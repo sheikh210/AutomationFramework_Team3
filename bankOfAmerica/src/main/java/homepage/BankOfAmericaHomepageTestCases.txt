@@ -1,0 +1,36 @@
+Bank of America Homepage Test Cases
+
+Test Case 1 - Verify number of links on homepage
+1. Navigate to www.bankofamerica.com
+2. Capture all links present on homepage
+3. Capture all link texts present on homepage
+
+
+Test case 2 - Do log in
+1. Navigate to www.bankofamerica.com
+2. Enter User Name
+3. Enter Password
+4. Save Online ID
+5. Click Submit Button
+
+Test Case 3 - Open New Account
+1. Navigate to www.bankofamerica.com
+2. Click on "Open An Account"
+3. Click on small business
+4. Click on compare account
+5. Quit the driver
+
+Test Case 4 - Find elements
+1. Navigate to www.bankofamerica.com
+2. Make windows full screen
+3. Click on WEB Elements Table
+4. Find out how many elements are there
+
+Test Case 5 - Change Language
+1. Navigate to www.bankofamerica.com
+2. Click on Language option
+3. Find out options of Languages
+4. Select the language
+
+
+
