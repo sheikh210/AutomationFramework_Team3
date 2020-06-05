@@ -50,6 +50,7 @@
                 <artifactId>selenium-server</artifactId>
                 <version>3.141.59</version>
             </dependency>
+
             <!-- https://mvnrepository.com/artifact/org.testng/testng -->
             <dependency>
                 <groupId>org.testng</groupId>
@@ -109,7 +110,6 @@
 
     </dependencyManagement>
 
-
     <build>
 
         <plugins>
@@ -130,9 +130,7 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <suiteXmlFiles>
-<!--                        <suiteXmlFiles>target/test-classes/AmazonTestRunner.xml</suiteXmlFiles>-->
-                        <!--<suiteXmlFiles>target/test-classes/CNNTestRunner.xml</suiteXmlFiles>  -->
-                        <!--<suiteXmlFiles>target/test-classes/BBCTestRunner.xml</suiteXmlFiles>  -->
+                        <suiteXmlFiles>target/test-classes/ESPNTestRunner.xml</suiteXmlFiles>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
