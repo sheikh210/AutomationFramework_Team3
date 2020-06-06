@@ -5,6 +5,7 @@ import homepage.ESPNHomepage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+
 public class ESPNHomepageTest extends WebAPI {
 
     static ESPNHomepage espnHomepage;
@@ -32,5 +33,29 @@ public class ESPNHomepageTest extends WebAPI {
         getInItElements();
         espnHomepage.featuredBoxHoverTextAndLink();
         espnHomepage.validateFeaturedBox();
+    }
+
+    @Test(priority = 3)
+    public static void testScrollHeader() throws Exception {
+        getInItElements();
+        espnHomepage.scrollHeader();
+        espnHomepage.validateScrollHeader();
+    }
+
+    @Test (priority = 4)
+    public static void testNFLDropdownMenuLeftItemsText(){
+        getInItElements();
+        espnHomepage.dropdownNFLMenuLeft();
+        espnHomepage.validateNFLMenuLeftSize();
+        espnHomepage.validateNFLMenuLeftItemsText();
+    }
+
+    @Test (priority = 5, enabled = false, groups = "PENDING")
+    public static void testNFLDropdownMenuLeftItems() throws Exception{
+        getInItElements();
+//        espnHomepage.getNFLDropdownMenuLeftPageTitles();
+        espnHomepage.getNFLDropdownMenuLeftLinks();
+//        espnHomepage.validateDropdownNFLMenuLeftTitles();
+        espnHomepage.validateDropdownNFLMenuLeftLinks();
     }
 }

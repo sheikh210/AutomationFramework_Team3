@@ -8,6 +8,7 @@
     <artifactId>AutomationFramework_Team3</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <modules>
         <module>Generic</module>
         <module>eBay</module>
@@ -109,6 +110,8 @@
         </dependencies>
 
     </dependencyManagement>
+
+
 
     <build>
 

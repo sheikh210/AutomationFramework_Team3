@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -121,10 +122,10 @@ public class WebAPI {
         } else {
             getLocalDriver(os, browserName);
         }
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
-        driver.get(url);
         driver.manage().window().maximize();
+        driver.get(url);
     }
 
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
@@ -144,14 +145,14 @@ public class WebAPI {
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
 
+        } else if (browserName.equalsIgnoreCase("Edge")){
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+
         } else if (browserName.equalsIgnoreCase("chrome-options")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
-            if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", macChromeDriverPath);
-            } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", windowsChromeDriverPath);
-            }
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
         }
         return driver;
@@ -255,15 +256,14 @@ public class WebAPI {
     public static void captureScreenshot(WebDriver driver) {
         Date date = new Date();
         String fileName = date.toString().replace(" ", "_").replace(":", "-") + ".png";
-
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
         try {
             FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "\\lib\\Screenshots\\" + fileName));
             System.out.println("SCREENSHOT TAKEN");
         } catch (Exception e) {
             System.out.println("ERROR TAKING SCREENSHOT: " + e.getMessage());
         }
-
     }
 
     public static String convertToString(String st) {
@@ -272,15 +272,12 @@ public class WebAPI {
         return splitString;
     }
 
-    public static void clickOnElement(String locator, WebDriver driver) {
+    public static void clickOnElement(WebElement element) {
         try {
-            driver.findElement(By.cssSelector(locator)).click();
-        } catch (Exception ex1) {
-            try {
-                driver.findElement(By.xpath(locator)).click();
-            } catch (Exception ex2) {
-                driver.findElement(By.id(locator)).click();
-            }
+            element.click();
+        } catch (Exception e) {
+            System.out.println("UNABLE TO CLICK ON ELEMENT");
+            e.getMessage();
         }
     }
 
@@ -347,9 +344,8 @@ public class WebAPI {
         return text;
     }
 
-    public static List<WebElement> getListOfWebElementsByCss(String locator) {
-        List<WebElement> list = new ArrayList<WebElement>();
-        list = driver.findElements(By.cssSelector(locator));
+    public static List<WebElement> getListOfWebElementsByCss(WebElement element, String locator) {
+        List<WebElement> list = element.findElements(By.cssSelector(locator));
         return list;
     }
 
@@ -376,7 +372,7 @@ public class WebAPI {
         return url;
     }
 
-    public String getCurrentPageTitle(){
+    public String getCurrentPageTitle() {
         String title = driver.getTitle();
         return title;
     }
@@ -578,6 +574,48 @@ public class WebAPI {
         String text = webElement.getText();
         return text;
     }
+
+
+    public void mouseHoverJScript(WebElement element) {
+        try {
+            if (isElementPresent(element)) {
+
+                String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('onmouseover');}";
+                ((JavascriptExecutor) driver).executeScript(mouseOverScript,
+                        element);
+
+            } else {
+                System.out.println("Element was not visible to hover " + "\n");
+
+            }
+        } catch (StaleElementReferenceException e) {
+            System.out.println("Element with " + element
+                    + " is not attached to the page document"
+                    + e.getStackTrace());
+        } catch (NoSuchElementException e) {
+            System.out.println("Element " + element + " was not found in DOM"
+                    + e.getStackTrace());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error occurred while hovering\n"
+                    + e.getStackTrace());
+        }
+    }
+
+    public static boolean isElementPresent(WebElement element) {
+        boolean flag = false;
+        try {
+            if (element.isDisplayed()
+                    || element.isEnabled())
+                flag = true;
+        } catch (NoSuchElementException e) {
+            flag = false;
+        } catch (StaleElementReferenceException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
 
 
 }

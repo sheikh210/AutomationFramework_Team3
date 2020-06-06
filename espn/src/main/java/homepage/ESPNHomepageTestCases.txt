@@ -1,5 +1,6 @@
 ESPN Homepage Test Cases
 
+***HEADER TEST CASES***
 Test Case 1 - Validate Navigation to Homepage
 1 - Navigate to http://espn.com
 2 - Capture page title and match with expected page title
@@ -9,30 +10,53 @@ Test Case 2 - Validate Links in "Top Events" dropdown menu
 2 - Click on "Top Events" dropdown menu
 3 - Capture number of links present in "Top Events" dropdown menu
 
-Test Case 3 - Validate mouse-over changes "Featured" box and links to appropriate page
+Test Case 3 - Validate mouse-over changes "Featured" box and get text + URL from hidden mouse-over element
 1 - Navigate to http://espn.com
 2 - Hover over "Featured" hover box (located directly to the right)
 3 - Validate box changes to display text "Full Coverage"
 4 - Validate box links to appropriate page when clicked
 
-Test Case  - NFL Dropdown Menu (Left Div)
+Test Case 4 - Validate header scroll
+1 - Navigate to http://espn.com
+2 - Click on arrow (right) to scroll header
+3 - Validate presence of back scroller
+
+Test Case 5 - NFL Dropdown Menu (Left Div)
 1 - Navigate to http://espn.com
 2 - Hover over NFL Dropdown on header bar
 3 - Ensure there are 9 links located on left side of dropdown menu (Home, Scores, Schedule, Teams, Standings,
     Stats, Draft, Depth Charts, Free Agency), and capture links
 
-Test Case  - NFL Dropdown Menu 2 (Left Div)
+Test Case 6 - NFL Dropdown Menu 2 (Left Div)
 1 - Navigate to http://espn.com
 2 - Hover over NFL Dropdown on header bar
 3 - Navigate to the 9 links located on left side of dropdown menu (Home, Scores, Schedule, Teams, Standings,
     Stats, Draft, Depth Charts, Free Agency), and capture page titles for each link
 
-Test Case  - NFL Dropdown Menu (Team Links)
+Test Case 7 - NFL Dropdown Menu (Team Links)
 1 - Navigate to http://espn.com
 2 - Hover over NFL Dropdown on header bar
-3 - Ensure there are 32 links located on right side of dropdown menu for all 32 NFL teams - Capture all 32 links
+3 - Ensure there are 8 NFL divisions & verify each one by name
+******************
+Test Case 8 - NFL Dropdown Menu (Team Links)
+1 - Navigate to http://espn.com
+2 - Hover over NFL Dropdown on header bar
+3 - Ensure there are 32 NFL teams - Verify each team name
 
-Test Case  - NFL Dropdown Menu (Team Links)
+
+Test Case 9 - NFL Dropdown Menu (Team Links)
 1 - Navigate to http://espn.com
 2 - Hover over NFL Dropdown on header bar
-3 - Ensure that all 32 team links navigate to corresponding NFL team pages - Capture page titles for each link
+3 - Ensure that all 32 team links located on right side of dropdown menu correspond to correct NFL team pages - Capture links + page titles for each team
+
+***BODY TEST CASES***
+//LEFT BODY\\
+Test Case  - ESPN+
+1 - Navigate to http://espn.com
+2 - Click on ESPN+ Box Header
+3 - Validate user is navigated to https://www.espn.com/watch/espnplus/
+
+Test Case  - ESPN+ Box
+1 - Navigate to http://espn.com
+2 - Capture number of links present within box
+3 - Validate there are 5 links present
