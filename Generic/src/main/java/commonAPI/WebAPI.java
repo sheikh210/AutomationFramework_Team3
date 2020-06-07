@@ -2,6 +2,7 @@ package commonAPI;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
@@ -51,6 +52,7 @@ public class WebAPI {
     public void startExtent(Method method) {
         String className = method.getDeclaringClass().getSimpleName();
         String methodName = method.getName().toLowerCase();
+
         ExtentTestManager.startTest(method.getName());
         ExtentTestManager.getTest().assignCategory(className);
     }
@@ -81,7 +83,7 @@ public class WebAPI {
         ExtentTestManager.endTest();
         extent.flush();
         if (result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver, result.getName());
+            captureScreenshot(driver);
         }
         driver.quit();
     }
@@ -130,12 +132,9 @@ public class WebAPI {
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
-            } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
-            }
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
+
         } else if (browserName.equalsIgnoreCase("chrome-options")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
@@ -146,15 +145,11 @@ public class WebAPI {
             }
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
-            if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/mac/geckodriver");
-            } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/windows/geckodriver.exe");
-            }
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
 
         } else if (browserName.equalsIgnoreCase("ie")) {
-            System.setProperty("webdriver.ie.driver", "../Generic/BrowserDriver/windows/IEDriverServer.exe");
+            WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
         }
         return driver;
@@ -257,15 +252,13 @@ public class WebAPI {
         driver.navigate().back();
     }
 
-    public static void captureScreenshot(WebDriver driver, String screenshotName) {
-        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
+    public static void captureScreenshot(WebDriver driver) {
         Date date = new Date();
-        df.format(date);
-
-        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        String fileName=date.toString().replace(" ","_").replace(":","-") +".png";
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file,
-                    new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName + " " + df.format(date) + ".png"));
+            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "\\lib\\Screenshots\\" + fileName));
+
             System.out.println("Screenshot captured");
         } catch (Exception e) {
             System.out.println("Exception while taking screenshot " + e.getMessage());
@@ -376,6 +369,10 @@ public class WebAPI {
         String url = driver.getCurrentUrl();
         return url;
     }
+    public String getCurrentPageTitle(){
+        String title = driver.getTitle();
+        return title;
+    }
 
     public void navigateForward() {
         driver.navigate().forward();
@@ -436,12 +433,13 @@ public class WebAPI {
         try {
             WebElement element = driver.findElement(By.xpath(locator));
             Actions action = new Actions(driver);
-            Actions hover = action.moveToElement(element);
+            //Actions hover = action.moveToElement(element).click();
+            action.moveToElement(element).click().build().perform();
         } catch (Exception ex) {
             System.out.println("First attempt has been done, This is second try");
             WebElement element = driver.findElement(By.xpath(locator));
             Actions action = new Actions(driver);
-            action.moveToElement(element).perform();
+            action.moveToElement(element).click().build().perform();
 
         }
 
