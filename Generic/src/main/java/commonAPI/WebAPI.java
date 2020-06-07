@@ -83,7 +83,7 @@ public class WebAPI {
         ExtentTestManager.endTest();
         extent.flush();
         if (result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver);
+            captureScreenshot(driver, result.getName());
         }
         driver.quit();
     }
@@ -253,9 +253,9 @@ public class WebAPI {
         driver.navigate().back();
     }
 
-    public static void captureScreenshot(WebDriver driver) {
+    public static void captureScreenshot(WebDriver driver, String testName) {
         Date date = new Date();
-        String fileName = date.toString().replace(" ", "_").replace(":", "-") + ".png";
+        String fileName = testName+" - "+date.toString().replace(" ", "_").replace(":", "-") + ".png";
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         try {
@@ -433,7 +433,7 @@ public class WebAPI {
     public void mouseHover(WebElement element) {
         try {
             Actions hover = new Actions(driver);
-            hover.moveToElement(element);
+            hover.moveToElement(element).perform();
         } catch (Exception ex) {
             System.out.println("1st mouse-hover attempt failed - Attempting 2nd time");
             Actions hover = new Actions(driver);

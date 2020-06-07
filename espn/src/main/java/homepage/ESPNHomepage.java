@@ -43,8 +43,14 @@ public class ESPNHomepage extends WebAPI {
     @FindBy(css = webElementNFLDropdownMenuRight)
     public WebElement nflDropdownMenuRight;
 
-    @FindBy(xpath = webElementNBADropdown)
+    @FindBy(css = webElementNBADropdown)
     public WebElement nbaDropdown;
+
+    @FindBy(css = webElementNBADropdownMenuLeft)
+    public WebElement nbaDropdownMenuLeft;
+
+    @FindBy(css = webElementNBADropdownMenuRight)
+    public WebElement nbaDropdownMenuRight;
 
     @FindBy(xpath = webElementMLBDropdown)
     public WebElement mlbDropdown;
@@ -165,31 +171,30 @@ public class ESPNHomepage extends WebAPI {
      * 3 - Verify there are 9 elements located on left menu of NFL Dropdown menu
      * 4 - Verify all expected names
      */
-    public List<WebElement> dropdownNFLMenuLeft() {
+    public List<WebElement> getNFLDropdownMenuLeft() {
         mouseHover(nflDropdown);
         List<WebElement> nflDropdownElementsLeftList = getListOfWebElementsByCss(nflDropdownMenuLeft, webElementNFLDropdownMenuItemsLeft);
 
         return nflDropdownElementsLeftList;
     }
 
-    public void validateNFLMenuLeftSize() {
-        int actualSize = dropdownNFLMenuLeft().size();
-        int expectedSize = 9;
+    public void validateNFLDropdownMenuLeftSize() {
+        int actualSize = getNFLDropdownMenuLeft().size();
         System.out.println("Number of elements in NFL Menu (Left Side): " + actualSize);
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualSize, expectedSize, "SIZE OF LIST (NFL MENU LEFT) DOES NOT MATCH");
+        softAssert.assertEquals(actualSize, expectedHeaderDropdownListSize, "SIZE OF LIST (NFL MENU LEFT) DOES NOT MATCH");
         softAssert.assertAll();
     }
 
-    public void validateNFLMenuLeftItemsText() {
-        List<WebElement> nflDropdownElementsLeftList = dropdownNFLMenuLeft();
+    public void validateNFLDropdownMenuLeftItemsText() {
+        List<WebElement> nflDropdownElementsLeftList = getNFLDropdownMenuLeft();
         SoftAssert softAssert = new SoftAssert();
 
         for (int i = 0; i < nflDropdownElementsLeftList.size(); i++) {
             String actualText = nflDropdownElementsLeftList.get(i).getAttribute("innerHTML");
             System.out.println(nflDropdownElementsLeftList.get(i).getAttribute("innerHTML"));
-            softAssert.assertEquals(expectedElementNFLDropdownMenuItemsLeft[i], actualText, "ELEMENT OF LIST AT POSITION " + i + " (NFL MENU LEFT) DOES NOT MATCH");
+            softAssert.assertEquals(actualText, expectedElementNFLDropdownMenuItemsLeft[i],"ELEMENT OF LIST AT POSITION " + i + " (NFL MENU LEFT) DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
@@ -252,7 +257,7 @@ public class ESPNHomepage extends WebAPI {
 //        return nflMenuListLeftTitles;
 //    }
 //
-//    public void validateDropdownNFLMenuLeftTitles() throws Exception {
+//    public void validateNFLDropdownMenuLeftTitles() throws Exception {
 //        String[] actualNFLDropdownMenuLeftPageTitles = getNFLDropdownMenuLeftPageTitles();
 //        SoftAssert softAssert = new SoftAssert();
 //
@@ -278,7 +283,7 @@ public class ESPNHomepage extends WebAPI {
         return nflMenuListLeftLinks;
     }
 
-    public void validateDropdownNFLMenuLeftLinks() {
+    public void validateNFLDropdownMenuLeftLinks() {
         String[] actualNFLDropdownMenuLeftPageLinks = getNFLDropdownMenuLeftLinks();
         SoftAssert softAssert = new SoftAssert();
 
@@ -370,13 +375,104 @@ public class ESPNHomepage extends WebAPI {
             System.out.println(actualNFLTeams[i]);
             softAssert.assertEquals(actualNFLTeams[i], expectedNFLTeamNames[i], "TEAM NAME AT INDEX "+i+" DOES NOT MATCH");
         }
-
     }
 
 
     /**
-     *
+     * Test Case 9 - NBA Dropdown Menu (Left Div)
+     * 1 - Navigate to http://espn.com
+     * 2 - Hover over NBA Dropdown on header bar
+     * 3 - Verify there are 9 elements located on left menu of NBA Dropdown menu
+     * 4 - Verify all expected names
+     */
+    public List<WebElement> getNBADropdownMenuLeft() {
+        mouseHover(nbaDropdown);
+        List<WebElement> nbaDropdownElementsLeftList = getListOfWebElementsByCss(nbaDropdownMenuLeft, webElementNBADropdownMenuItemsLeft);
+
+        return nbaDropdownElementsLeftList;
+    }
+
+    public void validateNBADropdownMenuLeftSize() {
+        int actualSize = getNBADropdownMenuLeft().size();
+        System.out.println("Number of elements in NFL Menu (Left Side): " + actualSize);
+
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(actualSize, expectedHeaderDropdownListSize, "SIZE OF LIST (NBA MENU LEFT) DOES NOT MATCH");
+        softAssert.assertAll();
+    }
+
+    public void validateNBADropdownMenuLeftItemsText() {
+        List<WebElement> nbaDropdownElementsLeftList = getNBADropdownMenuLeft();
+        SoftAssert softAssert = new SoftAssert();
+
+        for (int i = 0; i < nbaDropdownElementsLeftList.size(); i++) {
+            String actualText = nbaDropdownElementsLeftList.get(i).getAttribute("innerHTML");
+            System.out.println(nbaDropdownElementsLeftList.get(i).getAttribute("innerHTML"));
+            softAssert.assertEquals(actualText, expectedElementNBADropdownMenuItemsLeft[i], "ELEMENT OF LIST AT POSITION " + i + " (NBA MENU LEFT) DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+
+    /**
+     * Test Case 10 - NBA Dropdown Menu 2 (Left Div)
+     * 1 - Navigate to http://espn.com
+     * 2 - Hover over NBA Dropdown on header bar
+     * 3 - Navigate to the 9 links located on left side of dropdown menu (Home, Orlando Playoffs, The Last Dance, Scores,
+     *     Schedule, Standings, Stats, Teams, Draft)
+     * 4 - Verify all links
+     * 5 - COULD NOT PERFORM ----> (Verify page titles for each link)
+     */
+    public String[] getNBADropdownMenuLeftLinks(){
+        mouseHover(nbaDropdown);
+
+        List<WebElement> nbaMenuListLeft = getListOfWebElementsByCss(nbaDropdownMenuLeft, webElementNBADropdownMenuLinksLeft);
+        String[] nbaMenuListLeftLinks = new String[nbaMenuListLeft.size()];
+
+        for (int i = 0; i < nbaMenuListLeft.size(); i++) {
+            nbaMenuListLeftLinks[i] = nbaMenuListLeft.get(i).getAttribute("href");
+        }
+        return nbaMenuListLeftLinks;
+    }
+
+    public void validateNBADropdownMenuLeftLinks() {
+        String[] actualNBADropdownMenuLeftPageLinks = getNBADropdownMenuLeftLinks();
+        SoftAssert softAssert = new SoftAssert();
+
+        System.out.println("Total Number of Links (NBA Menu Dropdown - LEFT): " + actualNBADropdownMenuLeftPageLinks.length);
+        for (int i = 0; i < actualNBADropdownMenuLeftPageLinks.length; i++) {
+            System.out.println(actualNBADropdownMenuLeftPageLinks[i]);
+            softAssert.assertEquals(actualNBADropdownMenuLeftPageLinks[i], expectedElementNBADropdownMenuLeftLinks[i], "LINK AT POSITION " + i + " (NBA MENU LEFT) DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+
+    /**
+     * Test Case 11 - NBA Dropdown Menu (Right Div) (NBA Divisions)
+     * 1 - Navigate to http://espn.com
+     * 2 - Hover over NBA Dropdown on header bar
+     * 3 - Verify each NBA division by name
      */
 
+    public String[] getNBADropdownMenuRightNBADivisionNames() {
+        mouseHover(nbaDropdown);
 
+        List<WebElement> nbaDivisions = nbaDropdownMenuRight.findElements(By.cssSelector(webElementNBADropdownMenuDivisions));
+        String[] nflDivision = new String[nbaDivisions.size()];
+
+        for (int i = 0; i < nbaDivisions.size(); i++) {
+            nflDivision[i] = nbaDivisions.get(i).getAttribute("innerHTML");
+        }
+        return nflDivision;
+    }
+
+    public void validateNBADropdownMenuRightNFLDivisionNames(){
+        SoftAssert softAssert = new SoftAssert();
+
+        for (int i=0; i<getNBADropdownMenuRightNBADivisionNames().length; i++){
+            System.out.println(getNBADropdownMenuRightNBADivisionNames()[i]);
+            softAssert.assertEquals(getNBADropdownMenuRightNBADivisionNames()[i], expectedElementNBADivisions[i], "NBA DIVISION AT POSITION" + i + " (NBA MENU RIGHT) DOES NOT MATCH");
+        }
+    }
 }

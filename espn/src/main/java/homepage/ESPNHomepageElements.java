@@ -36,6 +36,9 @@ public class ESPNHomepageElements {
     // Header Scroll Left Arrow (CSS)
     public static final String webElementHeaderScrollLeft = "#global-scoreboard > div > div > div.scores-prev.controls";
 
+    // EXPECTED - Header Dropdowns List Size
+    public static final int expectedHeaderDropdownListSize = 9;
+
     // NFL Dropdown (CSS)
     public static final String webElementNFLDropdown = "#global-nav > ul > li.sports.menu-nfl > a > span";
 
@@ -79,8 +82,47 @@ public class ESPNHomepageElements {
             "Denver Broncos", "Kansas City Chiefs", "Las Vegas Raiders", "Los Angeles Chargers", "Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins", "Chicago Bears", "Detroit Lions", "Green Bay Packers", "Minnesota Vikings", "Atlanta Falcons", "Carolina Panthers",
             "New Orleans Saints", "Tampa Bay Buccaneers", "Arizona Cardinals", "Los Angeles Rams", "San Francisco 49ers", "Seattle Seahawks"};
 
-    // NBA Dropdown (xPath)
-    public static final String webElementNBADropdown = "//a[@name='&lpos=sitenavdefault+sitenav_nba']";
+    // NBA Dropdown (CSS)
+    public static final String webElementNBADropdown = "#global-nav > ul > li.sports.menu-nba > a > span";
+
+    // NBA Dropdown (Left Section) (CSS)
+    public static final String webElementNBADropdownMenuLeft = "#global-nav > ul > li.sports.menu-nba.hover > div > ul:nth-child(1)";
+
+    // NBA Dropdown Menu Items (Left Section) [LIST] (CSS)
+    public static final String webElementNBADropdownMenuItemsLeft = "#global-nav > ul > li.sports.menu-nba.hover > div > ul:nth-child(1) > li:not([style*=\"display: none;\"])>a>span>span:not([class=\"link-text-short\"])";
+
+    // EXPECTED - NBA Dropdown Menu Items Actual (Left Section) [String []]
+    public static final String[] expectedElementNBADropdownMenuItemsLeft = {"Home", "Orlando Playoffs", "The Last Dance", "Scores", "Schedule", "Standings", "Stats", "Teams", "Draft"};
+
+    // NBA Dropdown Menu Links (Left Section) [LIST] (CSS)
+    public static final String webElementNBADropdownMenuLinksLeft = "#global-nav > ul > li.sports.menu-nba.hover > div > ul:nth-child(1)>li:not([style*=\"display: none;\"])>a";
+
+    // NBA Dropdown Menu Links (Left Section) [String []]
+    public static final String[] expectedElementNBADropdownMenuLeftLinks = {"https://www.espn.com/nba/", "https://www.espn.com/nba/story/_/id/28911848/when-nba-return-latest-updates-amid-coronavirus-suspension", "https://www.espn.com/nba/story/_/id/28973557/the-last-dance-updates-untold-story-michael-jordan-chicago-bulls",
+            "https://www.espn.com/nba/scoreboard", "https://www.espn.com/nba/schedule", "https://www.espn.com/nba/standings", "https://www.espn.com/nba/stats", "https://www.espn.com/nba/teams", "http://www.espn.com/nba/draft/news"};
+
+    // NBA Dropdown Menu (Right Section) (CSS)
+    public static final String webElementNBADropdownMenuRight = "#global-nav > ul > li.sports.menu-nba.hover > div > ul:nth-child(2) > li > div";
+
+    // NBA Dropdown Menu - NBA Divisions (Right Section) [LIST] (CSS)
+    public static final String webElementNBADropdownMenuDivisions = "#global-nav > ul > li.sports.menu-nba.hover > div > ul:nth-child(2) > li > div >ul>li[class*=\"conference label group\"]>span>span:not([class*=\"link-text-short\"])";
+
+    // NFL Dropdown Menu - Expected NFL Division Names (Right Section) [STRING []]
+    public static final String[] expectedElementNBADivisions = {"Atlantic", "Central", "Southeast", "Pacific", "Southwest", "Northwest"};
+
+    // NFL Dropdown Menu - NFL Teams (Right Section) [LIST] (CSS)
+    public static final String webElementNBADropdownMenuTeams = "";
+
+    // EXPECTED NFL Dropdown Menu - NFL Teams Count (Right Section) [Integer]
+    public static final int expectedNBATeamsCount = 30;
+
+    // EXPECTED NFL Dropdown Menu - NFL Team Names (Right Section) [STRING []]
+    public static final String[] expectedNBATeamNames = {"Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets", "Baltimore Ravens", "Cincinnati Bengals", "Cleveland Browns", "Pittsburgh Steelers", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans",
+            "Denver Broncos", "Kansas City Chiefs", "Las Vegas Raiders", "Los Angeles Chargers", "Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins", "Chicago Bears", "Detroit Lions", "Green Bay Packers", "Minnesota Vikings", "Atlanta Falcons", "Carolina Panthers",
+            "New Orleans Saints", "Tampa Bay Buccaneers", "Arizona Cardinals", "Los Angeles Rams", "San Francisco 49ers", "Seattle Seahawks"};
+
+
+
 
     // MLB Dropdown (xPath)
     public static final String webElementMLBDropdown = "//a[@name='&lpos=sitenavdefault+sitenav_mlb']";

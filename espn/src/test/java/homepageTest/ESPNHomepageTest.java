@@ -45,18 +45,18 @@ public class ESPNHomepageTest extends WebAPI {
     @Test (priority = 4,enabled = false)
     public static void testNFLDropdownMenuLeftItemsText(){
         getInItElements();
-        espnHomepage.dropdownNFLMenuLeft();
-        espnHomepage.validateNFLMenuLeftSize();
-        espnHomepage.validateNFLMenuLeftItemsText();
+        espnHomepage.getNFLDropdownMenuLeft();
+        espnHomepage.validateNFLDropdownMenuLeftSize();
+        espnHomepage.validateNFLDropdownMenuLeftItemsText();
     }
 
     @Test (priority = 5,enabled = false)
     public static void testNFLDropdownMenuLeftItems() {
         getInItElements();
         espnHomepage.getNFLDropdownMenuLeftLinks();
-        espnHomepage.validateDropdownNFLMenuLeftLinks();
+        espnHomepage.validateNFLDropdownMenuLeftLinks();
 //        espnHomepage.getNFLDropdownMenuLeftPageTitles();
-//        espnHomepage.validateDropdownNFLMenuLeftTitles();
+//        espnHomepage.validateNFLDropdownMenuLeftTitles();
     }
 
     @Test (priority = 6, enabled = false)
@@ -66,12 +66,34 @@ public class ESPNHomepageTest extends WebAPI {
         espnHomepage.validateNFLDropdownMenuRightNFLDivisionNames();
     }
 
-    @Test (priority = 7)
+    @Test (priority = 7, enabled = false)
     public static void testNFLDropdownMenuRightTeams(){
         getInItElements();
         espnHomepage.getNFLDropdownMenuRightNFLTeams();
         espnHomepage.validateNFLDropdownMenuRightNFLTeamsCount();
         espnHomepage.validateNFLDropdownMenuRightNFLTeams();
+    }
+
+    @Test (priority = 8, enabled = false)
+    public static void testNBADropdownMenuLeftItemsText(){
+        getInItElements();
+        espnHomepage.getNBADropdownMenuLeft();
+        espnHomepage.validateNBADropdownMenuLeftSize();
+        espnHomepage.validateNBADropdownMenuLeftItemsText();
+    }
+
+    @Test (priority = 9, enabled = false)
+    public static void testNBADropdownMenuLeftItems(){
+        getInItElements();
+        espnHomepage.getNBADropdownMenuLeftLinks();
+        espnHomepage.validateNBADropdownMenuLeftLinks();
+    }
+
+    @Test (priority = 10)
+    public static void testNBADropdownMenuRightDivisions(){
+        getInItElements();
+        espnHomepage.getNBADropdownMenuRightNBADivisionNames();
+        espnHomepage.validateNBADropdownMenuRightNFLDivisionNames();
     }
 
 }
