@@ -1,40 +1,42 @@
 package commonAPI;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.LogStatus;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.annotations.*;
-import reporting.ExtentManager;
-import reporting.ExtentTestManager;
+        import com.relevantcodes.extentreports.ExtentReports;
+        import com.relevantcodes.extentreports.LogStatus;
+        import io.github.bonigarcia.wdm.WebDriverManager;
+        import org.apache.commons.io.FileUtils;
+        import org.apache.commons.lang3.StringUtils;
+        import org.openqa.selenium.*;
+        import org.openqa.selenium.chrome.ChromeDriver;
+        import org.openqa.selenium.chrome.ChromeOptions;
+        import org.openqa.selenium.edge.EdgeDriver;
+        import org.openqa.selenium.firefox.FirefoxDriver;
+        import org.openqa.selenium.ie.InternetExplorerDriver;
+        import org.openqa.selenium.interactions.Actions;
+        import org.openqa.selenium.remote.DesiredCapabilities;
+        import org.openqa.selenium.remote.RemoteWebDriver;
+        import org.openqa.selenium.support.ui.ExpectedConditions;
+        import org.openqa.selenium.support.ui.Select;
+        import org.openqa.selenium.support.ui.WebDriverWait;
+        import org.testng.ITestContext;
+        import org.testng.ITestResult;
+        import org.testng.annotations.*;
+        import reporting.ExtentManager;
+        import reporting.ExtentTestManager;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.lang.reflect.Method;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+        import java.io.File;
+        import java.io.IOException;
+        import java.io.PrintWriter;
+        import java.io.StringWriter;
+        import java.lang.reflect.Method;
+        import java.net.HttpURLConnection;
+        import java.net.URL;
+        import java.text.DateFormat;
+        import java.text.SimpleDateFormat;
+        import java.util.ArrayList;
+        import java.util.Calendar;
+        import java.util.Date;
+        import java.util.List;
+        import java.util.concurrent.TimeUnit;
 
 public class WebAPI {
 
@@ -81,7 +83,7 @@ public class WebAPI {
         ExtentTestManager.endTest();
         extent.flush();
         if (result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver, result.getName());
+            captureScreenshot(driver);
         }
         driver.quit();
     }
@@ -100,7 +102,7 @@ public class WebAPI {
 
 
     //Browser SetUp
-    public static WebDriver driver = null;
+    public static WebDriver driver;
     public String browserstack_username = "mhshahib1";
     public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
     public String saucelabs_username = "";
@@ -110,8 +112,7 @@ public class WebAPI {
     @BeforeMethod
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
                       @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("34")
-                              String browserVersion, @Optional("https://www.cnn.com") String url) throws IOException {
-        //System.setProperty("webdriver.chrome.driver", "/Users/peoplentech/eclipse-workspace-March2018/SeleniumProject1/driver/chromedriver");
+                              String browserVersion, @Optional("") String url) throws IOException {
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
                 getCloudDriver(cloudEnvName, browserstack_username, browserstack_accesskey, os, os_version, browserName, browserVersion);
@@ -121,45 +122,41 @@ public class WebAPI {
         } else {
             getLocalDriver(os, browserName);
         }
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         driver.get(url);
-        //driver.manage().window().maximize();
     }
 
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
 
-        if (browserName.equalsIgnoreCase("chrome")) {
-            if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
-            } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
-            }
+        String windowsChromeDriverPath = "/Generic/lib/BrowserDrivers/Windows/chromedriver.exe";
+        String macChromeDriverPath = "/Generic/lib/BrowserDrivers/Mac/chromedriver";
+
+        if (browserName.equalsIgnoreCase("Chrome")) {
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
+
+        } else if (browserName.equalsIgnoreCase("Firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+
+        } else if (browserName.equalsIgnoreCase("IE")) {
+            WebDriverManager.iedriver().setup();
+            driver = new InternetExplorerDriver();
+
+        } else if (browserName.equalsIgnoreCase("Edge")){
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+
         } else if (browserName.equalsIgnoreCase("chrome-options")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
-            if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
-            } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
-            }
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
-        } else if (browserName.equalsIgnoreCase("firefox")) {
-            if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/mac/geckodriver");
-            } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/windows/geckodriver.exe");
-            }
-            driver = new FirefoxDriver();
-
-        } else if (browserName.equalsIgnoreCase("ie")) {
-            System.setProperty("webdriver.ie.driver", "../Generic/BrowserDriver/windows/IEDriverServer.exe");
-            driver = new InternetExplorerDriver();
         }
         return driver;
     }
-
 
     public WebDriver getCloudDriver(String envName, String envUsername, String envAccessKey, String os, String os_version, String browserName,
                                     String browserVersion) throws IOException {
@@ -182,7 +179,6 @@ public class WebAPI {
 
     @AfterMethod(alwaysRun = true)
     public void cleanUp() {
-        //driver.close();
         driver.quit();
     }
 
@@ -257,20 +253,17 @@ public class WebAPI {
         driver.navigate().back();
     }
 
-    public static void captureScreenshot(WebDriver driver, String screenshotName) {
-        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
+    public static void captureScreenshot(WebDriver driver) {
         Date date = new Date();
-        df.format(date);
+        String fileName = date.toString().replace(" ", "_").replace(":", "-") + ".png";
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file,
-                    new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName + " " + df.format(date) + ".png"));
-            System.out.println("Screenshot captured");
+            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "\\lib\\Screenshots\\" + fileName));
+            System.out.println("SCREENSHOT TAKEN");
         } catch (Exception e) {
-            System.out.println("Exception while taking screenshot " + e.getMessage());
+            System.out.println("ERROR TAKING SCREENSHOT: " + e.getMessage());
         }
-
     }
 
     public static String convertToString(String st) {
@@ -279,15 +272,12 @@ public class WebAPI {
         return splitString;
     }
 
-    public static void clickOnElement(String locator, WebDriver driver1) {
+    public static void clickOnElement(WebElement element) {
         try {
-            driver1.findElement(By.cssSelector(locator)).click();
-        } catch (Exception ex1) {
-            try {
-                driver1.findElement(By.xpath(locator)).click();
-            } catch (Exception ex2) {
-                driver1.findElement(By.id(locator)).click();
-            }
+            element.click();
+        } catch (Exception e) {
+            System.out.println("UNABLE TO CLICK ON ELEMENT");
+            e.getMessage();
         }
     }
 
@@ -354,9 +344,8 @@ public class WebAPI {
         return text;
     }
 
-    public static List<WebElement> getListOfWebElementsByCss(String locator) {
-        List<WebElement> list = new ArrayList<WebElement>();
-        list = driver.findElements(By.cssSelector(locator));
+    public static List<WebElement> getListOfWebElementsByCss(WebElement element, String locator) {
+        List<WebElement> list = element.findElements(By.cssSelector(locator));
         return list;
     }
 
@@ -366,15 +355,26 @@ public class WebAPI {
         return list;
     }
 
-    public List<WebElement> getListOfWebElementsByXpath(String locator) {
+    public List<WebElement> getListOfWebElementsByXpath(WebElement element, String locator) {
         List<WebElement> list = new ArrayList<WebElement>();
-        list = driver.findElements(By.xpath(locator));
+        list = element.findElements(By.xpath(locator));
+        return list;
+    }
+
+    public List<WebElement> getListOfWebElementsByTagName(WebElement element, String tagName) {
+        List<WebElement> list = new ArrayList<WebElement>();
+        list = element.findElements(By.tagName(tagName));
         return list;
     }
 
     public String getCurrentPageUrl() {
         String url = driver.getCurrentUrl();
         return url;
+    }
+
+    public String getCurrentPageTitle() {
+        String title = driver.getTitle();
+        return title;
     }
 
     public void navigateForward() {
@@ -427,24 +427,18 @@ public class WebAPI {
             WebElement element = driver.findElement(By.cssSelector(locator));
             Actions action = new Actions(driver);
             action.moveToElement(element).perform();
-
         }
-
     }
 
-    public void mouseHoverByXpath(String locator) {
+    public void mouseHover(WebElement element) {
         try {
-            WebElement element = driver.findElement(By.xpath(locator));
-            Actions action = new Actions(driver);
-            Actions hover = action.moveToElement(element);
+            Actions hover = new Actions(driver);
+            hover.moveToElement(element);
         } catch (Exception ex) {
-            System.out.println("First attempt has been done, This is second try");
-            WebElement element = driver.findElement(By.xpath(locator));
-            Actions action = new Actions(driver);
-            action.moveToElement(element).perform();
-
+            System.out.println("1st mouse-hover attempt failed - Attempting 2nd time");
+            Actions hover = new Actions(driver);
+            hover.moveToElement(element).perform();
         }
-
     }
 
     //handling Alert
@@ -470,12 +464,6 @@ public class WebAPI {
     //get Links
     public void getLinks(String locator) {
         driver.findElement(By.linkText(locator)).findElement(By.tagName("a")).getText();
-    }
-
-    //Taking Screen shots
-    public void takeScreenShot() throws IOException {
-        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        //FileUtils.copyFile(file, new File("screenShots.png"));
     }
 
     //Synchronization
@@ -542,7 +530,7 @@ public class WebAPI {
     }
 
 
-    // Customer Made Helper Methods for Amex.com
+    // Custom-made Helper Methods for Amex.com
     public void brokenLink() throws IOException {
         //Step:1-->Get the list of all the links and images
         List<WebElement> linkslist = driver.findElements(By.tagName("a"));
@@ -586,6 +574,48 @@ public class WebAPI {
         String text = webElement.getText();
         return text;
     }
+
+
+    public void mouseHoverJScript(WebElement element) {
+        try {
+            if (isElementPresent(element)) {
+
+                String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('onmouseover');}";
+                ((JavascriptExecutor) driver).executeScript(mouseOverScript,
+                        element);
+
+            } else {
+                System.out.println("Element was not visible to hover " + "\n");
+
+            }
+        } catch (StaleElementReferenceException e) {
+            System.out.println("Element with " + element
+                    + " is not attached to the page document"
+                    + e.getStackTrace());
+        } catch (NoSuchElementException e) {
+            System.out.println("Element " + element + " was not found in DOM"
+                    + e.getStackTrace());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error occurred while hovering\n"
+                    + e.getStackTrace());
+        }
+    }
+
+    public static boolean isElementPresent(WebElement element) {
+        boolean flag = false;
+        try {
+            if (element.isDisplayed()
+                    || element.isEnabled())
+                flag = true;
+        } catch (NoSuchElementException e) {
+            flag = false;
+        } catch (StaleElementReferenceException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
 
 
 }
