@@ -33,25 +33,26 @@ Test Case 6 - NFL Dropdown Menu 2 (Left Div)
 3 - Navigate to the 9 links located on left side of dropdown menu (Home, Scores, Schedule, Teams, Standings,
     Stats, Draft, Depth Charts, Free Agency), and capture page titles for each link
 
-Test Case 7 - NFL Dropdown Menu (Team Links)
+Test Case 7 - NFL Dropdown Menu (NFL Divisions)
 1 - Navigate to http://espn.com
 2 - Hover over NFL Dropdown on header bar
-3 - Ensure there are 8 NFL divisions & verify each one by name
+3 - Verify each NFL division by name
+
 ******************
-Test Case 8 - NFL Dropdown Menu (Team Links)
+
+Test Case 8 - NFL Dropdown Menu (NFL Teams)
 1 - Navigate to http://espn.com
 2 - Hover over NFL Dropdown on header bar
-3 - Ensure there are 32 NFL teams - Verify each team name
+3 - Verify there are 32 NFL teams
+4 - Verify each team name
 
 
-Test Case 9 - NFL Dropdown Menu (Team Links)
-1 - Navigate to http://espn.com
-2 - Hover over NFL Dropdown on header bar
-3 - Ensure that all 32 team links located on right side of dropdown menu correspond to correct NFL team pages - Capture links + page titles for each team
+
+
 
 ***BODY TEST CASES***
 //LEFT BODY\\
-Test Case  - ESPN+
+Test Case 9 - ESPN+
 1 - Navigate to http://espn.com
 2 - Click on ESPN+ Box Header
 3 - Validate user is navigated to https://www.espn.com/watch/espnplus/

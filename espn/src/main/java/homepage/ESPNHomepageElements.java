@@ -6,7 +6,7 @@ public class ESPNHomepageElements {
      * HEADER
      */
 
-    // Expected Homepage Title [STRING]
+    // EXPECTED Homepage Title [STRING]
     public static final String expectedElementHomepageTitle = "ESPN: Serving sports fans. Anytime. Anywhere.";
 
     // Top Events Dropdown (xPath)
@@ -18,7 +18,7 @@ public class ESPNHomepageElements {
     // Top Events Dropdown Menu Box Items (xPath)
     public static final String webElementTopEventsDropdownMenuItems = "//*[@id=\"global-scoreboard\"]/div/div/div[1]/div[2]/ul/li/a";
 
-    // Top Events Dropdown Menu Items Count (Integer)
+    // EXPECTED - Top Events Dropdown Menu Items Count (Integer)
     public static final int expectedElementTopEventsDropdownCount = 8;
 
     // Featured Hover Box (xPath)
@@ -27,7 +27,7 @@ public class ESPNHomepageElements {
     // Featured Hover Box Hidden (xPath)
     public static final String webElementFeaturedHoverHidden = "//*[@id=\"leagues\"]//div[@class=\"scoreEvent scoreEvent--featured\"]//a[contains(text(),'Full Coverage')]";
 
-    // Featured Hover Box Expected Link [STRING]
+    // EXPECTED - Featured Hover Box Expected Link [STRING]
     public static final String expectedElementFeaturedHoverBoxLink = "Full Coverage\nhttps://fantasy.espn.com/games/ufc-250-pickem/make-picks?addata=ufc250pickem_ufc_web_headerscoreboard_p1";
 
     // Header Scroll Right Arrow (CSS)
@@ -45,13 +45,13 @@ public class ESPNHomepageElements {
     // NFL Dropdown Menu Items (Left Section) [LIST] (CSS)
     public static final String webElementNFLDropdownMenuItemsLeft = "#global-nav > ul > li.sports.menu-nfl>div>ul:nth-child(1)>li:not([style*=\"display: none;\"])>a>span>span:not([class*=\"link-text-short\"])";
 
-    // NFL Dropdown Menu Items Actual (Left Section) [String []]
+    // EXPECTED - NFL Dropdown Menu Items Actual (Left Section) [String []]
     public static final String[] expectedElementNFLDropdownMenuItemsLeft = {"Home", "Scores", "Schedule", "Teams", "Standings", "Stats", "Draft", "Depth Charts", "Free Agency"};
 
     // NFL Dropdown Menu Links (Left Section) [LIST] (CSS)
     public static final String webElementNFLDropdownMenuLinksLeft = "#global-nav > ul > li.sports.menu-nfl>div>ul:nth-child(1)>li:not([style*=\"display: none;\"])>a";
 
-    // NFL Dropdown Menu Link Page Titles (Left Section) [String []]
+    // EXPECTED - NFL Dropdown Menu Link Page Titles (Left Section) [String []]
     public static final String[] expectedElementNFLDropdownMenuLeftPageTitles = {"NFL Football Teams, Scores, Stats, News, Standings, Rumors - National Football League - ESPN", "NFL Football Scores - NFL Scoreboard - ESPN", "2020 NFL Schedule",
             "NFL Teams | ESPN", "2019 NFL Standings | ESPN", "2019 NFL Stat Leaders | ESPN", "NFL Draft 2020 News - ESPN Draftcast", "2020 NFL depth charts for all 32 teams","NFL Free Agency - ESPN"};
 
@@ -60,10 +60,24 @@ public class ESPNHomepageElements {
             "https://www.espn.com/nfl/stats", "https://www.espn.com/nfl/draft/news", "https://www.espn.com/nfl/story/_/id/29098001/2020-nfl-depth-charts-all-32-teams", "https://www.espn.com/nfl/nfl-free-agency/"};
 
     // NFL Dropdown Menu (Right Section) (CSS)
-    public static final String webElementNFLDropdownMenuRight = "#global-nav > ul > li.sports.menu-nfl.inactive.hover > div > ul:nth-child(2) > li > div";
+    public static final String webElementNFLDropdownMenuRight = "#global-nav > ul > li.sports.menu-nfl.hover > div > ul:nth-child(2) > li > div";
 
     // NFL Dropdown Menu - NFL Divisions (Right Section) [LIST] (CSS)
     public static final String webElementNFLDropdownMenuDivisions = "#global-nav > ul > li.sports.menu-nfl > div > ul:nth-child(2) > li > div > ul>li>span>span:not([class*=\"link-text-short\"])";
+
+    // NFL Dropdown Menu - Expected NFL Division Names (Right Section) [STRING []]
+    public static final String[] expectedElementNFLDivisions = {"AFC East", "AFC North", "AFC South", "AFC West", "NFC East", "NFC North", "NFC South", "NFC West"};
+
+    // NFL Dropdown Menu - NFL Teams (Right Section) [LIST] (CSS)
+    public static final String webElementNFLDropdownMenuTeams = "#global-nav > ul > li.sports.menu-nfl.hover > div > ul:nth-child(2) > li > div ul>li:not([class*=\"conference label group\"])>a>span>span:not([class*=\"link-text-short\"])";
+
+    // EXPECTED NFL Dropdown Menu - NFL Teams Count (Right Section) [Integer]
+    public static final int expectedNFLTeamsCount = 32;
+
+    // EXPECTED NFL Dropdown Menu - NFL Team Names (Right Section) [STRING []]
+    public static final String[] expectedNFLTeamNames = {"Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets", "Baltimore Ravens", "Cincinnati Bengals", "Cleveland Browns", "Pittsburgh Steelers", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans",
+            "Denver Broncos", "Kansas City Chiefs", "Las Vegas Raiders", "Los Angeles Chargers", "Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins", "Chicago Bears", "Detroit Lions", "Green Bay Packers", "Minnesota Vikings", "Atlanta Falcons", "Carolina Panthers",
+            "New Orleans Saints", "Tampa Bay Buccaneers", "Arizona Cardinals", "Los Angeles Rams", "San Francisco 49ers", "Seattle Seahawks"};
 
     // NBA Dropdown (xPath)
     public static final String webElementNBADropdown = "//a[@name='&lpos=sitenavdefault+sitenav_nba']";
@@ -79,7 +93,6 @@ public class ESPNHomepageElements {
 
     // MMA Dropdown (xPath)
     public static final String webElementMMADropdown = "//a[@name='&lpos=sitenavdefault+sitenav_mma']";
-
 
     /**
      * BODY

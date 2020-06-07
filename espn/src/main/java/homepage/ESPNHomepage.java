@@ -62,7 +62,7 @@ public class ESPNHomepage extends WebAPI {
     /**
      * Test Case 1 - Validate Navigation to Homepage
      * 1 - Navigate to http://espn.com
-     * 2 - Capture page title and match with expected page title
+     * 2 - Verify we're on the homepage by capturing page title
      */
     @Override
     public String getCurrentPageTitle() {
@@ -81,7 +81,7 @@ public class ESPNHomepage extends WebAPI {
      * Test Case 2 - Validate number of elements in "Top Events" dropdown menu list
      * 1 - Navigate to http://espn.com
      * 2 - Click on "Top Events" dropdown menu
-     * 3 - Capture number of links present in "Top Events" dropdown menu
+     * 3 - Verify number of links present in "Top Events" dropdown menu
      */
     public int topEventsDropdownList() {
         mouseHover(topEventsDropdown);
@@ -103,8 +103,8 @@ public class ESPNHomepage extends WebAPI {
      * Test Case 3 - Validate mouse-over changes "Featured" box and links to appropriate page
      * 1 - Navigate to http://espn.com
      * 2 - Hover over "Featured" hover box (located directly to the right)
-     * 3 - Validate box changes to display text "Full Coverage"
-     * 4 - Validate box links to appropriate page when clicked
+     * 3 - Verify box changes to display text "Full Coverage"
+     * 4 - Verify box links to appropriate page when clicked
      */
     public String featuredBoxHoverTextAndLink() {
         String hiddenText;
@@ -126,7 +126,8 @@ public class ESPNHomepage extends WebAPI {
      * Test Case 4 - Validate header scroll
      * 1 - Navigate to http://espn.com
      * 2 - Click on arrow (right) to scroll header
-     * 3 - Validate presence of back scroller
+     * 3 - Click on arrow (left) to scroll header back
+     * 4 - Verify functionality of header scroll
      */
     public boolean scrollHeader() throws Exception {
         WebDriverWait expWait = new WebDriverWait(driver, 10);
@@ -200,55 +201,67 @@ public class ESPNHomepage extends WebAPI {
      * 3 - Navigate to the 9 links located on left side of dropdown menu (Home, Scores, Schedule, Teams, Standings,
      * Stats, Draft, Depth Charts, Free Agency)
      * 4 - Verify all links
-     * 5 - Verify page titles for each link
+     * 5 - COULD NOT PERFORM ----> (Verify page titles for each link)
      */
-    public String[] getNFLDropdownMenuLeftPageTitles() {
-        Actions hover = new Actions(driver);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-
-        List<WebElement> nflMenuListLeft = getListOfWebElementsByCss(nflDropdownMenuLeft, webElementNFLDropdownMenuLinksLeft);
-        String[] nflMenuListLeftTitles = new String[nflMenuListLeft.size()];
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-
-        for (int i = 0; i < nflMenuListLeft.size(); i++) {
-            try {
-                wait.until(ExpectedConditions.elementToBeClickable(nflDropdown));
-                hover.moveToElement(nflDropdown).perform();
-
-            } catch (Exception exception) {
-                System.out.println("COULD NOT HOVER ON ELEMENT " + i + " --- TRYING AGAIN");
-                exception.getMessage();
-                hover.moveToElement(nflDropdown).perform();
-            }
-
-            try {
-                wait.until(ExpectedConditions.elementToBeClickable(nflMenuListLeft.get(i)));
-                nflMenuListLeft.get(i).click();
-
-            } catch (Exception exception2) {
-                System.out.println("UNABLE TO CLICK ON ELEMENT " + i + " --- TRYING AGAIN");
-                exception2.getMessage();
-
-                wait.until(ExpectedConditions.elementToBeClickable(nflMenuListLeft.get(i)));
-                js.executeScript("arguments[0].click();", nflMenuListLeft.get(i));
-            }
-
-            try {
-                wait.until(ExpectedConditions.titleIs(expectedElementNFLDropdownMenuLeftPageTitles[i]));
-                nflMenuListLeftTitles[i] = driver.getTitle();
-                navigateBack();
-
-            } catch (Exception exception3) {
-                System.out.println("COULD NOT GET TITLE FOR ELEMENT " + i + " --- TRYING AGAIN");
-                wait.until(ExpectedConditions.titleIs(expectedElementNFLDropdownMenuLeftPageTitles[i]));
-                nflMenuListLeftTitles[i] = js.executeScript("return document.title;").toString();
-                navigateBack();
-            }
-            wait.until(ExpectedConditions.titleIs(expectedElementHomepageTitle));
-        }
-        return nflMenuListLeftTitles;
-    }
+//    public String[] getNFLDropdownMenuLeftPageTitles() {
+//        Actions hover = new Actions(driver);
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//
+//        List<WebElement> nflMenuListLeft = getListOfWebElementsByCss(nflDropdownMenuLeft, webElementNFLDropdownMenuLinksLeft);
+//        String[] nflMenuListLeftTitles = new String[nflMenuListLeft.size()];
+//
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//
+//        for (int i = 0; i < nflMenuListLeft.size(); i++) {
+//            try {
+//                wait.until(ExpectedConditions.elementToBeClickable(nflDropdown));
+//                hover.moveToElement(nflDropdown).perform();
+//
+//            } catch (Exception exception) {
+//                System.out.println("COULD NOT HOVER ON ELEMENT " + i + " --- TRYING AGAIN");
+//                exception.getMessage();
+//                hover.moveToElement(nflDropdown).perform();
+//            }
+//
+//            try {
+//                wait.until(ExpectedConditions.elementToBeClickable(nflMenuListLeft.get(i)));
+//                nflMenuListLeft.get(i).click();
+//
+//            } catch (Exception exception2) {
+//                System.out.println("UNABLE TO CLICK ON ELEMENT " + i + " --- TRYING AGAIN");
+//                exception2.getMessage();
+//
+//                wait.until(ExpectedConditions.elementToBeClickable(nflMenuListLeft.get(i)));
+////                js.executeScript("arguments[0].click();", nflMenuListLeft.get(i));
+//                nflMenuListLeft.get(i).click();
+//            }
+//
+//            try {
+//                wait.until(ExpectedConditions.titleIs(expectedElementNFLDropdownMenuLeftPageTitles[i]));
+//                nflMenuListLeftTitles[i] = driver.getTitle();
+//                navigateBack();
+//
+//            } catch (Exception exception3) {
+//                System.out.println("COULD NOT GET TITLE FOR ELEMENT " + i + " --- TRYING AGAIN");
+//                wait.until(ExpectedConditions.titleIs(expectedElementNFLDropdownMenuLeftPageTitles[i]));
+//                nflMenuListLeftTitles[i] = js.executeScript("return document.title;").toString();
+//                navigateBack();
+//            }
+//            wait.until(ExpectedConditions.titleIs(expectedElementHomepageTitle));
+//        }
+//        return nflMenuListLeftTitles;
+//    }
+//
+//    public void validateDropdownNFLMenuLeftTitles() throws Exception {
+//        String[] actualNFLDropdownMenuLeftPageTitles = getNFLDropdownMenuLeftPageTitles();
+//        SoftAssert softAssert = new SoftAssert();
+//
+//        for (int i = 0; i < actualNFLDropdownMenuLeftPageTitles.length; i++) {
+//            System.out.println(actualNFLDropdownMenuLeftPageTitles[i]);
+//            softAssert.assertEquals(actualNFLDropdownMenuLeftPageTitles[i], expectedElementNFLDropdownMenuLeftPageTitles[i], "LINK AT POSITION " + i + " (NFL MENU LEFT) DOES NOT MATCH");
+//        }
+//        softAssert.assertAll();
+//    }
 
     public String[] getNFLDropdownMenuLeftLinks() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -265,18 +278,7 @@ public class ESPNHomepage extends WebAPI {
         return nflMenuListLeftLinks;
     }
 
-    public void validateDropdownNFLMenuLeftTitles() throws Exception {
-        String[] actualNFLDropdownMenuLeftPageTitles = getNFLDropdownMenuLeftPageTitles();
-        SoftAssert softAssert = new SoftAssert();
-
-        for (int i = 0; i < actualNFLDropdownMenuLeftPageTitles.length; i++) {
-            System.out.println(actualNFLDropdownMenuLeftPageTitles[i]);
-            softAssert.assertEquals(actualNFLDropdownMenuLeftPageTitles[i], expectedElementNFLDropdownMenuLeftPageTitles[i], "LINK AT POSITION " + i + " (NFL MENU LEFT) DOES NOT MATCH");
-        }
-        softAssert.assertAll();
-    }
-
-    public void validateDropdownNFLMenuLeftLinks() throws Exception {
+    public void validateDropdownNFLMenuLeftLinks() {
         String[] actualNFLDropdownMenuLeftPageLinks = getNFLDropdownMenuLeftLinks();
         SoftAssert softAssert = new SoftAssert();
 
@@ -290,13 +292,12 @@ public class ESPNHomepage extends WebAPI {
 
 
     /**
-     * Test Case 7 - NFL Dropdown Menu (Team Links)
+     * Test Case 7 - NFL Dropdown Menu (NFL Divisions)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NFL Dropdown on header bar
-     * 3 - Ensure there are 8 NFL divisions & verify each one by name
+     * 3 - Verify each NFL division by name
      */
-
-    public void getNFLDropdownMenuRightNFLDivisionNames() {
+    public String[] getNFLDropdownMenuRightNFLDivisionNames() {
         Actions hover = new Actions(driver);
         try {
             hover.moveToElement(nflDropdown).perform();
@@ -307,23 +308,70 @@ public class ESPNHomepage extends WebAPI {
         }
 
         List<WebElement> nflDivisions = nflDropdownMenuRight.findElements(By.cssSelector(webElementNFLDropdownMenuDivisions));
-        String[] nflDivision = new String[nflDivisions.size() - 1];
+        String[] nflDivision = new String[nflDivisions.size()];
 
         for (int i = 0; i < nflDivisions.size(); i++) {
-            System.out.println(nflDivisions.get(i).getAttribute("innerHTML"));
             nflDivision[i] = nflDivisions.get(i).getAttribute("innerHTML");
+        }
+        return nflDivision;
+    }
+
+    public void validateNFLDropdownMenuRightNFLDivisionNames(){
+        SoftAssert softAssert = new SoftAssert();
+
+        for (int i=0; i<getNFLDropdownMenuRightNFLDivisionNames().length; i++){
+            System.out.println(getNFLDropdownMenuRightNFLDivisionNames()[i]);
+            softAssert.assertEquals(getNFLDropdownMenuRightNFLDivisionNames()[i], expectedElementNFLDivisions[i], "NFL DIVISION AT POSITION" + i + " (NFL MENU RIGHT) DOES NOT MATCH");
         }
     }
 
 
     /**
-     * Test Case 8 - NFL Dropdown Menu (Team Links)
+     * Test Case 8 - NFL Dropdown Menu (NFL Teams)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NFL Dropdown on header bar
-     * 3 - Ensure that all 32 team links navigate to corresponding NFL team pages - Capture page titles for each link
+     * 3 - Verify there are 32 NFL teams
+     * 4 - Verify each team name
      */
 
+    // nflDropdownMenuRight
+    // webElementNFLDropdownMenuTeams
 
+    public String[] getNFLDropdownMenuRightNFLTeams(){
+        Actions hover = new Actions(driver);
+        try {
+            hover.moveToElement(nflDropdown).perform();
+        } catch (StaleElementReferenceException exception) {
+            exception.getMessage();
+            System.out.println("COULD NOT HOVER - TRYING AGAIN");
+            hover.moveToElement(nflDropdown).perform();
+        }
+
+        List<WebElement> nflTeamsList = nflDropdownMenuRight.findElements(By.cssSelector(webElementNFLDropdownMenuTeams));
+        String[] nflTeams = new String[nflTeamsList.size()];
+
+        for (int i=0;i<nflTeamsList.size();i++){
+            nflTeams[i]=nflTeamsList.get(i).getAttribute("innerHTML");
+        }
+        return nflTeams;
+    }
+
+    public void validateNFLDropdownMenuRightNFLTeamsCount(){
+        int actualNFLTeamsCount = getNFLDropdownMenuRightNFLTeams().length;
+        System.out.println("Number of NFL Teams counted: "+actualNFLTeamsCount);
+        Assert.assertEquals(actualNFLTeamsCount,expectedNFLTeamsCount, "NUMBER OF NFL TEAMS & NUMBER OF COUNTED NFL TEAMS DO NOT MATCH");
+    }
+
+    public void validateNFLDropdownMenuRightNFLTeams(){
+        SoftAssert softAssert = new SoftAssert();
+        String [] actualNFLTeams = getNFLDropdownMenuRightNFLTeams();
+
+        for (int i=0; i<actualNFLTeams.length; i++){
+            System.out.println(actualNFLTeams[i]);
+            softAssert.assertEquals(actualNFLTeams[i], expectedNFLTeamNames[i], "TEAM NAME AT INDEX "+i+" DOES NOT MATCH");
+        }
+
+    }
 
 
     /**
