@@ -21,14 +21,8 @@ public class ESPNHomepageElements {
     // EXPECTED - Top Events Dropdown Menu Items Count (Integer)
     public static final int expectedElementTopEventsDropdownCount = 8;
 
-    // Featured Hover Box (xPath)
-    public static final String webElementFeaturedHoverBox = "//*[@id=\"leagues\"]//div[@class=\"scoreEvent scoreEvent--featured\"]";
-
-    // Featured Hover Box Hidden (xPath)
-    public static final String webElementFeaturedHoverHidden = "//*[@id=\"leagues\"]//div[@class=\"scoreEvent scoreEvent--featured\"]//a[contains(text(),'Full Coverage')]";
-
-    // EXPECTED - Featured Hover Box Expected Link [STRING]
-    public static final String expectedElementFeaturedHoverBoxLink = "Full Coverage\nhttps://fantasy.espn.com/games/ufc-250-pickem/make-picks?addata=ufc250pickem_ufc_web_headerscoreboard_p1";
+    // UFC Scroll Header Tile
+    public static final String webElementUFCHeaderTile = "#leagues > li:nth-child(1) > div > div.scoreLabel.mma.js-show > div";
 
     // Header Scroll Right Arrow (CSS)
     public static final String webElementHeaderScrollRight = "#global-scoreboard > div > div > div.scores-next.controls";
@@ -107,39 +101,65 @@ public class ESPNHomepageElements {
     // NBA Dropdown Menu - NBA Divisions (Right Section) [LIST] (CSS)
     public static final String webElementNBADropdownMenuDivisions = "#global-nav > ul > li.sports.menu-nba.hover > div > ul:nth-child(2) > li > div >ul>li[class*=\"conference label group\"]>span>span:not([class*=\"link-text-short\"])";
 
-    // NFL Dropdown Menu - Expected NFL Division Names (Right Section) [STRING []]
+    // NBA Dropdown Menu - Expected NBA Division Names (Right Section) [STRING []]
     public static final String[] expectedElementNBADivisions = {"Atlantic", "Central", "Southeast", "Pacific", "Southwest", "Northwest"};
 
-    // NFL Dropdown Menu - NFL Teams (Right Section) [LIST] (CSS)
-    public static final String webElementNBADropdownMenuTeams = "";
+    // NBA Dropdown Menu - NBA Teams (Right Section) [LIST] (CSS)
+    public static final String webElementNBADropdownMenuTeams = "#global-nav > ul > li.sports.menu-nba.hover > div > ul:nth-child(2)>li>div>ul>li[class*=\"team\"]>a>span>span:not([class*=\"link-text-short\"])";
 
-    // EXPECTED NFL Dropdown Menu - NFL Teams Count (Right Section) [Integer]
+    // EXPECTED NBA Dropdown Menu - NBA Teams Count (Right Section) [Integer]
     public static final int expectedNBATeamsCount = 30;
 
-    // EXPECTED NFL Dropdown Menu - NFL Team Names (Right Section) [STRING []]
-    public static final String[] expectedNBATeamNames = {"Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets", "Baltimore Ravens", "Cincinnati Bengals", "Cleveland Browns", "Pittsburgh Steelers", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans",
-            "Denver Broncos", "Kansas City Chiefs", "Las Vegas Raiders", "Los Angeles Chargers", "Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins", "Chicago Bears", "Detroit Lions", "Green Bay Packers", "Minnesota Vikings", "Atlanta Falcons", "Carolina Panthers",
-            "New Orleans Saints", "Tampa Bay Buccaneers", "Arizona Cardinals", "Los Angeles Rams", "San Francisco 49ers", "Seattle Seahawks"};
+    // EXPECTED NBA Dropdown Menu - NBA Team Names (Right Section) [STRING []]
+    public static final String[] expectedNBATeamNames = {"Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets",
+            "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "LA Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzlies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets",
+            "Minnesota Timberwolves", "Oklahoma City Thunder", "Portland Trail Blazers", "Utah Jazz"};
 
+    // MLB Dropdown (CSS)
+    public static final String webElementMLBDropdown = "#global-nav > ul > li.sports.menu-mlb > a > span";
 
+    // MLB Dropdown (Left Section) (CSS)
+    public static final String webElementMLBDropdownMenuLeft = "#global-nav > ul > li.sports.menu-mlb.hover > div > ul:nth-child(1)";
 
+    // MLB Dropdown Menu Items (Left Section) [LIST] (CSS)
+    public static final String webElementMLBDropdownMenuItemsLeft = "#global-nav > ul > li.sports.menu-mlb.hover > div > ul:nth-child(1) > li:not([style*=\"display: none;\"])>a>span>span:not([class=\"link-text-short\"])";
 
-    // MLB Dropdown (xPath)
-    public static final String webElementMLBDropdown = "//a[@name='&lpos=sitenavdefault+sitenav_mlb']";
+    // EXPECTED - MLB Dropdown Menu Items Actual (Left Section) [String []]
+    public static final String[] expectedElementMLBDropdownMenuItemsLeft = {"Home", "Draft", "When could MLB return?", "KBO League", "Teams", "Scores", "Schedule", "Standings", "Stats"};
 
-    // NCAAF Dropdown (xPath)
-    public static final String webElementNCAAFDropdown = "//a[@name='&lpos=sitenavdefault+sitenav_ncf']";
+    // MLB Dropdown Menu Links (Left Section) [LIST] (CSS)
+    public static final String webElementMLBDropdownMenuLinksLeft = "#global-nav > ul > li.sports.menu-mlb.hover > div > ul:nth-child(1)>li:not([style*=\"display: none;\"])>a";
 
-    // Soccer Dropdown (xPath)
-    public static final String webElementSoccerDropdown = "//a[@name='&lpos=sitenavdefault+sitenav_soccer']";
+    // MLB Dropdown Menu Links (Left Section) [String []]
+    public static final String[] expectedElementMLBDropdownMenuLeftLinks = {"https://www.espn.com/mlb/", "https://www.espn.com/mlb/story/_/id/29144339/2020-mlb-draft-mock-drafts-rankings-order-more", "https://www.espn.com/mlb/story/_/id/28910482/when-mlb-actually-return-here-latest-hearing",
+            "https://www.espn.com/mlb/story/_/id/29136672/kbo-espn-schedule-how-watch-teams-korea-baseball-league-more", "https://www.espn.com/mlb/teams", "https://www.espn.com/mlb/scoreboard", "https://www.espn.com/mlb/schedule", "https://www.espn.com/mlb/standings", "https://www.espn.com/mlb/stats"};
 
-    // MMA Dropdown (xPath)
-    public static final String webElementMMADropdown = "//a[@name='&lpos=sitenavdefault+sitenav_mma']";
+    // MLB Dropdown Menu (Right Section) (CSS)
+    public static final String webElementMLBDropdownMenuRight = "#global-nav > ul > li.sports.menu-mlb.hover > div > ul:nth-child(2) > li > div";
+
+    // MLB Dropdown Menu - MLB Divisions (Right Section) [LIST] (CSS)
+    public static final String webElementMLBDropdownMenuDivisions = "#global-nav > ul > li.sports.menu-mlb.hover > div > ul:nth-child(2) > li > div >ul>li[class*=\"conference label group\"]>span>span:not([class*=\"link-text-short\"])";
+
+    // MLB Dropdown Menu - Expected MLB Division Names (Right Section) [STRING []]
+    public static final String[] expectedElementMLBDivisions = {"AL East", "AL Central", "AL West", "NL East", "NL Central", "NL West"};
+
+    // MLB Dropdown Menu - MLB Teams (Right Section) [LIST] (CSS)
+    public static final String webElementMLBDropdownMenuTeams = "#global-nav > ul > li.sports.menu-mlb.hover > div > ul:nth-child(2)>li>div>ul>li[class*=\"team\"]>a>span>span:not([class*=\"link-text-short\"])";
+
+    // EXPECTED MLB Dropdown Menu - MLB Teams Count (Right Section) [Integer]
+    public static final int expectedMLBTeamsCount = 30;
+
+    // EXPECTED MLB Dropdown Menu - MLB Team Names (Right Section) [STRING []]
+    public static final String[] expectedMLBTeamNames = {"Baltimore Orioles", "Boston Red Sox", "New York Yankees", "Tampa Blue Rays", "Toronto Blue Jays", "Chicago White Sox", "Cleveland Indians", "Detroit Tigers", "Kansas City Royals", "Minnesota Twins",
+            "Houston Astros", "Los Angeles Angels", "Oakland Athletics", "Seattle Mariners", "Texas Rangers", "Atlanta Braves", "Miami Marlins", "New York Mets", "Philadelphia Phillies", "Washington Nationals", "Chicago Cubs", "Cincinnati Reds",
+            "Milwaukee Brewers", "Pittsburgh Pirates", "St. Louis Cardinals", "Arizona Diamondbacks", "Colorado Rockies", "Los Angeles Dodgers", "San Diego Padres", "San Francisco Giants"};
+
 
     /**
      * BODY
-     *
      */
+
+
 
 
 

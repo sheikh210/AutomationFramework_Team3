@@ -22,13 +22,10 @@ public class ESPNHomepage extends WebAPI {
     @FindBy(css = webElementTopEventsDropdownMenu)
     public WebElement topEventsDropdownMenu;
 
-    @FindBy(xpath = webElementFeaturedHoverBox)
-    public WebElement featuredHoverBox;
+    @FindBy(css = webElementUFCHeaderTile)
+    public WebElement ufcHeaderTile;
 
-    @FindBy(xpath = webElementFeaturedHoverHidden)
-    public WebElement featuredHoverHidden;
-
-    @FindBy(how = How.CSS, using = webElementHeaderScrollRight)
+    @FindBy(css = webElementHeaderScrollRight)
     public WebElement headerScrollRight;
 
     @FindBy(css = webElementHeaderScrollLeft)
@@ -52,17 +49,14 @@ public class ESPNHomepage extends WebAPI {
     @FindBy(css = webElementNBADropdownMenuRight)
     public WebElement nbaDropdownMenuRight;
 
-    @FindBy(xpath = webElementMLBDropdown)
+    @FindBy(css = webElementMLBDropdown)
     public WebElement mlbDropdown;
 
-    @FindBy(xpath = webElementNCAAFDropdown)
-    public WebElement ncaafDropdown;
+    @FindBy(css = webElementMLBDropdownMenuLeft)
+    public WebElement mlbDropdownMenuLeft;
 
-    @FindBy(xpath = webElementSoccerDropdown)
-    public WebElement soccerDropdown;
-
-    @FindBy(xpath = webElementMMADropdown)
-    public WebElement mmaDropdown;
+    @FindBy(css = webElementMLBDropdownMenuRight)
+    public WebElement mlbDropdownMenuRight;
 
 
     /**
@@ -106,30 +100,7 @@ public class ESPNHomepage extends WebAPI {
 
 
     /**
-     * Test Case 3 - Validate mouse-over changes "Featured" box and links to appropriate page
-     * 1 - Navigate to http://espn.com
-     * 2 - Hover over "Featured" hover box (located directly to the right)
-     * 3 - Verify box changes to display text "Full Coverage"
-     * 4 - Verify box links to appropriate page when clicked
-     */
-    public String featuredBoxHoverTextAndLink() {
-        String hiddenText;
-        String featuredBoxURL;
-        mouseHover(featuredHoverBox);
-        hiddenText = featuredHoverHidden.getAttribute("innerHTML").trim();
-        featuredBoxURL = featuredHoverHidden.getAttribute("href");
-
-        return hiddenText + "\n" + featuredBoxURL;
-    }
-
-    public void validateFeaturedBox() {
-        System.out.println(featuredBoxHoverTextAndLink());
-        Assert.assertEquals(featuredBoxHoverTextAndLink(), expectedElementFeaturedHoverBoxLink);
-    }
-
-
-    /**
-     * Test Case 4 - Validate header scroll
+     * Test Case 3 - Validate header scroll
      * 1 - Navigate to http://espn.com
      * 2 - Click on arrow (right) to scroll header
      * 3 - Click on arrow (left) to scroll header back
@@ -138,19 +109,29 @@ public class ESPNHomepage extends WebAPI {
     public boolean scrollHeader() throws Exception {
         WebDriverWait expWait = new WebDriverWait(driver, 10);
 
-        expWait.until(ExpectedConditions.elementToBeClickable(headerScrollRight));
-        headerScrollRight.click();
+        try {
+            expWait.until(ExpectedConditions.elementToBeClickable(headerScrollRight));
+            headerScrollRight.click();
+        } catch (Exception e) {
+            System.out.println("COULD NOT CLICK ON RIGHT SCROLL ON 1st ATTEMPT --- TRYING AGAIN");
+            expWait.until(ExpectedConditions.elementToBeClickable(headerScrollRight));
+            headerScrollRight.click();
+        }
 
-        expWait.until(ExpectedConditions.elementToBeClickable(headerScrollLeft));
-        headerScrollLeft.click();
+        try {
+            expWait.until(ExpectedConditions.elementToBeClickable(headerScrollLeft));
+            headerScrollLeft.click();
+        } catch (Exception e1) {
+            expWait.until(ExpectedConditions.elementToBeClickable(headerScrollLeft));
+            headerScrollLeft.click();
+        }
 
-        expWait.until(ExpectedConditions.elementToBeClickable(headerScrollRight));
         boolean isPresent = false;
 
-        if (headerScrollRight.isDisplayed()) {
+        if (ufcHeaderTile.isDisplayed()) {
             isPresent = true;
             return isPresent;
-        } else if (!(headerScrollRight.isDisplayed())) {
+        } else if (!(ufcHeaderTile.isDisplayed())) {
             isPresent = false;
             return isPresent;
         }
@@ -165,7 +146,7 @@ public class ESPNHomepage extends WebAPI {
 
 
     /**
-     * Test Case 5 - NFL Dropdown Menu (Left Div)
+     * Test Case 4 - NFL Dropdown Menu (Left Div)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NFL Dropdown on header bar
      * 3 - Verify there are 9 elements located on left menu of NFL Dropdown menu
@@ -194,13 +175,13 @@ public class ESPNHomepage extends WebAPI {
         for (int i = 0; i < nflDropdownElementsLeftList.size(); i++) {
             String actualText = nflDropdownElementsLeftList.get(i).getAttribute("innerHTML");
             System.out.println(nflDropdownElementsLeftList.get(i).getAttribute("innerHTML"));
-            softAssert.assertEquals(actualText, expectedElementNFLDropdownMenuItemsLeft[i],"ELEMENT OF LIST AT POSITION " + i + " (NFL MENU LEFT) DOES NOT MATCH");
+            softAssert.assertEquals(actualText, expectedElementNFLDropdownMenuItemsLeft[i], "ELEMENT OF LIST AT POSITION " + i + " (NFL MENU LEFT) DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
 
     /**
-     * Test Case 6 - NFL Dropdown Menu 2 (Left Div)
+     * Test Case 5 - NFL Dropdown Menu 2 (Left Div)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NFL Dropdown on header bar
      * 3 - Navigate to the 9 links located on left side of dropdown menu (Home, Scores, Schedule, Teams, Standings,
@@ -237,7 +218,7 @@ public class ESPNHomepage extends WebAPI {
 //                exception2.getMessage();
 //
 //                wait.until(ExpectedConditions.elementToBeClickable(nflMenuListLeft.get(i)));
-////                js.executeScript("arguments[0].click();", nflMenuListLeft.get(i));
+//                js.executeScript("arguments[0].click();", nflMenuListLeft.get(i));
 //                nflMenuListLeft.get(i).click();
 //            }
 //
@@ -267,7 +248,6 @@ public class ESPNHomepage extends WebAPI {
 //        }
 //        softAssert.assertAll();
 //    }
-
     public String[] getNFLDropdownMenuLeftLinks() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         Actions hover = new Actions(driver);
@@ -297,7 +277,7 @@ public class ESPNHomepage extends WebAPI {
 
 
     /**
-     * Test Case 7 - NFL Dropdown Menu (NFL Divisions)
+     * Test Case 6 - NFL Dropdown Menu (NFL Divisions)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NFL Dropdown on header bar
      * 3 - Verify each NFL division by name
@@ -321,10 +301,10 @@ public class ESPNHomepage extends WebAPI {
         return nflDivision;
     }
 
-    public void validateNFLDropdownMenuRightNFLDivisionNames(){
+    public void validateNFLDropdownMenuRightNFLDivisionNames() {
         SoftAssert softAssert = new SoftAssert();
 
-        for (int i=0; i<getNFLDropdownMenuRightNFLDivisionNames().length; i++){
+        for (int i = 0; i < getNFLDropdownMenuRightNFLDivisionNames().length; i++) {
             System.out.println(getNFLDropdownMenuRightNFLDivisionNames()[i]);
             softAssert.assertEquals(getNFLDropdownMenuRightNFLDivisionNames()[i], expectedElementNFLDivisions[i], "NFL DIVISION AT POSITION" + i + " (NFL MENU RIGHT) DOES NOT MATCH");
         }
@@ -332,17 +312,13 @@ public class ESPNHomepage extends WebAPI {
 
 
     /**
-     * Test Case 8 - NFL Dropdown Menu (NFL Teams)
+     * Test Case 7 - NFL Dropdown Menu (NFL Teams)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NFL Dropdown on header bar
      * 3 - Verify there are 32 NFL teams
      * 4 - Verify each team name
      */
-
-    // nflDropdownMenuRight
-    // webElementNFLDropdownMenuTeams
-
-    public String[] getNFLDropdownMenuRightNFLTeams(){
+    public String[] getNFLDropdownMenuRightNFLTeams() {
         Actions hover = new Actions(driver);
         try {
             hover.moveToElement(nflDropdown).perform();
@@ -355,31 +331,31 @@ public class ESPNHomepage extends WebAPI {
         List<WebElement> nflTeamsList = nflDropdownMenuRight.findElements(By.cssSelector(webElementNFLDropdownMenuTeams));
         String[] nflTeams = new String[nflTeamsList.size()];
 
-        for (int i=0;i<nflTeamsList.size();i++){
-            nflTeams[i]=nflTeamsList.get(i).getAttribute("innerHTML");
+        for (int i = 0; i < nflTeamsList.size(); i++) {
+            nflTeams[i] = nflTeamsList.get(i).getAttribute("innerHTML");
         }
         return nflTeams;
     }
 
-    public void validateNFLDropdownMenuRightNFLTeamsCount(){
+    public void validateNFLDropdownMenuRightNFLTeamsCount() {
         int actualNFLTeamsCount = getNFLDropdownMenuRightNFLTeams().length;
-        System.out.println("Number of NFL Teams counted: "+actualNFLTeamsCount);
-        Assert.assertEquals(actualNFLTeamsCount,expectedNFLTeamsCount, "NUMBER OF NFL TEAMS & NUMBER OF COUNTED NFL TEAMS DO NOT MATCH");
+        System.out.println("Number of NFL Teams counted: " + actualNFLTeamsCount);
+        Assert.assertEquals(actualNFLTeamsCount, expectedNFLTeamsCount, "NUMBER OF EXPECTED NFL TEAMS & NUMBER OF COUNTED NFL TEAMS DO NOT MATCH");
     }
 
-    public void validateNFLDropdownMenuRightNFLTeams(){
+    public void validateNFLDropdownMenuRightNFLTeams() {
         SoftAssert softAssert = new SoftAssert();
-        String [] actualNFLTeams = getNFLDropdownMenuRightNFLTeams();
+        String[] actualNFLTeams = getNFLDropdownMenuRightNFLTeams();
 
-        for (int i=0; i<actualNFLTeams.length; i++){
+        for (int i = 0; i < actualNFLTeams.length; i++) {
             System.out.println(actualNFLTeams[i]);
-            softAssert.assertEquals(actualNFLTeams[i], expectedNFLTeamNames[i], "TEAM NAME AT INDEX "+i+" DOES NOT MATCH");
+            softAssert.assertEquals(actualNFLTeams[i], expectedNFLTeamNames[i], "TEAM NAME AT INDEX " + i + " DOES NOT MATCH");
         }
     }
 
 
     /**
-     * Test Case 9 - NBA Dropdown Menu (Left Div)
+     * Test Case 8 - NBA Dropdown Menu (Left Div)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NBA Dropdown on header bar
      * 3 - Verify there are 9 elements located on left menu of NBA Dropdown menu
@@ -394,7 +370,7 @@ public class ESPNHomepage extends WebAPI {
 
     public void validateNBADropdownMenuLeftSize() {
         int actualSize = getNBADropdownMenuLeft().size();
-        System.out.println("Number of elements in NFL Menu (Left Side): " + actualSize);
+        System.out.println("Number of elements in NBA Menu (Left Side): " + actualSize);
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(actualSize, expectedHeaderDropdownListSize, "SIZE OF LIST (NBA MENU LEFT) DOES NOT MATCH");
@@ -415,15 +391,15 @@ public class ESPNHomepage extends WebAPI {
 
 
     /**
-     * Test Case 10 - NBA Dropdown Menu 2 (Left Div)
+     * Test Case 9 - NBA Dropdown Menu 2 (Left Div)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NBA Dropdown on header bar
      * 3 - Navigate to the 9 links located on left side of dropdown menu (Home, Orlando Playoffs, The Last Dance, Scores,
-     *     Schedule, Standings, Stats, Teams, Draft)
+     * Schedule, Standings, Stats, Teams, Draft)
      * 4 - Verify all links
      * 5 - COULD NOT PERFORM ----> (Verify page titles for each link)
      */
-    public String[] getNBADropdownMenuLeftLinks(){
+    public String[] getNBADropdownMenuLeftLinks() {
         mouseHover(nbaDropdown);
 
         List<WebElement> nbaMenuListLeft = getListOfWebElementsByCss(nbaDropdownMenuLeft, webElementNBADropdownMenuLinksLeft);
@@ -449,12 +425,11 @@ public class ESPNHomepage extends WebAPI {
 
 
     /**
-     * Test Case 11 - NBA Dropdown Menu (Right Div) (NBA Divisions)
+     * Test Case 10 - NBA Dropdown Menu (Right Div) (NBA Divisions)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NBA Dropdown on header bar
      * 3 - Verify each NBA division by name
      */
-
     public String[] getNBADropdownMenuRightNBADivisionNames() {
         mouseHover(nbaDropdown);
 
@@ -467,12 +442,189 @@ public class ESPNHomepage extends WebAPI {
         return nflDivision;
     }
 
-    public void validateNBADropdownMenuRightNFLDivisionNames(){
+    public void validateNBADropdownMenuRightNBADivisionNames() {
         SoftAssert softAssert = new SoftAssert();
 
-        for (int i=0; i<getNBADropdownMenuRightNBADivisionNames().length; i++){
+        for (int i = 0; i < getNBADropdownMenuRightNBADivisionNames().length; i++) {
             System.out.println(getNBADropdownMenuRightNBADivisionNames()[i]);
             softAssert.assertEquals(getNBADropdownMenuRightNBADivisionNames()[i], expectedElementNBADivisions[i], "NBA DIVISION AT POSITION" + i + " (NBA MENU RIGHT) DOES NOT MATCH");
         }
     }
+
+
+    /**
+     * Test Case 11 - NBA Dropdown Menu (Right Div) (NBA Teams)
+     * 1 - Navigate to http://espn.com
+     * 2 - Hover over NBA Dropdown on header bar
+     * 3 - Verify there are 30 NBA teams
+     * 4 - Verify each team name
+     */
+
+
+    public String[] getNBADropdownMenuRightNBATeams() {
+        mouseHover(nbaDropdown);
+
+        List<WebElement> nbaTeamsList = nbaDropdownMenuRight.findElements(By.cssSelector(webElementNBADropdownMenuTeams));
+        String[] nflTeams = new String[nbaTeamsList.size()];
+
+        for (int i = 0; i < nbaTeamsList.size(); i++) {
+            nflTeams[i] = nbaTeamsList.get(i).getAttribute("innerHTML");
+        }
+        return nflTeams;
+    }
+
+    public void validateNBADropdownMenuRightNBATeamsCount() {
+        int actualNBATeamsCount = getNBADropdownMenuRightNBATeams().length;
+        System.out.println("Number of NBA Teams counted: " + actualNBATeamsCount);
+        Assert.assertEquals(actualNBATeamsCount, expectedNBATeamsCount, "NUMBER OF EXPECTED NBA TEAMS & NUMBER OF COUNTED NBA TEAMS DO NOT MATCH");
+    }
+
+    public void validateNBADropdownMenuRightNBATeams() {
+        SoftAssert softAssert = new SoftAssert();
+        String[] actualNBATeams = getNBADropdownMenuRightNBATeams();
+
+        for (int i = 0; i < actualNBATeams.length; i++) {
+            System.out.println(actualNBATeams[i]);
+            softAssert.assertEquals(actualNBATeams[i], expectedNBATeamNames[i], "TEAM NAME AT INDEX " + i + " DOES NOT MATCH");
+        }
+    }
+
+
+    /**
+     * Test Case 12 - MLB Dropdown Menu (Left Div)
+     * 1 - Navigate to http://espn.com
+     * 2 - Hover over MLB Dropdown on header bar
+     * 3 - Verify there are 9 elements located on left menu of MLB Dropdown menu
+     * 4 - Verify all expected names
+     */
+    public List<WebElement> getMLBDropdownMenuLeft() {
+        mouseHover(mlbDropdown);
+        List<WebElement> mlbDropdownElementsLeftList = getListOfWebElementsByCss(mlbDropdownMenuLeft, webElementMLBDropdownMenuItemsLeft);
+
+        return mlbDropdownElementsLeftList;
+    }
+
+    public void validateMLBDropdownMenuLeftSize() {
+        int actualSize = getMLBDropdownMenuLeft().size();
+        System.out.println("Number of elements in MLB Menu (Left Side): " + actualSize);
+
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(actualSize, expectedHeaderDropdownListSize, "SIZE OF LIST (MLB MENU LEFT) DOES NOT MATCH");
+        softAssert.assertAll();
+    }
+
+    public void validateMLBDropdownMenuLeftItemsText() {
+        List<WebElement> mlbDropdownElementsLeftList = getMLBDropdownMenuLeft();
+        SoftAssert softAssert = new SoftAssert();
+
+        for (int i = 0; i < mlbDropdownElementsLeftList.size(); i++) {
+            String actualText = mlbDropdownElementsLeftList.get(i).getAttribute("innerHTML");
+            System.out.println(mlbDropdownElementsLeftList.get(i).getAttribute("innerHTML"));
+            softAssert.assertEquals(actualText, expectedElementMLBDropdownMenuItemsLeft[i], "ELEMENT OF LIST AT POSITION " + i + " (MLB MENU LEFT) DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+
+    /**
+     * Test Case 13 - MLB Dropdown Menu 2 (Left Div)
+     * 1 - Navigate to http://espn.com
+     * 2 - Hover over MLB Dropdown on header bar
+     * 3 - Navigate to the 9 links located on left side of dropdown menu (Home, Draft, When could MLB return?,
+     *     KBO League, Teams, Scores, Schedule, Standings, Stats)
+     * 4 - Verify all links
+     * 5 - COULD NOT PERFORM ----> (Verify page titles for each link)
+     */
+
+    public String[] getMLBDropdownMenuLeftLinks() {
+        mouseHover(mlbDropdown);
+
+        List<WebElement> mlbMenuListLeft = getListOfWebElementsByCss(mlbDropdownMenuLeft, webElementMLBDropdownMenuLinksLeft);
+        String[] mlbMenuListLeftLinks = new String[mlbMenuListLeft.size()];
+
+        for (int i = 0; i < mlbMenuListLeft.size(); i++) {
+            mlbMenuListLeftLinks[i] = mlbMenuListLeft.get(i).getAttribute("href");
+        }
+        return mlbMenuListLeftLinks;
+    }
+
+    public void validateMLBDropdownMenuLeftLinks() {
+        String[] actualMLBDropdownMenuLeftPageLinks = getMLBDropdownMenuLeftLinks();
+        SoftAssert softAssert = new SoftAssert();
+
+        System.out.println("Total Number of Links (MLB Menu Dropdown - LEFT): " + actualMLBDropdownMenuLeftPageLinks.length);
+        for (int i = 0; i < actualMLBDropdownMenuLeftPageLinks.length; i++) {
+            System.out.println(actualMLBDropdownMenuLeftPageLinks[i]);
+            softAssert.assertEquals(actualMLBDropdownMenuLeftPageLinks[i], expectedElementMLBDropdownMenuLeftLinks[i], "LINK AT POSITION " + i + " (MLB MENU LEFT) DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+
+    /**
+     * Test Case 14 - MLB Dropdown Menu (Right Div) (MLB Divisions)
+     * 1 - Navigate to http://espn.com
+     * 2 - Hover over MLB Dropdown on header bar
+     * 3 - Verify each MLB division by name
+     */
+    public String[] getMLBDropdownMenuRightMLBDivisionNames() {
+        mouseHover(mlbDropdown);
+
+        List<WebElement> mlbDivisions = mlbDropdownMenuRight.findElements(By.cssSelector(webElementMLBDropdownMenuDivisions));
+        String[] mlbDivision = new String[mlbDivisions.size()];
+
+        for (int i = 0; i < mlbDivisions.size(); i++) {
+            mlbDivision[i] = mlbDivisions.get(i).getAttribute("innerHTML");
+        }
+        return mlbDivision;
+    }
+
+    public void validateMLBDropdownMenuRightMLBDivisionNames() {
+        SoftAssert softAssert = new SoftAssert();
+
+        for (int i = 0; i < getMLBDropdownMenuRightMLBDivisionNames().length; i++) {
+            System.out.println(getMLBDropdownMenuRightMLBDivisionNames()[i]);
+            softAssert.assertEquals(getMLBDropdownMenuRightMLBDivisionNames()[i], expectedElementMLBDivisions[i], "MLB DIVISION AT POSITION" + i + " (MLB MENU RIGHT) DOES NOT MATCH");
+        }
+    }
+
+
+    /**
+     * Test Case 15 - MLB Dropdown Menu (Right Div) (MLB Teams)
+     * 1 - Navigate to http://espn.com
+     * 2 - Hover over MLB Dropdown on header bar
+     * 3 - Verify there are 30 MLB teams
+     * 4 - Verify each team name
+     */
+    public String[] getMLBDropdownMenuRightMLBTeams() {
+        mouseHover(mlbDropdown);
+
+        List<WebElement> mlbTeamsList = mlbDropdownMenuRight.findElements(By.cssSelector(webElementMLBDropdownMenuTeams));
+        String[] mlbTeams = new String[mlbTeamsList.size()];
+
+        for (int i = 0; i < mlbTeamsList.size(); i++) {
+            mlbTeams[i] = mlbTeamsList.get(i).getAttribute("innerHTML");
+        }
+        return mlbTeams;
+    }
+
+    public void validateMLBDropdownMenuRightMLBTeamsCount() {
+        int actualMLBTeamsCount = getMLBDropdownMenuRightMLBTeams().length;
+        System.out.println("Number of MLB Teams counted: " + actualMLBTeamsCount);
+        Assert.assertEquals(actualMLBTeamsCount, expectedMLBTeamsCount, "NUMBER OF EXPECTED MLB TEAMS & NUMBER OF COUNTED MLB TEAMS DO NOT MATCH");
+    }
+
+    public void validateMLBDropdownMenuRightMLBTeams() {
+        SoftAssert softAssert = new SoftAssert();
+        String[] actualMLBTeams = getMLBDropdownMenuRightMLBTeams();
+
+        for (int i = 0; i < actualMLBTeams.length; i++) {
+            System.out.println(actualMLBTeams[i]);
+            softAssert.assertEquals(actualMLBTeams[i], expectedMLBTeamNames[i], "TEAM NAME AT INDEX " + i + " DOES NOT MATCH");
+        }
+    }
+
+
+
+
 }
