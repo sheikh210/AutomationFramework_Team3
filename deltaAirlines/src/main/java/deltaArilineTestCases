@@ -18,7 +18,7 @@ Test case 2:
 Test case 3:"Validating SignUp button"
 1)Navigate to url "www.delta.com"
 2)Click on SignUp button
-3)Pass only firstname in the form
+3)Pass only first name in the form
 4)Click enter
 5)get the text and compare it to "To continue, please correct the 21 items indicated."
 6)Close browser
@@ -88,6 +88,57 @@ Test case 10:"Validate about us link"
 5)Click on Overview option
 6)Get title page
 7)Close Browser
+
+Test case 11: "Validate book button"
+1)Navigate to url "www.delta.com"
+2)Click on Book button
+3)Ensure that "Use Certificates, eCredits, or Delta Gift Cards" is displayed.
+
+Test case 12: "Confirm Flight Status"
+1)Navigate to url "www.delta.com"
+2)Click on "Flight Status" button
+3)Enter flight number "1872".
+4)Click Enter.
+5)Validate Flight number DL1872 is displayed in search.
+6)Close browser.
+
+Test case 13:"Count and display sub menu for travel info"
+1)Navigate to url "www.delta.com"
+2)Click on "Flight Status" button"
+3)count sub links
+4)Print subl inks
+5)Validate there are 18 sub links
+
+Test case 14: "Count links in Search menu"
+1)Navigate to url "www.delta.com"
+2)Click on "Search button"
+3)count sub links
+4)Validate there is 9 sub links
+
+Test Case 15: "Validate need help link"
+1)Navigate to url "www.delta.com"
+2)Scroll down until "need help" link is located
+2)Click on "Need Help"
+3)Get the page title
+4)Close Browser
+
+Test Case 16:"Validate Coronavirus link"
+1)Navigate to url "www.delta.com"
+2)Scroll down until "Coronavirus" link is located
+2)Click on "Coronavirus"
+3)Get the page title
+4)Close Browser
+
+Test Case 17:"Validate "Explore How" link
+1)Navigate to url "www.delta.com"
+2)Click on "Explore How"
+3)Get the page title
+4)Close Browser
+
+
+
+
+
 
 
 
