@@ -17,7 +17,7 @@ import static homepage.EbayHomepageElements.*;
 public class EbayHomepage extends WebAPI {
 
     @FindBy(xpath = webElementShopByCategoryDropdown)
-    public WebElement ShopByCategoryDropdown;
+    public WebElement shopByCategoryDropdown;
 
     @FindBy(css = webElementShopByCategoryDropdownMenu)
     public WebElement shopByCategoryDropdownMenu;
@@ -26,8 +26,7 @@ public class EbayHomepage extends WebAPI {
     public WebElement shopByCategoryDropdownMenuItems;
 
     @FindBy(xpath = webElementsSearchCategoryDropDown)
-    public WebElement SearchCategoryDropdown;
-
+    public WebElement searchCategoryDropdown;
 
     @FindBy(xpath = webElementSignIn)
     public WebElement signIn;
@@ -36,19 +35,19 @@ public class EbayHomepage extends WebAPI {
     public WebElement dailyDeals;
 
     @FindBy(xpath = webElementShoppingCart)
-    public WebElement ShoppingCart;
+    public WebElement shoppingCart;
 
-    @FindBy(xpath = webElementMyEbay)
-    public WebElement MyEbay;
+    @FindBy(xpath = webElementSellPage)
+    public WebElement sellPage;
 
     @FindBy(xpath = webElementHelpAndContact)
-    public WebElement HelpAndContact;
+    public WebElement helpAndContact;
 
     @FindBy(xpath = webElementCarouselNextSlide)
-    public WebElement CarouselNextSlide;
+    public WebElement carouselNextSlide;
 
     @FindBy(xpath = webElementCarouselPrevSlide)
-    public WebElement CarouselPrevSlide;
+    public WebElement carouselPrevSlide;
 
 
 
@@ -70,51 +69,113 @@ public class EbayHomepage extends WebAPI {
 
         Assert.assertEquals(actualTitle, expectedElementHomepageTitle, "HOMEPAGE TITLE DOES NOT MATCH");
     }
+
+
     /**
-     * Test Case 2 - Shop by category Drop down menu
+     * Test Case 2 - Validate navigation to login page
      * 1: Launch chrome browser
      * 2: Direct chrome to ebay "https://www.ebay.com/"
-     * 3: click on Shop by category Drop down menu
-     * 4: Ensure that there are 9 categories and 2 options at bottom of menu for
-     * all categories  and all brands within the menu and capture links
+     * 3: Click on Sign in at the top left corner of webpage
+     * 4: Verify sign in page title and match with expected page title
      */
-    /**public int shopByCategoryList() {
-        mouseHover(webElementshopByCategoryDropdown);
-        List<WebElement> topEventsDropDownList = getListOfWebElementsByXpath(webElementshopByCategoryDropdownMenu, webElementshopByCategoryDropdownMenuItems);
-        int listSize = topEventsDropDownList.size();
+    public void getSignInPage(){
+        WebDriverWait expWait = new WebDriverWait(driver, 10);
 
-        return listSize;
+        expWait.until(ExpectedConditions.elementToBeClickable(signIn));
+        signIn.click();
+
     }
 
-    public void validateTopEventsDropdownListSizeAndLinks() {
-        int actualListSize = shopByCategoryList();
+    public void validateSignInPage(){
+        String actualTitle = getCurrentPageTitle();
+        System.out.println("Page Title: " + actualTitle);
 
-        System.out.println("Size of 'Shop by Category' Dropdown List: " + actualListSize);
-        Assert.assertEquals(actualListSize, expectedElementshopByCategoryDropdownCount, "LIST SIZE DOES NOT MATCH");
+        Assert.assertEquals(actualTitle,expectedSignInPageTitle);
+
     }
-*/
-   /** public void dailyDeals() {
+
+    /**
+     * Test Case 3 - Daily Deals
+     * 1: Launch chrome browser
+     * 2: Direct chrome to ebay "https://www.ebay.com/"
+     * 3: click on Daily Deals in header on the top left corner
+     * 4: Verify sign in page title and match with expected page title
+     *
+     */
+    public void getDailyDeals() {
         WebDriverWait expWait = new WebDriverWait(driver, 10);
 
         expWait.until(ExpectedConditions.elementToBeClickable(dailyDeals));
         dailyDeals.click();
     }
-*/
 
-   /**Test Case 4 - Search bar All Category Drop down menu
+    public void validateDailyDeals(){
+        String actualTitle = getCurrentPageTitle();
+        System.out.println("Page Title: " + actualTitle);
+
+        Assert.assertEquals(actualTitle,expectedDailyDealsTitle);
+
+    }
+
+    /**
+     * Test Case 4 -  Navigate to Shopping Cart
+     * 1: Launch chrome browser
+     * 2: Direct chrome to ebay "https://www.ebay.com/"
+     * 3:Click on Shopping cart icon in top right corner
+     * 4: Verify sign in page title and match with expected page title
+     */
+
+public void getShoppingCart(){
+    WebDriverWait expWait = new WebDriverWait(driver, 10);
+
+    expWait.until(ExpectedConditions.elementToBeClickable(shoppingCart));
+    shoppingCart.click();
+
+}
+
+public void validateShoppingCart(){
+    String actualTitle = getCurrentPageTitle();
+    System.out.println("Page Title: " + actualTitle);
+
+    Assert.assertEquals(actualTitle,expectedShoppingCartTitle);
+
+}
+/**
+ * Test Case 5 - My ebay
+ * 1: Launch chrome browser
+ * 2: Direct chrome to ebay "https://www.ebay.com/"
+ * 3: click on My ebay in header on the top right
+ * 4: Verify sign in page title and match with expected page title
+ */
+public void getSellPage(){
+    WebDriverWait expWait = new WebDriverWait(driver, 10);
+
+    expWait.until(ExpectedConditions.elementToBeClickable(sellPage));
+    sellPage.click();
+
+}
+public void validateSellPage(){String actualTitle = getCurrentPageTitle();
+    System.out.println("Page Title: " + actualTitle);
+
+    Assert.assertEquals(actualTitle,expectedSellPageTitle);
+
+}
+
+
+   /**Test Case 7 - Search bar All Category Drop down menu
     1: Launch chrome browser
     2: Direct chrome to ebay "https://www.ebay.com/"
     3: click on All Categories Drop down menu
     4: Ensure that there are 36 categories and capture text
     */
    public int getSearchCategoryDropDownNum(){
-       List<WebElement> dropDownItemsList = SearchCategoryDropdown.findElements(By.xpath(webElementsSearchCategoryDropDownItems));
+       List<WebElement> dropDownItemsList = searchCategoryDropdown.findElements(By.xpath(webElementsSearchCategoryDropDownItems));
        int dropDownNum = dropDownItemsList.size();
 return dropDownNum;
 
    }
    public String[] getSearchCategoryText(){
-       List<WebElement> dropDownItemsList = SearchCategoryDropdown.findElements(By.xpath(webElementsSearchCategoryDropDownItems));
+       List<WebElement> dropDownItemsList = searchCategoryDropdown.findElements(By.xpath(webElementsSearchCategoryDropDownItems));
        String[] items = new String[dropDownItemsList.size()];
        int i=0;
        for(WebElement x: dropDownItemsList){
@@ -143,5 +204,32 @@ Assert.assertEquals(getSearchCategoryDropDownNum(),36,"List Size does not match"
        softAssert.assertAll();
        */
    }
+
+
+
+
+    /**
+     * Test Case 10 - Shop by category Drop down menu
+     * 1: Launch chrome browser
+     * 2: Direct chrome to ebay "https://www.ebay.com/"
+     * 3: click on Shop by category Drop down menu
+     * 4: Ensure that there are 9 categories and 2 options at bottom of menu for
+     * all categories  and all brands within the menu and capture links
+     */
+    /**public int shopByCategoryList() {
+     mouseHover(webElementshopByCategoryDropdown);
+     List<WebElement> topEventsDropDownList = getListOfWebElementsByXpath(webElementshopByCategoryDropdownMenu, webElementshopByCategoryDropdownMenuItems);
+     int listSize = topEventsDropDownList.size();
+
+     return listSize;
+     }
+
+     public void validateTopEventsDropdownListSizeAndLinks() {
+     int actualListSize = shopByCategoryList();
+
+     System.out.println("Size of 'Shop by Category' Dropdown List: " + actualListSize);
+     Assert.assertEquals(actualListSize, expectedElementshopByCategoryDropdownCount, "LIST SIZE DOES NOT MATCH");
+     }
+     */
    }
 

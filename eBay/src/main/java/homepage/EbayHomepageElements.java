@@ -33,14 +33,23 @@ public class EbayHomepageElements {
     //daily deals by xpath
     public static final String webElementDailyDeals = "//a[@class='gh-p'][contains(text(),'Daily Deals')]";
 
-    //Sign In button by xpath
-    public static final String webElementSignIn = "//a[contains(text(),'Sign in')]";
+    //daily deals expected title page
+    public static final String expectedDailyDealsTitle = "Daily Deals on eBay | Best deals and Free Shipping";
+
+    //Sign In button by css
+    public static final String webElementSignIn = "//*[@id=\"gh-ug\"]/a";
+
+    public static final String expectedSignInPageTitle = "Sign in or Register | eBay";
 
     //Shopping cart iron button by className
-    public static final String webElementShoppingCart = "gh-eb-li-a gh-cart-count-1";
+    public static final String webElementShoppingCart = "//*[@id=\"gh-minicart-hover\"]/div/a[1]";
+
+    public static final String expectedShoppingCartTitle = "eBay shopping cart";
 
     //My Ebay button by xpath
-    public static final String webElementMyEbay = "//a[@class='gh-eb-li-a']";
+    public static final String webElementSellPage = "//*[@id=\"gh-p-2\"]/a";
+
+    public static final String expectedSellPageTitle = "Selling on eBay | Electronics, Fashion, Home & Garden | eBay";
 
     //Help & Contact button by xpath
     public static final String webElementHelpAndContact = "//a[@class='gh-p'][contains(text(),'Help & Contact')]";
