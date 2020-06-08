@@ -2,6 +2,7 @@ package commonAPI;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.*;
@@ -81,7 +82,7 @@ public class WebAPI {
         ExtentTestManager.endTest();
         extent.flush();
         if (result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver, result.getName());
+            captureScreenshot(driver);
         }
         driver.quit();
     }
@@ -101,8 +102,8 @@ public class WebAPI {
 
     //Browser SetUp
     public static WebDriver driver = null;
-    public String browserstack_username = "mhshahib1";
-    public String browserstack_accesskey = "YA4xsqrMqFurrGduX1X9";
+    public String browserstack_username = "sarkerrashid1";
+    public String browserstack_accesskey = "gy8czqeP1DPj1J5BxB2D";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
 
@@ -123,19 +124,17 @@ public class WebAPI {
         }
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         //driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
+
+        driver.manage().window().maximize();
         driver.get(url);
-        //driver.manage().window().maximize();
     }
 
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
-            } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
-            }
-            driver = new ChromeDriver();
+            WebDriverManager.chromedriver().setup();
+            driver=new ChromeDriver();
+
         } else if (browserName.equalsIgnoreCase("chrome-options")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
@@ -146,15 +145,11 @@ public class WebAPI {
             }
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
-            if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/mac/geckodriver");
-            } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/BrowserDriver/windows/geckodriver.exe");
-            }
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
 
         } else if (browserName.equalsIgnoreCase("ie")) {
-            System.setProperty("webdriver.ie.driver", "../Generic/BrowserDriver/windows/IEDriverServer.exe");
+            WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
         }
         return driver;
@@ -257,15 +252,13 @@ public class WebAPI {
         driver.navigate().back();
     }
 
-    public static void captureScreenshot(WebDriver driver, String screenshotName) {
-        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
+    public static void captureScreenshot(WebDriver driver) {
         Date date = new Date();
-        df.format(date);
+        String fileName = date.toString().replace(" ","_").replace(":","-")+ ".png";
 
-        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file,
-                    new File(System.getProperty("user.dir") + "/Screenshots/" + screenshotName + " " + df.format(date) + ".png"));
+            FileUtils.copyFile(screenshot, new File(System.getProperty("user,dir") + "\\lid\\Screenshots\\" + fileName));
             System.out.println("Screenshot captured");
         } catch (Exception e) {
             System.out.println("Exception while taking screenshot " + e.getMessage());
@@ -586,6 +579,7 @@ public class WebAPI {
         String text = webElement.getText();
         return text;
     }
+
 
 
 }
