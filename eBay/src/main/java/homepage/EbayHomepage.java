@@ -43,6 +43,18 @@ public class EbayHomepage extends WebAPI {
     @FindBy(xpath = webElementHelpAndContact)
     public WebElement helpAndContact;
 
+    @FindBy(xpath = webElementMotorsPage)
+    public WebElement motorsPage;
+
+    @FindBy(xpath = webElementFashionPage)
+    public WebElement fashionPage;
+
+    @FindBy(xpath = webElementElectronicsPage)
+    public WebElement electronicsPage;
+
+    @FindBy(xpath = webElementCollectiblesAndArtPage)
+    public WebElement collectiblesAndArtPage;
+
     @FindBy(xpath = webElementCarouselNextSlide)
     public WebElement carouselNextSlide;
 
@@ -141,10 +153,10 @@ public void validateShoppingCart(){
 
 }
 /**
- * Test Case 5 - My ebay
+ * Test Case 5 - Sell Page
  * 1: Launch chrome browser
  * 2: Direct chrome to ebay "https://www.ebay.com/"
- * 3: click on My ebay in header on the top right
+ * 3: click on Sell in header on the top right
  * 4: Verify sign in page title and match with expected page title
  */
 public void getSellPage(){
@@ -154,13 +166,93 @@ public void getSellPage(){
     sellPage.click();
 
 }
-public void validateSellPage(){String actualTitle = getCurrentPageTitle();
+public void validateSellPage(){
+    String actualTitle = getCurrentPageTitle();
     System.out.println("Page Title: " + actualTitle);
 
     Assert.assertEquals(actualTitle,expectedSellPageTitle);
 
 }
+/**
+ * Test Case 6 - Help & Contact
+ * 1: Launch chrome browser
+ * 2: Direct chrome to ebay "https://www.ebay.com/"
+ * 3: click on Help & Contact in header on the top left corner
+ * 4: Verify sign in page title and match with expected page title
+ */
+public void getHelpAndContact(){
+    WebDriverWait expWait = new WebDriverWait(driver, 10);
 
+    expWait.until(ExpectedConditions.elementToBeClickable(helpAndContact));
+    helpAndContact.click();
+
+}
+
+public void validateHelpAndContact(){
+    String actualTitle = getCurrentPageTitle();
+    System.out.println("Page Title: " + actualTitle);
+
+    Assert.assertEquals(actualTitle,expectedHelpAndContactTitle);
+
+}
+
+
+
+public void getMotorsPage(){
+    WebDriverWait expWait = new WebDriverWait(driver, 10);
+    expWait.until(ExpectedConditions.elementToBeClickable(motorsPage));
+    motorsPage.click();
+    }
+
+public void validateMotorsPage(){
+    String actualTitle = getCurrentPageTitle();
+    System.out.println("Page Title: " + actualTitle);
+
+    Assert.assertEquals(actualTitle,expectedMotorsPageTitle);
+    }
+
+public void getFashionPage(){
+    WebDriverWait expWait = new WebDriverWait(driver, 10);
+    expWait.until(ExpectedConditions.elementToBeClickable(fashionPage));
+    fashionPage.click();
+
+}
+
+public void validateFashionPage(){
+    String actualTitle = getCurrentPageTitle();
+    System.out.println("Page Title: " + actualTitle);
+
+    Assert.assertEquals(actualTitle,expectedFashionPageTitle);
+
+}
+    public void getElectronicsPage(){
+        WebDriverWait expWait = new WebDriverWait(driver, 10);
+        expWait.until(ExpectedConditions.elementToBeClickable(electronicsPage));
+        electronicsPage.click();
+
+    }
+
+    public void validateElectronicsPage(){
+        String actualTitle = getCurrentPageTitle();
+        System.out.println("Page Title: " + actualTitle);
+
+        Assert.assertEquals(actualTitle,expectedElectronicsPageTitle);
+
+    }
+    public void getCollectiblesAndArtPage(){
+        WebDriverWait expWait = new WebDriverWait(driver, 10);
+        expWait.until(ExpectedConditions.elementToBeClickable(collectiblesAndArtPage));
+        collectiblesAndArtPage.click();
+
+    }
+
+    public void validateCollectiblesAndArtPage(){
+        String actualTitle = getCurrentPageTitle();
+        System.out.println("Page Title: " + actualTitle);
+
+        Assert.assertEquals(actualTitle,expectedCollectiblesAndArtPageTitle);
+
+    }
 
    /**Test Case 7 - Search bar All Category Drop down menu
     1: Launch chrome browser
@@ -204,6 +296,8 @@ Assert.assertEquals(getSearchCategoryDropDownNum(),36,"List Size does not match"
        softAssert.assertAll();
        */
    }
+
+
 
 
 

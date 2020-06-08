@@ -23,10 +23,10 @@ Test Case 4 -  Navigate to Shopping Cart
 3:Click on Shopping cart icon in top right corner
 4: Verify sign in page title and match with expected page title
 
-Test Case 5 - Sell
+Test Case 5 - Sell Page
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
-3: click on My ebay in header on the top right
+3: click on Sell in header on the top right
 4: Verify sign in page title and match with expected page title
 
 Test Case 6 - Help & Contact
@@ -61,3 +61,8 @@ Test Case 10 - Shop by category Drop down menu
 3: click on Shop by category Drop down menu
 4: Ensure that there are 9 categories and 2 options at bottom of menu for
 all categories  and all brands within the menu and capture links
+
+Test Case 11 - Motors
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: Hover over Motors in SubHeader

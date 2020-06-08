@@ -52,11 +52,29 @@ public class EbayHomepageElements {
     public static final String expectedSellPageTitle = "Selling on eBay | Electronics, Fashion, Home & Garden | eBay";
 
     //Help & Contact button by xpath
-    public static final String webElementHelpAndContact = "//a[@class='gh-p'][contains(text(),'Help & Contact')]";
+    public static final String webElementHelpAndContact = "//*[@id=\"gh-p-3\"]/a";
 
+    public static final String  expectedHelpAndContactTitle = "eBay Customer Service";
     //Next carousel Slide button by xpath
     public static final String webElementCarouselNextSlide = "//div[@class='carousel hl-carousel carousel--slides carousel__autoplay']//button[@class='carousel__control carousel__control--next']";
 
     //Previous carousel Slide button by xpath
     public static final String webElementCarouselPrevSlide = "//div[@class='carousel hl-carousel carousel--slides carousel__autoplay']//button[@class='carousel__control carousel__control--prev']";
+
+    public static final String webElementMotorsPage = "//*[@id=\"mainContent\"]/div[1]/ul/li[3]/a";
+
+    public static final String expectedMotorsPageTitle = "eBay Motors: Auto Parts and Vehicles | eBay";
+
+    public static final String webElementFashionPage ="//*[@id=\"mainContent\"]/div[1]/ul/li[4]/a";
+
+    public static final String expectedFashionPageTitle = "Fashion products for sale | eBay";
+
+    public static final String webElementElectronicsPage ="//*[@id=\"mainContent\"]/div[1]/ul/li[5]/a";
+
+    public static final String expectedElectronicsPageTitle = "Electronics products for sale | eBay";
+
+    public static final String webElementCollectiblesAndArtPage ="//*[@id=\"mainContent\"]/div[1]/ul/li[6]/a";
+
+    public static final String expectedCollectiblesAndArtPageTitle = "Collectibles & Art products for sale | eBay";
+
 }
