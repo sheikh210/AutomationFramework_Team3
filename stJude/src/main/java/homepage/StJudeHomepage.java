@@ -1,6 +1,5 @@
 package homepage;
 
-
 import commonAPI.WebAPI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
@@ -177,5 +176,3 @@ public class StJudeHomepage extends WebAPI {
         Assert.assertEquals(actualText,"Research at St. Jude");
 
     }
-
-}
