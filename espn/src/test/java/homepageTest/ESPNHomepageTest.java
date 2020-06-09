@@ -5,7 +5,6 @@ import homepage.ESPNHomepage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
-
 public class ESPNHomepageTest extends WebAPI {
 
     static ESPNHomepage espnHomepage;
@@ -126,6 +125,4 @@ public class ESPNHomepageTest extends WebAPI {
         espnHomepage.validateMLBDropdownMenuRightMLBTeamsCount();
         espnHomepage.validateMLBDropdownMenuRightMLBTeams();
     }
-
-
 }

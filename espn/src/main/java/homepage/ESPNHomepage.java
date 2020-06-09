@@ -76,7 +76,6 @@ public class ESPNHomepage extends WebAPI {
         Assert.assertEquals(actualTitle, expectedElementHomepageTitle, "HOMEPAGE TITLE DOES NOT MATCH");
     }
 
-
     /**
      * Test Case 2 - Validate number of elements in "Top Events" dropdown menu list
      * 1 - Navigate to http://espn.com
@@ -623,8 +622,4 @@ public class ESPNHomepage extends WebAPI {
             softAssert.assertEquals(actualMLBTeams[i], expectedMLBTeamNames[i], "TEAM NAME AT INDEX " + i + " DOES NOT MATCH");
         }
     }
-
-
-
-
 }

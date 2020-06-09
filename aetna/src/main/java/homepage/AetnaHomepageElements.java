@@ -1,7 +1,7 @@
 package homepage;
 
 public class AetnaHomepageElements {
-
+  
     /**
      * HEADER
      */
@@ -69,4 +69,5 @@ public class AetnaHomepageElements {
 
     // 'Medicare' Submenu Items (List) (CSS)
     public static final String webElementSubmenuMedicareItems = "body > div.header.headerwithmegamenu > div > nav > div > ul.megamenu__primary.meganav__primary--left > li.megamenu__primary--item.active > div.megamenu__dropdown > div > div > section > ul > li.megamenu__secondary--item.megamenu__secondary--clicklink.secondaryblock--active > div.megamenu__tertiary--block > ul > li";
+
 }
