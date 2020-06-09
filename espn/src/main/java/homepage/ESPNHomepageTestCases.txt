@@ -3,7 +3,7 @@ ESPN Homepage Test Cases
 ***HEADER TEST CASES***
 Test Case 1 - Validate Navigation to Homepage
 1 - Navigate to http://espn.com
-2 - Capture page title and match with expected page title
+2 - Verify we're on homepage by capturing page title
 
 Test Case 2 - Validate Links in "Top Events" dropdown menu
 1 - Navigate to http://espn.com
