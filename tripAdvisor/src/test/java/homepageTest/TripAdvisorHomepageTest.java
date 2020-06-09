@@ -6,14 +6,35 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 public class TripAdvisorHomepageTest extends WebAPI {
-
     static TripAdvisorHomepage tripAdvisorHomepage;
-    public static void getInItElements(){
-        tripAdvisorHomepage = PageFactory.initElements(driver,TripAdvisorHomepage.class);
+
+    public static void getInItElements() {
+        tripAdvisorHomepage = PageFactory.initElements(driver, TripAdvisorHomepage.class);
     }
+//1
     @Test
-    public static void testDoSearchElement() throws InterruptedException {
+    public void testDoHotelMenu() {
         getInItElements();
-        tripAdvisorHomepage.doSearchElement();
+        tripAdvisorHomepage.doSearchingText();
+        tripAdvisorHomepage.validateDoSearchingText();
     }
+
+//2
+    @Test(enabled = false)
+    public void testDoSearchElements() throws InterruptedException {
+        getInItElements();
+       tripAdvisorHomepage.doSearchElement();
+    }
+//3
+    @Test(enabled = false)
+    public void testDoSearchTitle() {
+        getInItElements();
+        tripAdvisorHomepage.doSearchTitle();
+        tripAdvisorHomepage.validateDoSearchTitle();
+
+    }
+
+
+
+
 }
