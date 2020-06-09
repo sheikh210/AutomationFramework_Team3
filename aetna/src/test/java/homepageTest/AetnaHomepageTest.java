@@ -1,4 +1,9 @@
 package homepageTest;
 
-public class AetnaHomepageTest {
+import commonAPI.WebAPI;
+import homepage.AetnaHomepage;
+
+
+public class AetnaHomepageTest extends WebAPI{
+
 }
