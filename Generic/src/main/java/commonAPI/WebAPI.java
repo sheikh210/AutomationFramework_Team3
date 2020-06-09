@@ -1,42 +1,42 @@
 package commonAPI;
 
-        import com.relevantcodes.extentreports.ExtentReports;
-        import com.relevantcodes.extentreports.LogStatus;
-        import io.github.bonigarcia.wdm.WebDriverManager;
-        import org.apache.commons.io.FileUtils;
-        import org.apache.commons.lang3.StringUtils;
-        import org.openqa.selenium.*;
-        import org.openqa.selenium.chrome.ChromeDriver;
-        import org.openqa.selenium.chrome.ChromeOptions;
-        import org.openqa.selenium.edge.EdgeDriver;
-        import org.openqa.selenium.firefox.FirefoxDriver;
-        import org.openqa.selenium.ie.InternetExplorerDriver;
-        import org.openqa.selenium.interactions.Actions;
-        import org.openqa.selenium.remote.DesiredCapabilities;
-        import org.openqa.selenium.remote.RemoteWebDriver;
-        import org.openqa.selenium.support.ui.ExpectedConditions;
-        import org.openqa.selenium.support.ui.Select;
-        import org.openqa.selenium.support.ui.WebDriverWait;
-        import org.testng.ITestContext;
-        import org.testng.ITestResult;
-        import org.testng.annotations.*;
-        import reporting.ExtentManager;
-        import reporting.ExtentTestManager;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
+import reporting.ExtentManager;
+import reporting.ExtentTestManager;
 
-        import java.io.File;
-        import java.io.IOException;
-        import java.io.PrintWriter;
-        import java.io.StringWriter;
-        import java.lang.reflect.Method;
-        import java.net.HttpURLConnection;
-        import java.net.URL;
-        import java.text.DateFormat;
-        import java.text.SimpleDateFormat;
-        import java.util.ArrayList;
-        import java.util.Calendar;
-        import java.util.Date;
-        import java.util.List;
-        import java.util.concurrent.TimeUnit;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.lang.reflect.Method;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class WebAPI {
 
@@ -53,6 +53,7 @@ public class WebAPI {
     public void startExtent(Method method) {
         String className = method.getDeclaringClass().getSimpleName();
         String methodName = method.getName().toLowerCase();
+
         ExtentTestManager.startTest(method.getName());
         ExtentTestManager.getTest().assignCategory(className);
     }
@@ -113,6 +114,7 @@ public class WebAPI {
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
                       @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("34")
                               String browserVersion, @Optional("") String url) throws IOException {
+                              
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
                 getCloudDriver(cloudEnvName, browserstack_username, browserstack_accesskey, os, os_version, browserName, browserVersion);
@@ -120,7 +122,7 @@ public class WebAPI {
                 getCloudDriver(cloudEnvName, saucelabs_username, saucelabs_accesskey, os, os_version, browserName, browserVersion);
             }
         } else {
-            getLocalDriver(os, browserName);
+            getLocalDriver(browserName);
         }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
@@ -128,7 +130,7 @@ public class WebAPI {
         driver.get(url);
     }
 
-    public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
+    public WebDriver getLocalDriver(String browserName) {
 
         String windowsChromeDriverPath = "/Generic/lib/BrowserDrivers/Windows/chromedriver.exe";
         String macChromeDriverPath = "/Generic/lib/BrowserDrivers/Mac/chromedriver";
@@ -182,7 +184,13 @@ public class WebAPI {
         driver.quit();
     }
 
-    //helper methods
+
+
+
+
+
+
+    // Helper methods
     public void clickOnElement(String locator) {
         try {
             driver.findElement(By.cssSelector(locator)).click();
@@ -253,9 +261,9 @@ public class WebAPI {
         driver.navigate().back();
     }
 
-    public static void captureScreenshot(WebDriver driver) {
+    public static void captureScreenshot(WebDriver driver, String testName) {
         Date date = new Date();
-        String fileName = date.toString().replace(" ", "_").replace(":", "-") + ".png";
+        String fileName = testName+" - "+date.toString().replace(" ", "_").replace(":", "-") + ".png";
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         try {
@@ -371,6 +379,15 @@ public class WebAPI {
         String url = driver.getCurrentUrl();
         return url;
     }
+    public String getCurrentPageTitle(){
+        String title = driver.getTitle();
+        return title;
+    }
+
+    public String getCurrentPageTitle() {
+        String title = driver.getTitle();
+        return title;
+    }
 
     public String getCurrentPageTitle() {
         String title = driver.getTitle();
@@ -433,7 +450,7 @@ public class WebAPI {
     public void mouseHover(WebElement element) {
         try {
             Actions hover = new Actions(driver);
-            hover.moveToElement(element);
+            hover.moveToElement(element).perform();
         } catch (Exception ex) {
             System.out.println("1st mouse-hover attempt failed - Attempting 2nd time");
             Actions hover = new Actions(driver);
@@ -615,7 +632,6 @@ public class WebAPI {
         }
         return flag;
     }
-
 
 
 }
