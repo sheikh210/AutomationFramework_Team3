@@ -89,6 +89,9 @@ public class WebAPI {
         driver.quit();
     }
 
+    private void captureScreenshot(WebDriver driver) {
+    }
+
     @AfterSuite
     public void generateReport() {
         extent.close();
@@ -384,15 +387,7 @@ public class WebAPI {
         return title;
     }
 
-    public String getCurrentPageTitle() {
-        String title = driver.getTitle();
-        return title;
-    }
-
-    public String getCurrentPageTitle() {
-        String title = driver.getTitle();
-        return title;
-    }
+    
 
     public void navigateForward() {
         driver.navigate().forward();

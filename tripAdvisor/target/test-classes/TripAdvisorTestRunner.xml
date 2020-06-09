@@ -14,6 +14,7 @@
     <parameter name="browserVersion" value="83"/>
     <parameter name="url" value="https://www.tripadvisor.com/"/>
 
+
     <test name="Trip Advisor Homepage">
         <classes>
             <class name="homepageTest.TripAdvisorHomepageTest"/>

@@ -1,0 +1,62 @@
+Trip Advisor Homepage Test Cases
+
+Test Case 1- Verify number of links on Homepage.
+1. Navigate to https://www.tripadvisor.com
+2. get the title of the page.
+3. Capture all links present on homepage.
+4. Validating the Hotel menu.
+5. Navigate to https://www.tripadvisor.com
+6. Click on Hotel menu button.
+7. Write on search field.
+8. Finding of searching text "South Africa Hotels".
+
+
+Test Case 2- Search Box Title menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on Search box menu.
+3. it will navigate search box menu.
+
+Test Case 3- Restaurant menu bar.
+1. Navigate to https://www.tripadvisor.com
+2. Click on Restaurant menu button.
+3. it should go directly restaurant menu bar.
+
+Test Case 4- Validating the things to do button.
+1. Navigate to https://www.tripadvisor.com
+2. Click on things to do button.
+3. make sure it open with search box.
+
+
+Test Case 5- Validating the insurance menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on insurance menu button.
+3. after the menu pop-up it will show "A year of trips. Protected."
+
+Test Case 6- Validating the more menu button
+1. Navigate to https://www.tripadvisor.com
+2. Click on more menu button.
+3. after the menu pop-up it will show "Find the best cruise for you".
+
+Test Case 7- Flights menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on flights menu button.
+3. after the menu pop-up it will show "Find the best flight from New York City".
+
+
+Test Case 8- validating the COVID-19 menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on covid-19 button.
+3. after clicking the button it will show ""What do I need to know about booking travel right now?".
+
+
+Test Case 9- Validating the travel forums menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on travel forums button.
+3. it should indicate "Share your experience with fellow travelers".
+
+Test Case 10- Validating the review menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on review menu button.
+3. it will navigate Review a place you've visited".
+
+
