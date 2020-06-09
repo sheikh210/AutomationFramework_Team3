@@ -1,0 +1,9 @@
+commonAPI\WebAPI.class
+reporting\ExtentManager.class
+reporting\ExtentTestManager.class
+reporting\ApplicationLog.class
+utilities\ConnectToSqlDB.class
+reporting\TestLogger.class
+commonAPI\WebServiceAPI.class
+commonAPI\MobileAPI.class
+utilities\DataReader.class
