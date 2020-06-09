@@ -6,7 +6,7 @@ public class ESPNHomepageElements {
      * HEADER
      */
 
-    // EXPECTED Homepage Title [STRING]
+    // EXPECTED Homepage Title [String]
     public static final String expectedElementHomepageTitle = "ESPN: Serving sports fans. Anytime. Anywhere.";
 
     // Top Events Dropdown (xPath)
@@ -21,7 +21,7 @@ public class ESPNHomepageElements {
     // EXPECTED - Top Events Dropdown Menu Items Count (Integer)
     public static final int expectedElementTopEventsDropdownCount = 8;
 
-    // UFC Scroll Header Tile
+    // UFC Scroll Header Tile (CSS)
     public static final String webElementUFCHeaderTile = "#leagues > li:nth-child(1) > div > div.scoreLabel.mma.js-show > div";
 
     // Header Scroll Right Arrow (CSS)
@@ -30,7 +30,7 @@ public class ESPNHomepageElements {
     // Header Scroll Left Arrow (CSS)
     public static final String webElementHeaderScrollLeft = "#global-scoreboard > div > div > div.scores-prev.controls";
 
-    // EXPECTED - Header Dropdowns List Size
+    // EXPECTED - Header Dropdowns List Size (Integer)
     public static final int expectedHeaderDropdownListSize = 9;
 
     // NFL Dropdown (CSS)
@@ -62,7 +62,7 @@ public class ESPNHomepageElements {
     // NFL Dropdown Menu - NFL Divisions (Right Section) [LIST] (CSS)
     public static final String webElementNFLDropdownMenuDivisions = "#global-nav > ul > li.sports.menu-nfl > div > ul:nth-child(2) > li > div > ul>li>span>span:not([class*=\"link-text-short\"])";
 
-    // NFL Dropdown Menu - Expected NFL Division Names (Right Section) [STRING []]
+    // NFL Dropdown Menu - Expected NFL Division Names (Right Section) [String []]
     public static final String[] expectedElementNFLDivisions = {"AFC East", "AFC North", "AFC South", "AFC West", "NFC East", "NFC North", "NFC South", "NFC West"};
 
     // NFL Dropdown Menu - NFL Teams (Right Section) [LIST] (CSS)
@@ -71,7 +71,7 @@ public class ESPNHomepageElements {
     // EXPECTED NFL Dropdown Menu - NFL Teams Count (Right Section) [Integer]
     public static final int expectedNFLTeamsCount = 32;
 
-    // EXPECTED NFL Dropdown Menu - NFL Team Names (Right Section) [STRING []]
+    // EXPECTED NFL Dropdown Menu - NFL Team Names (Right Section) [String []]
     public static final String[] expectedNFLTeamNames = {"Buffalo Bills", "Miami Dolphins", "New England Patriots", "New York Jets", "Baltimore Ravens", "Cincinnati Bengals", "Cleveland Browns", "Pittsburgh Steelers", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Tennessee Titans",
             "Denver Broncos", "Kansas City Chiefs", "Las Vegas Raiders", "Los Angeles Chargers", "Dallas Cowboys", "New York Giants", "Philadelphia Eagles", "Washington Redskins", "Chicago Bears", "Detroit Lions", "Green Bay Packers", "Minnesota Vikings", "Atlanta Falcons", "Carolina Panthers",
             "New Orleans Saints", "Tampa Bay Buccaneers", "Arizona Cardinals", "Los Angeles Rams", "San Francisco 49ers", "Seattle Seahawks"};
@@ -101,7 +101,7 @@ public class ESPNHomepageElements {
     // NBA Dropdown Menu - NBA Divisions (Right Section) [LIST] (CSS)
     public static final String webElementNBADropdownMenuDivisions = "#global-nav > ul > li.sports.menu-nba.hover > div > ul:nth-child(2) > li > div >ul>li[class*=\"conference label group\"]>span>span:not([class*=\"link-text-short\"])";
 
-    // NBA Dropdown Menu - Expected NBA Division Names (Right Section) [STRING []]
+    // NBA Dropdown Menu - Expected NBA Division Names (Right Section) [String []]
     public static final String[] expectedElementNBADivisions = {"Atlantic", "Central", "Southeast", "Pacific", "Southwest", "Northwest"};
 
     // NBA Dropdown Menu - NBA Teams (Right Section) [LIST] (CSS)
@@ -110,7 +110,7 @@ public class ESPNHomepageElements {
     // EXPECTED NBA Dropdown Menu - NBA Teams Count (Right Section) [Integer]
     public static final int expectedNBATeamsCount = 30;
 
-    // EXPECTED NBA Dropdown Menu - NBA Team Names (Right Section) [STRING []]
+    // EXPECTED NBA Dropdown Menu - NBA Team Names (Right Section) [String []]
     public static final String[] expectedNBATeamNames = {"Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets",
             "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "LA Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzlies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets",
             "Minnesota Timberwolves", "Oklahoma City Thunder", "Portland Trail Blazers", "Utah Jazz"};
@@ -140,7 +140,7 @@ public class ESPNHomepageElements {
     // MLB Dropdown Menu - MLB Divisions (Right Section) [LIST] (CSS)
     public static final String webElementMLBDropdownMenuDivisions = "#global-nav > ul > li.sports.menu-mlb.hover > div > ul:nth-child(2) > li > div >ul>li[class*=\"conference label group\"]>span>span:not([class*=\"link-text-short\"])";
 
-    // MLB Dropdown Menu - Expected MLB Division Names (Right Section) [STRING []]
+    // MLB Dropdown Menu - Expected MLB Division Names (Right Section) [String []]
     public static final String[] expectedElementMLBDivisions = {"AL East", "AL Central", "AL West", "NL East", "NL Central", "NL West"};
 
     // MLB Dropdown Menu - MLB Teams (Right Section) [LIST] (CSS)
@@ -149,7 +149,7 @@ public class ESPNHomepageElements {
     // EXPECTED MLB Dropdown Menu - MLB Teams Count (Right Section) [Integer]
     public static final int expectedMLBTeamsCount = 30;
 
-    // EXPECTED MLB Dropdown Menu - MLB Team Names (Right Section) [STRING []]
+    // EXPECTED MLB Dropdown Menu - MLB Team Names (Right Section) [String []]
     public static final String[] expectedMLBTeamNames = {"Baltimore Orioles", "Boston Red Sox", "New York Yankees", "Tampa Blue Rays", "Toronto Blue Jays", "Chicago White Sox", "Cleveland Indians", "Detroit Tigers", "Kansas City Royals", "Minnesota Twins",
             "Houston Astros", "Los Angeles Angels", "Oakland Athletics", "Seattle Mariners", "Texas Rangers", "Atlanta Braves", "Miami Marlins", "New York Mets", "Philadelphia Phillies", "Washington Nationals", "Chicago Cubs", "Cincinnati Reds",
             "Milwaukee Brewers", "Pittsburgh Pirates", "St. Louis Cardinals", "Arizona Diamondbacks", "Colorado Rockies", "Los Angeles Dodgers", "San Diego Padres", "San Francisco Giants"};

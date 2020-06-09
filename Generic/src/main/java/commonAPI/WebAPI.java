@@ -113,6 +113,7 @@ public class WebAPI {
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
                       @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("34")
                               String browserVersion, @Optional("") String url) throws IOException {
+
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
                 getCloudDriver(cloudEnvName, browserstack_username, browserstack_accesskey, os, os_version, browserName, browserVersion);
@@ -120,7 +121,7 @@ public class WebAPI {
                 getCloudDriver(cloudEnvName, saucelabs_username, saucelabs_accesskey, os, os_version, browserName, browserVersion);
             }
         } else {
-            getLocalDriver(os, browserName);
+            getLocalDriver(browserName);
         }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
@@ -128,7 +129,7 @@ public class WebAPI {
         driver.get(url);
     }
 
-    public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) {
+    public WebDriver getLocalDriver(String browserName) {
 
         String windowsChromeDriverPath = "/Generic/lib/BrowserDrivers/Windows/chromedriver.exe";
         String macChromeDriverPath = "/Generic/lib/BrowserDrivers/Mac/chromedriver";
@@ -182,7 +183,13 @@ public class WebAPI {
         driver.quit();
     }
 
-    //helper methods
+
+
+
+
+
+
+    // Helper methods
     public void clickOnElement(String locator) {
         try {
             driver.findElement(By.cssSelector(locator)).click();
