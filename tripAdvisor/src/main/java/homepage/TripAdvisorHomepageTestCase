@@ -1,0 +1,55 @@
+Trip Advisor Homepage Test Cases
+
+Test Case 1- Verify number of links on Homepage.
+1. Navigate to https://www.tripadvisor.com
+2. get the title of the page.
+3. Capture all links present on homepage.
+
+Test Case 2- Validating the Hotel menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on Hotel menu button.
+3. Write on search field.
+4. Finding of searching text "South Africa Hotels".
+
+
+
+Test Case 3- Validating the Sign in button.
+1. Navigate to https://www.tripadvisor.com
+2. Click on Sign in button.
+3.
+
+Test Case 4- Validating the Things to do menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on things to do button.
+3.
+
+Test Case 5- Validating the Logo button.
+1. Navigate to https://www.tripadvisor.com
+2. Click on logo button.
+3.
+
+Test Case 6- Validating the Write a review menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on write a review button.
+3.
+
+Test Case 7- Validating the restaurants menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on restaurants menu button.
+3.
+
+Test Case 8- Validating the travel forums menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on travel forums button.
+3.
+
+Test Case 9- Validating the insurances menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on insurance menu button.
+3.
+
+
+Test Case 10- Validating the Alerts menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on alerts menu button.
+3.
