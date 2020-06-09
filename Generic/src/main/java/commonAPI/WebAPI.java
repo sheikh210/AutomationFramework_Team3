@@ -592,7 +592,6 @@ public class WebAPI {
         return text;
     }
 
-
     public void mouseHoverJScript(WebElement element) {
         try {
             if (isElementPresent(element)) {
@@ -635,3 +634,4 @@ public class WebAPI {
 
 
 }
+
