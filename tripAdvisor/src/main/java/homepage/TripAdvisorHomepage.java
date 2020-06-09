@@ -95,18 +95,3 @@ public class TripAdvisorHomepage extends WebAPI {
 
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

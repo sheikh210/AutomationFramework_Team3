@@ -1,0 +1,75 @@
+Bank of America Homepage Test Cases
+
+
+Test case 1 - Do log in
+    1. Navigate to www.bankofamerica.com
+    2. Enter User Name
+    3. Enter Password
+    4. Click Submit Button
+
+Test Case 2 - Apply for credit card
+    1. Navigate to www.bankofamerica.com
+    2. Click on Credit Card
+    3. figure out all option
+    4. Check how many options are there
+
+Test Case 3 - Apply for credit card
+    1. Navigate to www.bankofamerica.com
+    2. Click on Auto loan Menu
+    3. Check "Auto Loan rate" is there
+    4. if auto loan rate is there then test is pass
+    5. otherwise Fail
+
+Test Case 4 - Change Language
+    1. Navigate to www.bankofamerica.com
+    2. Click on Language option
+    3. Find out options of Languages
+    4. Select the language
+
+
+Test Case 5 - Change Language
+    1. Navigate to www.bankofamerica.com
+    2. Click on Search Box
+    3. Write on Search box
+    4. Click on Search button
+
+Test Case 6 - Change Language
+    1. Navigate to www.bankofamerica.com
+    2. Click on "Find ATM Menu"
+    3. Check Availability of Jackson Height Branch
+
+Test Case 7 - Change Language
+    1. Navigate to www.bankofamerica.com
+    2. Click on "Digital Wallet Menu"
+    3. Get the Expected page title
+Test Case 8 - Change Language
+    1. Navigate to www.bankofamerica.com
+    2. Click on Investment Menu
+    3. Search expected text
+
+Test Case 9 - Change Language
+    1. Navigate to www.bankofamerica.com
+    2. Click on Zelle Menu
+    3. Click on play button to play video
+    4. Watch video for 5 seconds
+    5. Finally check page Title
+
+Test Case 10 - Change Language
+    1. Navigate to www.bankofamerica.com
+    2. Click on Get....Feature Menu
+    3. Search Text "$25 opening deposit"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
