@@ -53,6 +53,7 @@ public class WebAPI {
     public void startExtent(Method method) {
         String className = method.getDeclaringClass().getSimpleName();
         String methodName = method.getName().toLowerCase();
+
         ExtentTestManager.startTest(method.getName());
         ExtentTestManager.getTest().assignCategory(className);
     }
@@ -377,6 +378,10 @@ public class WebAPI {
     public String getCurrentPageUrl() {
         String url = driver.getCurrentUrl();
         return url;
+    }
+    public String getCurrentPageTitle(){
+        String title = driver.getTitle();
+        return title;
     }
 
     public String getCurrentPageTitle() {
