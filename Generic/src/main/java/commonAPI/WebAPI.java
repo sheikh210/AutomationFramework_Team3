@@ -84,7 +84,7 @@ public class WebAPI {
         ExtentTestManager.endTest();
         extent.flush();
         if (result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver, result.getName());
+            captureScreenshot(driver);
         }
         driver.quit();
     }
@@ -114,7 +114,7 @@ public class WebAPI {
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
                       @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("34")
                               String browserVersion, @Optional("") String url) throws IOException {
-
+                              
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
                 getCloudDriver(cloudEnvName, browserstack_username, browserstack_accesskey, os, os_version, browserName, browserVersion);
@@ -380,6 +380,11 @@ public class WebAPI {
         return url;
     }
     public String getCurrentPageTitle(){
+        String title = driver.getTitle();
+        return title;
+    }
+
+    public String getCurrentPageTitle() {
         String title = driver.getTitle();
         return title;
     }
