@@ -91,9 +91,6 @@ Test Case 15 - MLB Dropdown Menu (Right Div) (MLB Teams)
 4 - Verify each team name
 
 
-******************
-
-
 ***BODY TEST CASES***
 //LEFT BODY\\
 Test Case 16 - Login
@@ -102,3 +99,22 @@ Test Case 16 - Login
 3 - Pop-up should appear, containing username/email input & password input - Enter username/password
 4 - Click 'Login' button
 
+Test Case 17 - ESPN Sites Container Name & List Count
+1 - Navigate to http://espn.com
+2 - Verify title in header of container on left side of body (ESPN Sites)
+3 - Verify number of elements contained within container
+
+Test Case 18 - ESPN Sites Container List Item Names
+1 - Navigate to http://espn.com
+2 - Verify the name of each item contained within container (ESPN Sites)
+
+******************
+
+Test Case 19 - Follow ESPN Container Name & List Count
+1 - Navigate to http://espn.com
+2 - Verify title in header of container on left side of body (Follow ESPN)
+3 - Verify number of elements contained within container
+
+Test Case 20 - Follow ESPN Container List Item Names
+1 - Navigate to http://espn.com
+2 - Verify the name of each item contained within container (Follow ESPN)

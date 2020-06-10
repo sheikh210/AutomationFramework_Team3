@@ -116,26 +116,41 @@ public class ESPNHomepageElements {
 
     // Disney iFrame (Register/Login) (xPath)
     public static final String webElementIFrame = "//div/iframe[@id=\"disneyid-iframe\"]";
-
     // Login Button (xPath)
     public static final String webElementButtonLogin = "//article[@id=\"sideLogin-left-rail\"]/button[2]";
-
     // Username or Email Address Field (xPath)
     public static final String webElementInputUsernameEmailAddress = "//*[@id=\"did-ui-view\"]//div[@class=\"field-group\"]//span/input[@type=\"email\"]";
-
     // Password Field (xPath)
     public static final String webElementInputPassword = "//*[@id=\"did-ui-view\"]//div[@class=\"field-group\"]//span/input[@type=\"password\"]";
-
     // Login Button (inside iFrame/Login form) (xPath)
     public static final String webElementButtonLoginFormLogin = "//*[@id=\"did-ui-view\"]//div[@class=\"btn-group touch-print-btn-group-wrapper\"]//button";
-
     // Login Error Message (xPath)
     public static final String webElementErrorLoginMessage = "//*[@id=\"did-ui-view\"]//div[@ng-repeat=\"item in parsedItems\"]";
-
     // EXPECTED Login Error Message
     public static final String expectedElementLoginErrorMessage = "The credentials you entered are incorrect.\nReminder: Passwords are case sensitive.";
+    // ESPN Sites Container Header (Left Body) (CSS)
+    public static final String webElementContainerESPNSitesHeader = "#main-container > div > section.col-one > article:nth-child(5) > div > header";
+    // ESPN Sites Container List (Left Body) (CSS)
+    public static final String webElementContainerESPNSitesList = "#main-container > div > section.col-one > article:nth-child(5) > div > ul";
+    // ESPN Sites Container List Items (Left Body) [LIST] (CSS)
+    public static final String webElementsContainerESPNSitesListItems = "#main-container > div > section.col-one > article:nth-child(5) > div > ul > li a div span";
+    // EXPECTED ESPN Sites Container Header Title (Left Body)
+    public static final String expectedElementESPNSitesHeaderTitle = "ESPN Sites";
+    // EXPECTED ESPN Sites Container List Count (Left Body)
+    public static final int expectedElementESPNSitesListCount = 6;
+    // EXPECTED ESPN Sites Container List Item Names (Left Body)
+    public static final String[] expectedElementsESPNSitesListItemNames = {"ESPN Deportes", "The Undefeated", "espnW", "ESPNFC", "X Games", "SEC Network"};
+    // Follow ESPN Container Header (Left Body) (CSS)
+    public static final String webElementContainerFollowESPNHeader= "#main-container > div > section.col-one > article:nth-child(7) > div > header > h2";
+    // Follow ESPN Container List (Left Body) (CSS)
+    public static final String webElementContainerFollowESPNList = "#main-container > div > section.col-one > article:nth-child(7) > div > ul";
+    // ESPN Sites Container List Items (Left Body) [LIST] (CSS)
+    public static final String webElementsContainerFollowESPNListItems = "#main-container > div > section.col-one > article:nth-child(7) > div > ul li div:not([class=\"quicklinks_list__icon\"])>span";
+    // EXPECTED Follow ESPN Container Header Title (Left Body)
+    public static final String expectedElementFollowESPNHeaderTitle = "Follow ESPN";
+    // EXPECTED Follow ESPN Container List Count (Left Body)
+    public static final int expectedElementFollowESPNListCount = 9;
+    // EXPECTED ESPN Sites Container List Item Names (Left Body)
+    public static final String[] expectedElementsFollowESPNListItemNames = {"Facebook", "Twitter", "Instagram", "Snapchat", "YouTube", "Quibi", "The ESPN Daily Podcast", "The ESPN Daily Newsletter", "ESPN Daily Calendar"};
 
-    /**
-     * FOOTER
-     */
 }
