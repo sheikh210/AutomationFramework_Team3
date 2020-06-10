@@ -65,6 +65,17 @@ public class AetnaHomepage extends WebAPI {
     @FindBy (css = webElementSubmenuMedicaid)
     public WebElement submenuMedicaid;
 
+    @FindBy (css = webElementButtonLogin)
+    public WebElement buttonLogin;
+
+    @FindBy (css = webElementCustomerIdentifierSection)
+    public WebElement sectionCustomerIdentifier;
+
+    @FindBy (css = webElementMiscellaneousGridSection)
+    public WebElement sectionMiscellaneousGrid;
+
+
+
     /**
      * Test Case 1 - Validate Navigation to Homepage
      * 1 - Navigate to http://aetna.com
@@ -532,7 +543,77 @@ public class AetnaHomepage extends WebAPI {
      * 2 - Click "Login" button in header
      * 3 - Verify user is navigated to Login page
      */
-    public void validateLogin(){
+    public void validateLoginButton(){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(buttonLogin));
+        clickOnElement(buttonLogin);
 
+        String actualLoginPageURL = driver.getCurrentUrl();
+        System.out.println("Login Page URL: "+actualLoginPageURL);
+        Assert.assertEquals(actualLoginPageURL, expectedElementLoginPageURL, "WAS NOT NAVIGATED TO LOGIN PAGE (URL DOES NOT MATCH)");
     }
+
+
+    /**
+     * BODY
+     */
+    /**
+     * Test Case 17 - Validate 'Download Attain' button navigates us to Download Attain page
+     * 1 - Navigate to http://aetna.com
+     * 2 - Verify the name of each customer identifier within the customer identifier boxes
+     * 3 - Verify URL for each customer identifier box
+     */
+    public void validateCustomerIdentifierSectionNamesAndURLs(){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfAllElements(sectionCustomerIdentifier.findElements(By.cssSelector(webElementsCustomerIdentifierBoxes))));
+
+        List<WebElement> customerIdentifierBoxes = sectionCustomerIdentifier.findElements(By.cssSelector(webElementsCustomerIdentifierBoxes));
+        String [] actualCustomerIdentifierNames = new String[customerIdentifierBoxes.size()];
+        String [] actualCustomerIdentifierURLs = new String[customerIdentifierBoxes.size()];
+
+        SoftAssert softAssert = new SoftAssert();
+        for (int i=0; i<customerIdentifierBoxes.size(); i++){
+            actualCustomerIdentifierNames[i] = customerIdentifierBoxes.get(i).getAttribute("data-analytics-name");
+            System.out.println(actualCustomerIdentifierNames[i]);
+            softAssert.assertEquals(actualCustomerIdentifierNames[i], expectedElementsCustomerIdentifierNames[i], "CUSTOMER IDENTIFIER NAME IN BOX "+i+" DOES NOT MATCH");
+
+            actualCustomerIdentifierURLs[i] = customerIdentifierBoxes.get(i).getAttribute("href");
+            System.out.println(actualCustomerIdentifierURLs[i]);
+            softAssert.assertEquals(actualCustomerIdentifierURLs[i], expectedElementsCustomerIdentifierURLs[i], "CUSTOMER IDENTIFIER URL IN BOX "+i+" DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+
+    /**
+     * Test Case 18 - Validate Miscellaneous Grid Boxes
+     * 1 - Navigate to http://aetna.com
+     * 2 - Verify the name of each miscellaneous grid item (Health News, About Us, Careers)
+     * 3 - Verify the URL of each miscellaneous grid item
+     */
+    public void validateMiscellaneousGridBoxNamesAndURLs(){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfAllElements(sectionMiscellaneousGrid.findElements(By.cssSelector(webElementsMiscellaneousGridBoxesNames))));
+
+        List<WebElement> miscellaneousGridBoxesNames = sectionMiscellaneousGrid.findElements(By.cssSelector(webElementsMiscellaneousGridBoxesNames));
+        String [] actualMiscellaneousGridBoxNames = new String[miscellaneousGridBoxesNames.size()];
+
+        List<WebElement> miscellaneousGridBoxesURLs = sectionMiscellaneousGrid.findElements(By.cssSelector(webElementsMiscellaneousGridBoxesURLs));
+        String [] actualMiscellaneousGridBoxURLs = new String[miscellaneousGridBoxesURLs.size()];
+
+        SoftAssert softAssert = new SoftAssert();
+        for (int i=0; i<miscellaneousGridBoxesNames.size(); i++){
+            actualMiscellaneousGridBoxNames[i] = miscellaneousGridBoxesNames.get(i).getText();
+            System.out.println(actualMiscellaneousGridBoxNames[i]);
+            softAssert.assertEquals(actualMiscellaneousGridBoxNames[i], expectedElementsMiscellaneousGridBoxesNames[i], "MISCELLANEOUS GRID BOX NAME IN BOX "+i+" DOES NOT MATCH");
+
+            actualMiscellaneousGridBoxURLs[i] = miscellaneousGridBoxesURLs.get(i).getAttribute("href");
+            System.out.println(actualMiscellaneousGridBoxURLs[i]);
+            softAssert.assertEquals(actualMiscellaneousGridBoxURLs[i], expectedElementsMiscellaneousGridBoxesURLs[i], "MISCELLANEOUS GRID BOX URL IN BOX "+i+" DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+
+
 }

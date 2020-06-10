@@ -6,11 +6,12 @@ public class AetnaHomepageElements {
      * HEADER
      */
 
-
     // Search Button - Header (xPath)
     public static final String webElementButtonSearchHeader = "//body//header//form//button[1]";
     // Search Input Field - Header (xPath)
     public static final String webElementInputSearchFieldHeader = "//input[@id='globalSearch']";
+    // Header 'Login' Button (CSS)
+    public static final String webElementButtonLogin = "#header__loginbtn";
     // Search Term
     public static final String searchTerm = "Insurance Plans";
     // 'Explore Aetna sites' Dropdown Button (CSS)
@@ -58,14 +59,32 @@ public class AetnaHomepageElements {
     // 'Medicaid' Submenu Items (List) (CSS)
     public static final String webElementsSubmenuMedicaidItems = "body > div.header.headerwithmegamenu > div > nav > div > ul.megamenu__primary.meganav__primary--left > li.megamenu__primary--item.active > div.megamenu__dropdown > div > div > section > ul > li.megamenu__secondary--item.megamenu__secondary--clicklink.secondaryblock--active > div.megamenu__tertiary--block > ul > li > a";
 
+    /**
+     * BODY
+     */
+
+    // Customer Identifier Section (CSS)
+    public static final String webElementCustomerIdentifierSection = "#content__main > div.herobanner.parbase > div > div > div.herobanner__titlecontainer > div.component.nextaction > div > div";
+    // Customer Identifier Boxes [LIST] (CSS)
+    public static final String webElementsCustomerIdentifierBoxes = "#content__main > div.herobanner.parbase > div > div > div.herobanner__titlecontainer > div.component.nextaction > div > div div.nextaction__top__headline a";
+    // Miscellaneous Grid Section (CSS)
+    public static final String webElementMiscellaneousGridSection = "#content__main > div.responsivegrid > div > div > div";
+    // Miscellaneous Grid Boxes - Names [LIST] (CSS)
+    public static final String webElementsMiscellaneousGridBoxesNames = "#content__main > div.responsivegrid > div > div > div h2";
+    // Miscellaneous Grid Boxes - URLs [LIST] (CSS)
+    public static final String webElementsMiscellaneousGridBoxesURLs = "#content__main > div.responsivegrid > div > div > div a";
 
     /**
-     * HEADER (EXPECTED)
+     * (EXPECTED ELEMENTS)
      */
-    // EXPECTED Homepage Title [String]
+    // EXPECTED Homepage title (String)
     public static final String expectedElementHomepageTitle = "Health Insurance Plans | Aetna";
-    // EXPECTED Search Results page title [String]
+    // EXPECTED Search Results page title (String)
     public static final String expectedElementSearchResultsTitle = "Search Results";
+    // EXPECTED Login page URL (String)
+    public static final String expectedElementLoginPageURL = "https://www.aetna.com/about-us/login.html";
+    // EXPECTED Download Attain page URL (String)
+    public static final String expectedElementDownloadAttainPageURL = "https://www.attainbyaetna.com/?cid=site-aetna-IF-banner&ss=appstore";
     // EXPECTED 'Explore Aetna sites' Dropdown Menu Item Count (Integer)
     public static final int expectedElementExploreAetnaSitesItemCount = 7;
     // EXPECTED 'Explore Aetna sites' Dropdown Menu Item Names (String[])
@@ -108,8 +127,12 @@ public class AetnaHomepageElements {
     public static final String[] expectedElementsSubmenuMedicaidItemNames = {"Medicaid plans", "Find a doctor"};
     // EXPECTED 'Medicaid' Submenu Item URLs (String[])
     public static final String[] expectedElementsSubmenuMedicaidItemURLs = {"https://www.aetna.com/individuals-families/medicaid-coverage.html", "https://www.aetna.com/dsepublicContent/assets/html/content.html?resource=aetna-medicaid"};
-
-
-
-
+    // EXPECTED Customer Identifier Box Names (String[])
+    public static final String[] expectedElementsCustomerIdentifierNames = {"Individuals", "Employers", "Providers", "Agents/Brokers"};
+    // EXPECTED Customer Identifier Box URLs (String[])
+    public static final String[] expectedElementsCustomerIdentifierURLs = {"https://www.aetna.com/individuals-families.html", "https://www.aetna.com/employers-organizations.html", "https://www.aetna.com/health-care-professionals.html", "https://www.aetna.com/insurance-producer.html"};
+    // EXPECTED Miscellaneous Grid Box Names (String[])
+    public static final String[] expectedElementsMiscellaneousGridBoxesNames = {"Health News", "About Us", "Careers"};
+    // EXPECTED Miscellaneous Grid Box URLs (String[])
+    public static final String[] expectedElementsMiscellaneousGridBoxesURLs = {"https://news.aetna.com/", "https://www.aetna.com/about-us.html", "https://www.aetnacareers.com/"};
 }

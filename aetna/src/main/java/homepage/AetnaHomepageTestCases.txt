@@ -89,18 +89,23 @@ Test Case 16 - Validate "Login" button navigates us to Login page
 3 - Verify user is navigated to Login page
 
 
-
-
 ***BODY TEST CASES***
-Test Case 17 -
+Test Case 17 - Validate 'Download Attain' button navigates us to Download Attain page
 1 - Navigate to http://aetna.com
+2 - Verify the name of each customer identifier within the customer identifier boxes
+3 - Verify URL for each customer identifier box
 
-Test Case 18 -
+Test Case 18 - Validate Miscellaneous Grid Boxes
 1 - Navigate to http://aetna.com
+2 - Verify the name of each miscellaneous grid item (Health News, About Us, Careers)
+3 - Verify the URL of each miscellaneous grid item
 
 Test Case 19 -
 1 - Navigate to http://aetna.com
+2 -
+3 -
 
 Test Case 20 -
 1 - Navigate to http://aetna.com
-
+2 -
+3 -

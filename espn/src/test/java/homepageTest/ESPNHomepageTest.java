@@ -13,12 +13,12 @@ public class ESPNHomepageTest extends WebAPI {
         espnHomepage = PageFactory.initElements(driver, ESPNHomepage.class);
     }
 
-//    @Test (priority = 0)
-//    public static void testHomepage(){
-//        getInItElements();
-//        espnHomepage.getCurrentPageTitle();
-//        espnHomepage.validateCurrentPage();
-//    }
+    @Test (priority = 0)
+    public static void testHomepage(){
+        getInItElements();
+        espnHomepage.getCurrentPageTitle();
+        espnHomepage.validateCurrentPage();
+    }
 
     @Test (priority = 1)
     public static void testTopEventsDropdownListSize(){
