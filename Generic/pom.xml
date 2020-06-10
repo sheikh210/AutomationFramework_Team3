@@ -130,12 +130,6 @@
             <version>4.11</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
 
     </dependencies>
 
