@@ -129,11 +129,22 @@ Test Case 16:"Validate Coronavirus link"
 3)Get the page title
 4)Close Browser
 
-Test Case 17:"Validate "Explore How" link
+
+Test Case 17: "Count Site Support links"
 1)Navigate to url "www.delta.com"
-2)Click on "Explore How"
-3)Get the page title
-4)Close Browser
+2)Count Site support links
+3)Print site support links
+4)validate number of links
+5)Close browser
+
+Test Case 18:
+1)Navigate to url "www.delta.com"
+2)Scroll down until Download app is displayed.
+3)Click on "DOWNLOAD THE FLY DELTA APP".
+4)Get the title page
+5)Close the browser
+
+
 
 
 

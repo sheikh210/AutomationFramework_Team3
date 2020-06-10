@@ -30,8 +30,8 @@ public class DeltaHomePageElements {
     public static final String WebElementFlightNumberBox="/html//input[@id='flightNo']";
     //Flight number" Dl1872" by xpath
     public static final String WebElementFlightDL1872="//*[@id=\"flightn\"]/div";
-    //Flight info button by xpath
-    public static final String WebElementTravelInfoButton="//*[@id=\"headSectab1\"]";
+    //Flight info button by css
+    public static final String WebElementTravelInfoButton="#secPanel1 > ngc-app-sec-links-content > div > div > div.row > div.col-lg-3.col-md-12.col-primary-links >ul>li";
     //
     /**
      * Body Web Elements
@@ -74,6 +74,8 @@ public class DeltaHomePageElements {
     public static final String WebElementTicketNumberError="//div[@id='eticketNumber-error']";
     //Explore How Link by xpath
     public static final String WebElementExploreHowLink="//*[@id=\"BS4-hero\"]/div[1]/div/div/div/div/span[2]/div/a";
+    //Download App by xpath
+    public static final String WebElementDownloadApp="//*[@id=\"BS4-hero\"]/div[6]/div/div/div/div[2]/a/div/span";
 
     /**
      * Footer Web Elements
@@ -83,13 +85,10 @@ public class DeltaHomePageElements {
     //Need help link by xpath
     public static final  String WebElementNeedHelpLink="/html/body/app-root/app-home/ngc-global-footer/footer/div/div/div[2]/div/ngc-footer-column/div/div/div[2]/ul[2]/li[1]/a";
 
-    //CoronaVirus Link by xpath
-    public static final String WebElementCoronaVirusLink="/html/body/app-root/app-home/ngc-global-footer/footer/div/div/div[1]/div[2]/div/ul/li[1]/a";
-
-
-
-
-
+    //CoronaVirus Link by CSS selector
+    public static final String WebElementCoronaVirusLink=".popular-list-2";
+    //Site support links by xpath
+    public static final String WebElementSiteSupportLinks="body > app-root > app-home > ngc-global-footer > footer > div > div > div.row.ng-star-inserted > div > ngc-footer-column > div > div > div:nth-child(3) > ul.d-none.d-md-block";
 
 
 }
