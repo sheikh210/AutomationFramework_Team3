@@ -84,7 +84,7 @@ public class WebAPI {
         ExtentTestManager.endTest();
         extent.flush();
         if (result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver);
+            captureScreenshot(driver, result.getName());
         }
         driver.quit();
     }
@@ -384,15 +384,6 @@ public class WebAPI {
         return title;
     }
 
-    public String getCurrentPageTitle() {
-        String title = driver.getTitle();
-        return title;
-    }
-
-    public String getCurrentPageTitle() {
-        String title = driver.getTitle();
-        return title;
-    }
 
     public void navigateForward() {
         driver.navigate().forward();

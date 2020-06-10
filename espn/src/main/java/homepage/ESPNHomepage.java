@@ -248,7 +248,6 @@ public class ESPNHomepage extends WebAPI {
 //        softAssert.assertAll();
 //    }
     public String[] getNFLDropdownMenuLeftLinks() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
         Actions hover = new Actions(driver);
 
         hover.moveToElement(nflDropdown).perform();

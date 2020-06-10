@@ -13,14 +13,14 @@ public class ESPNHomepageTest extends WebAPI {
         espnHomepage = PageFactory.initElements(driver, ESPNHomepage.class);
     }
 
-    @Test (priority = 0, enabled = false)
+    @Test (priority = 0)
     public static void testHomepage(){
         getInItElements();
         espnHomepage.getCurrentPageTitle();
         espnHomepage.validateCurrentPage();
     }
 
-    @Test (priority = 1, enabled = false)
+    @Test (priority = 1)
     public static void testTopEventsDropdownListSize(){
         getInItElements();
         espnHomepage.topEventsDropdownList();
@@ -34,7 +34,7 @@ public class ESPNHomepageTest extends WebAPI {
         espnHomepage.validateScrollHeader();
     }
 
-    @Test (priority = 3, enabled = false)
+    @Test (priority = 3)
     public static void testNFLDropdownMenuLeftItemsCountAndText(){
         getInItElements();
         espnHomepage.getNFLDropdownMenuLeft();
@@ -42,7 +42,7 @@ public class ESPNHomepageTest extends WebAPI {
         espnHomepage.validateNFLDropdownMenuLeftItemsText();
     }
 
-    @Test (priority = 4, enabled = false)
+    @Test (priority = 4)
     public static void testNFLDropdownMenuLeftItems() {
         getInItElements();
         espnHomepage.getNFLDropdownMenuLeftLinks();
@@ -51,14 +51,14 @@ public class ESPNHomepageTest extends WebAPI {
 //        espnHomepage.validateNFLDropdownMenuLeftTitles();
     }
 
-    @Test (priority = 5, enabled = false)
+    @Test (priority = 5)
     public static void testNFLDropdownMenuRightDivisions(){
         getInItElements();
         espnHomepage.getNFLDropdownMenuRightNFLDivisionNames();
         espnHomepage.validateNFLDropdownMenuRightNFLDivisionNames();
     }
 
-    @Test (priority = 6, enabled = false)
+    @Test (priority = 6)
     public static void testNFLDropdownMenuRightNFLTeams(){
         getInItElements();
         espnHomepage.getNFLDropdownMenuRightNFLTeams();
@@ -66,7 +66,7 @@ public class ESPNHomepageTest extends WebAPI {
         espnHomepage.validateNFLDropdownMenuRightNFLTeams();
     }
 
-    @Test (priority = 7, enabled = false)
+    @Test (priority = 7)
     public static void testNBADropdownMenuLeftItemsCountAndText(){
         getInItElements();
         espnHomepage.getNBADropdownMenuLeft();
@@ -74,21 +74,21 @@ public class ESPNHomepageTest extends WebAPI {
         espnHomepage.validateNBADropdownMenuLeftItemsText();
     }
 
-    @Test (priority = 8, enabled = false)
+    @Test (priority = 8)
     public static void testNBADropdownMenuLeftItems(){
         getInItElements();
         espnHomepage.getNBADropdownMenuLeftLinks();
         espnHomepage.validateNBADropdownMenuLeftLinks();
     }
 
-    @Test (priority = 9, enabled = false)
+    @Test (priority = 9)
     public static void testNBADropdownMenuRightDivisions(){
         getInItElements();
         espnHomepage.getNBADropdownMenuRightNBADivisionNames();
         espnHomepage.validateNBADropdownMenuRightNBADivisionNames();
     }
 
-    @Test (priority = 10, enabled = false)
+    @Test (priority = 10)
     public static void testNBADropdownMenuRightNBATeams(){
         getInItElements();
         espnHomepage.getNBADropdownMenuRightNBATeams();
