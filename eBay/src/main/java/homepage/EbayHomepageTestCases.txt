@@ -65,4 +65,19 @@ all categories  and all brands within the menu and capture links
 Test Case 11 - Motors
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
-3: Hover over Motors in SubHeader
+3: Click on Motors in SubHeader
+
+Test Case 12 - Fashion
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: Click on Fashion in SubHeader
+
+Test Case 13 - Electronics
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: Click on Electronics in SubHeader
+
+Test Case 14 - Collectibles & Art
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: Click on Collectibles & Art in SubHeader

@@ -2,6 +2,7 @@ package homepageTest;
 import commonAPI.WebAPI;
 import homepage.EbayHomepage;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class EbayHomepageTest extends WebAPI {
@@ -18,7 +19,7 @@ public class EbayHomepageTest extends WebAPI {
         ebayHomepage.getCurrentPageTitle();
         ebayHomepage.validateCurrentPage();
     }
-    @Test(priority = 1,enabled = false)
+    @Test(priority = 1)
     public static void testSignIn(){
         getInItElements();
         ebayHomepage.getSignInPage();
@@ -53,35 +54,35 @@ public class EbayHomepageTest extends WebAPI {
         ebayHomepage.validateHelpAndContact();
 }
 
-    @Test()
+    @Test(priority = 6,enabled = false)
     public static void testMotorsPage(){
         getInItElements();
         ebayHomepage.getMotorsPage();
         ebayHomepage.validateMotorsPage();
     }
 
-    @Test()
+    @Test(priority = 7,enabled = false)
     public static void testFashionPage(){
         getInItElements();
         ebayHomepage.getFashionPage();
         ebayHomepage.validateFashionPage();
     }
 
-    @Test()
+    @Test(priority = 8,enabled = false)
     public static void testElectronicsPage(){
         getInItElements();
         ebayHomepage.getElectronicsPage();
         ebayHomepage.validateElectronicsPage();
     }
 
-    @Test()
+    @Test(priority = 9,enabled = false)
     public static void testCollectiblesAndArt(){
         getInItElements();
         ebayHomepage.getCollectiblesAndArtPage();
         ebayHomepage.validateCollectiblesAndArtPage();
     }
 
-    @Test(priority = 6,enabled = false)
+    @Test(priority = 10,enabled = false)
     public static void testSearchCategoryDropdownList(){
         getInItElements();
         ebayHomepage.getSearchCategoryDropDownNum();

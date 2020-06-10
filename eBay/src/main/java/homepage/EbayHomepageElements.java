@@ -28,7 +28,6 @@ public class EbayHomepageElements {
             "Health & Beauty","Home & Garden","Jewelry & Watches","Music","Musical Instruments & Gear","Pet Supplies","Pottery & Glass","Real Estate","Specialty Services",
             "Sporting Goods","Sports Mem, Cards & Fan Shop","Stamps","Tickets & Experiences","Toys & Hobbies","Travel","Video Games & Consoles","Everything Else"};
 
-    public static final String webElementSearchCategoryDropdownMenu = "";
 
     //daily deals by xpath
     public static final String webElementDailyDeals = "//a[@class='gh-p'][contains(text(),'Daily Deals')]";
@@ -64,6 +63,10 @@ public class EbayHomepageElements {
     public static final String webElementMotorsPage = "//*[@id=\"mainContent\"]/div[1]/ul/li[3]/a";
 
     public static final String expectedMotorsPageTitle = "eBay Motors: Auto Parts and Vehicles | eBay";
+
+    public static final String webElementMotorsDropDown = "//*[@id=\"mainContent\"]/div[1]/ul/li[3]/a";
+
+    public static final String getWebElementsMotorsDropDownItems ="";
 
     public static final String webElementFashionPage ="//*[@id=\"mainContent\"]/div[1]/ul/li[4]/a";
 
