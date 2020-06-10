@@ -34,14 +34,14 @@ public class AetnaHomepageTest extends WebAPI{
         aetnaHomepage.validateExploreAetnaSitesDropdownItemCountAndNames();
     }
 
-    @Test (priority = 3, enabled = false)
+    @Test (priority = 3)
     public static void testExploreAetnaSitesDropdownItemNavigation(){
         getInItElements();
         aetnaHomepage.validateExploreAetnaSitesDropdownItemURL();
     }
 
-    @Test (priority = 4)
-    public static void testSearachForAPlanDropdownItemCountAndNames(){
+    @Test (priority = 4, enabled = false)
+    public static void testSearchForAPlanDropdownItemCountAndNames(){
         getInItElements();
         aetnaHomepage.validateShopForAPlanMenuItemCountAndNames();
     }

@@ -125,4 +125,10 @@ public class ESPNHomepageTest extends WebAPI {
         espnHomepage.validateMLBDropdownMenuRightMLBTeamsCount();
         espnHomepage.validateMLBDropdownMenuRightMLBTeams();
     }
+
+    @Test (priority = 15)
+    public static void testLogin(){
+        getInItElements();
+        espnHomepage.validateLogin();
+    }
 }

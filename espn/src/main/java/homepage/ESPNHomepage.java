@@ -58,6 +58,27 @@ public class ESPNHomepage extends WebAPI {
     @FindBy(css = webElementMLBDropdownMenuRight)
     public WebElement mlbDropdownMenuRight;
 
+    @FindBy(xpath = webElementIFrame)
+    public WebElement iFrame;
+
+    @FindBy(xpath = webElementButtonLogin)
+    public WebElement buttonLogin;
+
+    @FindBy(xpath = webElementInputUsernameEmailAddress)
+    public WebElement inputUsernameEmailAddress;
+
+    @FindBy(xpath = webElementInputPassword)
+    public WebElement inputPassword;
+
+    @FindBy(xpath = webElementButtonLoginFormLogin)
+    public WebElement buttonLoginFormLogin;
+
+    @FindBy(xpath = webElementErrorLoginMessage)
+    public WebElement errorLoginMessage;
+
+    /**
+     * HEADER
+     */
 
     /**
      * Test Case 1 - Validate Navigation to Homepage
@@ -620,5 +641,37 @@ public class ESPNHomepage extends WebAPI {
             System.out.println(actualMLBTeams[i]);
             softAssert.assertEquals(actualMLBTeams[i], expectedMLBTeamNames[i], "TEAM NAME AT INDEX " + i + " DOES NOT MATCH");
         }
+    }
+
+
+
+
+
+
+    /**
+     * BODY
+     */
+
+    /**
+     * Test Case 16 - Login
+     * 1 - Navigate to http://espn.com
+     * 2 - Scroll down the page and click on "Login" button
+     * 3 - Pop-up should appear, containing username/email input & password input - Enter username/password
+     * 4 - Click 'Login' button
+     * 5 - Verify Error message that is displayed with invalid credentials
+     */
+    public void validateLogin(){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        clickOnElement(buttonLogin);
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iFrame));
+
+        inputUsernameEmailAddress.sendKeys("DemoAccount1");
+        inputPassword.sendKeys("demoPassword");
+        buttonLoginFormLogin.click();
+
+        wait.until(ExpectedConditions.textToBePresentInElement(errorLoginMessage, expectedElementLoginErrorMessage));
+        System.out.println("Error Message: "+errorLoginMessage.getText());
+        Assert.assertEquals(errorLoginMessage.getText(), expectedElementLoginErrorMessage, "LOGIN ERROR DOES NOT MATCH");
     }
 }

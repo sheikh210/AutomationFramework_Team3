@@ -65,8 +65,6 @@ Test Case 11 - NBA Dropdown Menu (Right Div) (NBA Teams)
 3 - Verify there are 30 NBA teams
 4 - Verify each team name
 
-******************
-
 Test Case 12 - MLB Dropdown Menu (Left Div)
 1 - Navigate to http://espn.com
 2 - Hover over MLB Dropdown on header bar
@@ -93,16 +91,14 @@ Test Case 15 - MLB Dropdown Menu (Right Div) (MLB Teams)
 4 - Verify each team name
 
 
+******************
 
 
 ***BODY TEST CASES***
 //LEFT BODY\\
-Test Case 9 - ESPN+
+Test Case 16 - Login
 1 - Navigate to http://espn.com
-2 - Click on ESPN+ Box Header
-3 - Validate user is navigated to https://www.espn.com/watch/espnplus/
+2 - Scroll down the page and click on "Login" button
+3 - Pop-up should appear, containing username/email input & password input - Enter username/password
+4 - Click 'Login' button
 
-Test Case  - ESPN+ Box
-1 - Navigate to http://espn.com
-2 - Capture number of links present within box
-3 - Validate there are 5 links present
