@@ -2,7 +2,7 @@ package homepage;
 
 import org.openqa.selenium.WebElement;
 
-public class DeltaHomePageElements {
+public class DeltaAirlinesHomepageElements {
     /**
      * Header Web Elements
      */

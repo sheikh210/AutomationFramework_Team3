@@ -9,10 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import static homepage.DeltaHomePageElements.*;
+import static homepage.DeltaAirlinesHomepageElements.*;
 
 
 public class DeltaAirlinesHomepage extends WebAPI {
