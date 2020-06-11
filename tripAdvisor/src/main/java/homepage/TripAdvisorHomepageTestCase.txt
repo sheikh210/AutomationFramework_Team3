@@ -59,4 +59,18 @@ Test Case 10- Validating the review menu.
 2. Click on review menu button.
 3. it will navigate Review a place you've visited".
 
+Test Case 11- Trips menu.
+1. Navigate to https://www.tripadvisor.com
+2. Validating the Trips menu.
+3. Click on trips menu button.
+4. gives actual Url.
+5. open expected url.
+
+Test Case 12- Search Menu button.
+1. Navigate to https://www.tripadvisor.com
+2. Validating the Menu button.
+3. Click on Menu button.
+4. gives actual UrlTwo.
+5. open expected urlTwo.
+
 

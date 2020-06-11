@@ -24,71 +24,61 @@ public class TripAdvisorHomepage extends WebAPI {
   public WebElement searchBox2;
   @FindBy(how = How.CSS, using = webElementSearchingText)
   public WebElement searchingText;
-
   //test case 2
   @FindBy(how = How.XPATH,using = webElementSearchBoxTwo)
   public WebElement searchBoxTwo;
   @FindBy(xpath = webElementSearchSelectTextZero)
   public  WebElement selectText;
-
   //test case 3
   @FindBy(how = How.XPATH,using = webElementRestaurantMenu)
   public WebElement restaurantMenu;
-
   //test Case 4
   @FindBy(how = How.XPATH,using = webElementThingsToDo)
   public WebElement thingToDo;
   @FindBy(how = How.XPATH,using = webElementSelectTextTwo)
   public WebElement selectTextTwo;
-
   // test case 5
   @FindBy(how = How.XPATH,using = webElementInsurance)
   public WebElement insurance;
   @FindBy(how = How.XPATH,using = webElementSearchInsuranceMenu)
   public WebElement insuranceMenu;
-
   //test case 6
   @FindBy(how = How.XPATH,using = webElementMoreButton)
   public WebElement moreButton;
   @FindBy(how = How.XPATH,using = webElementSearchMoreMenu)
   public WebElement searchMoreMenu;
-
   //test case 7
   @FindBy(how = How.XPATH,using = webElementFlights)
   public WebElement flights;
   @FindBy(how = How.XPATH,using = webElementSearchFlightsMenu)
   public WebElement searchFlightsMenu;
-
   //test case 8
   @FindBy(how = How.XPATH,using = webElementAboutCOVID)
   public WebElement aboutCODIV;
   @FindBy(how = How.XPATH,using = webElementSearchInformation)
   public WebElement searchInformation;
-
   //test case 9
   @FindBy(how = How.XPATH,using = webElementTravelForums)
   public WebElement travelForums;
   @FindBy(how = How.XPATH,using = webElementTravelForumsMenu)
   public WebElement searchTravelFormsMenu;
-
   //test case 10
   @FindBy(how = How.XPATH,using = webElementWriteAReview)
   public WebElement writeAReview;
   @FindBy(how = How.XPATH,using = webElementSearchWriteAReviewMenu)
   public WebElement searchWriteAReviewMenu;
-
-
-  //11
+  //test case 11
   @FindBy(how =How.XPATH,using = webElementTripsMenu)
   public WebElement tripsMenu;
-
+  //test case 12
+  @FindBy(how = How.XPATH,using=webElementMenuButton)
+  public WebElement menuButton;
 
 
 //test case 1
   public void doSearchingText() {
     hotelMenu.click();
     WebDriverWait wait = new WebDriverWait(driver, 10);
-
     if (searchBox1Alt.isDisplayed()){
       wait.until(ExpectedConditions.elementToBeClickable(searchBox1Alt));
       searchBox1Alt.sendKeys("South Africa Hotels");
@@ -105,7 +95,6 @@ public class TripAdvisorHomepage extends WebAPI {
     String actualText = searchingText.getText();
     Assert.assertEquals(actualText, "South Africa Hotels");
   }
-
 //test case 2
   public void doSearchElement() throws InterruptedException {
     searchBoxTwo.click();
@@ -115,7 +104,6 @@ public class TripAdvisorHomepage extends WebAPI {
   public void validateDoSearchSelectTextZero() {
     String actualText = selectText.getText();
     Assert.assertEquals(actualText, "ajmer ajmer district");
-
   }
   //test case 3
   public void doSearchTitle(){
@@ -126,7 +114,6 @@ public class TripAdvisorHomepage extends WebAPI {
     String expectedTitle = "Best Restaurants Near Me - Tripadvisor";
     Assert.assertEquals(actualTitle,expectedTitle);
   }
-
   //test case 4
   public void doSearchThingsToDo() {
     thingToDo.click();
@@ -135,7 +122,6 @@ public class TripAdvisorHomepage extends WebAPI {
     String actualText = selectTextTwo.getText();
     Assert.assertEquals(actualText, "Bangkok");
   }
-
   //test case 5
   public void doSearchInsuranceTitle() {
     insurance.click();
@@ -144,7 +130,6 @@ public class TripAdvisorHomepage extends WebAPI {
     String actualText = insuranceMenu.getText();
     Assert.assertEquals(actualText, "A year of trips. Protected.");
   }
-
   //test case 6
   public void doSearchMoreButton() {
     moreButton.click();
@@ -153,7 +138,6 @@ public class TripAdvisorHomepage extends WebAPI {
     String actualText = searchMoreMenu.getText();
     Assert.assertEquals(actualText, "Find the best cruise for you");
   }
-
   //test case 7
   public void doSearchBar() {
     flights.click();
@@ -162,17 +146,14 @@ public class TripAdvisorHomepage extends WebAPI {
     String actualText = searchFlightsMenu.getText();
     Assert.assertEquals(actualText, "Find the best flight from New York City");
   }
-
   //test case 8
   public void doSearchTopic() {
-
     aboutCODIV .click();
   }
   public void validateDoSearchInformation() {
     String actualText = searchInformation.getText();
     Assert.assertEquals(actualText, "What do I need to know about booking travel right now?");
   }
-
   //test case 9
   public void doSearchTravelTopic() {
     travelForums.click();
@@ -181,19 +162,15 @@ public class TripAdvisorHomepage extends WebAPI {
     String actualText = searchTravelFormsMenu.getText();
     Assert.assertEquals(actualText, "Share your experience with fellow travelers.");
   }
-
   //test case 10
   public void doSearchReviewMenu() {
-
     writeAReview.click();
   }
   public void validateDoReviewMenuButton() {
     String actualText = searchWriteAReviewMenu.getText();
     Assert.assertEquals(actualText, "Review a place you've visited");
   }
-
   // test case 11
-
     public void doSearchUrl(){
     tripsMenu.click();
   }
@@ -202,7 +179,21 @@ public class TripAdvisorHomepage extends WebAPI {
     System.out.println(actualUrl);
     String expectedUrl = "https://www.tripadvisor.com/Trips";
     Assert.assertEquals(actualUrl,expectedUrl, "expected url not found");
-
   }
+  //test case 12
+  public void doSearchUrlTwo(){
+    menuButton.click();
+  }
+  public void validateDoSearchUrlTwo(){
+    String actualUrlTwo = super.getCurrentPageUrl();
+    System.out.println(actualUrlTwo);
+    String expectedUrlTwo = "https://www.tripadvisor.com/";
+    Assert.assertEquals(actualUrlTwo,expectedUrlTwo,"expected url two not found");
+  }
+
+
+
+
+
 }
 

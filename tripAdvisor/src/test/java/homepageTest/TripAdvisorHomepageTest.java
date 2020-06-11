@@ -2,6 +2,7 @@ package homepageTest;
 
 import commonAPI.WebAPI;
 import homepage.TripAdvisorHomepage;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -90,5 +91,15 @@ import org.testng.annotations.Test;
         tripAdvisorHomepage.doSearchUrl();
         tripAdvisorHomepage.validateDoSearchUrl();
         }
+    //12
+        @Test
+        public static void testDoSearchUrlTwo(){
+        getInItElements();
+        tripAdvisorHomepage.doSearchUrlTwo();
+        tripAdvisorHomepage.validateDoSearchUrlTwo();
+        }
+
+
+
 
 }
