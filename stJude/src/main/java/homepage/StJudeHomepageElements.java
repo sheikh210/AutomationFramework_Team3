@@ -25,6 +25,7 @@ public class StJudeHomepageElements {
     public static final String webElementSearchingElement="//*[@id=\"affb7acb3944e89b7ec33abcdd811ddf83ae9625bdde1e9a9c5afce905a9fd29\"]/div[1]/section[2]/ul/li[1]/a";
     public static final String webElementExploreOurResearch="//*[@id=\"button-64d8a7e736e1b3beb72a0ea7235f20097e14b990aced5fcc77db3a00b1313ca1\"]/span";
     public static final String webElementSearchingTopic="//*[@id=\"site-content\"]/div[1]/section/div/div[2]/h1";
+    public static final String webElementSignTextAndEmailMenu="//*[@id=\"global-footer\"]/section[2]/section/div/div[1]/section/p/a";
 }
 
 

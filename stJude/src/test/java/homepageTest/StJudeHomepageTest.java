@@ -61,7 +61,7 @@ public class StJudeHomepageTest extends WebAPI {
          stJudeHomepage.validateDoSearchElement();
     }
 
-    @Test(enabled = false )
+    @Test(enabled = false)
 
     public static void testDoSearchButton(){
          getInItElements();
@@ -85,12 +85,21 @@ public class StJudeHomepageTest extends WebAPI {
          stJudeHomepage.validateDoSearchingElement();
     }
 
-    @Test
+    @Test(enabled = false)
 
     public static void testDoSearchingTopic(){
          getInItElements();
          stJudeHomepage.doSearchingTopic();
          stJudeHomepage.validateDoSearchingTopic();
     }
+
+    @Test
+    public static void testDoSearchUrl1(){
+         getInItElements();
+         stJudeHomepage.doSearchUrl1();
+         stJudeHomepage.validateDoSearchUrl1();
+
+    }
+
 
 }
