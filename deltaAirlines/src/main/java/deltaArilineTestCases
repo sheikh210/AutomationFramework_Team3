@@ -106,7 +106,7 @@ Test case 13:"Count and display sub menu for travel info"
 1)Navigate to url "www.delta.com"
 2)Click on "Flight Status" button"
 3)count sub links
-4)Print subl inks
+4)Print sub inks
 5)Validate there are 18 sub links
 
 Test case 14: "Count links in Search menu"
@@ -143,6 +143,26 @@ Test Case 18:
 3)Click on "DOWNLOAD THE FLY DELTA APP".
 4)Get the title page
 5)Close the browser
+
+Test Case 19:
+1)Navigate to url "www.delta.com"
+2)Click on Flight status
+3)Enter flight 1872
+4)Get the result
+4)Enter flight 4700
+5)Get the result
+6)Enter Flight 1786,4677,3071
+
+Test Case 20:
+1)Navigate to url "www.delta.com"
+2)Click on Drop Menu for number of passengers
+3) Select 5 passengers as un option
+4)Validate option was selected.
+5)Close Browser
+
+
+
+
 
 
 

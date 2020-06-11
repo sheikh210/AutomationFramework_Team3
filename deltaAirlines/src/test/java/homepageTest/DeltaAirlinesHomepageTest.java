@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class DeltaAirlinesHomepageTest extends WebAPI {
     static DeltaAirlinesHomepage deltaAirlinesHomepage;
 
@@ -104,13 +106,13 @@ public class DeltaAirlinesHomepageTest extends WebAPI {
       deltaAirlinesHomepage.countSearchSubLinks();
   }
   @Test(priority = 16)
-    public static void testClickNeedHelpLink(){
+    public static void testClickNeedHelpLink() throws InterruptedException {
       getInItElement();
       deltaAirlinesHomepage.clickNeedHelpLink();
       deltaAirlinesHomepage.validateNeedHelpLink();
   }
   @Test(priority = 15)
-    public static void testClickCoronaVirusLink()  {
+    public static void testClickCoronaVirusLink() throws InterruptedException {
       getInItElement();
       deltaAirlinesHomepage.clickCoronaVirusLink();
       deltaAirlinesHomepage.validateClickCoronaVirusLink();
@@ -125,11 +127,23 @@ public class DeltaAirlinesHomepageTest extends WebAPI {
 
     }
     @Test(priority = 13)
-    public static void testClickDownloadApp(){
+    public static void testClickDownloadApp() throws InterruptedException {
         getInItElement();
         deltaAirlinesHomepage.clickDownloadAppLink();
         deltaAirlinesHomepage.validateDownloadAppLink();
     }
+    @Test(priority = 20)
+    public void testCheckFlightsStatus() throws IOException, InterruptedException {
+        getInItElement();
+        deltaAirlinesHomepage.checkFlightsStatus();
+    }
+    @Test(priority = 21)
+    public void testCountDropMenuOptions(){
+        getInItElement();
+        deltaAirlinesHomepage.countDropMenuOptions();
+        deltaAirlinesHomepage.validateOptionIsSelected();
+    }
+
 }
 
 

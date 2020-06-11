@@ -7,9 +7,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -44,6 +46,10 @@ public class DeltaAirlinesHomepage extends WebAPI {
     public WebElement flightDL1872;
     @FindBy(css = WebElementTravelInfoButton)
     public WebElement travelInfoButton;
+    @FindBy(id = WebElementGetNotificationMessage)
+    WebElement getNotificationMessage;
+    @FindBy(id=WebElementPassenger5)
+    WebElement passenger5;
     /**
      * Body WebElement
      */
@@ -85,8 +91,10 @@ public class DeltaAirlinesHomepage extends WebAPI {
     public WebElement ticketNumberBox;
     @FindBy(xpath = WebElementTicketNumberError)
     public WebElement ticketNumberError;
-    @FindBy(xpath =WebElementDownloadApp )
+    @FindBy(css =WebElementDownloadApp )
     public WebElement downloadApp ;
+    @FindBy(xpath = WebElementPassengerDropMenu)
+    WebElement passengerDropMenu;
 
     /**
      * Footer
@@ -95,7 +103,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
     WebElement aboutUsLink;
     @FindBy(xpath = WebElementNeedHelpLink)
     public WebElement needHelpLink;
-    @FindBy(css = WebElementCoronaVirusLink)
+    @FindBy(className = WebElementCoronaVirusLink)
     public WebElement coronaVirusLink;
     @FindBy(css = WebElementSiteSupportLinks)
     public WebElement siteSupportLinks;
@@ -169,7 +177,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
         String actualTitle=getCurrentPageTitle();
         String expectedTitle="Login";
         Assert.assertEquals(actualTitle,expectedTitle,"Title does not match");
-        mouseHoverByXpath(WebElementHomePageLogo);
+        mouseHover(homePageLogo);
         sleepFor(3);
 
 
@@ -262,6 +270,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
         getCurrentPageTitle();
         continueButton.click();
         sleepFor(3);
+        getCurrentPageTitle();
 
 
     }
@@ -424,12 +433,13 @@ public class DeltaAirlinesHomepage extends WebAPI {
      * 3)Get the page title
      * 4)Close Browser
      */
-    public void clickNeedHelpLink(){
+    public void clickNeedHelpLink() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement needHelp= driver.findElement(By.xpath(WebElementNeedHelpLink));
         js.executeScript("arguments[0].scrollIntoView();",needHelp);
         needHelpLink.click();
-        getCurrentPageTitle();
+        sleepFor(3);
+
     }
     public void validateNeedHelpLink(){
         String actualTitle=getCurrentPageTitle();
@@ -444,10 +454,12 @@ public class DeltaAirlinesHomepage extends WebAPI {
      * 3)Get the page title
      * 4)Close Browser
      */
-    public void clickCoronaVirusLink()  {
+    public void clickCoronaVirusLink() throws InterruptedException {
+
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement coronaVirus= driver.findElement(By.cssSelector(WebElementCoronaVirusLink));
+        WebElement coronaVirus= driver.findElement(By.className("search-text"));
         js.executeScript("arguments[0].scrollIntoView();",coronaVirus);
+        sleepFor(3);
         coronaVirusLink.click();
         getCurrentPageTitle();
     }
@@ -488,11 +500,13 @@ public class DeltaAirlinesHomepage extends WebAPI {
      * 5)Close the browser
      */
 
-        public void clickDownloadAppLink(){
+        public void clickDownloadAppLink() throws InterruptedException {
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("window.scrollBy(0,1700)");
-            downloadApp.click();
+            WebElement downloadApplication= driver.findElement(By.xpath("/html//div[@id='BS4-hero']/div//a[@href='/us/en/coronavirus-update-center/ways-we-are-keeping-you-safe/6-ways-delta-supports-healthy-flying']/div"));
+            js.executeScript("arguments[0].scrollIntoView();",downloadApplication);
+            driver.findElement(By.xpath("//span[contains(text(),'DOWNLOAD THE FLY DELTA APP')]")).click();
             getCurrentPageTitle();
+            sleepFor(3);
 
         }
         public void validateDownloadAppLink(){
@@ -500,5 +514,58 @@ public class DeltaAirlinesHomepage extends WebAPI {
             String expectedTitle="Fly Delta App: Book, Manage or Track Your Flight : Delta Air Lines";
             Assert.assertEquals(actualTitle,expectedTitle,"Title does not match");
         }
+    /**
+     * 1)Navigate to url "www.delta.com"
+     * 2)Click on Flight status
+     * 3)Enter flight 1872
+     * 4)Get the result
+     * 4)Enter flight 4700
+     * 5)Get the result
+     * 6)Enter Flight 1786,4677,3071
+     */
+    public void checkFlightsStatus() throws IOException, InterruptedException {
+
+        String path="lib/Exel/Flight Status.xlsx";
+       int rows= XlUtil.getRowCount(path,"Sheet1");
+        for (int i=1;i<=rows;i++) {
+           String flightNumber= XlUtil.getCellData(path, "Sheet1", i, 0);
+           flightStatusButton.click();
+           typeOnElementNEnter(WebElementFlightNumberBox,flightNumber);
+           sleepFor(3);
+           if(getNotificationMessage.isDisplayed()){
+               System.out.println("Test Passed");
+               XlUtil.setCellData(path,"Sheet1",i,1,"Passed");
+           }
+           else if(driver.findElement(By.partialLinkText("Oops")).isDisplayed())
+
+           {
+               System.out.println("Test Failed");
+               XlUtil.setCellData(path,"Sheet1",i,1,"Failed");
+           }
+           sleepFor(3);
+           navigateBack();
+
+        }
+
+
     }
+    /**
+     *
+     * Test Case 20:
+     * 1)Navigate to url "www.delta.com"
+     * 2)Click on Drop Menu for number of passengers
+     * 3) Count number of options
+     * 4)Close Browser
+     */
+    public void countDropMenuOptions(){
+    passengerDropMenu.click();
+    mouseHover(passenger5);
+    passenger5.click();
+    }
+    public void validateOptionIsSelected(){
+        boolean actualResult=passenger5.isDisplayed();
+        Assert.assertEquals(actualResult,true,"Option was not selected");
+
+    }
+}
 

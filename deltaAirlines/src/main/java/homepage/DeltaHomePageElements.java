@@ -32,7 +32,12 @@ public class DeltaHomePageElements {
     public static final String WebElementFlightDL1872="//*[@id=\"flightn\"]/div";
     //Flight info button by css
     public static final String WebElementTravelInfoButton="#secPanel1 > ngc-app-sec-links-content > div > div > div.row > div.col-lg-3.col-md-12.col-primary-links >ul>li";
-    //
+    //Get Notification message by id
+    public static final String WebElementGetNotificationMessage="notificationBellIcon";
+    // Passenger Drop Menu by xpath
+    public static final String WebElementPassengerDropMenu="//*[@id=\"booking\"]/form/div[1]/div/div[1]/div[1]/div[4]/span/span[1]";
+    //"Passenger5" option in drop menu with id
+    public static final String WebElementPassenger5="ui-list-passengers4";
     /**
      * Body Web Elements
      */
@@ -72,10 +77,8 @@ public class DeltaHomePageElements {
     public static final String WebElementTicketNumberBox="//input[@id='eticketNumber']";
     //Ticket Number error message by xpath
     public static final String WebElementTicketNumberError="//div[@id='eticketNumber-error']";
-    //Explore How Link by xpath
-    public static final String WebElementExploreHowLink="//*[@id=\"BS4-hero\"]/div[1]/div/div/div/div/span[2]/div/a";
-    //Download App by xpath
-    public static final String WebElementDownloadApp="//*[@id=\"BS4-hero\"]/div[6]/div/div/div/div[2]/a/div/span";
+    //Download App by css
+    public static final String WebElementDownloadApp="body.delta.ng-tns-0-1:nth-child(2) app-home.ng-star-inserted:nth-child(2) div.ng-star-inserted div.personalizationcontent div.BS4-Hero div.cardb.parbase:nth-child(8) div.cardb.parbase.container div.row.content-component.mr-0.ml-0 div.card-component.flex-adjust.d-sm-block.d-lg-flex.componentLink div.cardComponentLink.flexColTxt.card-componentTxt.col-lg-8.col-sm-12.d-flex.flex-column.justify-content-center > a.card-component.flex-adjust.componentLink";
 
     /**
      * Footer Web Elements
@@ -85,8 +88,8 @@ public class DeltaHomePageElements {
     //Need help link by xpath
     public static final  String WebElementNeedHelpLink="/html/body/app-root/app-home/ngc-global-footer/footer/div/div/div[2]/div/ngc-footer-column/div/div/div[2]/ul[2]/li[1]/a";
 
-    //CoronaVirus Link by CSS selector
-    public static final String WebElementCoronaVirusLink=".popular-list-2";
+    //CoronaVirus Link by class
+    public static final String WebElementCoronaVirusLink="popular-list-2";
     //Site support links by xpath
     public static final String WebElementSiteSupportLinks="body > app-root > app-home > ngc-global-footer > footer > div > div > div.row.ng-star-inserted > div > ngc-footer-column > div > div > div:nth-child(3) > ul.d-none.d-md-block";
 
