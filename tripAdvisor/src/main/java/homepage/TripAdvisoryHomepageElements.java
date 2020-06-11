@@ -41,6 +41,8 @@ public class TripAdvisoryHomepageElements {
     //test case 12
     public static final String webElementMenuButton="//*[@id=\"lithium-root\"]/header/div/nav/div[3]/button/span[2]";
     //test case 13
+    public static final String webElementSearchHeaderButton="//*[@id=\"lithium-root\"]/div[2]/div/div/div/span";
+
     //test case 14
     //test case 15
     //test case 16

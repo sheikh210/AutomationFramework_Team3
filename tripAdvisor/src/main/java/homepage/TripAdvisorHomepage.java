@@ -73,6 +73,10 @@ public class TripAdvisorHomepage extends WebAPI {
   //test case 12
   @FindBy(how = How.XPATH,using=webElementMenuButton)
   public WebElement menuButton;
+  //13
+  @FindBy(how = How.XPATH,using = webElementSearchHeaderButton)
+  public WebElement searchHeaderButton;
+
 
 
 //test case 1
@@ -190,9 +194,15 @@ public class TripAdvisorHomepage extends WebAPI {
     String expectedUrlTwo = "https://www.tripadvisor.com/";
     Assert.assertEquals(actualUrlTwo,expectedUrlTwo,"expected url two not found");
   }
+  //test case 13
+    public void doSearchUrlThree(){
+    searchHeaderButton.click();
+    }
+    public void validateDOSearchUrlThree(){
+    String actualUrlThree = super.getCurrentPageTitle();
+      System.out.println(actualUrlThree);
 
-
-
+    }
 
 
 }

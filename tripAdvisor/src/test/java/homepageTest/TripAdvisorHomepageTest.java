@@ -92,11 +92,18 @@ import org.testng.annotations.Test;
         tripAdvisorHomepage.validateDoSearchUrl();
         }
     //12
-        @Test
+        @Test(enabled = false)
         public static void testDoSearchUrlTwo(){
         getInItElements();
         tripAdvisorHomepage.doSearchUrlTwo();
         tripAdvisorHomepage.validateDoSearchUrlTwo();
+        }
+        //13
+        @Test
+        public static void testDoSearchUrlThree(){
+            getInItElements();
+            tripAdvisorHomepage.doSearchUrlThree();
+            tripAdvisorHomepage.validateDOSearchUrlThree();
         }
 
 

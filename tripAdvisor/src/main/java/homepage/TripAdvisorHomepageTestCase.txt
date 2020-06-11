@@ -73,4 +73,9 @@ Test Case 12- Search Menu button.
 4. gives actual UrlTwo.
 5. open expected urlTwo.
 
-
+Test Case 13- Search Header.
+1. Navigate to https://www.tripadvisor.com
+2. Click on Header right corner where travel notice located.
+3. open expected urlTwo.
+4. press enter to keyboard.
+5. verify that page where need to navigate.
