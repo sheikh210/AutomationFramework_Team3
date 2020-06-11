@@ -78,10 +78,17 @@ public class TripAdvisorHomepage extends WebAPI {
   public WebElement searchWriteAReviewMenu;
 
 
+  //11
+  @FindBy(how =How.XPATH,using = webElementTripsMenu)
+  public WebElement tripsMenu;
+
+
+
 //test case 1
   public void doSearchingText() {
     hotelMenu.click();
     WebDriverWait wait = new WebDriverWait(driver, 10);
+
     if (searchBox1Alt.isDisplayed()){
       wait.until(ExpectedConditions.elementToBeClickable(searchBox1Alt));
       searchBox1Alt.sendKeys("South Africa Hotels");
@@ -116,7 +123,8 @@ public class TripAdvisorHomepage extends WebAPI {
   }
   public void validateDoSearchTitle(){
     String actualTitle = driver.getTitle();
-    Assert.assertEquals(actualTitle,webElementTitle);
+    String expectedTitle = "Best Restaurants Near Me - Tripadvisor";
+    Assert.assertEquals(actualTitle,expectedTitle);
   }
 
   //test case 4
@@ -175,6 +183,7 @@ public class TripAdvisorHomepage extends WebAPI {
 
   //test case 10
   public void doSearchReviewMenu() {
+
     writeAReview.click();
   }
   public void validateDoReviewMenuButton() {
@@ -182,6 +191,17 @@ public class TripAdvisorHomepage extends WebAPI {
     Assert.assertEquals(actualText, "Review a place you've visited");
   }
 
+  // test case 11
 
+    public void doSearchUrl(){
+    tripsMenu.click();
+  }
+  public void validateDoSearchUrl (){
+    String actualUrl = super.getCurrentPageUrl();
+    System.out.println(actualUrl);
+    String expectedUrl = "https://www.tripadvisor.com/Trips";
+    Assert.assertEquals(actualUrl,expectedUrl, "expected url not found");
+
+  }
 }
 
