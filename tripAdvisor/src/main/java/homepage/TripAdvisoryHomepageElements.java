@@ -9,34 +9,27 @@ public class TripAdvisoryHomepageElements {
     public static final String webElementSearchBox1Alt = "body > div._5_xsoLU2 > div > form > input._3qLQ-U8m";
     public static final String webElementSearchBox2 = "#typeahead_widget_component_component_10 > div > div > form > input._3qLQ-U8m";
     public static final String webElementSearchingText = "#HEADING > h1";
-
     //test case 2
     public static final String webElementSearchBoxTwo ="//*[@id=\"lithium-root\"]/main/div[2]/div/div/div[2]/div[2]/div/form/input[1]";
     public static final String webElementSearchSelectTextZero="//*[@id=\"lithium-root\"]/main/div[2]/div/div/div[2]/div[2]/div[2]/form/div/a[2]/div/div";
-
     //test case 3
     public static final String webElementRestaurantMenu="//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[3]/a/span/span[1]";
     public static final String webElementTitle="Tripadvisor: Read Reviews, Compare Prices &amp; Book";
-
     //test case 4
     public static final String webElementThingsToDo="//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[2]/a/span/span[1]";
     public static final String webElementSelectTextTwo="/html/body/div[2]/div/form/div/a[1]/div[2]/div[1]";
-
    //test case 5
    public static final String webElementInsurance="//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[6]/a/span/span[1]";
    public static final String webElementSearchInsuranceMenu="//*[@id=\"lithium-root\"]/main/div/div[2]/div/div/div/div/div[2]/div/div[1]";
-
     //test case 6
     public static final String webElementMoreButton="//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[16]/div/button/span/span[1]";
     public static final String webElementSearchMoreMenu="//*[@id=\"component_1\"]/div/div[1]/h1";
     //test case 7
     public static final String webElementFlights="//*[@id=\"google_osd_static_frame_1106102002911\"]";
     public static final String webElementSearchFlightsMenu="//*[@id=\"component_7\"]/div/div[2]/div/div/div/h1";
-
     //test case 8
     public static final String webElementAboutCOVID="//*[@id=\"lithium-root\"]/div[2]/div/div/div/a";
     public static final String webElementSearchInformation="//*[@id=\"INFOCENTER\"]/div[3]/div[6]/b";
-
     //test case 9
     public static final String webElementTravelForums="//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[5]/a/span/span[1]";
     public static final String webElementTravelForumsMenu="//*[@id=\"lithium-root\"]/main/div[3]/div/div/div[1]/div/div[1]/p[2]";

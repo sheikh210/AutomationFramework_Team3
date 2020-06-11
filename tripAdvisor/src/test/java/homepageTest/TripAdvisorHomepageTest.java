@@ -18,7 +18,6 @@ import org.testng.annotations.Test;
         tripAdvisorHomepage.doSearchingText();
         tripAdvisorHomepage.validateDoSearchingText();
     }
-
     //2
     @Test(enabled = false)
     public void testDoSearchElements() throws InterruptedException {
@@ -42,7 +41,6 @@ import org.testng.annotations.Test;
     tripAdvisorHomepage.doSearchThingsToDo();
     tripAdvisorHomepage.validateDoThingsToDo();
     }
-
     //5
     @Test(enabled = false)
     public void testDoSearchInsuranceTitle() {
@@ -50,7 +48,6 @@ import org.testng.annotations.Test;
     tripAdvisorHomepage.doSearchInsuranceTitle();
     tripAdvisorHomepage. validateDoSearchInsuranceMenu();
     }
-
     //6
     @Test(enabled = false)
     public void testDoSearchMoreButton() {
@@ -58,9 +55,6 @@ import org.testng.annotations.Test;
         tripAdvisorHomepage.doSearchMoreButton();
         tripAdvisorHomepage.validateDoSearchMoreMenu();
     }
-
-
-
     //7
     @Test(enabled = false)
     public void testDoSearchBar() {
@@ -68,8 +62,6 @@ import org.testng.annotations.Test;
         tripAdvisorHomepage.doSearchBar();
         tripAdvisorHomepage.validateDoSearchFlightsMenu();
     }
-
-
     //8
     @Test(enabled = false)
     public void testDoSearchTopic() {
@@ -77,8 +69,6 @@ import org.testng.annotations.Test;
         tripAdvisorHomepage.doSearchTopic();
         tripAdvisorHomepage.validateDoSearchInformation();
     }
-
-
     //9
     @Test(enabled = false)
     public void testDoSearchTravelTopic() {
@@ -86,8 +76,6 @@ import org.testng.annotations.Test;
         tripAdvisorHomepage.doSearchTravelTopic();
         tripAdvisorHomepage.validateDoTravelForumsMenu();
     }
-
-
     //10
     @Test
     public static void testDoSearchReviewMenu() {
