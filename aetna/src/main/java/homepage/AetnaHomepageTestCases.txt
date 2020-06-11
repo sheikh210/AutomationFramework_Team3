@@ -100,12 +100,10 @@ Test Case 18 - Validate Miscellaneous Grid Boxes
 2 - Verify the name of each miscellaneous grid item (Health News, About Us, Careers)
 3 - Verify the URL of each miscellaneous grid item
 
-Test Case 19 -
+Test Case 19 - Validate Social Media Wrapper - Count
 1 - Navigate to http://aetna.com
-2 -
-3 -
+2 - Verify there are 5 social media icons in the footer
 
-Test Case 20 -
+Test Case 20 - Validate Social Media Wrapper - Names & URLs
 1 - Navigate to http://aetna.com
-2 -
-3 -
+2 - Verify each social media icon's name & URL

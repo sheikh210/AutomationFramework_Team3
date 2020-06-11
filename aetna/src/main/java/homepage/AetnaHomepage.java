@@ -74,7 +74,8 @@ public class AetnaHomepage extends WebAPI {
     @FindBy (css = webElementMiscellaneousGridSection)
     public WebElement sectionMiscellaneousGrid;
 
-
+    @FindBy (css = webElementWrapperSocialMedia)
+    public WebElement wrapperSocialMedia;
 
     /**
      * Test Case 1 - Validate Navigation to Homepage
@@ -615,5 +616,48 @@ public class AetnaHomepage extends WebAPI {
     }
 
 
+    /**
+     * Test Case 19 - Validate Social Media Wrapper - Count
+     * 1 - Navigate to http://aetna.com
+     * 2 - Verify there are 5 social media icons in the footer
+     */
+    public void validateSocialMediaIconCount(){
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+        scrollToElementJScript(wrapperSocialMedia);
 
+        List<WebElement> socialMediaList = wrapperSocialMedia.findElements(By.cssSelector(webElementsIconsSocialMedia));
+        int actualSocialMediaIconCount = socialMediaList.size();
+        System.out.println("Number of Social Media icons counted: "+actualSocialMediaIconCount);
+
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(actualSocialMediaIconCount, expectedElementIconSocialMediaCount, "NUMBER OF SOCIAL MEDIA ICONS DO NOT MATCH");
+        softAssert.assertAll();
+    }
+
+
+    /**
+     * Test Case 20 - Validate Social Media Wrapper - Names & URLs
+     * 1 - Navigate to http://aetna.com
+     * 2 - Verify each social media icon's name & URL
+     */
+    public void validateSocialMediaIconNamesAndURLs(){
+        scrollToElementJScript(wrapperSocialMedia);
+
+        List<WebElement> socialMediaList = wrapperSocialMedia.findElements(By.cssSelector(webElementsIconsSocialMedia));
+        String[] actualSocialMediaIconNames = new String[socialMediaList.size()];
+        String[] actualSocialMediaIconURLs = new String[socialMediaList.size()];
+
+        SoftAssert softAssert = new SoftAssert();
+        for (int i=0; i<socialMediaList.size(); i++){
+            actualSocialMediaIconNames[i] = socialMediaList.get(i).getAttribute("aria-label");
+            System.out.println(actualSocialMediaIconNames[i]);
+
+            actualSocialMediaIconURLs[i] = socialMediaList.get(i).getAttribute("href");
+            System.out.println(actualSocialMediaIconURLs[i]);
+
+            softAssert.assertEquals(actualSocialMediaIconNames[i], expectedElementsIconSocialMediaNames[i], "SOCIAL MEDIA ICON NAME AT INDEX "+i+" DOES NOT MATCH");
+            softAssert.assertEquals(actualSocialMediaIconURLs[i], expectedElementsIconSocialMediaURLs[i], "SOCIAL MEDIA ICON URL AT INDEX "+i+" DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
 }

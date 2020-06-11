@@ -75,8 +75,19 @@ public class AetnaHomepageElements {
     public static final String webElementsMiscellaneousGridBoxesURLs = "#content__main > div.responsivegrid > div > div > div a";
 
     /**
+     * FOOTER
+     */
+
+    // Social Media Wrapper (CSS)
+    public static final String webElementWrapperSocialMedia = "footer div.row.footer__logo__social__wrapper ul";
+    // Social Media Links (CSS)
+    public static final String webElementsIconsSocialMedia = "footer div.row.footer__logo__social__wrapper ul a";
+
+
+    /**
      * (EXPECTED ELEMENTS)
      */
+
     // EXPECTED Homepage title (String)
     public static final String expectedElementHomepageTitle = "Health Insurance Plans | Aetna";
     // EXPECTED Search Results page title (String)
@@ -135,4 +146,10 @@ public class AetnaHomepageElements {
     public static final String[] expectedElementsMiscellaneousGridBoxesNames = {"Health News", "About Us", "Careers"};
     // EXPECTED Miscellaneous Grid Box URLs (String[])
     public static final String[] expectedElementsMiscellaneousGridBoxesURLs = {"https://news.aetna.com/", "https://www.aetna.com/about-us.html", "https://www.aetnacareers.com/"};
+    // EXPECTED Social Media Icon Count (Integer)
+    public static final int expectedElementIconSocialMediaCount = 5;
+    // EXPECTED Social Media Icon Name (String [])
+    public static final String[] expectedElementsIconSocialMediaNames = {"instagram", "facebook", "twitter", "youtube", "linkedin"};
+    // EXPECTED Social Media Icon URLs (String [])
+    public static final String[] expectedElementsIconSocialMediaURLs = {"https://www.instagram.com/aetna/?hl=en", "https://www.facebook.com/aetna", "https://twitter.com/aetna", "https://www.youtube.com/aetna", "https://www.linkedin.com/company/aetna"};
 }
