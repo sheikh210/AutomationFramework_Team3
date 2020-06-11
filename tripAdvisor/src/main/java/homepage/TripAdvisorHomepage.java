@@ -165,7 +165,8 @@ public class TripAdvisorHomepage extends WebAPI {
 
   //test case 8
   public void doSearchTopic() {
-   aboutCODIV .click();
+
+    aboutCODIV .click();
   }
   public void validateDoSearchInformation() {
     String actualText = searchInformation.getText();
@@ -178,7 +179,7 @@ public class TripAdvisorHomepage extends WebAPI {
   }
   public void validateDoTravelForumsMenu() {
     String actualText = searchTravelFormsMenu.getText();
-    Assert.assertEquals(actualText, "Share your experience with fellow travelers");
+    Assert.assertEquals(actualText, "Share your experience with fellow travelers.");
   }
 
   //test case 10

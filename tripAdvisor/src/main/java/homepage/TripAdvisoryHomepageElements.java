@@ -36,10 +36,18 @@ public class TripAdvisoryHomepageElements {
     //test case 10
     public static final String webElementWriteAReview="//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[4]/a/span/span[1]";
     public static final String webElementSearchWriteAReviewMenu="//*[@id=\"taplc_war_unattach_dual_search_0\"]/div[1]/div[1]";
-
-//test case 11
-
+    //test case 11
     public static final String webElementTripsMenu="//*[@id=\"lithium-root\"]/header/div/nav/div[5]/a/span[2]";
+//test case 12
+    //test case 13
+    //test case 14
+    //test case 15
+    //test case 16
+    //test case 17
+    //test case 18
+    //test case 19
+    //test case 20
+
 
 }
 

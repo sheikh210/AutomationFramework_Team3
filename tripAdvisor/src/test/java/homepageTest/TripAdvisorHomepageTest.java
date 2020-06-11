@@ -35,7 +35,7 @@ import org.testng.annotations.Test;
     }
 
     //4
-    @Test
+    @Test(enabled = false)
     public void testDoThingsToDo() {
     getInItElements();
     tripAdvisorHomepage.doSearchThingsToDo();
@@ -83,11 +83,10 @@ import org.testng.annotations.Test;
         tripAdvisorHomepage.doSearchReviewMenu();
         tripAdvisorHomepage.validateDoReviewMenuButton();
     }
-//11
+    //11
         @Test(enabled = false)
         public static void testDoSearchUrl(){
         getInItElements();
-
         tripAdvisorHomepage.doSearchUrl();
         tripAdvisorHomepage.validateDoSearchUrl();
         }
