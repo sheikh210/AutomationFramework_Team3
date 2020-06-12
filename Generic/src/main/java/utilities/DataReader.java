@@ -1,18 +1,23 @@
 package utilities;
 
+import commonAPI.WebAPI;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class DataReader {
+public class DataReader extends WebAPI {
     HSSFWorkbook wb = null;
     HSSFSheet sheet = null;
     Cell cell = null;
@@ -23,6 +28,7 @@ public class DataReader {
         String[][] data = {};
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
+
         wb = new HSSFWorkbook(fis);
         sheet = wb.getSheetAt(sheetIndex);
         numberOfRows = sheet.getLastRowNum();
@@ -44,6 +50,7 @@ public class DataReader {
         String[] data = {};
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
+
         wb = new HSSFWorkbook(fis);
         sheet = wb.getSheetAt(sheetIndex);
         numberOfRows = sheet.getLastRowNum();
@@ -60,6 +67,8 @@ public class DataReader {
         }
         return data;
     }
+
+
 
     public String getCellValue(HSSFCell cell) {
         Object value = null;
@@ -94,4 +103,49 @@ public class DataReader {
         fio.close();
         wb.close();
     }
+
+
+
+    private ArrayList<String> getList(By by) {
+        List<WebElement> list = driver.findElements(by);
+        System.out.println(list.size());
+        ArrayList<String> linkList = new ArrayList<String>();
+        for (int i = 0; i <= list.size() - 1; i++) {
+            linkList.add(list.get(i).getText());
+            System.out.println(list.get(i).getText() + " Added to linkList Array");
+        }
+        return linkList;
+    }
+
+
+//    public boolean checkListMatchesExcel(String sheetName, By by) {
+//        ArrayList<String> leftLinks = getList(by);
+//        excel.getData(sheetName);
+//        int falseResult = 0;
+//        Boolean result = null;
+//
+//        // outerloop:
+//        for (int row = 0; row < excel.getData(sheetName).length; row++) {
+//
+//            for (int col = 0; col < excel.getData(sheetName)[row].length; col++) {
+//
+//                if (excel.getData(sheetName)[row][col].toString().equals(leftLinks.get(row))) {
+//                    System.out.println(excel.getData(sheetName)[row][col].toString() + " from excel sheet is equal to " + leftLinks.get(row).toString());
+//                    log.debug(excel.getData(sheetName)[row][col].toString() + " from excel sheet is equal to " + leftLinks.get(row).toString());
+//                    result = true;
+//
+//                } else if (!excel.getData(sheetName)[row][col].toString().equals(leftLinks.get(row))) {
+//                    System.out.println(excel.getData(sheetName)[row][col].toString() + " from excel sheet is NOT equal to " + leftLinks.get(row).toString());
+//                    log.debug(excel.getData(sheetName)[row][col].toString() + " from excel sheet is NOT equal to " + leftLinks.get(row).toString());
+//                    falseResult++;
+//                    //break outerloop;
+//                }
+//            }
+//
+//        }
+//        if(falseResult>0){
+//            result = false;
+//        }
+//        return result;
+//    }
 }

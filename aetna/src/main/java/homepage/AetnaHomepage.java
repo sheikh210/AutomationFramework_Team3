@@ -134,8 +134,8 @@ public class AetnaHomepage extends WebAPI {
     public void validateExploreAetnaSitesDropdownItemCountAndNames(){
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(buttonExploreAetnaSites));
-
         clickOnElement(buttonExploreAetnaSites);
+
         List<WebElement> exploreAetnaSitesItems = dropdownMenuExploreAetnaSites.findElements(By.cssSelector(webElementItemsDropdownMenuExploreAetnaSites1));
         int itemCount=exploreAetnaSitesItems.size();
         System.out.println("Number of items counted in 'Explore Aetna sites' dropdown: "+itemCount+"\n");
@@ -145,7 +145,8 @@ public class AetnaHomepage extends WebAPI {
 
         int i=0;
         for (WebElement e:exploreAetnaSitesItems){
-            softAssert.assertEquals(e.getText(), expectedElementExploreAetnaSitesItemNames[i], "ITEM NAME AT INDEX "+i+" IN 'EXPLORE AETNA SITES' DROPDOWN DOES NOT MATCH");
+            softAssert.assertEquals(e.getText(), expectedElementExploreAetnaSitesItemNames[i], "ITEM NAME AT INDEX "+i+" " +
+                    "IN 'EXPLORE AETNA SITES' DROPDOWN DOES NOT MATCH");
             System.out.println(e.getText());
             i++;
         }
