@@ -2,7 +2,6 @@ package homepageTest;
 
 import commonAPI.WebAPI;
 import homepage.TripAdvisorHomepage;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -99,14 +98,59 @@ import org.testng.annotations.Test;
         tripAdvisorHomepage.validateDoSearchUrlTwo();
         }
         //13
-        @Test
+        @Test(enabled = false)
         public static void testDoSearchUrlThree(){
             getInItElements();
             tripAdvisorHomepage.doSearchUrlThree();
             tripAdvisorHomepage.validateDOSearchUrlThree();
         }
+        //14
+        @Test(enabled = false)
+        public static void testDoSearchUrlFour(){
+        getInItElements();
+        tripAdvisorHomepage.doSearchUrlFour();
+        tripAdvisorHomepage.validateDoSearchUrlFour();
+        }
+        //15
+        @Test(enabled = false)
+        public static void testDoSearchElementDestinationNewYork(){
+        getInItElements();
+        tripAdvisorHomepage.doSearchDestinationNewYork();
+        tripAdvisorHomepage.validateNeverSleepCity();
+        }
 
-
-
+        //16
+        @Test(enabled = false)
+        public static void testHomePageTitle(){
+        getInItElements();
+        tripAdvisorHomepage.validateHomePageTitle();
+        }
+        //17
+        @Test(enabled = false)
+        public static void testHomePageLinkNumber(){
+        getInItElements();
+        tripAdvisorHomepage.validateHomepageLinkNumber();
+        }
+        //18
+        @Test(enabled = false)
+        public static void testDoSearchInsuranceTwo(){
+        getInItElements();
+        tripAdvisorHomepage.doSearchInsuranceTwo();
+        tripAdvisorHomepage.validateElementPlanTwo();
+        }
+        //19
+        @Test(enabled = false)
+        public void testDoSearchAlertMenuTwo() {
+            getInItElements();
+            tripAdvisorHomepage.doSearchAlertMenuTwo();
+            tripAdvisorHomepage.validateDoFindAlertMenuTwo();
+        }
+        //20
+        @Test(enabled = false)
+        public void testDoSearchPostReviewTwo(){
+        getInItElements();
+        tripAdvisorHomepage.doSearchPostReviewTwo();
+        tripAdvisorHomepage.validateDoFindPostTwo();
+        }
 
 }

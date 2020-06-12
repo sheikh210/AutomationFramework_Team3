@@ -42,14 +42,22 @@ public class TripAdvisoryHomepageElements {
     public static final String webElementMenuButton="//*[@id=\"lithium-root\"]/header/div/nav/div[3]/button/span[2]";
     //test case 13
     public static final String webElementSearchHeaderButton="//*[@id=\"lithium-root\"]/div[2]/div/div/div/span";
-
     //test case 14
+    public static final String webElementSearchVacationPackage="//*[@id=\"TRIP88024759\"]/span/div";
     //test case 15
+    public static final String webElementDestinationNewYork="//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[5]/a/span/span[1]";
+    public static final String webElementNeverSleepCity ="//*[@id=\"lithium-root\"]/main/div[3]/div/div/div[3]/ul/li/div/h3";
     //test case 16
     //test case 17
     //test case 18
+    public static final String webElementInsuranceTwo="//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[6]/a/span/span[1]";
+    public static final String webElementPlanTwo="//*[@id=\"lithium-root\"]/main/div/div[3]/div/div/div/div[1]/div[1]";
     //test case 19
+    public static final String webElementAlertTwo="//*[@id=\"lithium-root\"]/header/div/nav/div[4]/a/span[2]";
+    public static final String webElementFindAlertMenuTwo="//*[@id=\"googleBtn\"]/span";
     //test case 20
+    public static final String webElementPostReviewTwo="//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[4]/a/span/span[1]";
+    public static final String webElementFindPostTwo="//*[@id=\"BODYCON\"]/div[4]/h2";
 
 
 }

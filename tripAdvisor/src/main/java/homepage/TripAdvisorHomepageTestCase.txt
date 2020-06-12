@@ -76,6 +76,46 @@ Test Case 12- Search Menu button.
 Test Case 13- Search Header.
 1. Navigate to https://www.tripadvisor.com
 2. Click on Header right corner where travel notice located.
-3. open expected urlTwo.
+3. open expected urlThree.
 4. press enter to keyboard.
 5. verify that page where need to navigate.
+
+Test Case 14- Search vacation package.
+1. Navigate to https://www.tripadvisor.com
+2. Click on inside of vacation package located.
+3. open expected urlFour.
+4. press enter to keyboard.
+5. verify that page where need to navigate.
+
+Test Case 15- destination New York.
+1. Navigate to https://www.tripadvisor.com
+2. Click on destination New York.
+3. Finding of searching text "A city that never sleeps, never stops moving".
+
+Test Case 16 - validate the Page Title.
+1. Navigate to https://www.tripadvisor.com
+2. Click on title page menu.
+3. navigate the expected title.
+
+Test Case 17 - validate the homepage link number.
+1. Navigate to https://www.tripadvisor.com
+2. put the character.
+3. navigate the expected link number.
+
+Test case 18 - search insurance plan two.
+1. Navigate to https://www.tripadvisor.com
+2. press/click insurance button.
+3. open page with several plans.
+4. select plan.
+5. it will show "This is travel insurance reimagined." text.
+
+Test case 19 - validate the alert two.
+1. Navigate to https://www.tripadvisor.com
+2. Click on alert menu button.
+3. it will show the page "Continue with Google".
+
+Test case 20 - validate review page twice.
+1. Navigate to https://www.tripadvisor.com
+2. Click on review menu button.
+3. It will navigate "Have you been? Travelers want to see more reviews of these places."
+

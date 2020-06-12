@@ -1,14 +1,14 @@
 package homepage;
-
 import commonAPI.WebAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.How;
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import java.util.List;
 import static homepage.TripAdvisoryHomepageElements.*;
 
 
@@ -76,8 +76,31 @@ public class TripAdvisorHomepage extends WebAPI {
   //13
   @FindBy(how = How.XPATH,using = webElementSearchHeaderButton)
   public WebElement searchHeaderButton;
-
-
+  //14
+  @FindBy(how = How.XPATH,using= webElementSearchVacationPackage)
+  public WebElement searchUrlFour;
+  //15
+  @FindBy(how = How.XPATH,using= webElementDestinationNewYork)
+  public WebElement elementDestinationNewYork;
+  @FindBy(how = How.XPATH,using= webElementNeverSleepCity)
+  public WebElement searchNeverSleepCity;
+  //16
+  //17
+  //18
+  @FindBy(how = How.XPATH,using = webElementInsuranceTwo)
+  public WebElement searchInsuranceTwo;
+  @FindBy(how = How.XPATH,using = webElementPlanTwo)
+  public WebElement searchPlanTwo;
+  //19
+  @FindBy(how = How.XPATH,using = webElementAlertTwo)
+  public WebElement searchAlertTwo;
+  @FindBy(how = How.XPATH,using = webElementFindAlertMenuTwo)
+  public WebElement findAlertMenuTwo;
+  //20
+  @FindBy(how = How.XPATH,using = webElementPostReviewTwo)
+  public WebElement searchPostReviewTwo;
+  @FindBy(how = How.XPATH,using = webElementFindPostTwo)
+  public WebElement findPostTwo;
 
 //test case 1
   public void doSearchingText() {
@@ -195,15 +218,68 @@ public class TripAdvisorHomepage extends WebAPI {
     Assert.assertEquals(actualUrlTwo,expectedUrlTwo,"expected url two not found");
   }
   //test case 13
-    public void doSearchUrlThree(){
+  public void doSearchUrlThree(){
     searchHeaderButton.click();
     }
     public void validateDOSearchUrlThree(){
     String actualUrlThree = super.getCurrentPageTitle();
       System.out.println(actualUrlThree);
-
     }
-
+  //test case 14
+    public void doSearchUrlFour(){
+    searchUrlFour.click();
+    }
+    public void validateDoSearchUrlFour(){
+      String actualUrlFour = super.getCurrentPageUrl();
+      System.out.println(actualUrlFour);
+      String expectedUrlFour="https://www.tripadvisor.com/Trips/88024759";
+      Assert.assertEquals(actualUrlFour,expectedUrlFour,"Url");
+    }
+//15
+   public void doSearchDestinationNewYork(){
+    elementDestinationNewYork.click();
+   }
+  public void validateNeverSleepCity() {
+    String actualText = searchNeverSleepCity.getText();
+    Assert.assertEquals(actualText, "Browse by destination");
+  }
+//16
+  public void validateHomePageTitle(){
+    String homePageTitle = super.getCurrentPageTitle();
+    String expectedTitle ="Tripadvisor: Read Reviews, Compare Prices & Book";
+    Assert.assertEquals(homePageTitle,expectedTitle,"Expected title not found");
+  }
+  //17
+  public void validateHomepageLinkNumber(){
+    List<WebElement>list = driver.findElements(By.tagName("a"));
+    System.out.println(list.size());
+    int linkNumber=list.size();
+    Assert.assertEquals(linkNumber,"101","expected link number not found");
+  }
+  //18
+  public void doSearchInsuranceTwo(){
+    searchInsuranceTwo.click();
+  }
+  public void validateElementPlanTwo(){
+    String actualText = searchPlanTwo.getText();
+    Assert.assertEquals(actualText,"This is travel insurance reimagined.");
+  }
+  //19
+  public void doSearchAlertMenuTwo() {
+    searchAlertTwo.click();
+    }
+  public void validateDoFindAlertMenuTwo() {
+    String actualText = findAlertMenuTwo.getText();
+    Assert.assertEquals(actualText, "Continue with Google");
+  }
+  //20
+  public void doSearchPostReviewTwo() {
+    searchPostReviewTwo.click();
+  }
+  public void validateDoFindPostTwo() {
+    String actualText = findPostTwo.getText();
+    Assert.assertEquals(actualText,"Have you been? Travelers want to see more reviews of these places.");
+  }
 
 }
 
