@@ -19,7 +19,7 @@ public class StJudeHomepageTest extends WebAPI {
      public static void testDoSearchText(){
          getInItElements();
          stJudeHomepage.doSearchText();
-         stJudeHomepage.validateDoSearchText();
+         stJudeHomepage.validateSearchText();
      }
 
 
@@ -28,7 +28,7 @@ public class StJudeHomepageTest extends WebAPI {
     public static void testDoSearchBar() throws InterruptedException {
          getInItElements();
          stJudeHomepage.doSearchBar();
-         stJudeHomepage.validateDoSearchBar();
+         stJudeHomepage.validateSearchBar();
 
      }
 
@@ -93,13 +93,43 @@ public class StJudeHomepageTest extends WebAPI {
          stJudeHomepage.validateDoSearchingTopic();
     }
 
-    @Test
+    @Test(enabled = false)
     public static void testDoSearchUrl1(){
          getInItElements();
          stJudeHomepage.doSearchUrl1();
          stJudeHomepage.validateDoSearchUrl1();
 
     }
+    @Test(enabled = false)
+    public static void testHomePageTitle(){
+         getInItElements();
+         stJudeHomepage.validateHomePageTitle();
+
+    }
+    @Test(enabled = false)
+    public static void testHomePageLinkNumber(){
+         getInItElements();
+         stJudeHomepage.validateHomePageLinkNumber();
+    }
+    @Test(enabled = false)
+    public static void testDoSearchUrl2(){
+         getInItElements();
+         stJudeHomepage.doSearchUrl2();
+         stJudeHomepage.validateDoSearchUrl2();
+     }
+     @Test(enabled = false)
+    public static void testDoSearchDisplayText(){
+         getInItElements();
+         stJudeHomepage.doSearchDisplayText();
+         //stJudeHomepage.validateSearchDisplayText();
+     }
+
+     @Test
+     public static void testSearchUrl3(){
+         getInItElements();
+         stJudeHomepage.validateSearchUrl3();
+     }
+
 
 
 }
