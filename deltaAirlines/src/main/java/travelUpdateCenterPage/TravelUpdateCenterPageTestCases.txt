@@ -1,22 +1,116 @@
 Delta.com - Travel Update Center Page Test Cases
 
-Test Case 1 -
-Test Case 2 -
-Test Case 3 -
-Test Case 4 -
-Test Case 5 -
-Test Case 6 -
+Test Case 1 - Validate navigation to correct URL
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+4 - Verify we are at http://.delta.com/us/en/travel-update-center/ways-we-are-keeping-you-safe/setting-the-standard-for-safer-travel
+
+Test Case 2 - Validate "Travel Update Center Dropdown" List Count
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+4 - Click on "Travel Update Center" dropdown (located on header - top left)
+5 - Verify dropdown functionality
+6 - Verify number of list items
+
+Test Case 3 - Validate "Travel Update Center Dropdown" List Item Names
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+4 - Click on "Travel Update Center" dropdown (located on header - top left)
+5 - Verify name of each list item
+
+Test Case 4 - Validate "Travel Update Center Dropdown" List - "Ways We're Keeping You Safe" submenu item names
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+4 - Click on "Travel Update Center" dropdown (located on header - top left)
+5 - Click on "Ways We're Keeping You Safe"
+6 - Verify the name of each submenu list items
+
+Test Case 5 - Validate "Travel Update Center Dropdown" List - "From Delta to Our Customers" submenu item names
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+4 - Click on "Travel Update Center" dropdown (located on header - top left)
+5 - Click on "From Delta to Our Customers"
+6 - Verify the name of each submenu list items
+
+Test Case 6 - Validate "Travel Update Center Dropdown" List - "Flying? What You Need to Know" submenu item names
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+4 - Click on "Travel Update Center" dropdown (located on header - top left)
+5 - Click on "Flying? What You Need to Know"
+6 - Verify the name of each submenu list items
+
 Test Case 7 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 8 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 9 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 10 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 11 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 12 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 13 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 14 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 15 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 16 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 17 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 18 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 19 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+
 Test Case 20 -
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
