@@ -4,13 +4,17 @@ import commonAPI.WebAPI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
+import utilities.ConnectToSqlDB;
+import utilities.DataReader;
 
+import java.io.IOException;
 import java.util.List;
 
 import static homepage.AetnaHomepageElements.*;
@@ -77,6 +81,12 @@ public class AetnaHomepage extends WebAPI {
     @FindBy (css = webElementWrapperSocialMedia)
     public WebElement wrapperSocialMedia;
 
+    @FindBy (id = webElementButtonTravelInfo)
+    public WebElement buttonTravelInfo;
+
+    DataReader dataReader = new DataReader();
+    ConnectToSqlDB connectToSQL = new ConnectToSqlDB();
+
     /**
      * Test Case 1 - Validate Navigation to Homepage
      * 1 - Navigate to http://aetna.com
@@ -87,11 +97,16 @@ public class AetnaHomepage extends WebAPI {
         return super.getCurrentPageTitle();
     }
 
-    public void validateCurrentPage() {
+    public void validateCurrentPage() throws Exception {
         String actualTitle = getCurrentPageTitle();
-        System.out.println("Page Title: " + actualTitle);
+        System.out.println("ACTUAL Page Title: " + actualTitle);
 
-        Assert.assertEquals(actualTitle, expectedElementHomepageTitle, "HOMEPAGE TITLE DOES NOT MATCH");
+        String [] expectedHomepageTitleArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") +
+                "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Homepage Title");
+        String expectedHomepageTitle = expectedHomepageTitleArray[0];
+        System.out.println("EXPECTED Page Title: "+expectedHomepageTitle);
+
+        Assert.assertEquals(actualTitle, expectedHomepageTitle, "HOMEPAGE TITLE DOES NOT MATCH");
     }
 
 
@@ -114,13 +129,19 @@ public class AetnaHomepage extends WebAPI {
         inputSearchFieldHeader.sendKeys(Keys.ENTER);
     }
 
-    public void validateDoSearch(){
+    public void validateDoSearch() throws Exception {
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         wait.until(ExpectedConditions.titleIs("Search Results"));
-        String title = driver.getTitle();
+        String actualTitle = driver.getTitle();
+        System.out.println("ACTUAL Page Title: "+actualTitle);
 
-        Assert.assertEquals(title, expectedElementSearchResultsTitle, "NOT NAVIGATED TO SEARCH RESULTS PAGE");
+        String [] expectedSearchResultsPageTitleArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") +
+                "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Search Results Page Title");
+        String expectedSearchResultsPageTitle = expectedSearchResultsPageTitleArray[0];
+        System.out.println("EXPECTED Page Title: "+expectedSearchResultsPageTitle);
+
+        Assert.assertEquals(actualTitle, expectedSearchResultsPageTitle, "NOT NAVIGATED TO SEARCH RESULTS PAGE");
     }
 
 
@@ -131,26 +152,23 @@ public class AetnaHomepage extends WebAPI {
      * 3 - Verify the number of items contained within the dropdown
      * 4 - Verify the name of each of the items
      */
-    public void validateExploreAetnaSitesDropdownItemCountAndNames(){
+    public void validateExploreAetnaSitesDropdownItemCount() throws Exception {
         WebDriverWait wait = new WebDriverWait(driver, 10);
+
         wait.until(ExpectedConditions.elementToBeClickable(buttonExploreAetnaSites));
         clickOnElement(buttonExploreAetnaSites);
 
         List<WebElement> exploreAetnaSitesItems = dropdownMenuExploreAetnaSites.findElements(By.cssSelector(webElementItemsDropdownMenuExploreAetnaSites1));
-        int itemCount=exploreAetnaSitesItems.size();
-        System.out.println("Number of items counted in 'Explore Aetna sites' dropdown: "+itemCount+"\n");
+        int actualItemCount = exploreAetnaSitesItems.size();
+        System.out.println("ACTUAL number of items in 'Explore Aetna sites' dropdown: "+actualItemCount+"\n");
 
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(itemCount, expectedElementExploreAetnaSitesItemCount, "NUMBER OF ITEMS IN 'EXPLORE AETNA SITES' DROPDOWN DO NOT MATCH");
+        int [] expectedCountExploreAetnaSitesDropdownItemsArray = dataReader.fileReaderIntegerXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Explore Aetna Sites Count");
+        int expectedCountExploreAetnaSitesItems = expectedCountExploreAetnaSitesDropdownItemsArray[0];
+        System.out.println("EXPECTED number of items in 'Explore Aetna sites' dropdown: "+expectedCountExploreAetnaSitesItems);
 
-        int i=0;
-        for (WebElement e:exploreAetnaSitesItems){
-            softAssert.assertEquals(e.getText(), expectedElementExploreAetnaSitesItemNames[i], "ITEM NAME AT INDEX "+i+" " +
-                    "IN 'EXPLORE AETNA SITES' DROPDOWN DOES NOT MATCH");
-            System.out.println(e.getText());
-            i++;
-        }
-        softAssert.assertAll();
+        Assert.assertEquals(actualItemCount, expectedCountExploreAetnaSitesItems, "NUMBER OF ITEMS IN 'EXPLORE AETNA " +
+                "SITES' DROPDOWN DO NOT MATCH");
     }
 
 
@@ -161,22 +179,40 @@ public class AetnaHomepage extends WebAPI {
      * 3 - Click on each item in the list
      * 4 - Verify each item in the list takes us to the expected pages
      */
-    public void validateExploreAetnaSitesDropdownItemURL(){
+    public void validateExploreAetnaSitesDropdownItemNamesAndURL() throws Exception{
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         wait.until(ExpectedConditions.elementToBeClickable(buttonExploreAetnaSites));
         clickOnElement(buttonExploreAetnaSites);
 
         List<WebElement> exploreAetnaSitesItems = dropdownMenuExploreAetnaSites.findElements(By.cssSelector(webElementItemsDropdownMenuExploreAetnaSites2));
-        String [] exploreAetnaSitesItemURL = new String[exploreAetnaSitesItems.size()];
+
+        connectToSQL.insertWebElementTextArrayListToSqlTable(exploreAetnaSitesItems, "explore_aetna_sites_dropdown_names", "dropdown_names");
+        connectToSQL.insertWebElementLinksArrayListToSqlTable(exploreAetnaSitesItems, "explore_aetna_sites_dropdown_urls", "dropdown_urls");
+
+        String [] expectedNamesExploreAetnaSitesDropdownItemsArray = dataReader.fileReaderStringXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Explore Aetna Sites Name");
+        String [] expectedURLExploreAetnaSitesDropdownItemsArray = dataReader.fileReaderStringXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Explore Aetna Sites URL");
+
+        List<String> actualNames = connectToSQL.readDataBase("explore_aetna_sites_dropdown_names",
+                "dropdown_names");
+        List<String> actualURLs = connectToSQL.readDataBase("explore_aetna_sites_dropdown_urls",
+                "dropdown_urls");
 
         SoftAssert softAssert = new SoftAssert();
+        int i=0;
+        for (WebElement e:exploreAetnaSitesItems){
+            System.out.println("ACTUAL 'Explore Aetna sites' dropdown item name ("+i+"): "+actualNames.get(i));
+            System.out.println("ACTUAL 'Explore Aetna sites' dropdown item URL ("+i+"): "+actualURLs.get(i));
+            System.out.println("EXPECTED 'Explore Aetna sites' dropdown item name ("+i+"): "+expectedNamesExploreAetnaSitesDropdownItemsArray[i]);
+            System.out.println("EXPECTED 'Explore Aetna sites' dropdown item URL ("+i+"): "+expectedURLExploreAetnaSitesDropdownItemsArray[i]);
 
-        for (int i=0; i<exploreAetnaSitesItems.size(); i++){
-            exploreAetnaSitesItemURL[i] = exploreAetnaSitesItems.get(i).getAttribute("href");
-
-            System.out.println(exploreAetnaSitesItemURL[i]);
-            softAssert.assertEquals(exploreAetnaSitesItemURL[i], expectedElementExploreAetnaSitesItemURL[i], "ITEM URL AT INDEX "+i+" IN 'EXPLORE AETNA SITES' DROPDOWN DOES NOT MATCH");
+            softAssert.assertEquals(actualNames.get(i), expectedNamesExploreAetnaSitesDropdownItemsArray[i], "ITEM " +
+                    "NAME AT INDEX "+i+" IN 'EXPLORE AETNA SITES' DROPDOWN DOES NOT MATCH");
+            softAssert.assertEquals(actualURLs.get(i), expectedURLExploreAetnaSitesDropdownItemsArray[i],
+                    "ITEM URL AT INDEX \"+i+\" IN 'EXPLORE AETNA SITES' DROPDOWN DOES NOT MATCH");
+            i++;
         }
         softAssert.assertAll();
     }
@@ -188,25 +224,31 @@ public class AetnaHomepage extends WebAPI {
      * 2 - Click on "Shop for a plan" in header
      * 3 - Verify count & names of items listed on left side of dropdown menu
      */
-    public void validateShopForAPlanMenuItemCountAndNames(){
+    public void validateShopForAPlanMenuItemCountAndNames() throws Exception{
         WebDriverWait wait = new WebDriverWait(driver,10);
 
-        try {
-            Thread.sleep(2000);
-            clickOnElement(buttonShopForAPlan);
-        } catch (Exception e){
-            System.out.println("COULD NOT CLICK ON 'SHOP FOR A PLAN BUTTON --- TRYING AGAIN");
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(buttonShopForAPlan));
+        clickOnElement(buttonShopForAPlan);
+
         List<WebElement> shopForAPlanItemsList = dropdownMenuShopForAPlan.findElements(By.cssSelector(webElementDropdownMenuShopForAPlanItemsLeft));
         int actualCount = shopForAPlanItemsList.size();
         System.out.println("Number of counted items in 'Shop for a plan' dropdown menu: "+actualCount+"\n");
 
+        int [] expectedCountShopForAPlanItemsArray = dataReader.fileReaderIntegerXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "ShopForAPlan Dropdown Count");
+        int expectedCountShopForAPlan = expectedCountShopForAPlanItemsArray[0];
+
+        String [] expectedNameShopForAPlanItemsArray = dataReader.fileReaderStringXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "ShopForAPlan Dropdown Names");
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualCount, expectedElementShopForAPlanItemsListCount, "NUMBER OF COUNTED ITEMS ('SHOP FOR A PLAN' DROPDOWN) & NUMBER OF EXPECTED ITEMS DO NOT MATCH");
+        softAssert.assertEquals(actualCount, expectedCountShopForAPlan, "NUMBER OF COUNTED ITEMS ('SHOP FOR A PLAN' DROPDOWN) & NUMBER " +
+                "OF EXPECTED ITEMS DO NOT MATCH");
 
         for (int i=0;i<actualCount; i++){
             System.out.println(shopForAPlanItemsList.get(i).getText().toString());
-            softAssert.assertEquals(shopForAPlanItemsList.get(i).getText(), expectedElementShopForAPlanItemsListNames[i], "ITEM AT INDEX "+i+" ('SHOP FOR A PLAN' DROPDOWN) DOES NOT MATCH");
+            softAssert.assertEquals(shopForAPlanItemsList.get(i).getText(), expectedNameShopForAPlanItemsArray[i], "ITEM AT INDEX "+i+" " +
+                    "('SHOP FOR A PLAN' DROPDOWN) DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
@@ -218,30 +260,32 @@ public class AetnaHomepage extends WebAPI {
      * 2 - Click on "Shop for a plan" in header
      * 3 - Under 'Medicare' option, verify the count of submenu items & their names
      */
-    public void validateMedicareSubmenuItemCountAndNames(){
+    public void validateMedicareSubmenuItemCountAndNames() throws Exception{
         WebDriverWait wait = new WebDriverWait(driver,10);
 
-        try {
-            Thread.sleep(2000);
-            clickOnElement(buttonShopForAPlan);
-        } catch (Exception e){
-            System.out.println("COULD NOT CLICK ON 'SHOP FOR A PLAN BUTTON --- TRYING AGAIN");
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(buttonShopForAPlan));
+        clickOnElement(buttonShopForAPlan);
         wait.until(ExpectedConditions.elementToBeClickable(buttonMedicare));
         clickOnElement(buttonMedicare);
-        System.out.println("Clicked "+buttonMedicare.getText()+" Submenu Button");
-        wait.until(ExpectedConditions.visibilityOfAllElements(submenuMedicare.findElements(By.cssSelector(webElementsSubmenuMedicareItems))));
 
+        wait.until(ExpectedConditions.visibilityOfAllElements(submenuMedicare.findElements(By.cssSelector(webElementsSubmenuMedicareItems))));
         List<WebElement> submenuItems = submenuMedicare.findElements(By.cssSelector(webElementsSubmenuMedicareItems));
         int actualSubmenuItemCount = submenuItems.size();
         System.out.println("Counted items within 'Medicare' submenu: "+actualSubmenuItemCount);
 
+        int [] expectedCountMedicareSubmenuArray = dataReader.fileReaderIntegerXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Medicare Submenu Count");
+        int expectedCountMedicareSubmenu = expectedCountMedicareSubmenuArray[0];
+
+        String [] expectedNamesMedicareSubmenuArray = dataReader.fileReaderStringXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Medicare Submenu Names");
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualSubmenuItemCount, expectedElementSubmenuMedicareItemCount, "'MEDICARE' SUBMENU ITEM COUNT DOES NOT MATCH");
+        softAssert.assertEquals(actualSubmenuItemCount, expectedCountMedicareSubmenu, "'MEDICARE' SUBMENU ITEM COUNT DOES NOT MATCH");
 
         for (int i=0; i<submenuItems.size(); i++){
             System.out.println(submenuItems.get(i).getText());
-            softAssert.assertEquals(submenuItems.get(i).getText(), expectedElementsSubmenuMedicareItemNames[i], "LIST ITEM AT INDEX "+i+" IN 'MEDICARE' SUBMENU DOES NOT MATCH");
+            softAssert.assertEquals(submenuItems.get(i).getText(), expectedNamesMedicareSubmenuArray[i], "LIST ITEM AT INDEX "+i+" IN 'MEDICARE' SUBMENU DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
@@ -253,27 +297,28 @@ public class AetnaHomepage extends WebAPI {
      * 2 - Click on "Shop for a plan" in header
      * 3 - Under 'Medicare' option, verify the URLs of submenu items
      */
-    public void validateMedicareSubmenuItemURLs(){
+    public void validateMedicareSubmenuItemURLs() throws Exception{
         WebDriverWait wait = new WebDriverWait(driver,10);
 
-        try {
-            Thread.sleep(2000);
-            clickOnElement(buttonShopForAPlan);
-        } catch (Exception e){
-            System.out.println("COULD NOT CLICK ON 'SHOP FOR A PLAN BUTTON --- TRYING AGAIN");
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(buttonShopForAPlan));
+        clickOnElement(buttonShopForAPlan);
         wait.until(ExpectedConditions.elementToBeClickable(buttonMedicare));
         clickOnElement(buttonMedicare);
         System.out.println("Clicked "+buttonMedicare.getText()+" Submenu Button");
-        wait.until(ExpectedConditions.visibilityOfAllElements(submenuMedicare.findElements(By.cssSelector(webElementsSubmenuMedicareItems))));
 
+        wait.until(ExpectedConditions.visibilityOfAllElements(submenuMedicare.findElements(By.cssSelector(webElementsSubmenuMedicareItems))));
         List<WebElement> submenuItems = submenuMedicare.findElements(By.cssSelector(webElementsSubmenuMedicareItems));
 
+        String [] expectedURLMedicareSubmenuArray = dataReader.fileReaderStringXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Medicare Submenu URL");
+
         SoftAssert softAssert = new SoftAssert();
+
         for (int i=0; i<submenuItems.size(); i++) {
             String actualURL = submenuItems.get(i).getAttribute("href");
             System.out.println(actualURL);
-            softAssert.assertEquals(actualURL, expectedElementsSubmenuMedicareItemURLs[i], "URL FOR LIST ITEM IN 'MEDICARE' SUBMENU AT INDEX "+i+" DOES NOT MATCH");
+            softAssert.assertEquals(actualURL, expectedURLMedicareSubmenuArray[i], "URL FOR LIST ITEM IN 'MEDICARE' SUBMENU AT INDEX "+i
+                    +" " + "DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
@@ -285,29 +330,33 @@ public class AetnaHomepage extends WebAPI {
      * 2 - Click on "Shop for a plan" in header
      * 3 - Under 'Health Coverage' option, verify the count of submenu items & their names
      */
-    public void validateHealthCoverageSubmenuItemCountAndNames(){
+    public void validateHealthCoverageSubmenuItemCountAndNames() throws Exception{
         WebDriverWait wait = new WebDriverWait(driver,10);
 
-        try {
-            Thread.sleep(2000);
-            clickOnElement(buttonShopForAPlan);
-        } catch (Exception e){
-            System.out.println("COULD NOT CLICK ON 'SHOP FOR A PLAN BUTTON --- TRYING AGAIN");
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(buttonShopForAPlan));
+        clickOnElement(buttonShopForAPlan);
+
         wait.until(ExpectedConditions.elementToBeClickable(buttonHealthCoverage));
         clickOnElement(buttonHealthCoverage);
-        System.out.println("Clicked "+buttonHealthCoverage.getText()+" Submenu Button");
 
         List<WebElement> submenuItems = submenuHealthCoverage.findElements(By.cssSelector(webElementsSubmenuHealthCoverageItems));
         int actualSubmenuItemCount = submenuItems.size();
         System.out.println("Counted items within 'Health Coverage' submenu: "+actualSubmenuItemCount);
 
+        int [] expectedCountHealthCoverageSubmenuArray = dataReader.fileReaderIntegerXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Health Coverage Submenu" +
+                " Count");
+        int expectedCountHealthCoverageSubmenu = expectedCountHealthCoverageSubmenuArray[0];
+
+        String [] expectedNamesHealthCoverageSubmenuArray = dataReader.fileReaderStringXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Health Coverage Submenu Names");
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualSubmenuItemCount, expectedElementSubmenuHealthCoverageItemCount, "'HEALTH COVERAGE' SUBMENU ITEM COUNT DOES NOT MATCH");
+        softAssert.assertEquals(actualSubmenuItemCount, expectedCountHealthCoverageSubmenu, "'HEALTH COVERAGE' SUBMENU ITEM COUNT DOES NOT MATCH");
 
         for (int i=0; i<submenuItems.size(); i++){
             System.out.println(submenuItems.get(i).getText());
-            softAssert.assertEquals(submenuItems.get(i).getText(), expectedElementsSubmenuHealthCoverageItemNames[i], "LIST ITEM AT INDEX "+i+" IN 'HEALTH COVERAGE' SUBMENU DOES NOT MATCH");
+            softAssert.assertEquals(submenuItems.get(i).getText(), expectedNamesHealthCoverageSubmenuArray[i], "LIST ITEM AT INDEX "+i+" IN 'HEALTH COVERAGE' SUBMENU DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
@@ -319,26 +368,27 @@ public class AetnaHomepage extends WebAPI {
      * 2 - Click on "Shop for a plan" in header
      * 3 - Under 'Health Coverage' option, verify the URLs of submenu items
      */
-    public void validateHealthCoverageSubmenuItemURLs(){
+    public void validateHealthCoverageSubmenuItemURLs() throws Exception{
         WebDriverWait wait = new WebDriverWait(driver,10);
 
-        try {
-            Thread.sleep(2000);
-            clickOnElement(buttonShopForAPlan);
-        } catch (Exception e){
-            System.out.println("COULD NOT CLICK ON 'SHOP FOR A PLAN BUTTON --- TRYING AGAIN");
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(buttonShopForAPlan));
+        clickOnElement(buttonShopForAPlan);
+
         wait.until(ExpectedConditions.elementToBeClickable(buttonHealthCoverage));
         clickOnElement(buttonHealthCoverage);
         System.out.println("Clicked "+buttonHealthCoverage.getText()+" Submenu Button");
 
         List<WebElement> submenuItems = submenuHealthCoverage.findElements(By.cssSelector(webElementsSubmenuHealthCoverageItems));
 
+        String [] expectedURLHealthCoverageSubmenuArray = dataReader.fileReaderStringXSSF(System.getProperty(
+                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Health Coverage Submenu URL");
+
         SoftAssert softAssert = new SoftAssert();
         for (int i=0; i<submenuItems.size(); i++) {
             String actualURL = submenuItems.get(i).getAttribute("href");
             System.out.println(actualURL);
-            softAssert.assertEquals(actualURL, expectedElementsSubmenuHealthCoverageItemURLs[i], "URL FOR LIST ITEM IN 'HEALTH COVERAGE' SUBMENU AT INDEX "+i+" DOES NOT MATCH");
+            softAssert.assertEquals(actualURL, expectedURLHealthCoverageSubmenuArray[i], "URL FOR LIST ITEM IN 'HEALTH COVERAGE' SUBMENU AT INDEX "+i+
+                    " DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
@@ -350,29 +400,34 @@ public class AetnaHomepage extends WebAPI {
      * 2 - Click on "Shop for a plan" in header
      * 3 - Under 'Dental, vision and supplemental' option, verify the count of submenu items & their names
      */
-    public void validateDentalVisionSupplementalSubmenuItemCountAndNames(){
+    public void validateDentalVisionSupplementalSubmenuItemCountAndNames() throws Exception{
         WebDriverWait wait = new WebDriverWait(driver,10);
 
-        try {
-            Thread.sleep(2000);
-            clickOnElement(buttonShopForAPlan);
-        } catch (Exception e){
-            System.out.println("COULD NOT CLICK ON 'SHOP FOR A PLAN BUTTON --- TRYING AGAIN");
-        }
+        wait.until(ExpectedConditions.elementToBeClickable(buttonShopForAPlan));
+        clickOnElement(buttonShopForAPlan);
+
         wait.until(ExpectedConditions.elementToBeClickable(buttonDentalVisionSupplemental));
         clickOnElement(buttonDentalVisionSupplemental);
-        System.out.println("Clicked "+buttonDentalVisionSupplemental.getText()+" Submenu Button");
 
         List<WebElement> submenuItems = submenuDentalVisionSupplemental.findElements(By.cssSelector(webElementsSubmenuDentalVisionSupplementalItems));
         int actualSubmenuItemCount = submenuItems.size();
         System.out.println("Counted items within 'Dental, Vision and supplemental' submenu: "+actualSubmenuItemCount);
 
+        int [] expectedSubmenuCountArray = dataReader.fileReaderIntegerXSSF(System.getProperty("user.dir")+"\\src" +
+                "\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "DVS Submenu Count");
+        int expectedSubmenuCount = expectedSubmenuCountArray[0];
+
+        String [] expectedSubmenuNamesArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+"\\src" +
+                "\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "DVS Submenu Names");
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(actualSubmenuItemCount, expectedElementSubmenuDentalVisionSupplementalItemCount, "'DENTAL, VISION AND SUPPLEMENTAL' SUBMENU ITEM COUNT DOES NOT MATCH");
+        softAssert.assertEquals(actualSubmenuItemCount, expectedSubmenuCount, "'DENTAL, VISION AND SUPPLEMENTAL' SUBMENU ITEM COUNT " +
+                "DOES NOT MATCH");
 
         for (int i=0; i<submenuItems.size(); i++){
-            System.out.println(submenuItems.get(i).getText());
-            softAssert.assertEquals(submenuItems.get(i).getText(), expectedElementsSubmenuDentalVisionSupplementalItemNames[i], "LIST ITEM AT INDEX "+i+" IN 'DENTAL, VISION AND SUPPLEMENTAL' SUBMENU DOES NOT MATCH");
+            System.out.println(expectedSubmenuNamesArray[i]);
+            softAssert.assertEquals(submenuItems.get(i).getText(), expectedSubmenuNamesArray[i], "LIST ITEM AT INDEX "+i+" IN 'DENTAL, " +
+                    "VISION AND SUPPLEMENTAL' SUBMENU DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
@@ -545,14 +600,19 @@ public class AetnaHomepage extends WebAPI {
      * 2 - Click "Login" button in header
      * 3 - Verify user is navigated to Login page
      */
-    public void validateLoginButton(){
+    public void validateLoginButton() throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(buttonLogin));
         clickOnElement(buttonLogin);
-
         String actualLoginPageURL = driver.getCurrentUrl();
         System.out.println("Login Page URL: "+actualLoginPageURL);
-        Assert.assertEquals(actualLoginPageURL, expectedElementLoginPageURL, "WAS NOT NAVIGATED TO LOGIN PAGE (URL DOES NOT MATCH)");
+
+        String[] expectedLoginPageURLArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+"\\src" +
+                "\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Login Page URL");
+        String expectedLoginPageURL = expectedLoginPageURLArray[0];
+        System.out.println("EXPECTED URL: "+expectedLoginPageURL);
+
+        Assert.assertEquals(actualLoginPageURL, expectedLoginPageURL, "WAS NOT NAVIGATED TO LOGIN PAGE (URL DOES NOT MATCH)");
     }
 
 

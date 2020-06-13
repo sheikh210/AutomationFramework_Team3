@@ -87,22 +87,6 @@ public class AetnaHomepageElements {
     /**
      * (EXPECTED ELEMENTS)
      */
-
-    // EXPECTED Homepage title (String)
-    public static final String expectedElementHomepageTitle = "Health Insurance Plans | Aetna";
-    // EXPECTED Search Results page title (String)
-    public static final String expectedElementSearchResultsTitle = "Search Results";
-    // EXPECTED Login page URL (String)
-    public static final String expectedElementLoginPageURL = "https://www.aetna.com/about-us/login.html";
-    // EXPECTED Download Attain page URL (String)
-    public static final String expectedElementDownloadAttainPageURL = "https://www.attainbyaetna.com/?cid=site-aetna-IF-banner&ss=appstore";
-    // EXPECTED 'Explore Aetna sites' Dropdown Menu Item Count (Integer)
-    public static final int expectedElementExploreAetnaSitesItemCount = 7;
-    // EXPECTED 'Explore Aetna sites' Dropdown Menu Item Names (String[])
-    public static final String[] expectedElementExploreAetnaSitesItemNames = {"Aetna.com", "For Providers", "For Employers", "For Agents/Brokers", "For Partners", "Careers", "About Us"};
-    // EXPECTED 'Explore Aetna sites' Dropdown Menu Item Names (String[])
-    public static final String[] expectedElementExploreAetnaSitesItemURL = {"https://www.aetna.com/individuals-families.html", "https://www.aetna.com/health-care-professionals.html", "https://www.aetna.com/employers-organizations.html",
-            "https://www.aetna.com/insurance-producer.html", "https://www.aetna.com/partners.html", "https://www.aetnacareers.com/", "https://www.aetna.com/about-us.html"};
     // EXPECTED 'Shop for a plan' Dropdown Item Count (Integer)
     public static final int expectedElementShopForAPlanItemsListCount = 5;
     // EXPECTED 'Shop for a plan' Dropdown Item Names (String[])
@@ -119,6 +103,7 @@ public class AetnaHomepageElements {
     public static final String[] expectedElementsSubmenuHealthCoverageItemNames = {"Plans through an employer", "Student plans", "International plans", "Find a doctor"};
     // EXPECTED 'Health Coverage' Submenu Item URLs (String[])
     public static final String[] expectedElementsSubmenuHealthCoverageItemURLs = {"https://www.aetna.com/individuals-families/health-insurance-through-work.html", "https://www.aetnastudenthealth.com/en/index.html", "https://int.aetnainternational.com/individuals/getQuote.do", "https://www.aetna.com/individuals-families/find-a-doctor.html"};
+
     // EXPECTED 'Dental, Vision and Supplemental' Submenu Item Count (Integer)
     public static final int expectedElementSubmenuDentalVisionSupplementalItemCount = 5;
     // EXPECTED 'Dental, Vision and Supplemental' Submenu Item Names (String[])
@@ -126,30 +111,39 @@ public class AetnaHomepageElements {
     // EXPECTED 'Dental, Vision and Supplemental' Submenu Item URLs (String[])
     public static final String[] expectedElementsSubmenuDentalVisionSupplementalItemURLs = {"https://www.aetna.com/individuals-families/buy-dental-coverage.html", "https://www.aetna.com/dsepublic/#/contentPage?page=providerSearchLanding&site_id=dse&language=en", "https://www.aetna.com/individuals-families/vision-insurance.html", "https://www.aetna.com/dsepublic/#/contentPage?page=providerSearchLanding&site_id=dse&language=en",
     "https://www.aetna.com/individuals-families/voluntary-benefits.html"};
+
     // EXPECTED 'Pharmacy' Submenu Item Count (Integer)
     public static final int expectedElementSubmenuPharmacyItemCount = 3;
     // EXPECTED 'Pharmacy' Submenu Item Names (String[])
     public static final String[] expectedElementsSubmenuPharmacyItemNames = {"Get pharmacy plan information", "Find a pharmacy", "Find medicine and costs"};
     // EXPECTED 'Pharmacy' Submenu Item URLs (String[])
     public static final String[] expectedElementsSubmenuPharmacyItemURLs = {"https://www.aetna.com/individuals-families/pharmacy.html", "http://www.aetna.com/docfind/home.do?site_id=aetnapharmacy&langpref=en", "https://www.aetna.com/individuals-families/find-a-medication.html"};
+
     // EXPECTED 'Medicaid' Submenu Item Count (Integer)
     public static final int expectedElementSubmenuMedicaidItemCount = 2;
     // EXPECTED 'Medicaid' Submenu Item Names (String[])
     public static final String[] expectedElementsSubmenuMedicaidItemNames = {"Medicaid plans", "Find a doctor"};
     // EXPECTED 'Medicaid' Submenu Item URLs (String[])
     public static final String[] expectedElementsSubmenuMedicaidItemURLs = {"https://www.aetna.com/individuals-families/medicaid-coverage.html", "https://www.aetna.com/dsepublicContent/assets/html/content.html?resource=aetna-medicaid"};
+
     // EXPECTED Customer Identifier Box Names (String[])
     public static final String[] expectedElementsCustomerIdentifierNames = {"Individuals", "Employers", "Providers", "Agents/Brokers"};
     // EXPECTED Customer Identifier Box URLs (String[])
     public static final String[] expectedElementsCustomerIdentifierURLs = {"https://www.aetna.com/individuals-families.html", "https://www.aetna.com/employers-organizations.html", "https://www.aetna.com/health-care-professionals.html", "https://www.aetna.com/insurance-producer.html"};
+
     // EXPECTED Miscellaneous Grid Box Names (String[])
     public static final String[] expectedElementsMiscellaneousGridBoxesNames = {"Health News", "About Us", "Careers"};
     // EXPECTED Miscellaneous Grid Box URLs (String[])
     public static final String[] expectedElementsMiscellaneousGridBoxesURLs = {"https://news.aetna.com/", "https://www.aetna.com/about-us.html", "https://www.aetnacareers.com/"};
+
     // EXPECTED Social Media Icon Count (Integer)
     public static final int expectedElementIconSocialMediaCount = 5;
     // EXPECTED Social Media Icon Name (String [])
     public static final String[] expectedElementsIconSocialMediaNames = {"instagram", "facebook", "twitter", "youtube", "linkedin"};
     // EXPECTED Social Media Icon URLs (String [])
     public static final String[] expectedElementsIconSocialMediaURLs = {"https://www.instagram.com/aetna/?hl=en", "https://www.facebook.com/aetna", "https://twitter.com/aetna", "https://www.youtube.com/aetna", "https://www.linkedin.com/company/aetna"};
+
+    // Travel Info Hover Button (id)
+    public static final String webElementButtonTravelInfo = "headSectab1";
+
 }

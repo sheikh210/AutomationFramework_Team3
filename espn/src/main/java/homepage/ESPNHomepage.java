@@ -186,7 +186,9 @@ public class ESPNHomepage extends WebAPI {
      */
     public List<WebElement> getNFLDropdownMenuLeft() {
         mouseHover(nflDropdown);
-        List<WebElement> nflDropdownElementsLeftList = getListOfWebElementsByCss(nflDropdownMenuLeft, webElementNFLDropdownMenuItemsLeft);
+//        List<WebElement> nflDropdownElementsLeftList = getListOfWebElementsByCss(nflDropdownMenuLeft, webElementNFLDropdownMenuItemsLeft);
+
+        List<WebElement> nflDropdownElementsLeftList = nflDropdownMenuLeft.findElements(By.cssSelector(webElementNFLDropdownMenuItemsLeft));
 
         return nflDropdownElementsLeftList;
     }
@@ -282,7 +284,6 @@ public class ESPNHomepage extends WebAPI {
 //    }
     public String[] getNFLDropdownMenuLeftLinks() {
         Actions hover = new Actions(driver);
-
         hover.moveToElement(nflDropdown).perform();
 
         List<WebElement> nflMenuListLeft = getListOfWebElementsByCss(nflDropdownMenuLeft, webElementNFLDropdownMenuLinksLeft);
