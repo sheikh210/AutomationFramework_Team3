@@ -110,7 +110,7 @@ public class EbayHomepageElements {
 
     public static final String webElementMiniCartEmpty = "//*[@id=\"gh-minicart-hover-body\"]/div/div/div[1]/span[1]";
 
-    public static final String expectedMiniCartEmptyText = "Your cart is empty";
+    public static final String expectedMiniCartEmptyText = "Shopping cart";
 
     public static final String webElementHelpButton = "//*[@id=\"i-faq\"]";
 

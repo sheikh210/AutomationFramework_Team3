@@ -420,6 +420,7 @@ public class EbayHomepage extends WebAPI {
         }
 
         Assert.assertEquals(text,expectedCarouselText);
+        System.out.println("Carousel moved to the Right");
     }
 
     /**Test Case 9 - Carousel slides Left arrow
@@ -432,13 +433,12 @@ public class EbayHomepage extends WebAPI {
     public void validateCarouselLeft() {
         String text = carouselSlideText.getText();
         carouselPrevSlide.click();
-        System.out.println(text);
         while(carouselSlideText.isDisplayed()){
             carouselPrevSlide.click();
 
         }
-
         Assert.assertEquals(text,expectedCarouselText);
+        System.out.println("Carousel moved to the left");
 
 
     }
