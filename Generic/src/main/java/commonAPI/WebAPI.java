@@ -582,6 +582,7 @@ public class WebAPI {
         return text;
     }
 
+
     public void clickJScript(WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
