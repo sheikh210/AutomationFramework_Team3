@@ -47,3 +47,17 @@ Test Case 10: Explore our research
 1.Navigate to https://www.stjude.org/
 2.Click on explore our research
 3.It'll navigate "Research at St. Jude".
+
+Test Case 11: Sign Text and Email Menu
+1.Navigate to https://www.stjude.org/
+2.Get expected Url
+
+Test Case 12:
+1.Navigate to https://www.stjude.org/
+2.Home page title
+3.Get expected Title
+
+Test Case 13:
+1.Navigate to https://www.stjude.org/
+2.Home page Link number
+3.get expected link

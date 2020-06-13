@@ -89,6 +89,9 @@ public class WebAPI {
         driver.quit();
     }
 
+    private void captureScreenshot(WebDriver driver) {
+    }
+
     @AfterSuite
     public void generateReport() {
         extent.close();
@@ -267,7 +270,7 @@ public class WebAPI {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         try {
-            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "\\lib\\Screenshots\\" + fileName));
+            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "/lib/Screenshots/" + fileName));
             System.out.println("SCREENSHOT TAKEN");
         } catch (Exception e) {
             System.out.println("ERROR TAKING SCREENSHOT: " + e.getMessage());
@@ -383,6 +386,7 @@ public class WebAPI {
         String title = driver.getTitle();
         return title;
     }
+
 
     public void navigateForward() {
         driver.navigate().forward();

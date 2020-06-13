@@ -1,0 +1,121 @@
+Trip Advisor Homepage Test Cases
+
+Test Case 1- Verify number of links on Homepage.
+1. Navigate to https://www.tripadvisor.com
+2. get the title of the page.
+3. Capture all links present on homepage.
+4. Validating the Hotel menu.
+5. Navigate to https://www.tripadvisor.com
+6. Click on Hotel menu button.
+7. Write on search field.
+8. Finding of searching text "South Africa Hotels".
+
+
+Test Case 2- Search Box Title menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on Search box menu.
+3. it will navigate search box menu.
+
+Test Case 3- Restaurant menu bar.
+1. Navigate to https://www.tripadvisor.com
+2. Click on Restaurant menu button.
+3. it should go directly restaurant menu bar.
+
+Test Case 4- Validating the things to do button.
+1. Navigate to https://www.tripadvisor.com
+2. Click on things to do button.
+3. make sure it open with search box.
+
+
+Test Case 5- Validating the insurance menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on insurance menu button.
+3. after the menu pop-up it will show "A year of trips. Protected."
+
+Test Case 6- Validating the more menu button
+1. Navigate to https://www.tripadvisor.com
+2. Click on more menu button.
+3. after the menu pop-up it will show "Find the best cruise for you".
+
+Test Case 7- Flights menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on flights menu button.
+3. after the menu pop-up it will show "Find the best flight from New York City".
+
+
+Test Case 8- validating the COVID-19 menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on covid-19 button.
+3. after clicking the button it will show ""What do I need to know about booking travel right now?".
+
+
+Test Case 9- Validating the travel forums menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on travel forums button.
+3. it should indicate "Share your experience with fellow travelers".
+
+Test Case 10- Validating the review menu.
+1. Navigate to https://www.tripadvisor.com
+2. Click on review menu button.
+3. it will navigate Review a place you've visited".
+
+Test Case 11- Trips menu.
+1. Navigate to https://www.tripadvisor.com
+2. Validating the Trips menu.
+3. Click on trips menu button.
+4. gives actual Url.
+5. open expected url.
+
+Test Case 12- Search Menu button.
+1. Navigate to https://www.tripadvisor.com
+2. Validating the Menu button.
+3. Click on Menu button.
+4. gives actual UrlTwo.
+5. open expected urlTwo.
+
+Test Case 13- Search Header.
+1. Navigate to https://www.tripadvisor.com
+2. Click on Header right corner where travel notice located.
+3. open expected urlThree.
+4. press enter to keyboard.
+5. verify that page where need to navigate.
+
+Test Case 14- Search vacation package.
+1. Navigate to https://www.tripadvisor.com
+2. Click on inside of vacation package located.
+3. open expected urlFour.
+4. press enter to keyboard.
+5. verify that page where need to navigate.
+
+Test Case 15- destination New York.
+1. Navigate to https://www.tripadvisor.com
+2. Click on destination New York.
+3. Finding of searching text "A city that never sleeps, never stops moving".
+
+Test Case 16 - validate the Page Title.
+1. Navigate to https://www.tripadvisor.com
+2. Click on title page menu.
+3. navigate the expected title.
+
+Test Case 17 - validate the homepage link number.
+1. Navigate to https://www.tripadvisor.com
+2. put the character.
+3. navigate the expected link number.
+
+Test case 18 - search insurance plan two.
+1. Navigate to https://www.tripadvisor.com
+2. press/click insurance button.
+3. open page with several plans.
+4. select plan.
+5. it will show "This is travel insurance reimagined." text.
+
+Test case 19 - validate the alert two.
+1. Navigate to https://www.tripadvisor.com
+2. Click on alert menu button.
+3. it will show the page "Continue with Google".
+
+Test case 20 - validate review page twice.
+1. Navigate to https://www.tripadvisor.com
+2. Click on review menu button.
+3. It will navigate "Have you been? Travelers want to see more reviews of these places."
+
