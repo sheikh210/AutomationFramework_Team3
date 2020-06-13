@@ -9,10 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import static homepage.DeltaHomePageElements.*;
+import static homepage.DeltaAirlinesHomepageElements.*;
 
 
 public class DeltaAirlinesHomepage extends WebAPI {
@@ -169,7 +166,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
         String actualTitle=getCurrentPageTitle();
         String expectedTitle="Login";
         Assert.assertEquals(actualTitle,expectedTitle,"Title does not match");
-        mouseHoverByXpath(WebElementHomePageLogo);
+        mouseHover(homePageLogo);
         sleepFor(3);
 
 
@@ -403,8 +400,8 @@ public class DeltaAirlinesHomepage extends WebAPI {
      */
     public void countSearchSubLinks() {
         clickOnElement("//ngc-search[@class='d-none d-lg-block ng-tns-c0-0 ng-star-inserted']//a[@class='search icon-search-icon circle-outline']");
-        List<WebElement>links=getListOfWebElementsByXpath("/html/body/modal-container/div/div/ngc-flyout-search/div/div/div/div/div[2]/div[2]");
-        System.out.println(links.size());
+//        List<WebElement>links=getListOfWebElementsByXpath("/html/body/modal-container/div/div/ngc-flyout-search/div/div/div/div/div[2]/div[2]");
+//        System.out.println(links.size());
 
     }
 

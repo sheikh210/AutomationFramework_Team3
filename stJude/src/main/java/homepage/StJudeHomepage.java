@@ -78,10 +78,12 @@ public class StJudeHomepage extends WebAPI {
 
 
 
+
     //Test 1
     public void doSearchText() {
         aboutUs.click();
     }
+
     public void validateSearchText() {
         String actualText = seachingText.getText();
         Assert.assertEquals(actualText, "Facts & Figures");
@@ -95,10 +97,12 @@ public class StJudeHomepage extends WebAPI {
         String actualText = searchBar.getText();
         Assert.assertEquals(actualText, "Does your child need treatment?");
     }
+
     //Test 3
     public void doSearchTopic() {
         research.click();
     }
+
     public void validateDoSearchTopic() {
         String actualText = searchTopic.getText();
         Assert.assertEquals(actualText, "NCI-Funded Shared Resources");
@@ -107,6 +111,7 @@ public class StJudeHomepage extends WebAPI {
     public void searchTraining() {
         training.click();
     }
+
     public void validateSearchTrainingTopic() {
         String actualText = searchTrainingTopic.getText();
         Assert.assertEquals(actualText, "Advanced Training");
@@ -115,14 +120,17 @@ public class StJudeHomepage extends WebAPI {
     public void doSearchTitle() {
         getInvolvedMenu.click();
     }
+
     public void validateDoSearchTitle() {
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, webElementSearchingTitle);
+
     }
     //Test 6
     public void doSearchElement() {
         waysToGive.click();
     }
+
     public void validateDoSearchElement() {
         String actualText = searchElement.getText();
         Assert.assertEquals(actualText, "Send a Memorial Card");
@@ -132,6 +140,7 @@ public class StJudeHomepage extends WebAPI {
     public void doSearchButton() {
         contactUs.click();
     }
+
     public void validateDoSearchButton() {
         String actualText = searchButton.getText();
         Assert.assertEquals(actualText, "Frequently asked questions");
@@ -140,6 +149,7 @@ public class StJudeHomepage extends WebAPI {
     public void doSearchingButton() {
         donateNow.click();
     }
+
     public void validateDoSearchingButton() {
         String actualText = searchingButton.getText();
         Assert.assertEquals(actualText, "Make a donation to end childhood cancer");
@@ -189,6 +199,7 @@ public class StJudeHomepage extends WebAPI {
         int linkNumber = list.size();
         Assert.assertEquals(linkNumber,"243","Expected link number not found");
     }
+
     //Test 14
     public void doSearchUrl2(){
         moreScienceAndMedicineMenu.click();
