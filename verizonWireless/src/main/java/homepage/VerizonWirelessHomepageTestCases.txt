@@ -1,5 +1,3 @@
-"3990NY_Firdovsi Isgandarov"
-
 VerizonWireless Homepage Test cases
 
 >>>Test Case 1 - Login Functionality<<<
