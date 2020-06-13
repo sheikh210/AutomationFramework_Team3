@@ -84,7 +84,7 @@ public class WebAPI {
         ExtentTestManager.endTest();
         extent.flush();
         if (result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver);
+            captureScreenshot(driver, result.getName());
         }
         driver.quit();
     }
@@ -387,7 +387,6 @@ public class WebAPI {
         return title;
     }
 
-    
 
     public void navigateForward() {
         driver.navigate().forward();
@@ -585,6 +584,17 @@ public class WebAPI {
     public String getTextByWebElement(WebElement webElement) {
         String text = webElement.getText();
         return text;
+    }
+
+
+    public void clickJScript(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
+    }
+
+    public void scrollToElementJScript(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
     public void mouseHoverJScript(WebElement element) {
