@@ -582,6 +582,10 @@ public class WebAPI {
         return text;
     }
 
+    public void scrollToElementJScript(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", element);
+    }
     public void mouseHoverJScript(WebElement element) {
         try {
             if (isElementPresent(element)) {

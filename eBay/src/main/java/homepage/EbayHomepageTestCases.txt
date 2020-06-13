@@ -15,31 +15,31 @@ Test Case 3 - Daily Deals
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
 3: click on Daily Deals in header on the top left corner
-4: Verify sign in page title and match with expected page title
+4: Verify Daily Deals page title and match with expected page title
 
 Test Case 4 -  Navigate to Shopping Cart
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
 3:Click on Shopping cart icon in top right corner
-4: Verify sign in page title and match with expected page title
+4: Verify Shopping Cart page title and match with expected page title
 
-Test Case 5 - Sell Page
+Test Case 5 - Navigate to Sell Page
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
 3: click on Sell in header on the top right
-4: Verify sign in page title and match with expected page title
+4: Verify Sell page title and match with expected page title
 
-Test Case 6 - Help & Contact
+Test Case 6 - Navigate to Help & Contact
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
 3: click on Help & Contact in header on the top left corner
-4: Verify sign in page title and match with expected page title
+4: Verify Help & Contact page title and match with expected page title
 
 Test Case 7 - Search bar All Category Drop down menu
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
 3: click on All Categories Drop down menu
-4: Ensure that there are 35 categories and capture titles
+4: Verify that there are 35 categories and capture titles
 
 Test Case 8 - Carousel slides right arrow
 1: Launch chrome browser
@@ -62,22 +62,69 @@ Test Case 10 - Shop by category Drop down menu
 4: Ensure that there are 9 categories and 2 options at bottom of menu for
 all categories  and all brands within the menu and capture links
 
-Test Case 11 - Motors
+Test Case 11 - Navigate to Motors
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
 3: Click on Motors in SubHeader
+4: Verify Motors page title and match with expected page title
 
-Test Case 12 - Fashion
+Test Case 12 - Navigate to Fashion
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
 3: Click on Fashion in SubHeader
+4: Verify Fashion page title and match with expected page title
 
-Test Case 13 - Electronics
+Test Case 13 - Navigate to Electronics
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
 3: Click on Electronics in SubHeader
+4: Verify Electronics page title and match with expected page title
 
-Test Case 14 - Collectibles & Art
+Test Case 14 - Navigate to Collectibles & Art
 1: Launch chrome browser
 2: Direct chrome to ebay "https://www.ebay.com/"
 3: Click on Collectibles & Art in SubHeader
+4: Verify Collectibles & Art page title and match with expected page title
+
+Test Case 15 - Get list under About Ebay
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: locate all text under About Ebay at the bottom of ebay homepage
+4: Verify that there are 12 links and capture titles
+
+Test Case 16 - Test Search bar
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: Put a line of text in the search bar
+4: Click on the search button
+5: Verify that that item was searched
+
+Test Case 17- Add item to shopping cart from homepage
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: Click on item on carousel list to direct to item page
+4: Click on add to cart
+5: verify that item is in your shopping cart
+
+Test Case 18 - Delete Item from Cart from hover menu (dependent on case 17)
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: Click on item on carousel list to direct to item page
+4: Click on add to cart
+5: Go back to Ebay home Page
+6: Hover over Shopping cart till menu appears
+7: Click on Delete icon to remove item
+8: Verify that there are no items in your shopping cart
+
+Test Case 19 - Ebay Sites List
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: Hover over Ebay Sites to see list of all Countries
+4: Get all Countries and store in array list
+5: Verify all Countries are present in list
+
+Test Case 20 - Help button
+1: Launch chrome browser
+2: Direct chrome to ebay "https://www.ebay.com/"
+3: Click on '?' to open FAQs popup box
+4: Verify there the Text inside popup
