@@ -30,6 +30,18 @@ public class TravelUpdateCenterPage extends WebAPI {
     @FindBy (css = webElementSubmenuWaysWereKeepingYouSafe)
     public WebElement submenuWaysWereKeepingYouSafe;
 
+    @FindBy (css = webElementButtonAccordionFromDeltaToOurCustomers)
+    public WebElement buttonAccordionFromDeltaToOurCustomers;
+
+    @FindBy (css = webElementSubmenuFromDeltaToOurCustomers)
+    public WebElement submenuFromDeltaToOurCustomers;
+
+    @FindBy (css = webElementButtonAccordionFlyingWhatYouNeedToKnow)
+    public WebElement buttonAccordionFlyingWhatYouNeedToKnow;
+
+    @FindBy (css = webElementSubmenuFlyingWhatYouNeedToKnow)
+    public WebElement submenuFlyingWhatYouNeedToKnow;
+
     WebDriverWait wait = new WebDriverWait(driver, 10);
 
     /**
@@ -127,6 +139,7 @@ public class TravelUpdateCenterPage extends WebAPI {
             clickJScript(buttonAccordionWaysWereKeepingYouSafe);
         }
 
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(webElementListWaysWereKeepingYouSafe)));
         List<WebElement> submenuItems = submenuWaysWereKeepingYouSafe.findElements(By.cssSelector(webElementListWaysWereKeepingYouSafe));
         String[] submenuItemNames = new String[submenuItems.size()];
 
@@ -134,14 +147,77 @@ public class TravelUpdateCenterPage extends WebAPI {
             submenuItemNames[i] = submenuItems.get(i).getText();
             System.out.println(i + " - " + submenuItemNames[i]);
         }
-
         return submenuItemNames;
     }
 
+    /**
+     * Test Case 5 - Validate "Travel Update Center Dropdown" List - "From Delta to Our Customers" submenu item names
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Click on "Travel Update Center" dropdown (located on header - top left)
+     * 5 - Click on "From Delta to Our Customers"
+     * 6 - Verify the name of each submenu list items
+     */
+    public String[] validateTUCDropdownFromDeltaToOurCustomersSubmenuListNames() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTravelUpdateCenter));
 
+        clickButtonTravelUpdateCenterDropdown();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonAccordionFromDeltaToOurCustomers));
 
+        try {
+            clickOnElement(buttonAccordionFromDeltaToOurCustomers);
+        } catch (Exception e) {
+            System.out.println("COULD NOT CLICK ON \"FROM DELTA TO OUR CUSTOMERS\" ACCORDION BUTTON --- TRYING AGAIN");
+            clickJScript(buttonAccordionFromDeltaToOurCustomers);
+        }
 
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(webElementListFromDeltaToOurCustomers)));
+        List<WebElement> submenuItems = submenuFromDeltaToOurCustomers.findElements(By.cssSelector(webElementListFromDeltaToOurCustomers));
+        String[] submenuItemNames = new String[submenuItems.size()];
 
+        for (int i = 0; i < submenuItems.size(); i++) {
+            submenuItemNames[i] = submenuItems.get(i).getText();
+            System.out.println(i + " - " + submenuItemNames[i]);
+        }
+        return submenuItemNames;
+    }
+
+    /**
+     * Test Case 6 - Validate "Travel Update Center Dropdown" List - "Flying? What You Need to Know" submenu item names
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Click on "Travel Update Center" dropdown (located on header - top left)
+     * 5 - Click on "Flying? What You Need to Know"
+     * 6 - Verify the name of each submenu list items
+     */
+
+    public String[] validateTUCDropdownFlyingWhatYouNeedToKnowSubmenuListNames() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonTravelUpdateCenter));
+
+        clickButtonTravelUpdateCenterDropdown();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonAccordionFlyingWhatYouNeedToKnow));
+
+        try {
+            clickOnElement(buttonAccordionFlyingWhatYouNeedToKnow);
+        } catch (Exception e) {
+            System.out.println("COULD NOT CLICK ON \"FLYING? WHAT YOU NEED TO KNOW\" ACCORDION BUTTON --- TRYING AGAIN");
+            clickJScript(buttonAccordionFlyingWhatYouNeedToKnow);
+        }
+
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(webElementListFlyingWhatYouNeedToKnow)));
+        List<WebElement> submenuItems = submenuFlyingWhatYouNeedToKnow.findElements(By.cssSelector(webElementListFlyingWhatYouNeedToKnow));
+        String[] submenuItemNames = new String[submenuItems.size()];
+
+        for (int i = 0; i < submenuItems.size(); i++) {
+            submenuItemNames[i] = submenuItems.get(i).getText();
+            System.out.println(i + " - " + submenuItemNames[i]);
+        }
+        return submenuItemNames;
+    }
 
 
 

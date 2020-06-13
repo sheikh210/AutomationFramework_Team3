@@ -90,5 +90,36 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         softAssert.assertAll();
     }
 
+    @Test (priority = 4)
+    public static void testTUCDropdownFromDeltaToOurCustomersSubmenuListNames() throws IOException {
+        getInItElement();
+        String[] actualListNames = travelUpdateCenterPage.validateTUCDropdownFromDeltaToOurCustomersSubmenuListNames();
+
+        String[] expectedListNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
+                "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "TUC - FDTOC Submenu Names");
+
+        SoftAssert softAssert = new SoftAssert();
+        for (int i = 0; i < actualListNames.length; i++) {
+            softAssert.assertEquals(actualListNames[i], expectedListNames[i], "\"FROM DELTA TO OUR CUSTOMERS\" " +
+                    "SUBMENU LIST ITEM AT INDEX " + i + " DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+    @Test (priority = 5)
+    public static void testTUCDropdownFlyingWhatYouNeedToKnowSubmenuListNames() throws IOException {
+        getInItElement();
+        String[] actualListNames = travelUpdateCenterPage.validateTUCDropdownFlyingWhatYouNeedToKnowSubmenuListNames();
+
+        String[] expectedListNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
+                "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "TUC - FWYNTK Submenu Names");
+
+        SoftAssert softAssert = new SoftAssert();
+        for (int i = 0; i < actualListNames.length; i++) {
+            softAssert.assertEquals(actualListNames[i], expectedListNames[i], "\"FLYING? WHAT YOU NEED TO KNOW\" " +
+                    "SUBMENU LIST ITEM AT INDEX " + i + " DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
 
 }

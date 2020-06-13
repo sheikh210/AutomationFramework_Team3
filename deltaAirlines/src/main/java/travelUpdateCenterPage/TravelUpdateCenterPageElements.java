@@ -17,6 +17,20 @@ public class TravelUpdateCenterPageElements {
     public static final String webElementSubmenuWaysWereKeepingYouSafe = "ul#accordion2>li div#collapseInner4 ul";
     // Travel Update Center - 'Ways We're Keeping You Safe' List Items (CSS)
     public static final String webElementListWaysWereKeepingYouSafe = "ul#accordion2>li div#collapseInner4 ul a";
+    // Travel Update Center - 'From Delta to Our Customers' Accordion Button (CSS)
+    public static final String webElementButtonAccordionFromDeltaToOurCustomers = "ul#accordion2>li div>a[href*='5']";
+    // Travel Update Center - 'From Delta to Our Customers' Menu (CSS)
+    public static final String webElementSubmenuFromDeltaToOurCustomers = "ul#accordion2>li div#collapseInner5 ul";
+    // Travel Update Center - 'From Delta to Our Customers' List Items (CSS)
+    public static final String webElementListFromDeltaToOurCustomers = "ul#accordion2>li div#collapseInner5 ul a";
+    // Travel Update Center - 'Flying? What You Need To Know' Accordion Button (CSS)
+    public static final String webElementButtonAccordionFlyingWhatYouNeedToKnow = "ul#accordion2>li div>a[href*='6']";
+    // Travel Update Center - 'Flying? What You Need To Know' Menu (CSS)
+    public static final String webElementSubmenuFlyingWhatYouNeedToKnow = "ul#accordion2>li div#collapseInner6 ul";
+    // Travel Update Center - 'Flying? What You Need To Know' List Items (CSS)
+    public static final String webElementListFlyingWhatYouNeedToKnow = "ul#accordion2>li div#collapseInner6 ul a";
+
+
 
     /**
      * BODY
