@@ -1,0 +1,49 @@
+Test Case 1:About Us
+1.Navigate to homepage
+2.Click on about us
+3.Make sure it shows "Facts & Figures".
+
+Test Case 2:Care & Treatment
+1.Navigate to https://www.stjude.org/
+2.Click on care & treatment
+3.It should shows "Does your child need treatment?"
+
+Test Case 3: Research
+1.Navigate to https://www.stjude.org/
+2.Click on research
+3.It should popout "NCI-Funded Shared Resources".
+
+Test Case 4: Training
+1.Navigate to https://www.stjude.org/
+2.Click on Training
+3. Make sure it open "Advance training" text
+
+Test Case 5: Get Involved Menu
+1.Navigate to https://www.stjude.org/
+2.Click on get involved menu
+3.It should go directly homepage
+
+Test Case 6: Ways to Give
+1.Navigate to https://www.stjude.org/
+2.Click on ways to give
+3.It'll open "Send a Memorial Card" option
+
+Test Case 7: Contact Us
+1.Navigate to https://www.stjude.org/
+2.Click on contact us
+3.It shows "Frequently asked questions" message
+
+Test Case 8: Donate now
+1.Navigate to https://www.stjude.org/
+2.Click on donate now
+3."Make a donation to end childhood cancer" page will be open
+
+Test Case 9: Patient referrals
+1.Navigate to https://www.stjude.org/
+2.Click on patient referrals
+3.It should indicate "How to get your child admitted to St. Jude" option
+
+Test Case 10: Explore our research
+1.Navigate to https://www.stjude.org/
+2.Click on explore our research
+3.It'll navigate "Research at St. Jude".

@@ -1,0 +1,120 @@
+ESPN Homepage Test Cases
+
+***HEADER TEST CASES***
+Test Case 1 - Validate Navigation to Homepage
+1 - Navigate to http://espn.com
+2 - Verify we're on homepage by capturing page title
+
+Test Case 2 - Validate Links in "Top Events" dropdown menu
+1 - Navigate to http://espn.com
+2 - Click on "Top Events" dropdown menu
+3 - Capture number of links present in "Top Events" dropdown menu
+
+Test Case 3 - Validate header scroll
+1 - Navigate to http://espn.com
+2 - Click on arrow (right) to scroll header
+3 - Validate presence of back scroller
+
+Test Case 4 - NFL Dropdown Menu (Left Div)
+1 - Navigate to http://espn.com
+2 - Hover over NFL Dropdown on header bar
+3 - Verify there are 9 elements located on left menu of NFL Dropdown menu
+4 - Verify all expected names
+
+Test Case 5 - NFL Dropdown Menu 2 (Left Div)
+1 - Navigate to http://espn.com
+2 - Hover over NFL Dropdown on header bar
+3 - Navigate to the 9 links located on left side of dropdown menu (Home, Scores, Schedule, Teams, Standings,
+    Stats, Draft, Depth Charts, Free Agency)
+4 - Verify all links
+5 - COULD NOT PERFORM ----> (Verify page titles for each link)
+
+Test Case 6 - NFL Dropdown Menu (Right Div) (NFL Divisions)
+1 - Navigate to http://espn.com
+2 - Hover over NFL Dropdown on header bar
+3 - Verify each NFL division by name
+
+Test Case 7 - NFL Dropdown Menu (Right Div) (NFL Teams)
+1 - Navigate to http://espn.com
+2 - Hover over NFL Dropdown on header bar
+3 - Verify there are 32 NFL teams
+4 - Verify each team name
+
+Test Case 8 - NBA Dropdown Menu (Left Div)
+1 - Navigate to http://espn.com
+2 - Hover over NBA Dropdown on header bar
+3 - Verify there are 9 elements located on left menu of NBA Dropdown menu
+4 - Verify all expected names
+
+Test Case 9 - NBA Dropdown Menu 2 (Left Div)
+1 - Navigate to http://espn.com
+2 - Hover over NBA Dropdown on header bar
+3 - Navigate to the 9 links located on left side of dropdown menu (Home, Orlando Playoffs, The Last Dance, Scores,
+    Schedule, Standings, Stats, Teams, Draft)
+4 - Verify all links
+5 - COULD NOT PERFORM ----> (Verify page titles for each link)
+
+Test Case 10 - NBA Dropdown Menu (Right Div) (NBA Divisions)
+1 - Navigate to http://espn.com
+2 - Hover over NBA Dropdown on header bar
+3 - Verify each NBA division by name
+
+Test Case 11 - NBA Dropdown Menu (Right Div) (NBA Teams)
+1 - Navigate to http://espn.com
+2 - Hover over NBA Dropdown on header bar
+3 - Verify there are 30 NBA teams
+4 - Verify each team name
+
+Test Case 12 - MLB Dropdown Menu (Left Div)
+1 - Navigate to http://espn.com
+2 - Hover over MLB Dropdown on header bar
+3 - Verify there are 9 elements located on left menu of MLB Dropdown menu
+4 - Verify all expected names
+
+Test Case 13 - MLB Dropdown Menu 2 (Left Div)
+1 - Navigate to http://espn.com
+2 - Hover over MLB Dropdown on header bar
+3 - Navigate to the 9 links located on left side of dropdown menu (Home, Draft, When could MLB return?,
+    KBO League, Teams, Scores, Schedule, Standings, Stats)
+4 - Verify all links
+5 - COULD NOT PERFORM ----> (Verify page titles for each link)
+
+Test Case 14 - MLB Dropdown Menu (Right Div) (MLB Divisions)
+1 - Navigate to http://espn.com
+2 - Hover over MLB Dropdown on header bar
+3 - Verify each MLB division by name
+
+Test Case 15 - MLB Dropdown Menu (Right Div) (MLB Teams)
+1 - Navigate to http://espn.com
+2 - Hover over MLB Dropdown on header bar
+3 - Verify there are 30 MLB teams
+4 - Verify each team name
+
+
+***BODY TEST CASES***
+//LEFT BODY\\
+Test Case 16 - Login
+1 - Navigate to http://espn.com
+2 - Scroll down the page and click on "Login" button
+3 - Pop-up should appear, containing username/email input & password input - Enter username/password
+4 - Click 'Login' button
+
+Test Case 17 - ESPN Sites Container Name & List Count
+1 - Navigate to http://espn.com
+2 - Verify title in header of container on left side of body (ESPN Sites)
+3 - Verify number of elements contained within container
+
+Test Case 18 - ESPN Sites Container List Item Names
+1 - Navigate to http://espn.com
+2 - Verify the name of each item contained within container (ESPN Sites)
+
+******************
+
+Test Case 19 - Follow ESPN Container Name & List Count
+1 - Navigate to http://espn.com
+2 - Verify title in header of container on left side of body (Follow ESPN)
+3 - Verify number of elements contained within container
+
+Test Case 20 - Follow ESPN Container List Item Names
+1 - Navigate to http://espn.com
+2 - Verify the name of each item contained within container (Follow ESPN)

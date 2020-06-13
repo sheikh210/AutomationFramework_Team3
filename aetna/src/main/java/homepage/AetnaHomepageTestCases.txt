@@ -1,0 +1,109 @@
+Aetna Homepage Test Cases
+
+***HEADER TEST CASES***
+Test Case 1 - Validate Navigation to Homepage
+1 - Navigate to http://aetna.com
+2 - Verify we're on homepage by capturing page title
+
+Test Case 2 - Validate that clicking on the 'Search' icon will expand search field and allow user to enter keys
+1 - Navigate to http://aetna.com
+2 - Click on 'Search' icon (magnifying glass) on header (top right)
+3 - Enter the phrase "Insurance Plans"
+4 - Press "Enter" on keyboard
+5 - Verify that the page you are navigated to contains search results for "Insurance Plans"
+6 - Verify number of results returned & time spent to return results
+
+Test Case 3 - Validate "Explore Aetna sites" button in header & elements contained within it
+1 - Navigate to http://aetna.com
+2 - Click on "Explore Aetna sites" button on top right of header
+3 - Verify the number of items contained within the dropdown
+4 - Verify the name of each of the items
+5 - Verify each item in the list takes us to the expected pages
+
+Test Case 4 - Validate "Explore Aetna sites" element URLs
+1 - Navigate to http://aetna.com
+2 - Click on "Explore Aetna sites" button on top right of header
+3 - Click on each item in the list
+4 - Verify each item in the list takes us to the expected pages
+
+Test Case 5 - Validate "Shop for a plan" header dropdown - Count & names (Left Menu)
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Verify count & names of items listed on left side of dropdown menu
+
+Test Case 6 - Validate "Shop for a plan" header dropdown - 'Medicare' submenu count & names
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Medicare' option, verify the count of submenu items & their names
+
+Test Case 7 - Validate "Shop for a plan" header dropdown - 'Medicare' submenu URLs
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Medicare' option, verify the URLs of submenu items
+
+***********
+
+Test Case 8 - Validate "Shop for a plan" header dropdown - 'Health Coverage' submenu count & names
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Health Coverage' option, verify the count of submenu items & their names
+
+Test Case 9 - Validate "Shop for a plan" header dropdown - 'Health Coverage' submenu URLs
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Health Coverage' option, verify the URLs of submenu items
+
+Test Case 10 - Validate "Shop for a plan" header dropdown - 'Dental, vision and supplemental' submenu count & names
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Dental, vision and supplemental' option, verify the count of submenu items & their names
+
+Test Case 11 - Validate "Shop for a plan" header dropdown - 'Dental, vision and supplemental' submenu URLs
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Dental, vision and supplemental' option, verify the URLs of submenu items
+
+Test Case 12 - Validate "Shop for a plan" header dropdown - 'Pharmacy' submenu count & names
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Pharmacy' option, verify the count of submenu items & their names
+
+Test Case 13 - Validate "Shop for a plan" header dropdown - 'Pharmacy' submenu URLs
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Pharmacy' option, verify the URLs of submenu items
+
+Test Case 14 - Validate "Shop for a plan" header dropdown - 'Medicaid' submenu count & names
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Medicaid' option, verify the count of submenu items & their names
+
+Test Case 15 - Validate "Shop for a plan" header dropdown - 'Medicaid' submenu URLs
+1 - Navigate to http://aetna.com
+2 - Click on "Shop for a plan" in header
+3 - Under 'Medicaid' option, verify the URLs of submenu items
+
+Test Case 16 - Validate "Login" button navigates us to Login page
+1 - Navigate to http://aetna.com
+2 - Click "Login" button in header
+3 - Verify user is navigated to Login page
+
+
+***BODY TEST CASES***
+Test Case 17 - Validate 'Download Attain' button navigates us to Download Attain page
+1 - Navigate to http://aetna.com
+2 - Verify the name of each customer identifier within the customer identifier boxes
+3 - Verify URL for each customer identifier box
+
+Test Case 18 - Validate Miscellaneous Grid Boxes
+1 - Navigate to http://aetna.com
+2 - Verify the name of each miscellaneous grid item (Health News, About Us, Careers)
+3 - Verify the URL of each miscellaneous grid item
+
+Test Case 19 - Validate Social Media Wrapper - Count
+1 - Navigate to http://aetna.com
+2 - Verify there are 5 social media icons in the footer
+
+Test Case 20 - Validate Social Media Wrapper - Names & URLs
+1 - Navigate to http://aetna.com
+2 - Verify each social media icon's name & URL

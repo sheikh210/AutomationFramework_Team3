@@ -1,5 +1,7 @@
 package utilities;
 
+import org.openqa.selenium.WebElement;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +20,8 @@ public class ConnectToSqlDB {
 
     public static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
-        InputStream ism = new FileInputStream(System.getProperty("user.dir") + "\\Generic\\src\\main\\resources\\secret.properties");
+        InputStream ism = new FileInputStream("C:/Users/sshei/IdeaProjects/AutomationFramework_Team3/Generic/src" +
+                "/main/resources/secret.properties");
         prop.load(ism);
         ism.close();
         return prop;
@@ -108,42 +111,20 @@ public class ConnectToSqlDB {
         return data;
     }
 
-    /*public void insertDataFromArrayListToSqlTable(List<Student> list, String tableName, String columnName)
+    public void insertWebElementTextArrayListToSqlTable(List<WebElement> elementList, String tableName, String columnName)
     {
         try {
             connectToSqlDatabase();
             ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
             ps.executeUpdate();
-            //ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
-            ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` ("+columnName+" int(50) );");
+            ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
+            ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` ("+columnName+" varchar (100) );");
             ps.executeUpdate();
-            for(Student st:list){
+            for(WebElement e : elementList){
                 ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
-                ps.setObject(1,st);
+                ps.setObject(1, e.getText());
                 ps.executeUpdate();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }*/
-    public void insertDataFromArrayListToSqlTable(List<String> list, String tableName, String columnName) {
-        try {
-            connectToSqlDatabase();
-            ps = connect.prepareStatement("DROP TABLE IF EXISTS `" + tableName + "`;");
-            ps.executeUpdate();
-            //ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
-            ps = connect.prepareStatement("CREATE TABLE `" + tableName + "` (" + columnName + " varchar (100) );");
-            ps.executeUpdate();
-            for (Object st : list) {
-                ps = connect.prepareStatement("INSERT INTO " + tableName + " ( " + columnName + " ) VALUES(?)");
-                ps.setObject(1, st);
-                ps.executeUpdate();
-            }
-
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -153,11 +134,49 @@ public class ConnectToSqlDB {
         }
     }
 
+    public void insertWebElementLinksArrayListToSqlTable(List<WebElement> elementList, String tableName, String columnName)
+    {
+        try {
+            connectToSqlDatabase();
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
+            ps.executeUpdate();
+            ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
+            ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` ("+columnName+" varchar (100) );");
+            ps.executeUpdate();
+            for(WebElement e : elementList){
+                ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
+                ps.setObject(1, e.getAttribute("href"));
+                ps.executeUpdate();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
-//    public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
-//        List<User> list = readUserProfileFromSqlTable();
-//        for(User user:list){
-//            System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
-//        }
-//    }
+    public void insertStringArrayListToSqlTable(List<String> list, String tableName, String columnName) {
+        try {
+            connectToSqlDatabase();
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS `" + tableName + "`;");
+            ps.executeUpdate();
+            //ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
+            ps = connect.prepareStatement("CREATE TABLE `" + tableName + "` (" + columnName + " varchar (100) );");
+            ps.executeUpdate();
+
+            for (Object st : list) {
+                ps = connect.prepareStatement("INSERT INTO " + tableName + " ( " + columnName + " ) VALUES(?)");
+                ps.setObject(1, st);
+                ps.executeUpdate();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }
