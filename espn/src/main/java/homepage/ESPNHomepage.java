@@ -58,6 +58,39 @@ public class ESPNHomepage extends WebAPI {
     @FindBy(css = webElementMLBDropdownMenuRight)
     public WebElement mlbDropdownMenuRight;
 
+    @FindBy(xpath = webElementIFrame)
+    public WebElement iFrame;
+
+    @FindBy(xpath = webElementButtonLogin)
+    public WebElement buttonLogin;
+
+    @FindBy(xpath = webElementInputUsernameEmailAddress)
+    public WebElement inputUsernameEmailAddress;
+
+    @FindBy(xpath = webElementInputPassword)
+    public WebElement inputPassword;
+
+    @FindBy(xpath = webElementButtonLoginFormLogin)
+    public WebElement buttonLoginFormLogin;
+
+    @FindBy(xpath = webElementErrorLoginMessage)
+    public WebElement errorLoginMessage;
+
+    @FindBy(css = webElementContainerESPNSitesHeader)
+    public WebElement containerESPNSitesHeader;
+
+    @FindBy(css = webElementContainerESPNSitesList)
+    public WebElement containerESPNSitesList;
+
+    @FindBy(css = webElementContainerFollowESPNHeader)
+    public WebElement containerFollowESPNHeader;
+
+    @FindBy(css = webElementContainerFollowESPNList)
+    public WebElement containerFollowESPNList;
+
+    /**
+     * HEADER
+     */
 
     /**
      * Test Case 1 - Validate Navigation to Homepage
@@ -153,7 +186,9 @@ public class ESPNHomepage extends WebAPI {
      */
     public List<WebElement> getNFLDropdownMenuLeft() {
         mouseHover(nflDropdown);
-        List<WebElement> nflDropdownElementsLeftList = getListOfWebElementsByCss(nflDropdownMenuLeft, webElementNFLDropdownMenuItemsLeft);
+//        List<WebElement> nflDropdownElementsLeftList = getListOfWebElementsByCss(nflDropdownMenuLeft, webElementNFLDropdownMenuItemsLeft);
+
+        List<WebElement> nflDropdownElementsLeftList = nflDropdownMenuLeft.findElements(By.cssSelector(webElementNFLDropdownMenuItemsLeft));
 
         return nflDropdownElementsLeftList;
     }
@@ -248,9 +283,7 @@ public class ESPNHomepage extends WebAPI {
 //        softAssert.assertAll();
 //    }
     public String[] getNFLDropdownMenuLeftLinks() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
         Actions hover = new Actions(driver);
-
         hover.moveToElement(nflDropdown).perform();
 
         List<WebElement> nflMenuListLeft = getListOfWebElementsByCss(nflDropdownMenuLeft, webElementNFLDropdownMenuLinksLeft);
@@ -620,6 +653,112 @@ public class ESPNHomepage extends WebAPI {
         for (int i = 0; i < actualMLBTeams.length; i++) {
             System.out.println(actualMLBTeams[i]);
             softAssert.assertEquals(actualMLBTeams[i], expectedMLBTeamNames[i], "TEAM NAME AT INDEX " + i + " DOES NOT MATCH");
+        }
+    }
+
+
+
+    /**
+     * BODY
+     */
+
+    /**
+     * Test Case 16 - Login
+     * 1 - Navigate to http://espn.com
+     * 2 - Scroll down the page and click on "Login" button
+     * 3 - Pop-up should appear, containing username/email input & password input - Enter username/password
+     * 4 - Click 'Login' button
+     * 5 - Verify Error message that is displayed with invalid credentials
+     */
+    public void validateLogin(){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        clickOnElement(buttonLogin);
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iFrame));
+
+        inputUsernameEmailAddress.sendKeys("DemoAccount1");
+        inputPassword.sendKeys("demoPassword");
+        buttonLoginFormLogin.click();
+
+        wait.until(ExpectedConditions.textToBePresentInElement(errorLoginMessage, expectedElementLoginErrorMessage));
+        System.out.println("Error Message: "+errorLoginMessage.getText());
+        Assert.assertEquals(errorLoginMessage.getText(), expectedElementLoginErrorMessage, "LOGIN ERROR DOES NOT MATCH");
+    }
+
+
+    /**
+     * Test Case 17 - ESPN Sites Container Name & List Count
+     * 1 - Navigate to http://espn.com
+     * 2 - Verify title in header of container on left side of body (ESPN Sites)
+     * 3 - Verify number of elements contained within container
+     */
+
+    public void validateESPNSitesContainerHeadingAndCount(){
+        SoftAssert softAssert = new SoftAssert();
+
+        String actualHeaderTitle = containerESPNSitesHeader.getText();
+        System.out.println("Title of ESPN Sites container: "+actualHeaderTitle);
+
+        List<WebElement> listESPNSitesList = containerESPNSitesList.findElements(By.cssSelector(webElementsContainerESPNSitesListItems));
+        int actualESPNSitesListCount = listESPNSitesList.size();
+        System.out.println("Count of items within ESPN Sites container: "+actualESPNSitesListCount);
+        softAssert.assertEquals(actualHeaderTitle, expectedElementESPNSitesHeaderTitle, "'ESPN SITES' CONTAINER HEADER TITLE (LEFT BODY) DOES NOT MATCH");
+        softAssert.assertEquals(actualESPNSitesListCount, expectedElementESPNSitesListCount, "'ESPN SITES' CONTAINER LIST COUNT (LEFT BODY) DOES NOT MATCH");
+    }
+
+
+    /**
+     * Test Case 18 - ESPN Sites Container List Item Names
+     * 1 - Navigate to http://espn.com
+     * 2 - Verify the name of each item contained within container
+     */
+    public void validateESPNSitesContainerListItemNames(){
+        SoftAssert softAssert = new SoftAssert();
+
+        List<WebElement> listESPNSitesList = containerESPNSitesList.findElements(By.cssSelector(webElementsContainerESPNSitesListItems));
+        int i=0;
+        for(WebElement element : listESPNSitesList){
+            System.out.println(element.getAttribute("innerHTML"));
+            softAssert.assertEquals(element.getAttribute("innerHTML"), expectedElementsESPNSitesListItemNames[i], "LIST ITEM (ESPN SITES CONTAINER) AT INDEX "+i+" DOES NOT MATCH");
+            i++;
+        }
+    }
+
+
+    /**
+     * Test Case 19 - Follow ESPN Container Name & List Count
+     * 1 - Navigate to http://espn.com
+     * 2 - Verify title in header of container on left side of body (Follow ESPN)
+     * 3 - Verify number of elements contained within container
+     */
+    public void validateFollowESPNContainerHeadingAndCount(){
+        SoftAssert softAssert = new SoftAssert();
+
+        String actualHeaderTitle = containerFollowESPNHeader.getText();
+        System.out.println("Title of Follow ESPN container: "+actualHeaderTitle);
+
+        List<WebElement> listESPNSitesList = containerFollowESPNList.findElements(By.cssSelector(webElementsContainerFollowESPNListItems));
+        int actualESPNSitesListCount = listESPNSitesList.size();
+        System.out.println("Count of items within Follow ESPN container: "+actualESPNSitesListCount);
+        softAssert.assertEquals(actualHeaderTitle, expectedElementFollowESPNHeaderTitle, "'FOLLOW ESPN' CONTAINER HEADER TITLE (LEFT BODY) DOES NOT MATCH");
+        softAssert.assertEquals(actualESPNSitesListCount, expectedElementFollowESPNListCount, "'FOLLOW ESPN' CONTAINER LIST COUNT (LEFT BODY) DOES NOT MATCH");
+    }
+
+
+    /**
+     * Test Case 20 - Follow ESPN Container List Item Names
+     * 1 - Navigate to http://espn.com
+     * 2 - Verify the name of each item contained within container (Follow ESPN)
+     */
+    public void validateFollowESPNContainerListItemNames(){
+        SoftAssert softAssert = new SoftAssert();
+
+        List<WebElement> listESPNSitesList = containerFollowESPNList.findElements(By.cssSelector(webElementsContainerFollowESPNListItems));
+        int i=0;
+        for(WebElement element : listESPNSitesList){
+            System.out.println(element.getAttribute("innerHTML"));
+            softAssert.assertEquals(element.getAttribute("innerHTML"), expectedElementsFollowESPNListItemNames[i], "LIST ITEM (FOLLOW ESPN) AT INDEX "+i+" DOES NOT MATCH");
+            i++;
         }
     }
 }

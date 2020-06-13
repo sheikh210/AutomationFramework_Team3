@@ -1,6 +1,7 @@
 package homepage;
 
 public class VerizonWirelessHomepageElements {
+
     //-----------------------------------------------------------------------
 
     //case 1 elements
@@ -300,4 +301,3 @@ public class VerizonWirelessHomepageElements {
     public static final String clickSecurityLearnMoreNews = "//*[@id=\"section_copy_4161279\"]/div/div/div/div[1]/span/a";
 
 }
-

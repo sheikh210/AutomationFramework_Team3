@@ -1,5 +1,0 @@
-Test Case -1
-1. Navigate to Home Page
-2. Click the search Box
-3. put value on search Box
-4. select element

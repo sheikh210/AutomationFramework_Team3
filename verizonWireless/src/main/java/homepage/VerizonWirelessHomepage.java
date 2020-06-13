@@ -480,6 +480,7 @@ public class VerizonWirelessHomepage extends WebAPI {
     }
 
 
+
     //3---validate method
     //assertion
     public void validateLogin() {
