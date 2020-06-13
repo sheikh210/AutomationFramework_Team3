@@ -9,14 +9,13 @@
         <module name="tripAdvisor" />
         <module name="verizonWireless" />
         <module name="bankOfAmerica" />
-        <module name="ebay" />
+        <module name="eBay" />
         <module name="espn" />
         <module name="aetna" />
         <module name="Generic" />
         <module name="stJude" />
         <module name="deltaAirlines" />
       </profile>
-      <profile name="Annotation profile for AutomationFramework_Team3" enabled="true">
     </annotationProcessing>
   </component>
 </project>
