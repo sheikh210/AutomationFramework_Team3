@@ -10,16 +10,11 @@
         <module name="verizonWireless" />
         <module name="bankOfAmerica" />
         <module name="eBay" />
+        <module name="espn" />
         <module name="aetna" />
         <module name="Generic" />
         <module name="stJude" />
         <module name="deltaAirlines" />
-      </profile>
-      <profile name="Annotation profile for AutomationFramework_Team3" enabled="true">
-        <sourceOutputDir name="../eBay/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../eBay/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="espn" />
       </profile>
     </annotationProcessing>
   </component>
