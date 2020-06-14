@@ -45,40 +45,51 @@ Test Case 6 - Validate "Travel Update Center Dropdown" List - "Flying? What You 
 5 - Click on "Flying? What You Need to Know"
 6 - Verify the name of each submenu list items
 
-Test Case 7 -
+Test Case 7 - Validate names of each section within "Coronavirus Update Center"
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Verify the title of each section within the "Coronavirus Update Center" grid
 
-Test Case 8 -
-1 - Navigate to http://delta.com
-2 - Scroll down to "The Delta Customer Experience" grid
-3 - Click on "What Are The Latest Travel Updates?"
+*************
 
-Test Case 9 -
+Test Case 8 - Validate names of each item under "Travel Flexibility" grid ("Coronavirus Update Center" grid)
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Verify the name of each list item under "Travel Flexibility" grid, which resides under "Coronavirus Update Center"
 
-Test Case 10 -
+Test Case 9 - Validate URL of each item under "Travel Flexibility" grid ("Coronavirus Update Center" grid)
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Verify URL of each list item under "Travel Flexibility" grid ("Coronavirus Update Center" grid)
 
-Test Case 11 -
+Test Case 10 - Validate names of each item under "Traveling With Us" grid ("Coronavirus Update Center" grid)
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Verify the name of each list item under "Traveling With Us" grid, which resides under "Coronavirus Update Center"
 
-Test Case 12 -
+Test Case 11 - Validate URL of each item under "Traveling With Us" grid ("Coronavirus Update Center" grid)
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Verify URL of each list item under "Traveling With Us" grid, which resides under "Coronavirus Update Center"
 
-Test Case 13 -
+Test Case 12 - Validate names of each item under "Caring For You" grid ("Coronavirus Update Center" grid)
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Verify the name of each list item under "Caring For You" grid, which resides under "Coronavirus Update Center"
+
+Test Case 13 - Validate URL of each item under "Caring For You" grid ("Coronavirus Update Center" grid)
+1 - Navigate to http://delta.com
+2 - Scroll down to "The Delta Customer Experience" grid
+3 - Click on "What Are The Latest Travel Updates?"
+4 - Verify URL of each list item under "Caring For You" grid, which resides under "Coronavirus Update Center"
+
+
 
 Test Case 14 -
 1 - Navigate to http://delta.com

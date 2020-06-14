@@ -30,8 +30,6 @@ import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -282,6 +280,7 @@ public class WebAPI {
         splitString = StringUtils.join(StringUtils.splitByCharacterTypeCamelCase(st), ' ');
         return splitString;
     }
+
 
     public static void clickOnElement(WebElement element) {
         try {
@@ -587,7 +586,7 @@ public class WebAPI {
     }
 
 
-    public void clickJScript(WebElement element){
+    public static void clickJScript(WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
     }

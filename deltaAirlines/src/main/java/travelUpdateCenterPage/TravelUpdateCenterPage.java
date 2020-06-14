@@ -42,6 +42,18 @@ public class TravelUpdateCenterPage extends WebAPI {
     @FindBy (css = webElementSubmenuFlyingWhatYouNeedToKnow)
     public WebElement submenuFlyingWhatYouNeedToKnow;
 
+    @FindBy (css = webElementGridCoronavirusUpdateCenter)
+    public WebElement gridCoronavirusUpdateCenter;
+
+    @FindBy (css = webElementContainerTravelFlexibility)
+    public WebElement containerTravelFlexibility;
+
+    @FindBy (css = webElementContainerTravelingWithUs)
+    public WebElement containerTravelingWithUs;
+
+    @FindBy (css = webElementContainerCaringForYou)
+    public WebElement containerCaringForYou;
+
     WebDriverWait wait = new WebDriverWait(driver, 10);
 
     /**
@@ -217,6 +229,167 @@ public class TravelUpdateCenterPage extends WebAPI {
             System.out.println(i + " - " + submenuItemNames[i]);
         }
         return submenuItemNames;
+    }
+
+    /**
+     * Test Case 7 - Validate names of each section within "Coronavirus Update Center"
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Verify the title of each section within the "Coronavirus Update Center" grid
+     */
+    public String[] validateCoronavirusUpdateCenterGridHeaderNames() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOf(gridCoronavirusUpdateCenter));
+
+        List<WebElement> grids = gridCoronavirusUpdateCenter.findElements(By.cssSelector(webElementListCoronavirusUpdateCenterGridHeaders));
+        String[] gridNames = new String[grids.size()];
+
+        int i = 0;
+        for (WebElement e : grids) {
+            gridNames[i] = grids.get(i).getText();
+            System.out.println(i + " - " + gridNames[i]);
+            i++;
+        }
+        return gridNames;
+    }
+
+    /**
+     * Test Case 8 - Validate names of each item under "Travel Flexibility" grid ("Coronavirus Update Center" grid)
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Verify the name of each list item under "Travel Flexibility" grid, which resides under "Coronavirus Update Center"
+     */
+    public String[] validateTravelFlexibilityGridNames() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOf(gridCoronavirusUpdateCenter));
+
+        List<WebElement> gridList = containerTravelFlexibility.findElements(By.cssSelector(webElementListTravelFlexibility));
+        String[] listNames = new String[gridList.size()];
+
+        int i = 0;
+        for (WebElement e : gridList) {
+            listNames[i] = gridList.get(i).getText();
+            System.out.println(i + " - " + listNames[i]);
+            i++;
+        }
+        return listNames;
+    }
+
+    /**
+     * Test Case 9 - Validate URL of each item under "Travel Flexibility" grid ("Coronavirus Update Center" grid)
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Verify URL of each list item under "Travel Flexibility" grid ("Coronavirus Update Center" grid)
+     */
+    public String[] validateTravelFlexibilityGridURLs() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOf(gridCoronavirusUpdateCenter));
+
+        List<WebElement> gridList = containerTravelFlexibility.findElements(By.cssSelector(webElementListTravelFlexibility));
+        String[] listURLs = new String[gridList.size()];
+
+        int i = 0;
+        for (WebElement e : gridList) {
+            listURLs[i] = gridList.get(i).getAttribute("href");
+            System.out.println(i + " - " + listURLs[i]);
+            i++;
+        }
+        return listURLs;
+    }
+
+    /**
+     * Test Case 10 - Validate names of each item under "Traveling With Us" grid ("Coronavirus Update Center" grid)
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Verify the name of each list item under "Traveling With Us" grid, which resides under "Coronavirus Update Center"
+     */
+    public String[] validateTravelingWithUsGridNames() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOf(gridCoronavirusUpdateCenter));
+
+        List<WebElement> gridList = containerTravelingWithUs.findElements(By.cssSelector(webElementListTravelingWithUs));
+        String[] listNames = new String[gridList.size()];
+
+        int i = 0;
+        for (WebElement e : gridList) {
+            listNames[i] = gridList.get(i).getText();
+            System.out.println(i + " - " + listNames[i]);
+            i++;
+        }
+        return listNames;
+    }
+
+    /**
+     * Test Case 11 - Validate URL of each item under "Traveling With Us" grid ("Coronavirus Update Center" grid)
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Verify URL of each list item under "Traveling With Us" grid, which resides under "Coronavirus Update Center"
+     */
+    public String[] validateTravelingWithUsGridURLs() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOf(gridCoronavirusUpdateCenter));
+
+        List<WebElement> gridList = containerTravelingWithUs.findElements(By.cssSelector(webElementListTravelingWithUs));
+        String[] listURLs = new String[gridList.size()];
+
+        int i = 0;
+        for (WebElement e : gridList) {
+            listURLs[i] = gridList.get(i).getAttribute("href");
+            System.out.println(i + " - " + listURLs[i]);
+            i++;
+        }
+        return listURLs;
+    }
+
+    /**
+     * Test Case 12 - Validate names of each item under "Caring For You" grid ("Coronavirus Update Center" grid)
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Verify the name of each list item under "Caring For You" grid, which resides under "Coronavirus Update Center"
+     */
+    public String[] validateCaringForYouGridNames() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOf(gridCoronavirusUpdateCenter));
+
+        List<WebElement> gridList = containerCaringForYou.findElements(By.cssSelector(webElementListCaringForYou));
+        String[] listNames = new String[gridList.size()];
+
+        int i = 0;
+        for (WebElement e : gridList) {
+            listNames[i] = gridList.get(i).getText();
+            System.out.println(i + " - " + listNames[i]);
+            i++;
+        }
+        return listNames;
+    }
+
+    /**
+     * Test Case 13 - Validate URL of each item under "Caring For You" grid ("Coronavirus Update Center" grid)
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Verify URL of each list item under "Caring For You" grid, which resides under "Coronavirus Update Center"
+     */
+    public String[] validateCaringForYouGridURLs() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOf(gridCoronavirusUpdateCenter));
+
+        List<WebElement> gridList = containerCaringForYou.findElements(By.cssSelector(webElementListCaringForYou));
+        String[] listURLs = new String[gridList.size()];
+
+        int i = 0;
+        for (WebElement e : gridList) {
+            listURLs[i] = gridList.get(i).getAttribute("href");
+            System.out.println(i + " - " + listURLs[i]);
+            i++;
+        }
+        return listURLs;
     }
 
 
