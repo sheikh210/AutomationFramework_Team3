@@ -1,0 +1,71 @@
+"3990NY_Firdovsi Isgandarov"
+
+TripAdvisor Flights Page Test cases
+
+>>>Test Case 1 - Go to Home Page<<<
+Open Chrome Browser
+Type Url >>https://www.tripadvisor.com/<<
+Wait until home page is landing
+Get Home Page Title
+
+>>>Test Case 2 - Go to Flights page <<<
+Click >>More<< button on header
+Expand it
+Validate 9 Category are there
+Click Flights button
+Wait until home page is landing
+Get Title
+
+>>>Test Case 3 - Drop Down Menu<<<
+Click ellipsis button
+Validate 9 Category are visible
+
+>>>Test Case 4 - Round Trip<<<
+Click From box
+Type New York City (NYC)
+Click To Where Box
+Type Los Angeles (LAX)
+
+>>>Test Case 5 - Calendar Box<<<
+Click Calendar box
+Click right swipe
+Click 18 July
+Click 15 August
+
+>>>Test Case 6 - Check class type<<<
+Click Class box
+Expand it
+Click Economy button
+Validate 4 type of class
+Click First Class
+Click Close
+
+>>>Test Case 7 - Extra options<<<
+Click >>Prefer nonstop<< button
+Click >>Include nearby airports<< button
+
+>>>Test Case 8 - Price Alert<<<
+Click Email Bar
+Type >><pnttest@gmail.com<
+
+>>>Test Case 9 - Currency box<<<
+Click Currency box
+Validate 8 currency type are displayed
+
+>>>Test Case 10 - Country box<<<
+Click Country box
+Validate how many country name there
+
+>>>Test Case 11 - Do flight search<<<
+Click green search bar on the right side of the header
+
+
+>>>Test Case 12 - <<<
+>>>Test Case 13 - <<<
+>>>Test Case 14 - <<<
+>>>Test Case 15 - <<<
+>>>Test Case 16 - <<<
+>>>Test Case 17 - <<<
+>>>Test Case 18 - <<<
+>>>Test Case 19 - <<<
+>>>Test Case 20 - <<<
