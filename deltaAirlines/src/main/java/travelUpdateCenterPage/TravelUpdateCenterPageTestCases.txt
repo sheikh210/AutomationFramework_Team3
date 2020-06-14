@@ -51,8 +51,6 @@ Test Case 7 - Validate names of each section within "Coronavirus Update Center"
 3 - Click on "What Are The Latest Travel Updates?"
 4 - Verify the title of each section within the "Coronavirus Update Center" grid
 
-*************
-
 Test Case 8 - Validate names of each item under "Travel Flexibility" grid ("Coronavirus Update Center" grid)
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
@@ -89,39 +87,54 @@ Test Case 13 - Validate URL of each item under "Caring For You" grid ("Coronavir
 3 - Click on "What Are The Latest Travel Updates?"
 4 - Verify URL of each list item under "Caring For You" grid, which resides under "Coronavirus Update Center"
 
-
-
-Test Case 14 -
+Test Case 14 - Validate functionality of "Show All Recent Coronavirus Updates" Accordion
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Scroll down (below FAQ section) and click on "Show All Recent Coronavirus Updates"
+5 - Validate that the accordion menu expands
 
-Test Case 15 -
+Test Case 15 - Validate all URLs contained within "Show All Recent Coronavirus Updates" expanded menu
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Scroll down (below FAQ section) and click on "Show All Recent Coronavirus Updates"
+5 - Validate all URLs contained within expanded menu
 
-Test Case 16 -
+Test Case 16 - Validate "Other Updates and Travel Tips" Grid Header Names
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Scroll down to "Other Updates and Travel Tips"
+5 - Verify the header name within each grid 
 
-Test Case 17 -
+Test Case 17 - Validate Navigation to "Delta Sky Club Updates" - "Other Updates and Travel Tips" Container
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Scroll down to "Other Updates and Travel Tips"
+5 - Click "Delta Sky Club Updates"
+6 - Verify URL of page you are navigated to
 
-Test Case 18 -
+Test Case 18 - Validate Navigation to "Download The Fly Delta App" - "Other Updates and Travel Tips" Container
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Scroll down to "Other Updates and Travel Tips"
+5 - Click "Download The Fly Delta App"
+6 - Verify URL of page you are navigated to
 
-Test Case 19 -
+Test Case 19 - Validate Navigation to "Flying With A Partner Airline?" - "Other Updates and Travel Tips" Container
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Scroll down to "Other Updates and Travel Tips"
+5 - Click "Flying With A Partner Airline?"
+6 - Verify URL of page you are navigated to
 
-Test Case 20 -
+Test Case 20 - Validate "Frequently Asked Questions" Grid Header Titles
 1 - Navigate to http://delta.com
 2 - Scroll down to "The Delta Customer Experience" grid
 3 - Click on "What Are The Latest Travel Updates?"
+4 - Scroll down to "Frequently Asked Questions" container
+5 - Verify name of each grid header title

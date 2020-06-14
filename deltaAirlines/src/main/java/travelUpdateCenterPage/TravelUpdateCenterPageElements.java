@@ -52,13 +52,26 @@ public class TravelUpdateCenterPageElements {
     public static final String webElementContainerCaringForYou = "#maincontent div.container-fluid div.col-sm-12:nth-child(3)>div.text >div";
     // Coronavirus Update Center - "Caring For You" Items List (LIST) (CSS)
     public static final String webElementListCaringForYou = "#maincontent div.container-fluid div.col-sm-12:nth-child(3) div.container >p span a";
-
-
-
-
-    /**
-     * FOOTER
-     */
-
-
+    // "Show All Coronavirus Recent Updates" Accordion Button (xPath)
+    public static final String webElementButtonAccordionShowAllRecentCoronavirusUpdates = "//*[@id=\"maincontent\"]//a[@class=\"details-controller\"]";
+    // "Show All Coronavirus Recent Updates" Accordion Button EXPANDED (xPath)
+    public static final String webElementButtonExpandedAccordionShowAllRecentCoronavirusUpdates = "//*[@id=\"maincontent\"]//a[@class=\"details-controller active\"]";
+    // "Show All Coronavirus Recent Updates" Accordion Container EXPANDED (xPath)
+    public static final String webElementContainerShowAllRecentCoronavirusUpdates = "//*[@id=\" All recent Coronavirus updates\"]/ul";
+    // "Show All Coronavirus Recent Updates" Expanded Accordion Links (LIST) (xPath)
+    public static final String webElementListShowAllRecentCoronavirusUpdatesLinks = "//*[@id=\" All recent Coronavirus updates\"]/ul/li//a[contains(@href,'/')]";
+    // "Other Updates and Travel Tips" Container (CSS)
+    public static final String webElementContainerOtherUpdatesAndTravelTips = "#maincontent > div:nth-child(15) > div";
+    // "Other Updates and Travel Tips" Container Header Titles (CSS)
+    public static final String webElementListOtherUpdatesAndTravelTipsHeaderTitles = "#maincontent > div:nth-child(15) > div >div span.card-headertxt";
+    // "Delta Sky Club Updates" - "Other Updates and Travel Tips" Container (CSS)
+    public static final String webElementLinkDeltaSkyClubUpdates = "#maincontent > div:nth-child(15) > div >div a[href*='corona']";
+    // "Download The Fly Delta App" - "Other Updates and Travel Tips" Container (CSS)
+    public static final String webElementLinkDownloadTheFlyDeltaApp = "#maincontent > div:nth-child(15) > div >div a[href*='delta-digital']";
+    // "Flying With A Partner Airline" - "Other Updates and Travel Tips" Container (CSS)
+    public static final String webElementLinkFlyingWithAPartnerAirline = "#maincontent > div:nth-child(15) > div >div a[href*='partner-airline']";
+    // "Frequently Asked Questions" Container (CSS)
+    public static final String webElementContainerFrequentlyAskedQuestions = "#maincontent > div:nth-child(23) div[class*='row']";
+    // "Frequently Asked Questions" Grid Header Titles (LIST) (CSS)
+    public static final String webElementListFrequentlyAskedQuestionsHeaderTitles = "#maincontent > div:nth-child(23) div[class*='row'] h3";
 }

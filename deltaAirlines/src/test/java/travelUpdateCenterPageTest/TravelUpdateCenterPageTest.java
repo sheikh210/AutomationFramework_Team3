@@ -16,13 +16,14 @@ public class TravelUpdateCenterPageTest extends WebAPI {
 
     static TravelUpdateCenterPage travelUpdateCenterPage;
     static DataReader dataReader = new DataReader();
+    static SoftAssert softAssert = new SoftAssert();
 
     public static void getInItElement(){
         travelUpdateCenterPage = PageFactory.initElements(driver,TravelUpdateCenterPage.class);
     }
 
     @Test (priority = 0)
-    public static void testNavigationToTravelUpdateCenterPage(){
+    public static void testNavigationToTravelUpdateCenterPage() {
         getInItElement();
         String actualURL = travelUpdateCenterPage.validateNavigationToTravelUpdateCenterPage();
 
@@ -40,7 +41,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
     }
 
     @Test (priority = 1)
-    public static void testTravelUpdateCenterDropdownFunctionAndListCount(){
+    public static void testTravelUpdateCenterDropdownFunctionAndListCount() {
         getInItElement();
         int actualListCount = travelUpdateCenterPage.validateTravelUpdateCenterDropdownListCount();
 
@@ -66,7 +67,6 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         String[] expectedListNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "TUC Dropdown List Names");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i < actualListNames.length; i++) {
             softAssert.assertEquals(actualListNames[i].replace("’", "'"), expectedListNames[i], "\"TRAVEL UPDATE " +
                     "CENTER\" DROPDOWN LIST ITEM AT INDEX " + i + " DOES NOT MATCH");
@@ -82,7 +82,6 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         String[] expectedListNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "TUC - WWKYS Submenu Names");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i < actualListNames.length; i++) {
             softAssert.assertEquals(actualListNames[i], expectedListNames[i], "\"WAYS WE'RE KEEPING YOU SAFE\" " +
                     "SUBMENU LIST ITEM AT INDEX " + i + " DOES NOT MATCH");
@@ -98,7 +97,6 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         String[] expectedListNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "TUC - FDTOC Submenu Names");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i < actualListNames.length; i++) {
             softAssert.assertEquals(actualListNames[i], expectedListNames[i], "\"FROM DELTA TO OUR CUSTOMERS\" " +
                     "SUBMENU LIST ITEM AT INDEX " + i + " DOES NOT MATCH");
@@ -114,7 +112,6 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         String[] expectedListNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "TUC - FWYNTK Submenu Names");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i < actualListNames.length; i++) {
             softAssert.assertEquals(actualListNames[i], expectedListNames[i], "\"FLYING? WHAT YOU NEED TO KNOW\" " +
                     "SUBMENU LIST ITEM AT INDEX " + i + " DOES NOT MATCH");
@@ -130,7 +127,6 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         String[] expectedGridNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "CUC - Grid Header Names");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i < actualGridNames.length; i++) {
             softAssert.assertEquals(actualGridNames[i], expectedGridNames[i], "\""+expectedGridNames[i]+"\" HEADER " +
                     "TITLE DOES NOT MATCH");
@@ -139,14 +135,13 @@ public class TravelUpdateCenterPageTest extends WebAPI {
     }
 
     @Test (priority = 7)
-    public static void testTravelFlexibilityGridNames() throws IOException{
+    public static void testTravelFlexibilityGridNames() throws IOException {
         getInItElement();
         String[] actualNames = travelUpdateCenterPage.validateTravelFlexibilityGridNames();
 
         String[] expectedNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "CUC - TravelFlexibility Names");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i<actualNames.length; i++) {
             softAssert.assertEquals(actualNames[i], expectedNames[i], "LIST ITEM NAME UNDER \"TRAVEL FLEXIBILITY\" " +
                     "GRID AT INDEX " + i + " DOES NOT MATCH");
@@ -155,14 +150,13 @@ public class TravelUpdateCenterPageTest extends WebAPI {
     }
 
     @Test (priority = 8)
-    public static void testTravelFlexibilityGridURLs() throws IOException{
+    public static void testTravelFlexibilityGridURLs() throws IOException {
         getInItElement();
         String[] actualNames = travelUpdateCenterPage.validateTravelFlexibilityGridURLs();
 
         String[] expectedNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "CUC - TravelFlexibility URLs");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i<actualNames.length; i++) {
             softAssert.assertEquals(actualNames[i], expectedNames[i], "LIST ITEM URL UNDER \"TRAVEL FLEXIBILITY\" " +
                     "GRID AT INDEX " + i + " DOES NOT MATCH");
@@ -172,33 +166,28 @@ public class TravelUpdateCenterPageTest extends WebAPI {
 
     //********* &nbsp; - HTML whitespace character not able to be handled in this test case *********
     @Test (priority = 9)
-    public static void testTravelingWithUsGridNames() throws IOException{
+    public static void testTravelingWithUsGridNames() throws IOException {
         getInItElement();
         String[] actualNames = travelUpdateCenterPage.validateTravelingWithUsGridNames();
 
         String[] expectedNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "CUC - TravelingWithUs Names");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i<actualNames.length; i++) {
             softAssert.assertEquals(actualNames[i].replaceAll("&nbsp;", " "), expectedNames[i], "LIST ITEM NAME UNDER" +
-                    " \"TRAVELING WITH " +
-                    "US\"" +
-                    " " +
-                    "GRID AT INDEX " + i + " DOES NOT MATCH");
+                    " \"TRAVELING WITH US\" GRID AT INDEX " + i + " DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
 
     @Test (priority = 10)
-    public static void testTravelingWithUsGridURLs() throws IOException{
+    public static void testTravelingWithUsGridURLs() throws IOException {
         getInItElement();
         String[] actualNames = travelUpdateCenterPage.validateTravelingWithUsGridURLs();
 
         String[] expectedNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "CUC - TravelingWithUs URLs");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i<actualNames.length; i++) {
             softAssert.assertEquals(actualNames[i], expectedNames[i], "LIST ITEM URL UNDER \"TRAVELING WITH US\" GRID" +
                     " AT INDEX " + i + " DOES NOT MATCH");
@@ -207,14 +196,13 @@ public class TravelUpdateCenterPageTest extends WebAPI {
     }
 
     @Test (priority = 11)
-    public static void testCaringForYouGridNames() throws IOException{
+    public static void testCaringForYouGridNames() throws IOException {
         getInItElement();
         String[] actualNames = travelUpdateCenterPage.validateCaringForYouGridNames();
 
         String[] expectedNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "CUC - CaringForYou Names");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i<actualNames.length; i++) {
             softAssert.assertEquals(actualNames[i], expectedNames[i], "LIST ITEM NAME UNDER \"CARING FOR YOU\" GRID " +
                     "AT INDEX " + i + " DOES NOT MATCH");
@@ -222,18 +210,101 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         softAssert.assertAll();
     }
 
-    @Test (priority = 11)
-    public static void testCaringForYouGridURLs() throws IOException{
+    @Test (priority = 12)
+    public static void testCaringForYouGridURLs() throws IOException {
         getInItElement();
         String[] actualNames = travelUpdateCenterPage.validateCaringForYouGridURLs();
 
         String[] expectedNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
                 "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "CUC - CaringForYou URLs");
 
-        SoftAssert softAssert = new SoftAssert();
         for (int i = 0; i<actualNames.length; i++) {
             softAssert.assertEquals(actualNames[i], expectedNames[i], "LIST ITEM URL UNDER \"CARING FOR YOU\" GRID AT" +
                     " INDEX " + i + " DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+    @Test (priority = 13)
+    public static void testShowAllRecentCoronavirusUpdatesAccordionFunctionality() {
+        getInItElement();
+        boolean actual = travelUpdateCenterPage.validateShowAllRecentCoronavirusUpdatesAccordionFunctionality();
+        Assert.assertTrue(actual);
+    }
+
+    @Test (priority = 14)
+    public static void testShowAllRecentCoronavirusUpdatesURLs() throws IOException {
+        getInItElement();
+        String [] actualURLs = travelUpdateCenterPage.validateShowAllRecentCoronavirusUpdatesURLs();
+
+        String [] expectedURLs = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
+                "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "SACRU - URLs");
+
+        for (int i = 0; i < actualURLs.length; i++) {
+            softAssert.assertEquals(actualURLs[i], expectedURLs[i], "\"SHOW ALL RECENT CORONAVIRUS UPDATES\"" +
+                    " URL AT INDEX " + i + "DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+    @Test (priority = 15)
+    public static void testOtherUpdatesAndTravelTipsContainerHeaderNames() throws IOException {
+        getInItElement();
+        String[] actualNames = travelUpdateCenterPage.validateOtherUpdatesAndTravelTipsContainerHeaderNames();
+
+        String[] expectedNames = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src" +
+                "\\main\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "OUATT - Header Names");
+
+        for (int i = 0; i < actualNames.length; i++) {
+            softAssert.assertEquals(actualNames[i], expectedNames[i], "HEADER TITLE UNDER \"OTHER UPDATES AND " +
+                    "TRAVEL TIPS\" CONTAINER AT INDEX " + i + " DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+    @Test (priority = 16)
+    public static void testDeltaSkyClubUpdatesURLNav() throws IOException{
+        getInItElement();
+        String actualURL = travelUpdateCenterPage.validateDeltaSkyClubUpdatesURLNav();
+        String[] expectedURLArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+"\\src\\main" +
+                "\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "OUATT - DeltaSkyClub URL");
+        String expectedURL = expectedURLArray[0];
+
+        Assert.assertEquals(actualURL, expectedURL, "\"DELTA SKY CLUB UPDATES\" URL DOES NOT MATCH");
+    }
+
+    @Test (priority = 17)
+    public static void testDownloadTheFlyDeltaAppURLNav() throws IOException {
+        getInItElement();
+        String actualURL = travelUpdateCenterPage.validateDownloadTheFlyDeltaAppURLNav();
+        String[] expectedURLArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+"\\src\\main" +
+                "\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "OUATT - FlyDeltaApp URL");
+        String expectedURL = expectedURLArray[0];
+
+        Assert.assertEquals(actualURL, expectedURL, "COULD NOT NAVIGATE TO \"DOWNLOAD THE FLY DELTA APP\"");
+    }
+
+    @Test (priority = 18)
+    public static void testFlyingWithAPartnerAirlineURLNav() throws IOException {
+        getInItElement();
+        String actualURL = travelUpdateCenterPage.validateFlyingWithAPartnerAirlineURLNav();
+        String[] expectedURLArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+"\\src\\main" +
+                "\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "OUATT - FlyingPartnerAir URL");
+        String expectedURL = expectedURLArray[0];
+
+        Assert.assertEquals(actualURL, expectedURL, "COULD NOT NAVIGATE TO \"FLYING WITH A PARTNER AIRLINE?\"");
+    }
+
+    @Test (priority = 19)
+    public static void testFrequentlyAskedQuestionsContainerHeaderNames() throws IOException {
+        getInItElement();
+        String[] actualTitles = travelUpdateCenterPage.validateFrequentlyAskedQuestionsContainerHeaderNames();
+        String[] expectedTitles = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+"\\src\\main" +
+                "\\resources\\DeltaTravelUpdateCenterPage_ExpectedElements.xlsx", "FAQ Header Names");
+
+        for (int i = 0; i < actualTitles.length; i++) {
+            softAssert.assertEquals(actualTitles[i], expectedTitles[i], "\"FREQUENTLY ASKED QUESTIONS\" HEADER" +
+                    " TITLE AT INDEX " + i + " DOES NOT MATCH");
         }
         softAssert.assertAll();
     }

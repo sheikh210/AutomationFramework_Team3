@@ -317,7 +317,7 @@ public class DataReader extends WebAPI {
     public String getCellValueXSSF(XSSFCell cell) {
         Object value = null;
 
-        CellType dataType = cell.getCellTypeEnum();
+        CellType dataType = cell.getCellType();
         switch (dataType) {
             case NUMERIC:
                 value = cell.getNumericCellValue();

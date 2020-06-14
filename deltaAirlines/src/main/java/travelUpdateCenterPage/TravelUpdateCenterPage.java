@@ -3,6 +3,7 @@ package travelUpdateCenterPage;
 import commonAPI.WebAPI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -53,6 +54,30 @@ public class TravelUpdateCenterPage extends WebAPI {
 
     @FindBy (css = webElementContainerCaringForYou)
     public WebElement containerCaringForYou;
+
+    @FindBy (xpath = webElementButtonAccordionShowAllRecentCoronavirusUpdates)
+    public WebElement buttonAccordionShowAllRecentCoronavirusUpdates;
+
+    @FindBy (xpath = webElementButtonExpandedAccordionShowAllRecentCoronavirusUpdates)
+    public WebElement buttonExpandedAccordionShowAllCoronavirusRecentUpdates;
+
+    @FindBy (xpath = webElementContainerShowAllRecentCoronavirusUpdates)
+    public WebElement containerShowAllCoronavirusRecentUpdates;
+
+    @FindBy (css = webElementContainerOtherUpdatesAndTravelTips)
+    public WebElement containerOtherUpdatesAndTravelTips;
+
+    @FindBy (css = webElementLinkDeltaSkyClubUpdates)
+    public WebElement linkDeltaSkyClubUpdates;
+
+    @FindBy (css = webElementLinkDownloadTheFlyDeltaApp)
+    public WebElement linkDownloadTheFlyDeltaApp;
+
+    @FindBy (css = webElementLinkFlyingWithAPartnerAirline)
+    public WebElement linkFlyingWithAPartnerAirline;
+
+    @FindBy (css = webElementContainerFrequentlyAskedQuestions)
+    public WebElement containerFrequentlyAskedQuestions;
 
     WebDriverWait wait = new WebDriverWait(driver, 10);
 
@@ -122,7 +147,7 @@ public class TravelUpdateCenterPage extends WebAPI {
         int i = 0;
         for (WebElement element : dropdownList) {
             dropdownListNames[i]=element.getText();
-            System.out.println(i + " - " + dropdownListNames[i]);
+            System.out.println("List Item " + (i+1) + " - " + dropdownListNames[i]);
             i++;
         }
         return dropdownListNames;
@@ -157,7 +182,7 @@ public class TravelUpdateCenterPage extends WebAPI {
 
         for (int i = 0; i < submenuItems.size(); i++) {
             submenuItemNames[i] = submenuItems.get(i).getText();
-            System.out.println(i + " - " + submenuItemNames[i]);
+            System.out.println("List Item " + (i+1) + " - " + submenuItemNames[i]);
         }
         return submenuItemNames;
     }
@@ -191,7 +216,7 @@ public class TravelUpdateCenterPage extends WebAPI {
 
         for (int i = 0; i < submenuItems.size(); i++) {
             submenuItemNames[i] = submenuItems.get(i).getText();
-            System.out.println(i + " - " + submenuItemNames[i]);
+            System.out.println("List Item " + (i+1) + " - " + submenuItemNames[i]);
         }
         return submenuItemNames;
     }
@@ -226,7 +251,7 @@ public class TravelUpdateCenterPage extends WebAPI {
 
         for (int i = 0; i < submenuItems.size(); i++) {
             submenuItemNames[i] = submenuItems.get(i).getText();
-            System.out.println(i + " - " + submenuItemNames[i]);
+            System.out.println("List Item " + (i+1) + " - " + submenuItemNames[i]);
         }
         return submenuItemNames;
     }
@@ -248,7 +273,7 @@ public class TravelUpdateCenterPage extends WebAPI {
         int i = 0;
         for (WebElement e : grids) {
             gridNames[i] = grids.get(i).getText();
-            System.out.println(i + " - " + gridNames[i]);
+            System.out.println("Header " + (i+1) + " - " + gridNames[i]);
             i++;
         }
         return gridNames;
@@ -271,7 +296,7 @@ public class TravelUpdateCenterPage extends WebAPI {
         int i = 0;
         for (WebElement e : gridList) {
             listNames[i] = gridList.get(i).getText();
-            System.out.println(i + " - " + listNames[i]);
+            System.out.println("List Item " + (i+1) + " - " + listNames[i]);
             i++;
         }
         return listNames;
@@ -294,7 +319,7 @@ public class TravelUpdateCenterPage extends WebAPI {
         int i = 0;
         for (WebElement e : gridList) {
             listURLs[i] = gridList.get(i).getAttribute("href");
-            System.out.println(i + " - " + listURLs[i]);
+            System.out.println("URL " + (i+1) + " - " + listURLs[i]);
             i++;
         }
         return listURLs;
@@ -317,7 +342,7 @@ public class TravelUpdateCenterPage extends WebAPI {
         int i = 0;
         for (WebElement e : gridList) {
             listNames[i] = gridList.get(i).getText();
-            System.out.println(i + " - " + listNames[i]);
+            System.out.println("List Item " + (i+1) + " - " + listNames[i]);
             i++;
         }
         return listNames;
@@ -340,7 +365,7 @@ public class TravelUpdateCenterPage extends WebAPI {
         int i = 0;
         for (WebElement e : gridList) {
             listURLs[i] = gridList.get(i).getAttribute("href");
-            System.out.println(i + " - " + listURLs[i]);
+            System.out.println("URL " + (i+1) + " - " + listURLs[i]);
             i++;
         }
         return listURLs;
@@ -363,7 +388,7 @@ public class TravelUpdateCenterPage extends WebAPI {
         int i = 0;
         for (WebElement e : gridList) {
             listNames[i] = gridList.get(i).getText();
-            System.out.println(i + " - " + listNames[i]);
+            System.out.println("List Item " + (i+1) + " - " + listNames[i]);
             i++;
         }
         return listNames;
@@ -386,23 +411,183 @@ public class TravelUpdateCenterPage extends WebAPI {
         int i = 0;
         for (WebElement e : gridList) {
             listURLs[i] = gridList.get(i).getAttribute("href");
-            System.out.println(i + " - " + listURLs[i]);
+            System.out.println("URL " + (i+1) + " - " + listURLs[i]);
             i++;
         }
         return listURLs;
     }
 
+    /**
+     * Test Case 14 - Validate functionality of "Show All Recent Coronavirus Updates" Accordion
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Scroll down (below FAQ section) and click on "Show All Recent Coronavirus Updates"
+     * 5 - Validate that the accordion menu expands
+     */
+    public boolean validateShowAllRecentCoronavirusUpdatesAccordionFunctionality(){
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonAccordionShowAllRecentCoronavirusUpdates));
 
+        clickOnElement(buttonAccordionShowAllRecentCoronavirusUpdates);
 
+        boolean flag = false;
+        if (buttonExpandedAccordionShowAllCoronavirusRecentUpdates.isDisplayed()) {
+            flag = true;
+            System.out.println("Clicked \"Show All Recent Coronavirus Updates Accordion Button\"");
+        } else if (!(buttonExpandedAccordionShowAllCoronavirusRecentUpdates.isDisplayed())) {
+            flag = false;
+            System.out.println("Could NOT click on \"Show All Recent Coronavirus Updates Accordion Button\"");
+        }
+        return flag;
+    }
 
+    /**
+     * Test Case 15 - Validate all URLs contained within "Show All Recent Coronavirus Updates" expanded menu
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Scroll down (below FAQ section) and click on "Show All Recent Coronavirus Updates"
+     * 5 - Validate all URLs contained within expanded menu
+     */
+    public String[] validateShowAllRecentCoronavirusUpdatesURLs() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonAccordionShowAllRecentCoronavirusUpdates));
 
+        clickOnElement(buttonAccordionShowAllRecentCoronavirusUpdates);
+        wait.until(ExpectedConditions.visibilityOf(containerShowAllCoronavirusRecentUpdates));
 
+        List<WebElement> elementURLList = containerShowAllCoronavirusRecentUpdates.findElements(By.xpath(webElementListShowAllRecentCoronavirusUpdatesLinks));
+        String [] urlList = new String [elementURLList.size()];
 
+        int i = 0;
+        for (WebElement element : elementURLList) {
+            urlList[i] = element.getAttribute("href");
+            System.out.println("URL " + (i+1) + " - " + urlList[i]);
+            i++;
+        }
+        return urlList;
+    }
 
+    /**
+     * Test Case 16 - Validate "Other Updates and Travel Tips" Grid Header Names
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Scroll down to "Other Updates and Travel Tips"
+     * 5 - Verify the header name within each grid
+     */
+    public String[] validateOtherUpdatesAndTravelTipsContainerHeaderNames() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOf(containerOtherUpdatesAndTravelTips));
 
+        List<WebElement> headerNamesList = containerOtherUpdatesAndTravelTips.findElements(By.cssSelector(webElementListOtherUpdatesAndTravelTipsHeaderTitles));
+        String[] headerNames = new String [headerNamesList.size()];
 
+        int i = 0;
+        for (WebElement element : headerNamesList) {
+            headerNames[i] = element.getText();
+            System.out.println("Header Title " + (i+1) + " - " + headerNames[i]);
+            i++;
+        }
+        return headerNames;
+    }
 
+    /**
+     * Test Case 17 - Validate Navigation to "Delta Sky Club Updates" - "Other Updates and Travel Tips" Container
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Scroll down to "Other Updates and Travel Tips"
+     * 5 - Click "Delta Sky Club Updates"
+     * 6 - Verify URL of page you are navigated to
+     */
+    public String validateDeltaSkyClubUpdatesURLNav() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOf(linkDeltaSkyClubUpdates));
+        clickOnElement(linkDeltaSkyClubUpdates);
 
+        String url = driver.getCurrentUrl();
+        System.out.println("URL - " + url);
+
+        return url;
+    }
+
+    /**
+     * Test Case 18 - Validate Navigation to "Download The Fly Delta App" - "Other Updates and Travel Tips" Container
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Scroll down to "Other Updates and Travel Tips"
+     * 5 - Click "Download The Fly Delta App"
+     * 6 - Verify URL of page you are navigated to
+     */
+    public String validateDownloadTheFlyDeltaAppURLNav() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.elementToBeClickable(linkDownloadTheFlyDeltaApp));
+
+        clickOnElement(linkDownloadTheFlyDeltaApp);
+
+        java.util.Iterator<String> iter = driver.getWindowHandles().iterator();
+
+        String parentWindow = iter.next();
+        String childWindow = iter.next();
+
+        driver.switchTo().window(childWindow);
+        System.out.println("Switched to \"" + driver.getTitle() + "\" window\n");
+        String url = driver.getCurrentUrl();
+        System.out.println(url + "\n");
+
+        driver.switchTo().window(parentWindow);
+        System.out.println("Switched back to \"" + driver.getTitle() + "\" window\n");
+        System.out.println(driver.getCurrentUrl());
+
+        return url;
+    }
+
+    /**
+     * Test Case 19 - Validate Navigation to "Flying With A Partner Airline?" - "Other Updates and Travel Tips" Container
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Scroll down to "Other Updates and Travel Tips"
+     * 5 - Click "Flying With A Partner Airline?"
+     * 6 - Verify URL of page you are navigated to
+     */
+    public String validateFlyingWithAPartnerAirlineURLNav() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.elementToBeClickable(linkFlyingWithAPartnerAirline));
+        clickOnElement(linkFlyingWithAPartnerAirline);
+
+        String url = driver.getCurrentUrl();
+        System.out.println("URL - " + url);
+
+        return url;
+    }
+
+    /**
+     * Test Case 20 - Validate "Frequently Asked Questions" Grid Header Titles
+     * 1 - Navigate to http://delta.com
+     * 2 - Scroll down to "The Delta Customer Experience" grid
+     * 3 - Click on "What Are The Latest Travel Updates?"
+     * 4 - Scroll down to "Frequently Asked Questions" container
+     * 5 - Verify name of each grid header title
+     */
+    public String[] validateFrequentlyAskedQuestionsContainerHeaderNames() {
+        navigateToTravelUpdateCenterPage();
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(webElementListFrequentlyAskedQuestionsHeaderTitles)));
+
+        List<WebElement> headerTitleElements = containerFrequentlyAskedQuestions.findElements(By.cssSelector(webElementListFrequentlyAskedQuestionsHeaderTitles));
+        String[] headerTitles = new String[headerTitleElements.size()];
+
+        int i = 0;
+        for (WebElement element : headerTitleElements) {
+            headerTitles[i] = element.getText();
+            System.out.println("Header Title " + (i+1) + " - " + headerTitles[i]);
+            i++;
+        }
+        return headerTitles;
+    }
 
     /**
      * Helper methods used within this class
