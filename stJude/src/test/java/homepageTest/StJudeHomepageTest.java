@@ -16,7 +16,7 @@ public class StJudeHomepageTest extends WebAPI {
 
 
      @Test(enabled = false)
-     public static void testDoSearchText(){
+     public static void testDoSearchText() throws InterruptedException {
          getInItElements();
          stJudeHomepage.doSearchText();
          stJudeHomepage.validateSearchText();
@@ -124,10 +124,33 @@ public class StJudeHomepageTest extends WebAPI {
          //stJudeHomepage.validateSearchDisplayText();
      }
 
-     @Test
+     @Test(enabled = false)
      public static void testSearchUrl3(){
          getInItElements();
          stJudeHomepage.validateSearchUrl3();
+     }
+     @Test
+     public static void testSearchUrl5(){
+         getInItElements();
+         stJudeHomepage.validateSearchUrl5();
+     }
+     @Test(enabled = false)
+    public static void testHandleDropDownMenu() throws InterruptedException {
+         getInItElements();
+         stJudeHomepage.doHandleDropDownMenu();
+         //stJudeHomepage.validateHandleDropDownMenu();
+
+     }
+     @Test(enabled = false)
+    public static void testDropDownMenu1() throws InterruptedException {
+         getInItElements();
+         stJudeHomepage.doHandleDropDownSubMenu1();
+
+     }
+     @Test(enabled = false)
+    public static void testSearchUrl4(){
+         getInItElements();
+         stJudeHomepage.validateSearchUrl4();
      }
 
 

@@ -6,7 +6,7 @@ public class StJudeHomepageElements {
 
 
     public static final String webElementAboutUs="/html/body/header/section[2]/nav/ul/li[2]/a";
-    public static final String webElementSearchingText="//*[@id=\"8ab06c7d82edeb6858dafad416c346807a40224d7736bc909a8a9e56dcd37b5f\"]/div[2]/section[1]/div/p";
+    public static final String webElementSearchingText="//*[@id=\"038a22b858b81ec56bc5f0e98b691d4347aa78c0a595923e4b2aeed3a0703f45\"]/div[2]/section[2]/ul/li[2]/a";
 
     public static final String webElementCareAndTreatment ="/html/body/header/section[2]/nav/ul/li[3]/a";
     public static final String webElementSearchBar ="//*[@id=\"ae6d3f9357eb021d4020a7b36a15d5d882cede0699e87fd9cdcd349e8b0401c2\"]/div[1]/section/div[1]/section[1]/div/p";
@@ -40,6 +40,17 @@ public class StJudeHomepageElements {
     public static final String webElementMoreScienceAndMedicineMenu="//*[@id=\"button-baaccfee0f292aeb2ab882c7287c8abc25e80d88ed0ce4b47b7587b39ede195c\"]/span";
 
     public static final String webElementComprehensiveCancerCenter = "//*[@id=\"8feef8bf595acb74364afb0396484333b1423b34b5983ebc3df25fc2fb56f297\"]/div[2]/section[1]/div/p/a";
+
+    public static final String webElementDropDownButton="cbicon_3d8169eacefa9760e3f0b70aa1ef551095b090d1f044438d3b1152168e7659c5";
+    public static final String webElementDropDownSubMenu = "//*[contains(text(),'Acute Lymphoblastic Leukemia (ALL)')]";
+
+    public static final String webElementDropDownSubMenu1 ="//*[contains(text(),'Beta Thalassemia')]";
+
+    public static final String webElementBrainTumors = "//*[@id=\"0959e9f76465f1f82f5f129dd415902179be0cba069f97f3b3c1f9f048dd0e98\"]/div[1]/section/ul/li[1]/a";
+
+    public static final String webElementUniqueOperatingModel = "//*[@id=\"8ab06c7d82edeb6858dafad416c346807a40224d7736bc909a8a9e56dcd37b5f\"]/div[2]/section[2]/ul/li[2]/a";
+
+
 
 
 
