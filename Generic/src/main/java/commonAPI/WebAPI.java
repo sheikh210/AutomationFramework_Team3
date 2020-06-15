@@ -22,6 +22,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
+import utilities.DataReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,6 +38,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class WebAPI {
+
+    static DataReader dataReader = new DataReader();
 
     //ExtentReport
     public static ExtentReports extent;
@@ -637,6 +640,135 @@ public class WebAPI {
     }
 
 
+    /**
+     * Helper Methods To Use in Asserts
+     * @author Sami Sheikh
+     */
+
+    // Gets text from List<WebElements> and compares against expected String array from Excel workbook
+    public static boolean compareTextListToExpectedStringArray(By by, String path, String sheetName) throws IOException {
+        List<WebElement> actualList = driver.findElements(by);
+        String[] expectedList = dataReader.fileReaderStringXSSF(path, sheetName);
+
+        int falseCount = 0;
+        boolean flag = false;
+        for (int i = 0; i<expectedList.length; i++){
+            if (actualList.get(i).getText().replace("’", "'").equals(expectedList[i])){
+                flag = true;
+                System.out.println("ACTUAL " + (i+1) + " - " + actualList.get(i).getText());
+                System.out.println("EXPECTED " + (i+1) + " - " + expectedList[i] + "\n");
+            } else {
+                System.out.println("FAILED AT INDEX " + i + "\nEXPECTED: " + expectedList[i] + "\nACTUAL: " + actualList.get(i).getText());
+                falseCount++;
+            }
+        }
+        if (falseCount > 0){
+            flag = false;
+        }
+        return flag;
+    }
+
+    // Compares actual string against an expected string from Excel workbook
+    public static boolean compareTextToExpectedString(String actual, String path, String sheetName) throws IOException {
+        String[] expectedArray = dataReader.fileReaderStringXSSF(path, sheetName);
+        String expected = expectedArray[0];
+
+        boolean flag;
+        if (actual.replace("’", "'").equals(expected)){
+            flag = true;
+            System.out.println("ACTUAL TEXT: " + actual + "\nEXPECTED: " + expected);
+        } else {
+            flag = false;
+            System.out.println("***TEXT DOES NOT MATCH***\nACTUAL TEXT: " + actual + "\nEXPECTED TEXT: " + expected);
+        }
+        return flag;
+    }
+
+    // Gets text from List<WebElements> and compares against expected String array from Excel workbook
+    public static boolean compareAttributeListToExpectedStringArray(By by, String attribute, String path, String sheetName) throws IOException {
+        List<WebElement> actualList = driver.findElements(by);
+        String[] expectedList = dataReader.fileReaderStringXSSF(path, sheetName);
+
+        int falseCount = 0;
+        boolean flag = false;
+        for (int i = 0; i<expectedList.length; i++){
+            if (actualList.get(i).getAttribute(attribute).equals(expectedList[i])){
+                flag = true;
+                System.out.println("ACTUAL ATTRIBUTE " + (i+1) + ": " + actualList.get(i).getAttribute(attribute));
+                System.out.println("EXPECTED ATTRIBUTE " + (i+1) + ": " + expectedList[i] + "\n");
+            } else {
+                System.out.println("FAILED AT INDEX " + i + "\nEXPECTED ATTRIBUTE: " + expectedList[i] +
+                        "\nACTUAL ATTRIBUTE: " + actualList.get(i).getAttribute(attribute));
+                falseCount++;
+            }
+        }
+        if (falseCount > 0){
+            flag = false;
+        }
+        return flag;
+    }
+
+    public static boolean compareListSizeToExpectedCount(By by, String path, String sheetName) throws IOException {
+        int[] expectedArray = dataReader.fileReaderIntegerXSSF(path, sheetName);
+        int expected = expectedArray[0];
+
+        List<WebElement> dropdownList = driver.findElements(by);
+        int actual = dropdownList.size();
+        System.out.println("Counted " + actual + " elements");
+
+        boolean flag;
+        if (actual == expected){
+            flag = true;
+            System.out.println("ACTUAL COUNT: " + actual + "\nEXPECTED COUNT: " + expected);
+        } else {
+            flag = false;
+            System.out.println("***SIZE DOES NOT MATCH***\nACTUAL COUNT: " + actual + "\nEXPECTED COUNT: " + expected);
+        }
+        return flag;
+    }
+
+
+    // Switches to newly opened tab, gets URL and compares to expected URL in Excel workbook
+    public static boolean switchToTabAndCompareURL(String path, String sheetName) throws IOException {
+        java.util.Iterator<String> iter = driver.getWindowHandles().iterator();
+
+        String parentWindow = iter.next();
+        String childWindow = iter.next();
+
+        driver.switchTo().window(childWindow);
+        System.out.println("Switched to \"" + driver.getTitle() + "\" window\n");
+        String url = driver.getCurrentUrl();
+        System.out.println(url + "\n");
+
+        driver.switchTo().window(parentWindow);
+        System.out.println("Switched back to \"" + driver.getTitle() + "\" window\n");
+        System.out.println(driver.getCurrentUrl());
+
+        String [] expectedArray = dataReader.fileReaderStringXSSF(path, sheetName);
+        String expected = expectedArray[0];
+
+        boolean flag;
+        if (url.equals(expected)){
+            flag = true;
+            System.out.println("ACTUAL URL: " + url + "\nEXPECTED URL: " + expected);
+        } else {
+            flag = false;
+            System.out.println("***DOES NOT MATCH***\nEXPECTED URL: " + expected + "\nACTUAL URL: " + url);
+        }
+        return flag;
+    }
+
+    public static boolean confirmIfDropdownExpanded(WebElement element){
+        boolean flag = false;
+        if (element.isDisplayed()) {
+            flag = true;
+            System.out.println("Dropdown is displayed");
+        } else if (!(element.isDisplayed())) {
+            flag = false;
+            System.out.println("DROPDOWN IS NOT DISPLAYED");
+        }
+        return flag;
+    }
 
 }
 

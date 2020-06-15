@@ -1,0 +1,82 @@
+Owners Page Test Cases
+
+Test Case 1 - Validate Navigation to "Owners" page
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+3 - Verify user is on the correct page (http://tripadvisor.com/Owners)
+
+Test Case 2 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 3 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 4 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 5 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 6 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 7 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 8 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 9 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 10 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 11 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 12 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 13 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 14 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 15 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 16 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 17 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 18 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 19 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"
+
+Test Case 20 -
+1 - Navigate to http://tripadvisor.com
+2 - In footer, under "Do Business With Us", click "Owners"

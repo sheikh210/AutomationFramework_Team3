@@ -186,14 +186,14 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFiles>target/test-classes/AetnaTestRunner.xml</suiteXmlFiles>
-                        <suiteXmlFile>target/test-classes/BankOfAmericaTestRunner.xml</suiteXmlFile>
-                        <suiteXmlFile>target/test-classes/DeltaAirlinesTestRunner.xml</suiteXmlFile>
-                        <suiteXmlFile>target/test-classes/EbayTestRunner.xml</suiteXmlFile>
-                        <suiteXmlFiles>target/test-classes/ESPNTestRunner.xml</suiteXmlFiles>
-                        <suiteXmlFile>target/test-classes/StJudeTestRunner.xml</suiteXmlFile>
-                        <suiteXmlFile>target/test-classes/TripAdvisorTestRunner.xml</suiteXmlFile>
-                        <suiteXmlFile>target/test-classes/VerizonWirelessTestRunner.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>target/test-classes/AetnaTestRunner.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>target/test-classes/BankOfAmericaTestRunner.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>target/test-classes/DeltaAirlinesTestRunner.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>target/test-classes/EbayTestRunner.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>target/test-classes/ESPNTestRunner.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>target/test-classes/StJudeTestRunner.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>target/test-classes/TripAdvisorTestRunner.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>target/test-classes/VerizonWirelessTestRunner.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
