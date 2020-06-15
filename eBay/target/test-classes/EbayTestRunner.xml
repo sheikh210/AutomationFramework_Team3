@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="ESPN Automation Script" parallel="false">
+<suite name="Ebay Automation Script" parallel="false">
 
     <parameter name="useCloudEnv" value="false"/>
     <parameter name="cloudEnvName" value="browserstack"/>
@@ -12,11 +12,17 @@
         <parameter name="os_version" value="Catalina"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="83"/>
-    <parameter name="url" value="http://espn.com"/>
+    <parameter name="url" value="https://www.ebay.com/"/>
 
-    <test name="ESPN Homepage">
+<!--    <test name="Ebay Homepage">-->
+<!--        <classes>-->
+<!--            <class name="homepageTest.EbayHomepageTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Ebay ElectronicsPage">
         <classes>
-            <class name="homepageTest.ESPNHomepageTest"/>
+            <class name="electronicsPageTest.ElectronicsPageTest"/>
         </classes>
     </test>
 

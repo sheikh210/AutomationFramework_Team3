@@ -82,7 +82,7 @@ public class ElectronicsPage extends WebAPI {
      * Validate new page title
      */
 
-    public void doMouseHover() throws InterruptedException {
+    public void findOutPageTitle() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(electronicsButton));
         electronicsButton.click();
@@ -98,9 +98,9 @@ public class ElectronicsPage extends WebAPI {
         }
     }
 
-    public void validateMouseHover() {
+    public void validatePageTitle() {
 
-        String actualPageTitle = driver.getTitle();
+        String actualPageTitle = super.getCurrentPageTitle();
         String expectedPageTitle = "Security Measure";
         Assert.assertEquals(actualPageTitle, expectedPageTitle, "Expected page not found");
     }
@@ -113,7 +113,7 @@ public class ElectronicsPage extends WebAPI {
      * Validate new page Url
      */
 
-    public void doHandleDropDown() throws InterruptedException {
+    public void findOutPageUrl() throws InterruptedException {
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(electronicsButton));
@@ -128,7 +128,7 @@ public class ElectronicsPage extends WebAPI {
 
     }
 
-    public void validateHandleDropDown() {
+    public void validatePageUrl() {
 
         String currentPageUrl = super.getCurrentPageUrl();
 
@@ -256,6 +256,22 @@ public class ElectronicsPage extends WebAPI {
 
     }
 
+    /**
+     * Test Case:8
+     * Navigate to Ebay Homepage
+     * Click on Electronics Button to open Electronics page
+     * Validate Electronics page url
+     */
+
+
+    public String validateNavigationToEletronicsPage() {
+        navigateToElectronicsPage();
+        String url = driver.getCurrentUrl();
+        System.out.println("Page URL - " + url);
+
+        return url;
+
+    }
 
 }
 

@@ -3,11 +3,14 @@ package electronicsPageTest;
 import commonAPI.WebAPI;
 import electronicsPage.ElectronicsPage;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
 
 public class ElectronicsPageTest extends WebAPI {
 
     static ElectronicsPage electronicsPage;
+
 
     public static void getInItElements() {
         electronicsPage = PageFactory.initElements(driver, ElectronicsPage.class);
@@ -22,17 +25,17 @@ public class ElectronicsPageTest extends WebAPI {
     }
 
     @Test(priority = 2, enabled = false)
-    public static void testFigureOutSubMenus() throws InterruptedException {
+    public static void testPageTitle() throws InterruptedException {
         getInItElements();
-        electronicsPage.doMouseHover();
-        electronicsPage.validateMouseHover();
+        electronicsPage.findOutPageTitle();
+        electronicsPage.validatePageTitle();
 
     }
     @Test(priority = 3, enabled = false)
-    public static void TestHandleDropDown() throws InterruptedException {
+    public static void testPageUrl() throws InterruptedException {
         getInItElements();
-        electronicsPage.doHandleDropDown();
-        electronicsPage.validateHandleDropDown();
+        electronicsPage.findOutPageUrl();
+        electronicsPage.validatePageUrl();
     }
     @Test(priority = 4, enabled = false)
     public static void testSearchProduct() throws InterruptedException {
@@ -53,12 +56,22 @@ public class ElectronicsPageTest extends WebAPI {
         electronicsPage.doCheckArrowButtonLinks();
         electronicsPage.validateArrowButtonLinks();
     }
-    @Test
+    @Test(priority = 7, enabled = false)
     public static void testProductAvailablity() throws InterruptedException {
         getInItElements();
         electronicsPage.checkProductAvailablity();
         electronicsPage.validateProductAvailablity();
     }
+    @Test
+    public static void testNavigationToOwnersPage(){
+        getInItElements();
+        String actualURL = electronicsPage.validateNavigationToEletronicsPage();
+
+        String expectedURL = "https://www.ebay.com/b/Electronics/bn_7000259124";
+
+        Assert.assertEquals(actualURL, expectedURL, "NOT NAVIGATED TO ELECTRONICS PAGE");
+    }
+
 
 }
 

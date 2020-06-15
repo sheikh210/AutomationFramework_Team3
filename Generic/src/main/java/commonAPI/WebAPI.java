@@ -84,7 +84,7 @@ public class WebAPI {
         ExtentTestManager.endTest();
         extent.flush();
         if (result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver);
+            captureScreenshot(driver,result.getName());
         }
         driver.quit();
     }
@@ -114,7 +114,7 @@ public class WebAPI {
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
                       @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("34")
                               String browserVersion, @Optional("") String url) throws IOException {
-                              
+
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
                 getCloudDriver(cloudEnvName, browserstack_username, browserstack_accesskey, os, os_version, browserName, browserVersion);
@@ -147,7 +147,7 @@ public class WebAPI {
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
 
-        } else if (browserName.equalsIgnoreCase("Edge")){
+        } else if (browserName.equalsIgnoreCase("Edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
 
@@ -183,11 +183,6 @@ public class WebAPI {
     public void cleanUp() {
         driver.quit();
     }
-
-
-
-
-
 
 
     // Helper methods
@@ -263,11 +258,11 @@ public class WebAPI {
 
     public static void captureScreenshot(WebDriver driver, String testName) {
         Date date = new Date();
-        String fileName = testName+" - "+date.toString().replace(" ", "_").replace(":", "-") + ".png";
+        String fileName = testName + " - " + date.toString().replace(" ", "_").replace(":", "-") + ".png";
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         try {
-            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "\\lib\\Screenshots\\" + fileName));
+            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "/lib/Screenshots/" + fileName));
             System.out.println("SCREENSHOT TAKEN");
         } catch (Exception e) {
             System.out.println("ERROR TAKING SCREENSHOT: " + e.getMessage());
@@ -379,20 +374,12 @@ public class WebAPI {
         String url = driver.getCurrentUrl();
         return url;
     }
-    public String getCurrentPageTitle(){
-        String title = driver.getTitle();
-        return title;
-    }
 
     public String getCurrentPageTitle() {
         String title = driver.getTitle();
         return title;
     }
 
-    public String getCurrentPageTitle() {
-        String title = driver.getTitle();
-        return title;
-    }
 
     public void navigateForward() {
         driver.navigate().forward();
@@ -631,7 +618,6 @@ public class WebAPI {
         }
         return flag;
     }
-
 
 
 }

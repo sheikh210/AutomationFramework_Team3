@@ -44,3 +44,8 @@
      * Click on 'Arrow Button'
      * Click on 'cameras & Photos' Menu
      * Validate Camera Drone is Available=True
+
+* Test Case:8
+     * Navigate to Ebay Homepage
+     * Click on Electronics Button to open Electronics page
+     * Validate Electronics page url
