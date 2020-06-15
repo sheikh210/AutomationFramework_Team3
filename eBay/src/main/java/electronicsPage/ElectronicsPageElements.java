@@ -17,5 +17,15 @@ public class ElectronicsPageElements {
     public static final String webElementCamerasAndPhotosMenu ="//*[@id=\"s0-29-13_2-0-1[0]-0-0-0-38[0]-0-toggle-button\"]/span";
     public static final String webElementArrowLinks="//*[@id=\"s0-29-13_2-0-1[0]-0-0-0-38[0]-0\"]/ul/li[1]";
     public static final String webElementCameraDrone="//*[@id=\"mainContent\"]/section[2]/div[2]/a[2]/div[1]/img";
+    public static final String webElementLink ="//*[@id=\"s0-29-13_2-0-1[2]-0-0-0\"]/ul";
+    public static final String webElementSportingGoodsMenu ="//*[contains(text(),'Sporting goods')]";
+    public static final String webElementKidsToysMenu ="//*[contains(text(),'Kids toys')]";
+    public static final String webElementSelectCountryMenu ="//*[@id=\"gf-fbtn\"]";
+    public static final String webElementSelectCountryName ="//*[contains(text(),'Taiwan')]";
+    public static final String webElementSelectedItem="/html/body/div[1]/div/div[2]/p";
+    public static final String webElementSelectElement="//*[@id=\"mainContent\"]/section[2]/div[1]/a";
+    public static final String webElementSelectElementDisplay="//*[@id=\"s0-15-6-0-1[1]-0\"]/div[1]/div[2]/h1";//*[@id="s0-26_2-9-0-1[6]-0-0-xCarousel-x-carousel-items"]/ul/li[1]/a/div/img
+    public static final String webElementAirPodPro="//*[@id=\"s0-26_2-9-0-1[6]-0-0-xCarousel-x-carousel-items\"]/ul/li[1]/a/div/img";
+    public static final String webElementAirPodProImage="//*[@id=\"s0-26_1-9-0-1[0]-0-1\"]/ul/li[1]/div/div[1]/div/a/div/img";
 
 }
