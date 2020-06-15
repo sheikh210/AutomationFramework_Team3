@@ -1,0 +1,46 @@
+* Test case:1
+     * Navigate to Ebay Homepage
+     * Click on Electronics Button to open Electronics page
+     * Validate the page is displayed or not
+
+* Test Case:2
+     * Navigate to Ebay Homepage
+     * Click on Electronics Button to open Electronics page
+     * Mouse hover on 'My Ebay Menu'
+     * Click on 'Watch List'
+     * Validate new page title
+
+ * Test Case:3
+     * Navigate to Ebay Homepage
+     * Click on Electronics Button to open Electronics page
+     * Click on 'Shop Category' menu
+     * Click on 'Fashion' menu
+     * Validate new page Url
+
+ * Test Case:4
+     * Navigate to Ebay Homepage
+     * Click on Electronics Button to open Electronics page
+     * Click on 'Searching Button' menu
+     * Click on 'Searching Product' menu
+     * Click on 'Searching Product Button' menu
+     * Validate the product is there
+
+ * Test Case:5
+     * Navigate to Ebay Homepage
+     * Click on Electronics Button to open Electronics page
+     * Click on 'My Ebay' menu
+     * Click on 'Message' menu
+     * Validate the new page
+
+* Test Case:6
+     * Navigate to Ebay Homepage
+     * Click on Electronics Button to open Electronics page
+     * Click on 'Arrow Button'
+     * Validate link number
+
+* Test Case:7
+     * Navigate to Ebay Homepage
+     * Click on Electronics Button to open Electronics page
+     * Click on 'Arrow Button'
+     * Click on 'cameras & Photos' Menu
+     * Validate Camera Drone is Available=True
