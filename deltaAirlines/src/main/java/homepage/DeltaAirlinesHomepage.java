@@ -46,7 +46,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
     public WebElement flightDL1872;
     @FindBy(css = WebElementTravelInfoButton)
     public WebElement travelInfoButton;
-    @FindBy(id = WebElementGetNotificationMessage)
+    @FindBy(xpath = WebElementGetNotificationMessage)
     WebElement getNotificationMessage;
     @FindBy(id=WebElementPassenger5)
     WebElement passenger5;
@@ -184,7 +184,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
     }
     public void validateLogIn(){
         String actualTitle1=getCurrentPageTitle();
-        String expectedTitle1="Airline Tickets & Flights: Book Direct with Delta Air Lines - Official Site";
+        String expectedTitle1="Login";
         Assert.assertEquals(actualTitle1,expectedTitle1,"Title does not match");
 
     }
@@ -269,7 +269,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
         dateDoneButton.click();
         getCurrentPageTitle();
         continueButton.click();
-        sleepFor(3);
+        sleepFor(4);
         getCurrentPageTitle();
 
 
@@ -527,7 +527,8 @@ public class DeltaAirlinesHomepage extends WebAPI {
 
         String path="lib/Exel/Flight Status.xlsx";
        int rows= XlUtil.getRowCount(path,"Sheet1");
-        for (int i=1;i<=rows;i++) {
+        System.out.println(rows);
+        for (int i=1;i<=5;i++) {
            String flightNumber= XlUtil.getCellData(path, "Sheet1", i, 0);
            flightStatusButton.click();
            typeOnElementNEnter(WebElementFlightNumberBox,flightNumber);
@@ -536,7 +537,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
                System.out.println("Test Passed");
                XlUtil.setCellData(path,"Sheet1",i,1,"Passed");
            }
-           else if(driver.findElement(By.partialLinkText("Oops")).isDisplayed())
+           else
 
            {
                System.out.println("Test Failed");

@@ -32,8 +32,8 @@ public class DeltaHomePageElements {
     public static final String WebElementFlightDL1872="//*[@id=\"flightn\"]/div";
     //Flight info button by css
     public static final String WebElementTravelInfoButton="#secPanel1 > ngc-app-sec-links-content > div > div > div.row > div.col-lg-3.col-md-12.col-primary-links >ul>li";
-    //Get Notification message by id
-    public static final String WebElementGetNotificationMessage="notificationBellIcon";
+    //Get Notification message by css
+    public static final String WebElementGetNotificationMessage="//*[@id=\"flightfromto\"]/div/div/div/span[4]";
     // Passenger Drop Menu by xpath
     public static final String WebElementPassengerDropMenu="//*[@id=\"booking\"]/form/div[1]/div/div[1]/div[1]/div[4]/span/span[1]";
     //"Passenger5" option in drop menu with id
