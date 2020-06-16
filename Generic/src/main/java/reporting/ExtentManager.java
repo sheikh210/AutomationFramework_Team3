@@ -26,10 +26,6 @@ public class ExtentManager {
             extent.addSystemInfo("Host Name", "PNT").addSystemInfo("Environment","QA")
                     .addSystemInfo("User Name", "Elyamine Adjoudj");
 
-            extent.addSystemInfo("Host Name", "TEAM 3").addSystemInfo("Environment","QA")
-
-                    .addSystemInfo("User Name", "Sami Sheikh");
-
             extent.loadConfig(new File(System.getProperty("user.dir")+ "/report-config.xml"));
         }
         return extent;

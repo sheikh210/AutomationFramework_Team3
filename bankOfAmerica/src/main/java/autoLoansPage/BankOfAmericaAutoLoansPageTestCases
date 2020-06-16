@@ -34,22 +34,30 @@ Test case 4: Count menu visible links
 Test 5: Print Menu visible links
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+3) Click on Menu
+4) Print all visible links
 6) Close Browser
 
 
-Test Case 6 :
+Test Case 6 : "Estimate care monthly payment"
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+3) Connect to My sql data base
+4) Get loan amount and pass it.
 6) Close Browser
 
-Test Case 7:
+Test Case 7: "Validate Apply now button"
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
-6) Close Browser
+3) Click on "Apply now"
+4) Get the page Title
+5) Close Browser
 
-Test Case 8:
+Test Case 8: "Validate Shop for your car button"
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+3) Click on "Shop for your car now"
+4) Get page title
 6) Close Browser
 
 Test Case 9:

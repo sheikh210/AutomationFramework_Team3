@@ -87,7 +87,7 @@ public class WebAPI {
             captureScreenshot(driver, result.getName());
         }
 
-        //driver.quit();
+        driver.quit();
     }
 
     @AfterSuite
@@ -182,7 +182,7 @@ public class WebAPI {
 
     @AfterMethod(alwaysRun = true)
     public void cleanUp() {
-       // driver.quit();
+        driver.quit();
     }
 
 

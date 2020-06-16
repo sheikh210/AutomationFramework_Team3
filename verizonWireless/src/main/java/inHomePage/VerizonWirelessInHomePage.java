@@ -20,7 +20,7 @@ public class VerizonWirelessInHomePage extends WebAPI {
     /**
      * Header WebElements
      */
-    @FindBy(css=WebElementInHomeTab)
+    @FindBy(xpath=WebElementInHomeTab)
     public WebElement inHomeTab;
     @FindBy(xpath = WebElementShopMenu)
     public WebElement shopMenu;

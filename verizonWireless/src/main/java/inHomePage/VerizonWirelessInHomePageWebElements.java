@@ -9,8 +9,8 @@ public class VerizonWirelessInHomePageWebElements {
     /**
      * Header
      */
-    //InHome tab by CSS
-    public static final String WebElementInHomeTab="#vzw-gn > div > nav > div > div.nav-wrapper.clear-float > div.menu-container > div.main-menu > ul > li:nth-child(3) > a";
+    //InHome tab by xpath
+    public static final String WebElementInHomeTab="//a[contains(text(),'In Home')]";
     //Shop Menu by xpath
     public static final String WebElementShopMenu= "//*[@id=\"vcm_menu1\"]";
     //Icons links by xpath
