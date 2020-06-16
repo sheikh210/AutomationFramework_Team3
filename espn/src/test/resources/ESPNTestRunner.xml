@@ -6,18 +6,24 @@
     <parameter name="useCloudEnv" value="false"/>
     <parameter name="cloudEnvName" value="browserstack"/>
     <!--<parameter name="cloudEnvName" value="saucelab"/>-->
-<!--    <parameter name="os" value="windows"/>-->
-    <parameter name="os" value="OS X"/>
-<!--    <parameter name="os_version" value="10"/>-->
-        <parameter name="os_version" value="Catalina"/>
+    <parameter name="os" value="windows"/>
+    <!--<parameter name="os" value="OS X"/>-->
+    <parameter name="os_version" value="10"/>
+    <!--    <parameter name="os_version" value="Sierra"/>-->
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="83"/>
-    <parameter name="url" value="http://espn.com"/>
+    <parameter name="url" value="https://espn.com"/>
 
     <test name="ESPN Homepage">
         <classes>
             <class name="homepageTest.ESPNHomepageTest"/>
         </classes>
     </test>
-
+  
+    <test name="ESPN NBA">
+        <classes>
+            <class name="nbapageTest.ESPNnbapageTest"/>
+        </classes>
+    </test>
+  
 </suite>

@@ -1,0 +1,70 @@
+
+Test Case 1: Navigate to ESPN NBA page
+1. Navigate to espn.com
+2. Go to espn nba page
+3. Validate the title of the ESPN NBApage compare to title stored in excel
+
+Test case 2: Validate ESPN+ links
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the links under ESPN+ links
+4. Validate that those link title's are displayed compare to titles stored in excel
+
+Test Case 3: Validate ESPN Quick Links
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the links under Quick links
+4. Validate that those link title's are displayed compare to titles stored in excel
+
+Test Case 4: Validate Stats dropdown list
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the links under Stats dropdown list
+4. Validate that those link title's are displayed compare to titles stored in excel
+
+Test Case 5: Validate Teams dropdown list Categories
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the Teams dropdown list Categories
+4. Validate that those Teams list Categories title's are displayed compare to titles stored in excel
+
+Test Case 6:Validate Podcasts list
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the Podcasts list title's
+4. Validate that those Podcasts list title's are displayed compare to titles stored in excel
+
+Test Case 7:Validate Fantasy list
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the Fantasy list title's list
+4. Validate that those Fantasy list title's are displayed compare to titles stored in excel
+
+Test Case 8:Validate ESPN Sites list
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the ESPN Sites title's list
+4. Validate that those ESPN Sites title's are displayed compare to titles stored in excel
+
+Test Case 9:Validate ESPN Apps list
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the ESPN Apps title's list
+4. Validate that those ESPN Apps title's are displayed compare to titles stored in excel
+
+Test Case 10:Validate Follow ESPN list
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the Follow ESPN title's list
+4. Validate that those Follow ESPN title's are displayed compare to titles stored in excel
+
+Test Case 11 - Validate number of elements in "Top Events" dropdown menu list
+1 - Navigate to http://espn.com
+2 - Click on "Top Events" dropdown menu
+3 - Verify number of links present in "Top Events" dropdown menu
+
+Test Case 12:Validate ESPN footer list
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the ESPN Footer title's list
+4. Validate that those Follow ESPN title's are displayed compare to titles stored in excel
