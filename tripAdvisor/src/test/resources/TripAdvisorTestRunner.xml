@@ -21,10 +21,16 @@
 <!--        </classes>-->
 <!--    </test>-->
 
+
     <test name="Trip Advisor Flightspage">
         <classes>
             <class name="flightspageTest.TripAdvisorFlightspageTest"/>
         </classes>
     </test>
-
+  
+    <test name="Trip Advisor - Owners Page">
+        <classes>
+            <class name="ownerspageTest.OwnersPageTest"/>
+        </classes>
+    </test>
 </suite>
