@@ -1,0 +1,61 @@
+PROTECT YOUR ENTERPRISE PAGE - TEST CASES
+
+TEST CASE 1 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 2 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 3 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 4 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 5 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 6 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 7 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 8 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 9 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 10 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 11 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 12 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 13 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 14 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 15 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 16 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 17 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 18 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 19 -
+1. Navigate to "Protect Your Enterprise" page
+
+TEST CASE 20 -
+1. Navigate to "Protect Your Enterprise" page

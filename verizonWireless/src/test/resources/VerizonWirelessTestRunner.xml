@@ -12,11 +12,17 @@
     <parameter name="os_version" value="Catalina"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="83"/>
-    <parameter name="url" value="https://www.verizon.com"/>
+    <parameter name="url" value="http://verizonwireless.com"/>
 
-    <test name="VerizonWireless Homepage">
+<!--    <test name="VerizonWireless Homepage">-->
+<!--        <classes>-->
+<!--            <class name="homepageTest.VerizonWirelessHomepageTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="VerizonWireless Protect Your Enterprise Page">
         <classes>
-            <class name="homepageTest.VerizonWirelessHomepageTest"/>
+            <class name="protectYourEnterprisePageTest.ProtectYourEnterprisePageTest"/>
         </classes>
     </test>
 
