@@ -2,13 +2,11 @@ package ownerspage;
 
 import commonAPI.WebAPI;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utilities.DataReader;
-
-import java.io.IOException;
 
 import static ownerspage.OwnersPageElements.*;
 
@@ -24,6 +22,9 @@ public class OwnersPage extends WebAPI {
 
     @FindBy(css = webElementHeaderBar)
     private WebElement headerBar;
+
+    @FindBy (css = webElementButtonSignIn)
+    private WebElement buttonSignIn;
 
     @FindBy(css = webElementHoverDropdownProducts)
     private WebElement hoverDropdownProducts;
@@ -67,12 +68,20 @@ public class OwnersPage extends WebAPI {
     @FindBy (css = webElementButtonThirdResultBusinessName)
     private WebElement buttonThirdResultBusinessName;
 
+    @FindBy (css = webElementButtonListItNow)
+    private WebElement buttonListItNow;
+
+    @FindBy (tagName = webElementTextHeaderGetListedNew)
+    private WebElement textHeaderGetListedNew;
+
     @FindBy(className = webElementButtonSearch)
     private WebElement buttonSearch;
 
     @FindBy (css = webElementClaimPropertyBox)
     private WebElement claimPropertyBox;
 
+    @FindBy (css = webElementIFrameSignIn)
+    private WebElement iFrameSignIn;
 
     private final String searchTermLocationBox = "New York";
     private final String searchTermBusinessNameBox = "Museum";
@@ -109,7 +118,6 @@ public class OwnersPage extends WebAPI {
         navigateToOwnersPage();
         hoverOverDropdown(hoverDropdownReviews);
     }
-
 
     /**
      * Test Case 6 - Validate "Marketing Tools" Dropdown List Items
@@ -168,7 +176,7 @@ public class OwnersPage extends WebAPI {
         sendKeysToLocationSearchBox();
         selectAndVerifySearchResultLocationSearchBox();
         inputBoxBusinessName.sendKeys(searchTermBusinessNameBox);
-        System.out.println("Typed " + searchTermBusinessNameBox + "in Business Name input field");
+        System.out.println("Typed " + searchTermBusinessNameBox + " in Business Name input field\n");
 
         wait.until(ExpectedConditions.visibilityOf(resultsBoxBusinessName));
     }
@@ -176,53 +184,77 @@ public class OwnersPage extends WebAPI {
     /**
      * Test Case 15 - Validate "Business Name" Result Select
      */
-    public void selectSearchResultBusinessNameSearchBox() {
+    public String selectSearchResultBizNameSearchBoxAndVerifyNavToClaimListingPage() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonThirdResultBusinessName));
+
         clickOnElement(buttonThirdResultBusinessName);
         System.out.println("Clicked search result (Business Name Input Field)\n");
 
         wait.until(ExpectedConditions.visibilityOf(claimPropertyBox));
-    }
 
-    public String verifyNavigationToClaimListingPage() {
-        String pageTitle = null;
+        String text = null;
 
         if (claimPropertyBox.isDisplayed()) {
-            pageTitle = driver.getTitle();
-            System.out.println("Navigated to: " + pageTitle + "\n");
+            text = claimPropertyBox.getText();
+            System.out.println("Navigated to: " + text + "\n");
         } else {
-            pageTitle = driver.getTitle();
-            System.out.println("NAVIGATED TO INCORRECT PAGE: " + pageTitle + "\n");
+            System.out.println("NAVIGATED TO INCORRECT PAGE");
         }
-        return pageTitle;
+        return text;
     }
 
+    /**
+     * Test Case 16 - Validate "List it Now" Button at Bottom of "Business Name" Search Results Box
+     */
+    public String validateNavigationToGetListedNewPage() {
+        sendKeysToBusinessNameSearchBox();
 
+        wait.until(ExpectedConditions.elementToBeClickable(buttonListItNow));
+        clickOnElement(buttonListItNow);
+
+        wait.until(ExpectedConditions.visibilityOf(textHeaderGetListedNew));
+        String headerText = textHeaderGetListedNew.getText();
+
+        return headerText;
+    }
 
     /**
-     * HELPER METHODS
+     * Test Case 17 - Validate Grid Titles Under "Grow your business with free tools from Tripadvisor" Container
+     * Test Case 18 - Validate Grid SubTitles Under "Grow your business with free tools from Tripadvisor" Container
+     * Test Case 19 - Validate Grid Body Text Under "Grow your business with free tools from Tripadvisor" Container
      */
 
-    // Hover over dropdown and make sure it is visible
-    public void hoverOverDropdown(WebElement elementToHover) {
-        wait.until(ExpectedConditions.visibilityOf(elementToHover));
+    /**
+     * Test Case 20 - Validate "Sign In" Button Functionality
+     * 1 - Navigate to http://tripadvisor.com
+     * 2 - In footer, under "Do Business With Us", click "Owners"
+     * 3 - In header, click "Sign In"
+     * 4 - Validate new frame being available
+     */
+    public boolean validateSignInFrame() {
+        navigateToOwnersPage();
+        wait.until(ExpectedConditions.elementToBeClickable(buttonSignIn));
+        clickOnElement(buttonSignIn);
+        System.out.println("Clicked \"Sign-In\" button");
 
         try {
-            Thread.sleep(1000);
-            mouseHover(elementToHover);
-            System.out.println("Hovered over dropdown\n");
-        } catch (InterruptedException e) {
+            wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iFrameSignIn));
+        } catch (NoSuchElementException e) {
             try {
-                driver.navigate().refresh();
-                System.out.println("Couldn't hover over dropdown --- Refreshing page\n");
-
-                wait.until(ExpectedConditions.visibilityOf(elementToHover));
-                Thread.sleep(1000);
-
-                mouseHoverJScript(elementToHover);
+                iframeHandle(iFrameSignIn);
             } catch (Exception e1) {
                 e.getMessage();
             }
         }
+
+        boolean flag = false;
+        if (iFrameSignIn.isDisplayed()) {
+            flag = true;
+            System.out.println("iFrame is displayed");
+
+        } else {
+            flag = false;
+        }
+        return flag;
     }
 }

@@ -114,18 +114,23 @@ Test Case 16 - Validate "List it Now" Button at Bottom of "Business Name" Search
 6 - Click on "Can't Find Your Business? List It Now" button at bottom of expanded search results box
 7 - Verify user is navigated to "Get Listed New" page by capturing page header text
 
-Test Case 17 -
+Test Case 17 - Validate Grid Titles Under "Grow your business with free tools from Tripadvisor" Container
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - Validate the name of each grid title under "Grow your business with free tools from Tripadvisor" container
 
-Test Case 18 -
+Test Case 18 - Validate Grid SubTitles Under "Grow your business with free tools from Tripadvisor" Container
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - Validate the name of each grid subtitle under "Grow your business with free tools from Tripadvisor" container
 
-Test Case 19 -
+Test Case 19 - Validate Grid Body Text Under "Grow your business with free tools from Tripadvisor" Container
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - Validate the body text of each grid under "Grow your business with free tools from Tripadvisor" container
 
-Test Case 20 -
+Test Case 20 - Validate "Sign In" Button Functionality
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - In header, click "Sign In"
+4 - Validate new frame being available

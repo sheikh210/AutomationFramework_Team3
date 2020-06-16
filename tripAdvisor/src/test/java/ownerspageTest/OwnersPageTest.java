@@ -17,14 +17,12 @@ public class OwnersPageTest extends WebAPI {
 
     static OwnersPage ownersPage;
     static SoftAssert softAssert = new SoftAssert();
-    static DataReader dataReader = new DataReader();
     static String path = System.getProperty("user.dir")+"\\src\\main\\resources" +
             "\\TripAdvisor_OwnersPage_ExpectedElements.xlsx";
 
     public static void getInItElements() {
         ownersPage = PageFactory.initElements(driver, OwnersPage.class);
     }
-
 
     /**
      * Test Case 1 - Validate Header Bar - Names
@@ -190,7 +188,7 @@ public class OwnersPageTest extends WebAPI {
      * 4 - Verify there are 8 search results shown
      */
     @Test (priority = 9)
-    public static void testResultsCountLocationInputBox() throws IOException {
+    public static void testSearchResultsCountLocationInputBox() throws IOException {
         getInItElements();
         ownersPage.sendKeysToLocationSearchBox();
 
@@ -199,14 +197,14 @@ public class OwnersPageTest extends WebAPI {
     }
 
     /**
-     * Test Case 11 - Validate "Location" Results
+     * Test Case 11 - Validate "Location" Search Results
      * 1 - Navigate to http://tripadvisor.com
      * 2 - In footer, under "Do Business With Us", click "Owners"
      * 3 - In "Location" input box, type "New York"
      * 4 - Verify the name of each city shown in search results
      */
     @Test (priority = 10)
-    public static void testResultNamesLocationInputBox() throws IOException {
+    public static void testSearchResultsLocationInputBox() throws IOException {
         getInItElements();
         ownersPage.sendKeysToLocationSearchBox();
 
@@ -223,7 +221,7 @@ public class OwnersPageTest extends WebAPI {
      * 5 - Verify "Location" input box is populated with "New York, United States"
      */
     @Test (priority = 11)
-    public static void testResultSelectLocationInputBox() throws IOException {
+    public static void testSearchResultSelectLocationInputBox() throws IOException {
         getInItElements();
         ownersPage.sendKeysToLocationSearchBox();
 
@@ -241,7 +239,7 @@ public class OwnersPageTest extends WebAPI {
      * 6 - Verify there are 8 search results shown
      */
     @Test (priority = 12)
-    public static void testResultsCountBusinessNameInputBox() throws IOException {
+    public static void testSearchResultsCountBusinessNameInputBox() throws IOException {
         getInItElements();
         ownersPage.sendKeysToBusinessNameSearchBox();
 
@@ -257,7 +255,7 @@ public class OwnersPageTest extends WebAPI {
      * 4 - Verify the name of each business shown in search results
      */
     @Test (priority = 13)
-    public static void testResultsNamesBusinessNameInputBox() throws IOException {
+    public static void testSearchResultsBusinessNameInputBox() throws IOException {
         getInItElements();
         ownersPage.sendKeysToBusinessNameSearchBox();
 
@@ -279,11 +277,85 @@ public class OwnersPageTest extends WebAPI {
     public static void testResultSelectBusinessNameInputBox() throws IOException {
         getInItElements();
         ownersPage.sendKeysToBusinessNameSearchBox();
-        ownersPage.selectSearchResultBusinessNameSearchBox();
 
-        compareTextToExpectedString(ownersPage.verifyNavigationToClaimListingPage(), path, "ClaimListingPage Title");
+        Assert.assertTrue(compareTextToExpectedString(ownersPage.selectSearchResultBizNameSearchBoxAndVerifyNavToClaimListingPage(),
+                path, "ClaimListingPage Verify"));
     }
 
+    /**
+     * Test Case 16 - Validate "List it Now" Button at Bottom of "Business Name" Search Results Box
+     * 1 - Navigate to http://tripadvisor.com
+     * 2 - In footer, under "Do Business With Us", click "Owners"
+     * 3 - In "Location" input box, type "New York"
+     * 4 - Select "New York City" (1st option)
+     * 5 - In "Business Name" input box, type "Museum"
+     * 6 - Click on "Can't Find Your Business? List It Now" button at bottom of expanded search results box
+     * 7 - Verify user is navigated to "Get Listed New" page by capturing page header text
+     */
+    @Test (priority = 15)
+    public static void testListItNowButton() throws IOException {
+        getInItElements();
 
+        Assert.assertTrue(compareTextToExpectedString(ownersPage.validateNavigationToGetListedNewPage(),
+                path, "GetListedNewPage HeaderText"));
+    }
+
+    /**
+     * Test Case 17 - Validate Grid Titles Under "Grow your business with free tools from Tripadvisor" Container
+     * 1 - Navigate to http://tripadvisor.com
+     * 2 - In footer, under "Do Business With Us", click "Owners"
+     * 3 - Validate the name of each grid title under "Grow your business with free tools from Tripadvisor" container
+     */
+    @Test (priority = 16)
+    public static void testGridTitlesFreeBizToolsContainer() throws IOException {
+        getInItElements();
+        ownersPage.navigateToOwnersPage();
+
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementHeaderNamesContainerFreeTools()),
+                path, "BizToolsTitleNames"));
+    }
+
+    /**
+     * Test Case 18 - Validate Grid SubTitles Under "Grow your business with free tools from Tripadvisor" Container
+     * 1 - Navigate to http://tripadvisor.com
+     * 2 - In footer, under "Do Business With Us", click "Owners"
+     * 3 - Validate the name of each grid subtitle under "Grow your business with free tools from Tripadvisor" container
+     */
+    @Test (priority = 17)
+    public static void testGridSubTitlesFreeBizToolsContainer() throws IOException {
+        getInItElements();
+        ownersPage.navigateToOwnersPage();
+
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementSubHeaderNamesContainerFreeTools()),
+                path, "BizToolsSubTitleNames"));
+    }
+
+    /**
+     * Test Case 19 - Validate Grid Body Text Under "Grow your business with free tools from Tripadvisor" Container
+     * 1 - Navigate to http://tripadvisor.com
+     * 2 - In footer, under "Do Business With Us", click "Owners"
+     * 3 - Validate the body text of each grid under "Grow your business with free tools from Tripadvisor" container
+     */
+    @Test (priority = 18)
+    public static void testGridBodyTextFreeBizToolsContainer() throws IOException {
+        getInItElements();
+        ownersPage.navigateToOwnersPage();
+
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementTextBodyContainerFreeTools()),
+                path, "BizToolsBodyText"));
+    }
+
+    /**
+     * Test Case 20 - Validate "Sign In" Button Functionality
+     * 1 - Navigate to http://tripadvisor.com
+     * 2 - In footer, under "Do Business With Us", click "Owners"
+     * 3 - In header, click "Sign In"
+     * 4 - Validate new frame being available
+     */
+    @Test (priority = 19)
+    public static void testSignInButton () {
+        getInItElements();
+        Assert.assertTrue(ownersPage.validateSignInFrame());
+    }
 
 }

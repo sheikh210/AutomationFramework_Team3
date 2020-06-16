@@ -118,7 +118,7 @@ public class WebAPI {
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
                       @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("34")
                               String browserVersion, @Optional("") String url) throws IOException {
-                              
+
         if (useCloudEnv == true) {
             if (cloudEnvName.equalsIgnoreCase("browserstack")) {
                 getCloudDriver(cloudEnvName, browserstack_username, browserstack_accesskey, os, os_version, browserName, browserVersion);
@@ -151,7 +151,7 @@ public class WebAPI {
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
 
-        } else if (browserName.equalsIgnoreCase("Edge")){
+        } else if (browserName.equalsIgnoreCase("Edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
 
@@ -187,11 +187,6 @@ public class WebAPI {
     public void cleanUp() {
         driver.quit();
     }
-
-
-
-
-
 
 
     // Helper methods
@@ -267,7 +262,7 @@ public class WebAPI {
 
     public static void captureScreenshot(WebDriver driver, String testName) {
         Date date = new Date();
-        String fileName = testName+" - "+date.toString().replace(" ", "_").replace(":", "-") + ".png";
+        String fileName = testName + " - " + date.toString().replace(" ", "_").replace(":", "-") + ".png";
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         try {
@@ -341,7 +336,6 @@ public class WebAPI {
             String st = web.getText();
             text.add(st);
         }
-
         return text;
     }
 
@@ -353,7 +347,6 @@ public class WebAPI {
             String st = web.getText();
             text.add(st);
         }
-
         return text;
     }
 
@@ -384,11 +377,11 @@ public class WebAPI {
         String url = driver.getCurrentUrl();
         return url;
     }
-    public String getCurrentPageTitle(){
+
+    public String getCurrentPageTitle() {
         String title = driver.getTitle();
         return title;
     }
-
 
     public void navigateForward() {
         driver.navigate().forward();
@@ -594,12 +587,12 @@ public class WebAPI {
     }
 
 
-    public static void clickJScript(WebElement element){
+    public static void clickJScript(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
     }
 
-    public void scrollToElementJScript(WebElement element){
+    public void scrollToElementJScript(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
@@ -607,25 +600,21 @@ public class WebAPI {
     public void mouseHoverJScript(WebElement element) {
         try {
             if (isElementPresent(element)) {
-
                 String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('onmouseover');}";
-                ((JavascriptExecutor) driver).executeScript(mouseOverScript,
-                        element);
-
+                ((JavascriptExecutor) driver).executeScript(mouseOverScript, element);
             } else {
-                System.out.println("Element was not visible to hover " + "\n");
-
+                System.out.println("UNABLE TO HOVER OVER ELEMENT\n");
             }
         } catch (StaleElementReferenceException e) {
-            System.out.println("Element with " + element
-                    + " is not attached to the page document"
+            System.out.println("ELEMENT WITH " + element
+                    + " IS NOT ATTACHED TO THE PAGE DOCUMENT"
                     + e.getStackTrace());
         } catch (NoSuchElementException e) {
-            System.out.println("Element " + element + " was not found in DOM"
+            System.out.println("ELEMENT " + element + " WAS NOT FOUND IN DOM"
                     + e.getStackTrace());
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Error occurred while hovering\n"
+            System.out.println("ERROR OCCURED WHILE HOVERING\n"
                     + e.getStackTrace());
         }
     }
@@ -647,8 +636,33 @@ public class WebAPI {
 
     /**
      * Helper Methods To Use in Asserts
+     *
      * @author Sami Sheikh
      */
+
+    // Hover over dropdown and make sure it is visible (built-in page refresh)
+    public void hoverOverDropdown(WebElement elementToHover) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(elementToHover));
+
+        try {
+            Thread.sleep(1000);
+            mouseHover(elementToHover);
+            System.out.println("Hovered over dropdown\n");
+        } catch (InterruptedException e) {
+            try {
+                driver.navigate().refresh();
+                System.out.println("Couldn't hover over dropdown --- Refreshing page\n");
+
+                wait.until(ExpectedConditions.visibilityOf(elementToHover));
+                Thread.sleep(1000);
+
+                mouseHoverJScript(elementToHover);
+            } catch (Exception e1) {
+                e.getMessage();
+            }
+        }
+    }
 
     // Gets text from List<WebElements> and compares against expected String array from Excel workbook
     public static boolean compareWebElementListToExpectedStringArray(By by, String path, String sheetName) throws IOException {
@@ -657,18 +671,18 @@ public class WebAPI {
 
         int falseCount = 0;
         boolean flag = false;
-        for (int i = 0; i<expectedList.length; i++){
-            if (actualList.get(i).getText().replace("’", "'").equals(expectedList[i])){
+        for (int i = 0; i < expectedList.length; i++) {
+            if (actualList.get(i).getText().replace("’", "'").trim().equalsIgnoreCase(expectedList[i])) {
                 flag = true;
-                System.out.println("ACTUAL " + (i+1) + " - " + actualList.get(i).getText());
-                System.out.println("EXPECTED " + (i+1) + " - " + expectedList[i] + "\n");
+                System.out.println("ACTUAL STRING " + (i + 1) + ": " + actualList.get(i).getText());
+                System.out.println("EXPECTED STRING " + (i + 1) + ": " + expectedList[i] + "\n");
             } else {
-                System.out.println("***FAILED AT LIST ITEM " + (i+1) + "***\nEXPECTED: " + expectedList[i] +
-                        "\nACTUAL: " + actualList.get(i).getText() + "\n");
+                System.out.println("***FAILED AT INDEX " + (i + 1) + "***\nEXPECTED STRING: " + expectedList[i] +
+                        "\nACTUAL STRING: " + actualList.get(i).getText() + "\n");
                 falseCount++;
             }
         }
-        if (falseCount > 0){
+        if (falseCount > 0) {
             flag = false;
         }
         return flag;
@@ -680,17 +694,18 @@ public class WebAPI {
 
         int falseCount = 0;
         boolean flag = false;
-        for (int i = 0; i<expectedList.length; i++){
-            if (actualArray[i].replace("’", "'").equals(expectedList[i])){
+        for (int i = 0; i < expectedList.length; i++) {
+            if (actualArray[i].replace("’", "'").trim().equalsIgnoreCase(expectedList[i])) {
                 flag = true;
-                System.out.println("ACTUAL " + (i+1) + ": " + actualArray[i]);
-                System.out.println("EXPECTED " + (i+1) + ": " + expectedList[i] + "\n");
+                System.out.println("ACTUAL " + (i + 1) + ": " + actualArray[i]);
+                System.out.println("EXPECTED " + (i + 1) + ": " + expectedList[i] + "\n");
             } else {
-                System.out.println("FAILED AT INDEX " + i + "\nEXPECTED: " + expectedList[i] + "\nACTUAL: " + actualArray[i]);
+                System.out.println("FAILED AT INDEX " + (i + 1) + "\nEXPECTED STRING: " + expectedList[i] + "\nACTUAL STRING: "
+                        + actualArray[i]);
                 falseCount++;
             }
         }
-        if (falseCount > 0){
+        if (falseCount > 0) {
             flag = false;
         }
         return flag;
@@ -702,12 +717,12 @@ public class WebAPI {
         String expected = expectedArray[0];
 
         boolean flag;
-        if (actual.replace("’", "'").equals(expected)){
+        if (actual.replace("’", "'").trim().equalsIgnoreCase(expected)) {
             flag = true;
-            System.out.println("ACTUAL: " + actual + "\nEXPECTED: " + expected);
+            System.out.println("ACTUAL STRING: " + actual + "\nEXPECTED STRING: " + expected);
         } else {
             flag = false;
-            System.out.println("***DOES NOT MATCH***\nACTUAL: " + actual + "\nEXPECTED: " + expected);
+            System.out.println("***DOES NOT MATCH***\nEXPECTED STRING: " + expected + "\nACTUAL STRING: " + actual);
         }
         return flag;
     }
@@ -719,18 +734,18 @@ public class WebAPI {
 
         int falseCount = 0;
         boolean flag = false;
-        for (int i = 0; i<expectedList.length; i++){
-            if (actualList.get(i).getAttribute(attribute).equals(expectedList[i])){
+        for (int i = 0; i < expectedList.length; i++) {
+            if (actualList.get(i).getAttribute(attribute).trim().equalsIgnoreCase(expectedList[i])) {
                 flag = true;
-                System.out.println("ACTUAL ATTRIBUTE " + (i+1) + ": " + actualList.get(i).getAttribute(attribute));
-                System.out.println("EXPECTED ATTRIBUTE " + (i+1) + ": " + expectedList[i] + "\n");
+                System.out.println("ACTUAL " + attribute.toUpperCase() + " " + (i + 1) + ": " + actualList.get(i).getAttribute(attribute));
+                System.out.println("EXPECTED " + attribute.toUpperCase() + " " + (i + 1) + ": " + expectedList[i] + "\n");
             } else {
-                System.out.println("FAILED AT INDEX " + i + "\nEXPECTED ATTRIBUTE: " + expectedList[i] +
-                        "\nACTUAL ATTRIBUTE: " + actualList.get(i).getAttribute(attribute));
+                System.out.println("FAILED AT INDEX " + i + "\nEXPECTED " + attribute.toUpperCase() + ": " + expectedList[i] +
+                        "\nACTUAL " + attribute.toUpperCase() + ": " + actualList.get(i).getAttribute(attribute));
                 falseCount++;
             }
         }
-        if (falseCount > 0){
+        if (falseCount > 0) {
             flag = false;
         }
         return flag;
@@ -745,7 +760,7 @@ public class WebAPI {
         System.out.println("Counted " + actual + " elements");
 
         boolean flag;
-        if (actual == expected){
+        if (actual == expected) {
             flag = true;
             System.out.println("ACTUAL COUNT: " + actual + "\nEXPECTED COUNT: " + expected);
         } else {
@@ -816,12 +831,9 @@ public class WebAPI {
             actualURLs[i] = switchToTabAndGetURL();
             i++;
         }
-
         boolean flag = compareTextListToExpectedStringArray(actualURLs, path, sheetName);
 
         return flag;
     }
 
-
 }
-
