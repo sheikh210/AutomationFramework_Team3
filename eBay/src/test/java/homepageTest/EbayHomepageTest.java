@@ -15,7 +15,7 @@ public class EbayHomepageTest extends WebAPI {
     @Test (priority = 0)
     public static void testHomepage(){
         getInItElements();
-        ebayHomepage.getCurrentPageTitle();
+        //ebayHomepage.getCurrentPageTitle();
         ebayHomepage.validateCurrentPage();
     }
     @Test(priority = 1,enabled = false)

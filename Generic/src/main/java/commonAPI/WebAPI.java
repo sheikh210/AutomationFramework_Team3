@@ -383,6 +383,7 @@ public class WebAPI {
         return title;
     }
 
+
     public void navigateForward() {
         driver.navigate().forward();
     }

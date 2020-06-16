@@ -1,75 +1,103 @@
 Bank of America Homepage Test Cases
-
-
 Test case 1 - Do log in
     1. Navigate to www.bankofamerica.com
     2. Enter User Name
     3. Enter Password
     4. Click Submit Button
-
 Test Case 2 - Apply for credit card
     1. Navigate to www.bankofamerica.com
     2. Click on Credit Card
     3. figure out all option
     4. Check how many options are there
-
-Test Case 3 - Apply for credit card
+Test Case 3 - Validate Text
     1. Navigate to www.bankofamerica.com
     2. Click on Auto loan Menu
     3. Check "Auto Loan rate" is there
     4. if auto loan rate is there then test is pass
     5. otherwise Fail
-
-Test Case 4 - Change Language
-    1. Navigate to www.bankofamerica.com
-    2. Click on Language option
-    3. Find out options of Languages
-    4. Select the language
-
-
-Test Case 5 - Change Language
+Test Case 4 - Validate link number
+     1. Navigate to www.bankofamerica.com
+     2. Click on Click on Credit Card Menu
+     3. Find out all the links
+     4. Check how many link is there and validate it
+Test Case 5 - Validate Text
     1. Navigate to www.bankofamerica.com
     2. Click on Search Box
     3. Write on Search box
     4. Click on Search button
-
-Test Case 6 - Change Language
+Test Case 6 - Validate WebElement
     1. Navigate to www.bankofamerica.com
     2. Click on "Find ATM Menu"
     3. Check Availability of Jackson Height Branch
-
-Test Case 7 - Change Language
+Test Case 7 - Validate Text
     1. Navigate to www.bankofamerica.com
     2. Click on "Digital Wallet Menu"
     3. Get the Expected page title
-Test Case 8 - Change Language
+Test Case 8 - Validate Text
     1. Navigate to www.bankofamerica.com
     2. Click on Investment Menu
     3. Search expected text
-
-Test Case 9 - Change Language
+Test Case 9 - Validate Title
     1. Navigate to www.bankofamerica.com
     2. Click on Zelle Menu
     3. Click on play button to play video
     4. Watch video for 5 seconds
     5. Finally check page Title
-
-Test Case 10 - Change Language
+Test Case 10 - Validate Text
     1. Navigate to www.bankofamerica.com
     2. Click on Get....Feature Menu
     3. Search Text "$25 opening deposit"
+Test Case 11 - Verify Current URL
+    1. Navigate to www.bankofamerica.com
+    2. Click on 'Deals all day Every day' menu
+    3. Find out New page Url
+    4. Validate New page Url
+Test Case 12 - Verify link Number
+    1. Navigate to www.bankofamerica.com
+    2. Find link number
+    3. Validate link number
+Test Case 13 - Verify Url
+    1. Navigate to www.bankofamerica.com
+    2. Click on checkingMenu
+    3. Click on advantageMenu
+    4. Write Zip Code
+    5. click on Search Button
+    6. Validate Current Url
 
+Test Case 14 - Verify Text
+    1. Navigate to www.bankofamerica.com
+    2. Click on "Savings"
+    3. Search 'Bank of America Advantage Savings' text
+    4. Validate text
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Test Case 15 - Verify Elements
+    1. Navigate to www.bankofamerica.com
+    2. Click on  'invest Your Way'
+    3. Write User Name
+    4. Write password
+    5. Click on login Button
+    6. Then validate Elements
+Test Case 16 - Verify Elements
+    1. Navigate to www.bankofamerica.com
+    2. Click on  "life Service" Button
+    3. validate new page Url.
+Test Case 17 - Verify homepage links
+    1. Navigate to www.bankofamerica.com
+    2. Find out homepage link number
+    3. validate the link number
+Test Case 18 - Verify homepage title
+    1. Navigate to www.bankofamerica.com
+    2. Find out homepage title
+    3. validate Title
+Test Case 19 - Verify homepage links
+    1. Navigate to www.bankofamerica.com
+    2. Write text on search Box
+    3. Click on search button
+    4. Check desire element is displayed
+    5. Validate the elements
+Test Case 20 - Verify homepage links
+    1. Navigate to www.bankofamerica.com
+    2. Write text on search Box
+    3. Click on search button
+    4. Check desire element is displayed
+    5. Validate the elements
