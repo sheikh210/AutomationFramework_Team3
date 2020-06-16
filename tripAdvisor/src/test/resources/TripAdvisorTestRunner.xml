@@ -15,10 +15,15 @@
     <parameter name="url" value="https://www.tripadvisor.com/"/>
 
 
-    <test name="Trip Advisor Homepage">
+<!--    <test name="Trip Advisor Homepage">-->
+<!--        <classes>-->
+<!--            <class name="homepageTest.TripAdvisorHomepageTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Trip Advisor - Owners Page">
         <classes>
-            <class name="homepageTest.TripAdvisorHomepageTest"/>
+            <class name="ownerspageTest.OwnersPageTest"/>
         </classes>
     </test>
-
 </suite>

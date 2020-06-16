@@ -5,6 +5,7 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -178,7 +179,7 @@ public class DataReader extends WebAPI {
 
     // RETURNS ARRAY OF STRING ARRAYS (XSSF)
     public String[][] fileReaderStringArrayXSSF(String path, String sheetName) throws IOException {
-        String[][] data = {};
+        String[][] data;
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
 
@@ -186,7 +187,7 @@ public class DataReader extends WebAPI {
         xssfSheet = xssfWorkbook.getSheet(sheetName);
         numberOfRows = xssfSheet.getLastRowNum();
         numberOfCol = xssfSheet.getRow(0).getLastCellNum();
-        data = new String[numberOfRows + 1][numberOfCol+1];
+        data = new String[numberOfRows + 1][numberOfCol + 1];
 
         for (int i = 0; i < data.length; i++) {
             xssfRows = xssfSheet.getRow(i);
@@ -316,15 +317,15 @@ public class DataReader extends WebAPI {
     public String getCellValueXSSF(XSSFCell cell) {
         Object value = null;
 
-        int dataType = cell.getCellType();
+        CellType dataType = cell.getCellType();
         switch (dataType) {
-            case XSSFCell.CELL_TYPE_NUMERIC:
+            case NUMERIC:
                 value = cell.getNumericCellValue();
                 break;
-            case XSSFCell.CELL_TYPE_STRING:
+            case STRING:
                 value = cell.getStringCellValue();
                 break;
-            case XSSFCell.CELL_TYPE_BOOLEAN:
+            case BOOLEAN:
                 value = cell.getBooleanCellValue();
                 break;
         }
@@ -334,15 +335,15 @@ public class DataReader extends WebAPI {
     public String getCellValueHSSF(HSSFCell cell) {
         Object value = null;
 
-        int dataType = cell.getCellType();
+        CellType dataType = cell.getCellType();
         switch (dataType) {
-            case HSSFCell.CELL_TYPE_NUMERIC:
+            case NUMERIC:
                 value = cell.getNumericCellValue();
                 break;
-            case HSSFCell.CELL_TYPE_STRING:
+            case STRING:
                 value = cell.getStringCellValue();
                 break;
-            case HSSFCell.CELL_TYPE_BOOLEAN:
+            case BOOLEAN:
                 value = cell.getBooleanCellValue();
                 break;
         }

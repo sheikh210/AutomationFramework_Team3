@@ -1,0 +1,166 @@
+"3990NY_Firdovsi Isgandarov"
+
+VerizonWireless Homepage Test cases
+
+>>>Test Case 1 - Login Functionality<<<
+Open Chrome Browser
+Maximize Window
+Go to https://www.verizonwireless.com/
+Get Title
+Click Sign in button
+Wait landing page
+Type Email
+Type Password
+Click sign in
+
+>>>Test Case 2 - 5G Page<<<
+Click Verizon icon
+Go to Home Page
+Wait Landing page
+Click 5G
+Verify subcategories are visible
+Verify subcategories are clickable
+Open 5G Overview
+Wait landing
+Scroll down
+Swipe advertisements
+Click 5G
+Open 5G Home Internet
+
+>>>Test Case 3 - Support Page<<<
+Click Support
+Open Support overview
+Click Search bar
+Type >>>Make Payment<<<
+Click search
+Wait landing page
+Click Pay Bill
+
+>>>Test Case 4 - Shop Page<<<
+Click Shop
+Open Smartphones
+Click Pricing
+Click Retail Price
+Click first item
+Click quick view button
+Click add to card
+Click zip code bar
+Type 11223
+Click Confirm location
+Click X to exit
+
+>>>Test Case 5 - Deals Page<<<
+Click Deals
+Open Verizon Up
+Scroll down
+Click >>i am eligible<<
+Click Deals
+Open First responders
+Click Fios button
+Click Learn more
+
+>>>Test Case 6 - Plans Page<<<
+Click Plan
+Open Unlimited
+Click Chart view
+Click How many lines bar
+Click minus 3 times
+
+>>>Test Case 7 - Phones Page<<<
+Click phone
+Open >Trade in your phone<
+Click Search bar
+Type >>Apple iPhone X 64GB Verizon Gray<<
+Click >Confirm
+Click >Good
+
+>>>Test Case 8 - In Home Page<<<
+Click In home page
+Click TV
+Click >check availability
+Click zip code
+Type 11223
+Click address bar
+Type >>2203 West street<<
+Click result
+
+>>>Test Case 9 - Business Page<<<
+Click Business page
+Click Education
+Click Learn more
+Click Business continuity
+
+>>>Test Case 10 - News Page<<<
+Go to home page
+Click Responsibility
+Click Building abilities/Learn More
+Click Read Story
+
+>>>Test Case 11 - Wireless Page<<<
+Go tome Home Page
+Click Wireless button
+Click Shop all accessories
+Click Keyboards
+Click fist item
+Click add filter
+Click brand
+Click apple
+Click Close filter
+
+>>>Test Case 12 - Mobile app<<<
+Go to home page
+Click sign in
+Click Mobile app
+Click Data hub
+
+>>>Test Case 13 - Stores Page<<<
+Click Stores
+Scroll Down
+Click Zip Code bar
+Type zip code
+Click Stores near me
+
+>>>Test Case 14 - Return Policy<<<
+Go to home page
+Click return policy
+Click Return and service termination
+Click Gift card returns
+
+>>>Test Case 15 - More Apps<<<
+Click Wireless
+Click See More Apps
+Click Entertainment
+Click Learn more
+
+>>>Test Case 16 - Gift Card<<<
+Click Wireless
+Click Shop
+Click gift Card
+Click 50
+Click Add to card
+
+>>>Test Case 17 - Community Forum<<<
+Click Support
+Click Community Forum
+Click Central
+Choose Community Blog
+
+>>>Test Case 18 - News Page<<<
+Go home page
+Click Verizon Cloud
+Click Need Help
+Click Backup Assistant
+Select Backup Assistant Plus
+
+>>>Test Case 19 - News Page<<<
+Go Home Page
+Click Smart Family
+Click Pick Me Up
+Click Learn More Digital
+
+>>>Test Case 20 - News Page<<<
+Go home Page
+Click Device Protection
+Click Security
+Click Security Learn More News
+
