@@ -19,5 +19,11 @@
             <class name="homepageTest.ESPNHomepageTest"/>
         </classes>
     </test>
-
+  
+    <test name="ESPN NBA">
+        <classes>
+            <class name="nbapageTest.ESPNnbapageTest"/>
+        </classes>
+    </test>
+  
 </suite>

@@ -179,7 +179,7 @@ public class DataReader extends WebAPI {
 
     // RETURNS ARRAY OF STRING ARRAYS (XSSF)
     public String[][] fileReaderStringArrayXSSF(String path, String sheetName) throws IOException {
-        String[][] data = {};
+        String[][] data;
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
 
@@ -187,7 +187,7 @@ public class DataReader extends WebAPI {
         xssfSheet = xssfWorkbook.getSheet(sheetName);
         numberOfRows = xssfSheet.getLastRowNum();
         numberOfCol = xssfSheet.getRow(0).getLastCellNum();
-        data = new String[numberOfRows + 1][numberOfCol+1];
+        data = new String[numberOfRows + 1][numberOfCol + 1];
 
         for (int i = 0; i < data.length; i++) {
             xssfRows = xssfSheet.getRow(i);

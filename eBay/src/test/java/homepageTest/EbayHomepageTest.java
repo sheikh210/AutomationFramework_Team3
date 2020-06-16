@@ -2,7 +2,6 @@ package homepageTest;
 import commonAPI.WebAPI;
 import homepage.EbayHomepage;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class EbayHomepageTest extends WebAPI {
@@ -16,7 +15,7 @@ public class EbayHomepageTest extends WebAPI {
     @Test (priority = 0)
     public static void testHomepage(){
         getInItElements();
-        ebayHomepage.getCurrentPageTitle();
+        //ebayHomepage.getCurrentPageTitle();
         ebayHomepage.validateCurrentPage();
     }
     @Test(priority = 1,enabled = false)
@@ -153,4 +152,4 @@ public class EbayHomepageTest extends WebAPI {
         ebayHomepage.getHelpButton();
     }
 
-    }
+}
