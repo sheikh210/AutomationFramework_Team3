@@ -59,13 +59,43 @@ Validate how many country name there
 >>>Test Case 11 - Do flight search<<<
 Click green search bar on the right side of the header
 
+>>>Test Case 12 - Check Sort By Box<<<
+Click Sort By Box
+Validate 11 Elements are visible
+Click Best Value
 
->>>Test Case 12 - <<<
->>>Test Case 13 - <<<
->>>Test Case 14 - <<<
->>>Test Case 15 - <<<
->>>Test Case 16 - <<<
->>>Test Case 17 - <<<
+>>>Test Case 13 - Check Deals Box<<<
+Click View Deals button
+Scroll down
+Click Down Arrow expand more info
+Click Airline view arrow
+Click X to close window
+
+>>>Test Case 14 - Airlines Options<<<
+Click Alaska Airlines
+Click American Airlines
+
+>>>Test Case 15 - Click Amenities<<<
+Click Wifi
+Click Power available
+
+>>>Test Case 16 - Choose one way option<<<
+Click one-way
+Click Travelers
+Click First Class
+Click close button to close tab
+Click Search
+
+>>>Test Case 17 - Choose Multi City<<<
+Click Multi City
+Click SecondFrom box
+Type >>Los Angeles (LAX)<<
+Click Second >>To<< box
+Type San Francisco (SFO)
+Click Depart
+Click 30 August
+Click Search
+
 >>>Test Case 18 - <<<
 >>>Test Case 19 - <<<
 >>>Test Case 20 - <<<

@@ -58,30 +58,45 @@ public class TripAdvisorFlightspageElements {
     //case 11 elements
     public static final String clickGreenSearch = "";
 
-
     //-----------------------------------------------------------------------
-
     //case 12 elements
+    public static final String clickSortByBox = "";
+    public static final String clickBestValue = "";
 
     //-----------------------------------------------------------------------
-
     //case 13 elements
+    public static final String clickViewDealsButton = "";
+    public static final String clickDownArrow = "";
+    public static final String clickAirlineView = "";
+    public static final String clickXtoClose = "";
 
     //-----------------------------------------------------------------------
-
     //case 14 elements
+    public static final String clickAlaskaAirlines = "";
+    public static final String clickAmericanAirlines = "";
 
     //-----------------------------------------------------------------------
-
     //case 15 elements
+    public static final String clickWifi = "";
+    public static final String clickPowerAvailable = "";
 
     //-----------------------------------------------------------------------
-
     //case 16 elements
+    public static final String clickOneWay = "";
+    public static final String clickTravelers = "";
+    public static final String clickFirstClassButton = "";
+    public static final String clickCloseButton2 = "";
+    public static final String clickSearch = "";
 
     //-----------------------------------------------------------------------
-
     //case 17 elements
+    public static final String clickMultiCity = "";
+    public static final String clickSecondFromBox = "";
+    public static final String clickSecondToTox= "";
+    public static final String clickDepart = "";
+    public static final String click30August = "";
+    public static final String clickSearchButton = "";
+
 
     //-----------------------------------------------------------------------
 

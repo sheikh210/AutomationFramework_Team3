@@ -5,7 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import utilities.DataReader;
 
+import java.io.IOException;
 import java.util.List;
 
 public class TripAdvisorFlightspage extends WebAPI {
@@ -86,6 +88,96 @@ public class TripAdvisorFlightspage extends WebAPI {
     @FindBy (xpath = clickGreenSearch)
     public WebElement webclickGreenSearch;
 
+    //-----------------------------------------------------------------------
+    //case 12 elements
+    @FindBy (xpath = clickSortByBox)
+    public WebElement webclickSortByBox;
+
+    @FindBy (xpath = clickBestValue)
+    public WebElement webclickBestValue;
+
+    //-----------------------------------------------------------------------
+    //case 13 elements
+    @FindBy (xpath = clickViewDealsButton)
+    public WebElement webclickViewDealsButton;
+
+    @FindBy (xpath = clickDownArrow)
+    public WebElement webclickDownArrow;
+
+    @FindBy (xpath = clickAirlineView)
+    public WebElement webclickAirlineView;
+
+    @FindBy (xpath = clickXtoClose)
+    public WebElement webclickXtoClose;
+
+    //-----------------------------------------------------------------------
+    //case 14 elements
+    @FindBy (xpath = clickAlaskaAirlines )
+    public WebElement webclickAlaskaAirlines ;
+
+    @FindBy (xpath = clickAmericanAirlines)
+    public WebElement webclickAmericanAirlines;
+
+    //-----------------------------------------------------------------------
+    //case 15 elements
+    @FindBy (xpath = clickWifi)
+    public WebElement webclickWifi;
+
+    @FindBy (xpath = clickPowerAvailable)
+    public WebElement webclickPowerAvailable;
+
+    //-----------------------------------------------------------------------
+    //case 16 elements
+    @FindBy (xpath = clickOneWay)
+    public WebElement webclickOneWay;
+
+    @FindBy (xpath = clickTravelers)
+    public WebElement webcclickTravelers;
+
+    @FindBy (xpath = clickFirstClassButton)
+    public WebElement webclickFirstClassButton;
+
+    @FindBy (xpath = clickCloseButton2)
+    public WebElement webclickCloseButton2;
+
+    @FindBy (xpath = clickSearch)
+    public WebElement webclickSearch;
+
+    //-----------------------------------------------------------------------
+    //case 17 elements
+    @FindBy (xpath = clickMultiCity)
+    public WebElement webclickMultiCity;
+
+    @FindBy (xpath = clickSecondFromBox)
+    public WebElement webclickSecondFromBox;
+
+    @FindBy (xpath = clickSecondToTox)
+    public WebElement webclickSecondToTox;
+
+    @FindBy (xpath = clickDepart)
+    public WebElement webclickDepart;
+
+    @FindBy (xpath = click30August)
+    public WebElement webclick30August;
+
+    @FindBy (xpath = clickSearchButton)
+    public WebElement webclickSearchButton;
+
+    //-----------------------------------------------------------------------
+    //case 18 elements
+
+
+    //-----------------------------------------------------------------------
+    //case 19 elements
+
+
+    //-----------------------------------------------------------------------
+    //case 20 elements
+
+
+    //-----------------------------------------------------------------------
+
+    DataReader dataReader = new DataReader();
 
     /**
      * >>>Test Case 1 - Go to Home Page<<<
@@ -97,11 +189,16 @@ public class TripAdvisorFlightspage extends WebAPI {
     public void goToHomePage() {
 
     }
-    public void validateHomePage() {
+    public void validateHomePage() throws IOException {
         String actualTitle = getCurrentPageTitle();
         System.out.println("Page Title:"+actualTitle);
 
-        Assert.assertEquals(actualTitle,expectedHomePageTitle);
+        String [] expectedHomePageTitleArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+
+                "//src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","Homepage Title");
+        String expectedHomePageTitle = expectedHomePageTitleArray [0];
+        System.out.println("Expected Page Title: "+expectedHomePageTitle);
+
+        Assert.assertEquals(actualTitle,expectedHomePageTitle,"Homepage Title Does not match");
     }
 
     /**
@@ -113,10 +210,26 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Wait until home page is landing
      * Get Title
      */
+    public int getMoreCategories() {
+        webclickMoreButton.click();
+        List<WebElement> moreCategories = webclickMoreButton.findElements(By.xpath(clickMoreButton));
+        int moreCtegoryList = moreCategories.size();
+        return moreCtegoryList;
+    }
+
+    public void validateCategoryList() throws IOException {
+        int [] expectedMenuArrayCount = dataReader.fileReaderIntegerHSSF(System.getProperty("user.dir")+
+                "//src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","MoreCategory List");
+        int expectedCategoryList = expectedMenuArrayCount[0];
+
+
+        Assert.assertEquals(getMoreCategories(),expectedCategoryList,"List size does not match");
+    }
 
     public void goToFlightsPage() {
-        webclickMoreButton.click();
         webclickFlightsButton.click();
+        String actualTitle = getCurrentPageTitle();
+        System.out.println("Page Title:"+actualTitle);
     }
 
     /**
@@ -125,6 +238,7 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Validate 5 Category are visible
      */
     public int getEllipsMenu() {
+        mouseHover(webclickEllipsMenuButton);
         List<WebElement> ellipsMenuList = webclickEllipsMenuButton.findElements(By.xpath(clickEllipsMenuButton));
         int ellipsMenuSize = ellipsMenuList.size();
         return ellipsMenuSize;
@@ -144,6 +258,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     public void roundTripBox() {
         webclickFrombox.sendKeys("New York City (NYC)");
         webclickToWhereBox.sendKeys("Los Angeles (LAX)");
+
     }
     /**
      * >>>Test Case 5 - Calendar Box<<<
@@ -167,11 +282,17 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click First Class
      * Click Close
      */
-    public void chooseClasType() {
+    public int getClasType() {
         webclickClassBox.click();
         webclickEconomyButton.click();
+        List <WebElement> classTypeList = webclickEconomyButton.findElements(By.xpath(clickEconomyButton));
+        int classTypeListSize = classTypeList.size();
         webclickFirstClass.click();
         webclickCloseButton.click();
+        return classTypeListSize;
+    }
+    public void validateClassTypelist() {
+        Assert.assertEquals(getClasType(),4,"List Size does not match");
     }
 
     /**
@@ -198,8 +319,14 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click Currency box
      * Validate 8 currency type are displayed
      */
-    public void checkCurrencyBox() {
+    public int getCurrencyBox() {
         webclickCurrencyBox.click();
+        List<WebElement> currencyBoxList = webclickCurrencyBox.findElements(By.xpath(clickCurrencyBox));
+        int currencyBoxListSize = currencyBoxList.size();
+        return currencyBoxListSize;
+    }
+    public void validateCurrencyBox() {
+        Assert.assertEquals(getCurrencyBox(),9,"List Size does not match");
     }
 
     /**
@@ -207,8 +334,10 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click Country box
      * Validate how many country names are there
      */
-    public void checkCountryBox() {
+    public void getCountryBox() {
         webclickCountryBox.click();
+        List<WebElement> countryBox = webclickCountryBox.findElements(By.xpath(clickCountryBox));
+        System.out.println(countryBox);
     }
 
     /**
@@ -218,5 +347,91 @@ public class TripAdvisorFlightspage extends WebAPI {
     public void doFlightSearch() {
         webclickGreenSearch.click();
     }
+
+    /**
+     * >>>Test Case 12 - Check Sort By Box<<<
+     * Click Sort By Box
+     * Validate 11 Elements are visible
+     * Click Best Value
+     */
+
+    public int getCheckSortByBox() {
+        webclickSortByBox.click();
+        List<WebElement> sortByBoxList = webclickSortByBox.findElements(By.xpath(clickSortByBox));
+        int sortByBoxSize = sortByBoxList.size();
+        return sortByBoxSize;
+    }
+    public void validateCheckSortBybox() {
+        Assert.assertEquals(getCheckSortByBox(),11,"List Size Does not match");
+        webclickBestValue.click();
+    }
+
+    /**
+     * >>>Test Case 13 - Check Deals Box<<<
+     * Click View Deals button
+     * Scroll down
+     * Click Down Arrow expand more info
+     * Click Airline view arrow
+     * Click X to close window
+     */
+    public void validateCheckDealsBox() {
+        webclickViewDealsButton.click();
+        webclickDownArrow.click();
+        webclickAirlineView.click();
+        webclickXtoClose.click();
+    }
+
+    /**
+     * >>>Test Case 14 - Airlines Options<<<
+     * Click Alaska Airlines
+     * Click American Airlines
+     */
+    public void validateAirlineOptions() {
+        webclickAlaskaAirlines.click();
+        webclickAmericanAirlines.click();
+    }
+
+    /**
+     * >>>Test Case 15 - Click Amenities<<<
+     * Click Wifi
+     * Click Power available
+     */
+    public void validateAmenitiesBox() {
+        webclickWifi.click();
+        webclickPowerAvailable.click();
+    }
+
+    /**
+     * >>>Test Case 16 - Choose one way option<<<
+     * Click one-way
+     * Click Travelers
+     * Click First Class
+     * Click close button to close tab
+     * Click Search
+     */
+    public void validateOneWayOption() {
+        webclickOneWay.click();
+        webcclickTravelers.click();
+        webclickFirstClassButton.click();
+        webclickCloseButton2.click();
+        webclickSearch.click();
+    }
+
+    /**
+     * >>>Test Case 17 - Choose Multi City<<<
+     * Click Multi City
+     * Click SecondFrom box
+     * Type >>Los Angeles (LAX)<<
+     * Click Second >>To<< box
+     * Type San Francisco (SFO)
+     * Click Depart
+     * Click 30 August
+     * Click Search
+     */
+
+
+
+
+
 
 }
