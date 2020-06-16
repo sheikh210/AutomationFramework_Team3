@@ -39,7 +39,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
     public static void testDropdownFunctionalityTravelUpdateCenter() {
         getInItElement();
         travelUpdateCenterPage.clickDropdownTravelUpdateCenter();
-        Assert.assertTrue(confirmIfDropdownExpanded(travelUpdateCenterPage.getButtonTravelUpdateCenter()));
+        Assert.assertTrue(isElementPresent(travelUpdateCenterPage.getButtonTravelUpdateCenter()));
     }
 
     /**
@@ -73,7 +73,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.clickDropdownTravelUpdateCenter();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListTravelUpdateCenterDropdown()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListTravelUpdateCenterDropdown()),
                 path, "TUC Dropdown List Names"));
     }
 
@@ -91,7 +91,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.clickDropdownTravelUpdateCenterAndWaysWereKeepingYouSafe();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListWaysWereKeepingYouSafe()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListWaysWereKeepingYouSafe()),
                 path, "TUC - WWKYS Submenu Names"));
     }
 
@@ -109,7 +109,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.clickDropdownTravelUpdateCenterAndFromDeltaToOurCustomers();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListFromDeltaToOurCustomers()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListFromDeltaToOurCustomers()),
                 path, "TUC - FDTOC Submenu Names"));
     }
 
@@ -127,7 +127,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.clickDropdownTravelUpdateCenterAndFlyingWhatYouNeedToKnowSubmenu();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListFlyingWhatYouNeedToKnow()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListFlyingWhatYouNeedToKnow()),
                 path, "TUC - FWYNTK Submenu Names"));
     }
 
@@ -143,7 +143,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.waitToBeVisibleCoronavirusUpdateCenter();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListCoronavirusUpdateCenterGridHeaders()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListCoronavirusUpdateCenterGridHeaders()),
                 path, "CUC - Grid Header Names"));
     }
 
@@ -159,7 +159,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.waitToBeVisibleTravelFlexibility();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListTravelFlexibility()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListTravelFlexibility()),
                 path, "CUC - TravelFlexibility Names"));
     }
 
@@ -191,7 +191,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.waitToBeVisibleTravelingWithUs();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListTravelingWithUs()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListTravelingWithUs()),
                 path, "CUC - TravelingWithUs Names"));
     }
 
@@ -223,7 +223,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.waitToBeVisibleCaringForYou();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListCaringForYou()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListCaringForYou()),
                 path, "CUC - CaringForYou Names"));
     }
 
@@ -256,7 +256,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.clickAccordionShowAllRecentCoronavirusUpdates();
 
-        Assert.assertTrue(confirmIfDropdownExpanded(travelUpdateCenterPage.getButtonExpandedAccordionShowAllCoronavirusRecentUpdates()));
+        Assert.assertTrue(isElementPresent(travelUpdateCenterPage.getButtonExpandedAccordionShowAllCoronavirusRecentUpdates()));
     }
 
     /**
@@ -272,7 +272,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.clickAccordionDropdownShowAllRecentCoronavirusUpdates();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.xpath(getWebElementListShowAllRecentCoronavirusUpdatesLinks()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.xpath(getWebElementListShowAllRecentCoronavirusUpdatesLinks()),
                 path, "SARCU - URLs"));
     }
 
@@ -289,7 +289,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.waitToBeVisibleContainerOtherUpdatesAndTravelTips();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListOtherUpdatesAndTravelTipsHeaderTitles()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListOtherUpdatesAndTravelTipsHeaderTitles()),
                 path, "OUATT - Header Names"));
     }
 
@@ -357,7 +357,7 @@ public class TravelUpdateCenterPageTest extends WebAPI {
         getInItElement();
         travelUpdateCenterPage.waitToBeVisibleFrequentlyAskedQuestionsContainerHeaderNames();
 
-        Assert.assertTrue(compareTextListToExpectedStringArray(By.cssSelector(getWebElementListFrequentlyAskedQuestionsHeaderTitles()),
+        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementListFrequentlyAskedQuestionsHeaderTitles()),
                 path, "FAQ Header Names"));
     }
 }

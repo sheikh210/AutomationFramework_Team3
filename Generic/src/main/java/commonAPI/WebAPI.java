@@ -448,8 +448,13 @@ public class WebAPI {
             Actions hover = new Actions(driver);
             hover.moveToElement(element).perform();
         } catch (Exception ex) {
+            driver.navigate().refresh();
             System.out.println("1st mouse-hover attempt failed - Attempting 2nd time");
+
+            WebDriverWait wait = new WebDriverWait(driver, 10);
             Actions hover = new Actions(driver);
+
+            wait.until(ExpectedConditions.visibilityOf(element));
             hover.moveToElement(element).perform();
         }
     }
@@ -646,7 +651,7 @@ public class WebAPI {
      */
 
     // Gets text from List<WebElements> and compares against expected String array from Excel workbook
-    public static boolean compareTextListToExpectedStringArray(By by, String path, String sheetName) throws IOException {
+    public static boolean compareWebElementListToExpectedStringArray(By by, String path, String sheetName) throws IOException {
         List<WebElement> actualList = driver.findElements(by);
         String[] expectedList = dataReader.fileReaderStringXSSF(path, sheetName);
 
@@ -658,7 +663,30 @@ public class WebAPI {
                 System.out.println("ACTUAL " + (i+1) + " - " + actualList.get(i).getText());
                 System.out.println("EXPECTED " + (i+1) + " - " + expectedList[i] + "\n");
             } else {
-                System.out.println("FAILED AT INDEX " + i + "\nEXPECTED: " + expectedList[i] + "\nACTUAL: " + actualList.get(i).getText());
+                System.out.println("***FAILED AT LIST ITEM " + (i+1) + "***\nEXPECTED: " + expectedList[i] +
+                        "\nACTUAL: " + actualList.get(i).getText() + "\n");
+                falseCount++;
+            }
+        }
+        if (falseCount > 0){
+            flag = false;
+        }
+        return flag;
+    }
+
+    // Gets text from String[] and compares against expected String array from Excel workbook
+    public static boolean compareTextListToExpectedStringArray(String[] actualArray, String path, String sheetName) throws IOException {
+        String[] expectedList = dataReader.fileReaderStringXSSF(path, sheetName);
+
+        int falseCount = 0;
+        boolean flag = false;
+        for (int i = 0; i<expectedList.length; i++){
+            if (actualArray[i].replace("’", "'").equals(expectedList[i])){
+                flag = true;
+                System.out.println("ACTUAL " + (i+1) + ": " + actualArray[i]);
+                System.out.println("EXPECTED " + (i+1) + ": " + expectedList[i] + "\n");
+            } else {
+                System.out.println("FAILED AT INDEX " + i + "\nEXPECTED: " + expectedList[i] + "\nACTUAL: " + actualArray[i]);
                 falseCount++;
             }
         }
@@ -676,10 +704,10 @@ public class WebAPI {
         boolean flag;
         if (actual.replace("’", "'").equals(expected)){
             flag = true;
-            System.out.println("ACTUAL TEXT: " + actual + "\nEXPECTED: " + expected);
+            System.out.println("ACTUAL: " + actual + "\nEXPECTED: " + expected);
         } else {
             flag = false;
-            System.out.println("***TEXT DOES NOT MATCH***\nACTUAL TEXT: " + actual + "\nEXPECTED TEXT: " + expected);
+            System.out.println("***DOES NOT MATCH***\nACTUAL: " + actual + "\nEXPECTED: " + expected);
         }
         return flag;
     }
@@ -728,6 +756,26 @@ public class WebAPI {
     }
 
 
+    // Switches to newly opened tab, gets URL, closes new tab, switches back to parent tab
+    public static String switchToTabAndGetURL() {
+        java.util.Iterator<String> iter = driver.getWindowHandles().iterator();
+
+        String parentWindow = iter.next();
+        String childWindow = iter.next();
+
+        driver.switchTo().window(childWindow);
+        System.out.println("Switched to \"" + driver.getTitle() + "\" window");
+        String actualURL = driver.getCurrentUrl();
+        System.out.println(actualURL + "\n");
+        driver.close();
+
+        driver.switchTo().window(parentWindow);
+        System.out.println("Switched back to \"" + driver.getTitle() + "\" window");
+        System.out.println(driver.getCurrentUrl() + "\n");
+
+        return actualURL;
+    }
+
     // Switches to newly opened tab, gets URL and compares to expected URL in Excel workbook
     public static boolean switchToTabAndCompareURL(String path, String sheetName) throws IOException {
         java.util.Iterator<String> iter = driver.getWindowHandles().iterator();
@@ -736,37 +784,41 @@ public class WebAPI {
         String childWindow = iter.next();
 
         driver.switchTo().window(childWindow);
-        System.out.println("Switched to \"" + driver.getTitle() + "\" window\n");
-        String url = driver.getCurrentUrl();
-        System.out.println(url + "\n");
+        System.out.println("Switched to \"" + driver.getTitle() + "\" window");
+        String actualURL = driver.getCurrentUrl();
+        System.out.println(actualURL + "\n");
+        driver.close();
 
         driver.switchTo().window(parentWindow);
-        System.out.println("Switched back to \"" + driver.getTitle() + "\" window\n");
-        System.out.println(driver.getCurrentUrl());
+        System.out.println("Switched back to \"" + driver.getTitle() + "\" window");
+        System.out.println(driver.getCurrentUrl() + "\n");
 
-        String [] expectedArray = dataReader.fileReaderStringXSSF(path, sheetName);
-        String expected = expectedArray[0];
+        boolean flag = compareTextToExpectedString(actualURL, path, sheetName);
 
-        boolean flag;
-        if (url.equals(expected)){
-            flag = true;
-            System.out.println("ACTUAL URL: " + url + "\nEXPECTED URL: " + expected);
-        } else {
-            flag = false;
-            System.out.println("***DOES NOT MATCH***\nEXPECTED URL: " + expected + "\nACTUAL URL: " + url);
-        }
         return flag;
     }
 
-    public static boolean confirmIfDropdownExpanded(WebElement element){
-        boolean flag = false;
-        if (element.isDisplayed()) {
-            flag = true;
-            System.out.println("Dropdown is displayed");
-        } else if (!(element.isDisplayed())) {
-            flag = false;
-            System.out.println("DROPDOWN IS NOT DISPLAYED");
+    // Loops through list of links clicks on each link individually, grabs each page URL, inserts into String[] closes
+    //      child page & switches back to parent page
+    // Compares String[] to expected URLs in Excel workbook
+    public static boolean clickLinksSwitchTabsCompareURLs(By by, String path, String sheetName) throws InterruptedException, IOException {
+        List<WebElement> list = driver.findElements(by);
+        int listSize = list.size();
+        String[] actualURLs = new String[listSize];
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        int i = 0;
+        for (WebElement element : list) {
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            element.sendKeys(Keys.CONTROL, Keys.ENTER);
+            Thread.sleep(1000);
+            actualURLs[i] = switchToTabAndGetURL();
+            i++;
         }
+
+        boolean flag = compareTextListToExpectedStringArray(actualURLs, path, sheetName);
+
         return flag;
     }
 
