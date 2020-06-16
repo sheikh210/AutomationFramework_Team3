@@ -5,6 +5,8 @@ import flightspage.TripAdvisorFlightspage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class TripAdvisorFlightspageTest extends WebAPI {
 
     static TripAdvisorFlightspage testFlightsPage;
@@ -14,12 +16,12 @@ public class TripAdvisorFlightspageTest extends WebAPI {
     }
 
     @Test (priority = 0)
-    public static void testHomePage() {
+    public static void testHomePage() throws IOException {
         getInitElements();
         testFlightsPage.validateHomePage();
     }
     @Test (priority = 1)
-    public static void testMoreCategories() {
+    public static void testMoreCategories() throws IOException {
         getInitElements();
         testFlightsPage.getMoreCategories();
         testFlightsPage.validateCategoryList();

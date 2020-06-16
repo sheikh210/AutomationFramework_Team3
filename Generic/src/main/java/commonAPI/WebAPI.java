@@ -814,7 +814,7 @@ public class WebAPI {
         return flag;
     }
 
-    // Loops through list of links clicks on each link individually, grabs each page URL, inserts into String[] closes
+    // Loops through list of links, clicks on each link individually, grabs each page URL, inserts into String[], closes
     //      child page & switches back to parent page
     // Compares String[] to expected URLs in Excel workbook
     public static boolean clickLinksSwitchTabsCompareURLs(By by, String path, String sheetName) throws InterruptedException, IOException {
