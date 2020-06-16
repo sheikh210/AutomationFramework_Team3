@@ -111,7 +111,7 @@ public class VerizonWirelessInHomePage extends WebAPI {
 //        for(WebElement link:menu){
 //        System.out.println(link.getAttribute("href") + " - " );
         List<WebElement> vlinks = menu.stream().filter(WebElement::isDisplayed).collect(Collectors.toList());
-        System.out.println("The total number of visible links on the page are :" + vlinks.size());
+        System.out.println("The total number of visible links on the page is :" + vlinks.size());
 
         for (WebElement link : vlinks) {
             String url = link.getAttribute("href");
