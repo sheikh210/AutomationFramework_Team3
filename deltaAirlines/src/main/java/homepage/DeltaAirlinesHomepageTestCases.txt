@@ -1,0 +1,147 @@
+Delta Airline HomePage Test Cases:
+
+
+
+Test Case 1: Validate Home Page
+1)Navigate to url "www.delta.com"
+2)get the title of the page
+3)Close browser
+
+"Search service animal in search button"
+Test case 2:
+1)Navigate to url "www.delta.com"
+2)click on search bar
+3)search "Traveling with service animal"
+4)Get the text
+5)Close browser
+
+Test case 3:"Validating SignUp button"
+1)Navigate to url "www.delta.com"
+2)Click on SignUp button
+3)Pass only first name in the form
+4)Click enter
+5)get the text and compare it to "To continue, please correct the 21 items indicated."
+6)Close browser
+
+Test case 4:"Validating the Login button"
+1)Navigate to url "www.delta.com"
+2)Click on LogIn button
+3)Go back to home page by clicking logo
+4)Close browser
+
+Test case 5: "Validate departure airport selection"
+1)Navigate to url "www.delta.com"
+2)Click on "From" and make sure a search box is displayed
+3)Select "EWR" as origin
+4)Click search
+5)Ensure that an error message is displayed
+"To continue, please correct the 2 items indicated"
+6)Close browser
+
+Test case 6:"Validate destination airport selection"
+1)Navigate to url "www.delta.com"
+2)Click on "From" and make sure a search box is displayed
+3)Click on "To" and ensure search box is displayed
+4)Select "SFO" as destination
+5)Click search
+6)Ensure that an error message is displayed
+"To continue, please correct the 1 items indicated"
+7)Close browser
+
+Test case 7:"Validate dates selection"
+1)Navigate to url "www.delta.com"
+2)Click on "From" and make sure a search box is displayed
+3)Click on "To" and ensure search box is displayed
+4)Select "TPA" as destination
+5)Select departure date "June 11 2020"
+6)Select return date "June 18 2020 "
+7)Click Done on the calender menu
+8)Click Search
+9)Get the title and compare to Expected title "Flight Results : Find & Book Airline Tickets : Delta Air Lines"
+10)Close browser
+
+Test case 8:"Validate Check in Button"
+1)Navigate to url "www.delta.com"
+2)Click on "Check in"
+3)Open "Find your trip by drop menu"
+4)Count the number of options and print them
+5)Select "Ticket Number" as an option
+6)Click search button
+7)Get the error message and compare it to "To continue, please correct the 2 items indicated"
+8)Close browser
+
+Test case 9:"Test search with wrong ticket number"
+1)Navigate to url "www.delta.com"
+2)Click on "Check in"
+3)Open "Find your trip by drop menu"
+4)Count the number of options and print them
+5)Select "Ticket Number" as an option
+6)Enter Wrong ticket number
+7)Click search
+8)Get the error message
+
+Test case 10:"Validate about us link"
+1)Navigate to url "www.delta.com"
+2)Click on "about us"
+3)Click on "About delta"
+4)count links and print them
+5)Click on Overview option
+6)Get title page
+7)Close Browser
+
+Test case 11: "Validate book button"
+1)Navigate to url "www.delta.com"
+2)Click on Book button
+3)Ensure that "Use Certificates, eCredits, or Delta Gift Cards" is displayed.
+
+Test case 12: "Confirm Flight Status"
+1)Navigate to url "www.delta.com"
+2)Click on "Flight Status" button
+3)Enter flight number "1872".
+4)Click Enter.
+5)Validate Flight number DL1872 is displayed in search.
+6)Close browser.
+
+Test case 13:"Count and display sub menu for travel info"
+1)Navigate to url "www.delta.com"
+2)Click on "Flight Status" button"
+3)count sub links
+4)Print subl inks
+5)Validate there are 18 sub links
+
+Test case 14: "Count links in Search menu"
+1)Navigate to url "www.delta.com"
+2)Click on "Search button"
+3)count sub links
+4)Validate there is 9 sub links
+
+Test Case 15: "Validate need help link"
+1)Navigate to url "www.delta.com"
+2)Scroll down until "need help" link is located
+2)Click on "Need Help"
+3)Get the page title
+4)Close Browser
+
+Test Case 16:"Validate Coronavirus link"
+1)Navigate to url "www.delta.com"
+2)Scroll down until "Coronavirus" link is located
+2)Click on "Coronavirus"
+3)Get the page title
+4)Close Browser
+
+Test Case 17:"Validate "Explore How" link
+1)Navigate to url "www.delta.com"
+2)Click on "Explore How"
+3)Get the page title
+4)Close Browser
+
+
+
+
+
+
+
+
+
+
+
