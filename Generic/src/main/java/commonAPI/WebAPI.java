@@ -270,7 +270,7 @@ public class WebAPI {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         try {
-            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "\\lib\\Screenshots\\" + fileName));
+            FileUtils.copyFile(screenshot, new File(System.getProperty("user.dir") + "/lib/Screenshots/" + fileName));
             System.out.println("SCREENSHOT TAKEN");
         } catch (Exception e) {
             System.out.println("ERROR TAKING SCREENSHOT: " + e.getMessage());

@@ -1,0 +1,17 @@
+//case-1
+1. Navigate to Aetna homepage.
+2. Click on careers button to open careers page.
+3. validate the page is displayed or not.
+
+
+//2
+1. Navigate to Aetna homepage.
+2. Click on careers button to open careers page.
+3. validate the page is displayed or not.
+
+//5
+1. Navigate to Aetna homepage.
+2. Click on careers button to open careers page.
+3. Click on member support.
+4. Click on account agreement.
+5. validate the page is displayed or not.

@@ -146,7 +146,7 @@ import org.testng.annotations.Test;
             tripAdvisorHomepage.validateDoFindAlertMenuTwo();
         }
         //20
-        @Test(enabled = false)
+        @Test
         public void testDoSearchPostReviewTwo(){
         getInItElements();
         tripAdvisorHomepage.doSearchPostReviewTwo();
