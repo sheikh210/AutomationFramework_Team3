@@ -63,7 +63,7 @@ Test Case 10 - Validate "Location" Search Box Functionality
 3 - In "Location" input box, type "New York"
 4 - Verify there are 8 search results shown
 
-Test Case 11 - Validate "Location" Results
+Test Case 11 - Validate "Location" Search Results
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
 3 - In "Location" input box, type "New York"
@@ -76,23 +76,43 @@ Test Case 12 - Validate "Location" Result Select
 4 - If the first search result option is "New York City", click on it
 5 - Verify "Location" input box is populated with "New York, United States"
 
+
+
+
+
 Test Case 13 - Validate "Business Name" Search Box Functionality
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
-3 - In "Business Name" input box, type ""
-4 - Verify
+3 - In "Location" input box, type "New York"
+4 - Select "New York City" (1st option)
+5 - In "Business Name" input box, type "Museum"
+6 - Verify there are 8 search results shown
 
-Test Case 14 -
+Test Case 14 - Validate "Business Name" Search Results
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - In "Location" input box, type "New York"
+4 - Select "New York City" (1st option)
+5 - In "Business Name" input box, type "Museum"
+6 - Verify the name of each business shown in search results
 
-Test Case 15 -
+Test Case 15 - Validate "Business Name" Result Select
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - In "Location" input box, type "New York"
+4 - Select "New York City" (1st option)
+5 - In "Business Name" input box, type "Museum"
+6 - Click on box containing "American Museum of Natural History"
+7 - Verify user is navigated to business listing detail page by capturing business name text
 
-Test Case 16 -
+Test Case 16 - Validate "List it Now" Button at Bottom of "Business Name" Search Results Box
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - In "Location" input box, type "New York"
+4 - Select "New York City" (1st option)
+5 - In "Business Name" input box, type "Museum"
+6 - Click on "Can't Find Your Business? List It Now" button at bottom of expanded search results box
+7 - Verify user is navigated to "Get Listed New" page by capturing page header text
 
 Test Case 17 -
 1 - Navigate to http://tripadvisor.com

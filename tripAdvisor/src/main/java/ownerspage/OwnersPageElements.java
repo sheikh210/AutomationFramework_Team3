@@ -41,51 +41,51 @@ public class OwnersPageElements {
     public static String getWebElementListDropdownsHeaderBar() {
         return webElementListDropdownsHeaderBar;
     }
-    // "Products" Dropdown Names (CSS)
+    // "Products" Dropdown Names (LIST) (CSS)
     private static final String webElementListDropdownNamesProducts = "body.rebrand_2017.js_logging.desktop_web.Owners.cx_brand_refresh_phase2.brand_refresh_bubble_ratings:nth-child(2) div.header.global-header:nth-child(1) div.masthead div.ppr_rup.ppr_priv_global_nav:nth-child(2) div.ppr_rup.ppr_priv_global_nav_component:nth-child(2) div.react-container div.t4b-t4b_header-T4BHeader__menuContainer--2uhyU div.t4b-t4b_header-T4BHeader__horizontalMenu--3Mt2V nav.t4b-t4b_header-T4BHeader__navMenus--yjL5C div.t4b-t4b_header-TopLevelDesktopMenu__navMainItem--_6LJ0:nth-child(3) div.t4b-t4b_header-TopLevelDesktopMenu__submenu--2g1h0 > ul.t4b-t4b_header-TopLevelDesktopMenu__menuItems--3sezM span";
-    // GETTER - "Products" Dropdown Names (CSS)
+    // GETTER - "Products" Dropdown Names (LIST) (CSS)
     public static String getWebElementListDropdownNamesProducts() {
         return webElementListDropdownNamesProducts;
     }
-    // "Products" Dropdown Links (CSS)
+    // "Products" Dropdown Links (LIST) (CSS)
     private static final String webElementListDropdownLinksProducts = "body.rebrand_2017.js_logging.desktop_web.Owners.cx_brand_refresh_phase2.brand_refresh_bubble_ratings:nth-child(2) div.header.global-header:nth-child(1) div.masthead div.ppr_rup.ppr_priv_global_nav:nth-child(2) div.ppr_rup.ppr_priv_global_nav_component:nth-child(2) div.react-container div.t4b-t4b_header-T4BHeader__menuContainer--2uhyU div.t4b-t4b_header-T4BHeader__horizontalMenu--3Mt2V nav.t4b-t4b_header-T4BHeader__navMenus--yjL5C div.t4b-t4b_header-TopLevelDesktopMenu__navMainItem--_6LJ0:nth-child(3) div.t4b-t4b_header-TopLevelDesktopMenu__submenu--2g1h0 > ul.t4b-t4b_header-TopLevelDesktopMenu__menuItems--3sezM li a";
-    // GETTER - "Products" Dropdown Links (CSS)
+    // GETTER - "Products" Dropdown Links (LIST) (CSS)
     public static String getWebElementListDropdownLinksProducts() {
         return webElementListDropdownLinksProducts;
     }
-    // "Reviews" Dropdown Names (CSS)
+    // "Reviews" Dropdown Names (LIST) (CSS)
     private static final String webElementListDropdownNamesReviews = "body.rebrand_2017.js_logging.desktop_web.Owners.cx_brand_refresh_phase2.brand_refresh_bubble_ratings:nth-child(2) div.header.global-header:nth-child(1) div.masthead div.ppr_rup.ppr_priv_global_nav:nth-child(2) div.ppr_rup.ppr_priv_global_nav_component:nth-child(2) div.react-container div.t4b-t4b_header-T4BHeader__menuContainer--2uhyU div.t4b-t4b_header-T4BHeader__horizontalMenu--3Mt2V nav.t4b-t4b_header-T4BHeader__navMenus--yjL5C div.t4b-t4b_header-TopLevelDesktopMenu__navMainItem--_6LJ0:nth-child(4) div.t4b-t4b_header-TopLevelDesktopMenu__submenu--2g1h0 > ul.t4b-t4b_header-TopLevelDesktopMenu__menuItems--3sezM span";
-    // GETTER - "Reviews" Dropdown Names (CSS)
+    // GETTER - "Reviews" Dropdown Names (LIST) (CSS)
     public static String getWebElementListDropdownNamesReviews() {
         return webElementListDropdownNamesReviews;
     }
-    // "Reviews" Dropdown Links (CSS)
+    // "Reviews" Dropdown Links (LIST) (CSS)
     private static final String webElementListDropdownLinksReviews = "body.rebrand_2017.js_logging.desktop_web.Owners.cx_brand_refresh_phase2.brand_refresh_bubble_ratings:nth-child(2) div.header.global-header:nth-child(1) div.masthead div.ppr_rup.ppr_priv_global_nav:nth-child(2) div.ppr_rup.ppr_priv_global_nav_component:nth-child(2) div.react-container div.t4b-t4b_header-T4BHeader__menuContainer--2uhyU div.t4b-t4b_header-T4BHeader__horizontalMenu--3Mt2V nav.t4b-t4b_header-T4BHeader__navMenus--yjL5C div.t4b-t4b_header-TopLevelDesktopMenu__navMainItem--_6LJ0:nth-child(4) div.t4b-t4b_header-TopLevelDesktopMenu__submenu--2g1h0 > ul.t4b-t4b_header-TopLevelDesktopMenu__menuItems--3sezM li a";
-    // GETTER - "Reviews" Dropdown Links (CSS)
+    // GETTER - "Reviews" Dropdown Links (LIST) (CSS)
     public static String getWebElementListDropdownLinksReviews() {
         return webElementListDropdownLinksReviews;
     }
-    // "Marketing Tools" Dropdown Names (CSS)
+    // "Marketing Tools" Dropdown Names (LIST) (CSS)
     private static final String webElementListDropdownNamesMarketingTools = "body.rebrand_2017.js_logging.desktop_web.Owners.cx_brand_refresh_phase2.brand_refresh_bubble_ratings:nth-child(2) div.header.global-header:nth-child(1) div.masthead div.ppr_rup.ppr_priv_global_nav:nth-child(2) div.ppr_rup.ppr_priv_global_nav_component:nth-child(2) div.react-container div.t4b-t4b_header-T4BHeader__menuContainer--2uhyU div.t4b-t4b_header-T4BHeader__horizontalMenu--3Mt2V nav.t4b-t4b_header-T4BHeader__navMenus--yjL5C div.t4b-t4b_header-TopLevelDesktopMenu__navMainItem--_6LJ0:nth-child(5) div.t4b-t4b_header-TopLevelDesktopMenu__submenu--2g1h0 > ul.t4b-t4b_header-TopLevelDesktopMenu__menuItems--3sezM span";
-    // GETTER - "Marketing Tools" Dropdown Names (CSS)
+    // GETTER - "Marketing Tools" Dropdown Names (LIST) (CSS)
     public static String getWebElementListDropdownNamesMarketingTools() {
         return webElementListDropdownNamesMarketingTools;
     }
-    // "Marketing Tools" Dropdown Links (CSS)
+    // "Marketing Tools" Dropdown Links (LIST) (CSS)
     private static final String webElementListDropdownLinksMarketingTools = "body.rebrand_2017.js_logging.desktop_web.Owners.cx_brand_refresh_phase2.brand_refresh_bubble_ratings:nth-child(2) div.header.global-header:nth-child(1) div.masthead div.ppr_rup.ppr_priv_global_nav:nth-child(2) div.ppr_rup.ppr_priv_global_nav_component:nth-child(2) div.react-container div.t4b-t4b_header-T4BHeader__menuContainer--2uhyU div.t4b-t4b_header-T4BHeader__horizontalMenu--3Mt2V nav.t4b-t4b_header-T4BHeader__navMenus--yjL5C div.t4b-t4b_header-TopLevelDesktopMenu__navMainItem--_6LJ0:nth-child(5) div.t4b-t4b_header-TopLevelDesktopMenu__submenu--2g1h0 > ul.t4b-t4b_header-TopLevelDesktopMenu__menuItems--3sezM li a";
-    // GETTER - "Marketing Tools" Dropdown Links (CSS)
+    // GETTER - "Marketing Tools" Dropdown Links (LIST) (CSS)
     public static String getWebElementListDropdownLinksMarketingTools() {
         return webElementListDropdownLinksMarketingTools;
     }
-    // "Help" Dropdown Names (CSS)
+    // "Help" Dropdown Names (LIST) (CSS)
     private static final String webElementListDropdownNamesHelp = "body.rebrand_2017.js_logging.desktop_web.Owners.cx_brand_refresh_phase2.brand_refresh_bubble_ratings:nth-child(2) div.header.global-header:nth-child(1) div.masthead div.ppr_rup.ppr_priv_global_nav:nth-child(2) div.ppr_rup.ppr_priv_global_nav_component:nth-child(2) div.react-container div.t4b-t4b_header-T4BHeader__menuContainer--2uhyU div.t4b-t4b_header-T4BHeader__horizontalMenu--3Mt2V nav.t4b-t4b_header-T4BHeader__navMenus--yjL5C div.t4b-t4b_header-TopLevelDesktopMenu__navMainItem--_6LJ0:nth-child(6) div.t4b-t4b_header-TopLevelDesktopMenu__submenu--2g1h0 > ul.t4b-t4b_header-TopLevelDesktopMenu__menuItems--3sezM span";
-    // GETTER - "Help" Dropdown Names (CSS)
+    // GETTER - "Help" Dropdown Names (LIST) (CSS)
     public static String getWebElementListDropdownNamesHelp() {
         return webElementListDropdownNamesHelp;
     }
-    // "Help" Dropdown Links (CSS)
+    // "Help" Dropdown Links (LIST) (CSS)
     private static final String webElementListDropdownLinksHelp = "body.rebrand_2017.js_logging.desktop_web.Owners.cx_brand_refresh_phase2.brand_refresh_bubble_ratings:nth-child(2) div.header.global-header:nth-child(1) div.masthead div.ppr_rup.ppr_priv_global_nav:nth-child(2) div.ppr_rup.ppr_priv_global_nav_component:nth-child(2) div.react-container div.t4b-t4b_header-T4BHeader__menuContainer--2uhyU div.t4b-t4b_header-T4BHeader__horizontalMenu--3Mt2V nav.t4b-t4b_header-T4BHeader__navMenus--yjL5C div.t4b-t4b_header-TopLevelDesktopMenu__navMainItem--_6LJ0:nth-child(6) div.t4b-t4b_header-TopLevelDesktopMenu__submenu--2g1h0 > ul.t4b-t4b_header-TopLevelDesktopMenu__menuItems--3sezM li a";
-    // GETTER - "Help" Dropdown Links (CSS)
+    // GETTER - "Help" Dropdown Links (LIST) (CSS)
     public static String getWebElementListDropdownLinksHelp() {
         return webElementListDropdownLinksHelp;
     }
@@ -101,19 +101,24 @@ public class OwnersPageElements {
     public static final String webElementButtonFirstResultLocation = "div._2sFgES0v > div:nth-child(1) > div";
     // "Business Name" Input Box (xPath)
     public static final String webElementInputBoxBusinessName = "//input[@placeholder='Business name']";
-    // Results Box - "Business Name
-    public static final String webElementResultsBoxBusinessName = "";
+    // Results Box - "Business Name (className)
+    public static final String webElementResultsBoxBusinessName = "_2sFgES0v";
+    // Search Result - 3rd Option - "Business Name" Input Box (CSS)
+    public static final String webElementButtonThirdResultBusinessName = "div._2sFgES0v > div:nth-child(3) > div";
+    // Claim Property Box - Listing Detail Page
+    public static final String webElementClaimPropertyBox = "div.t4b-owners-ClaimProperty__claimProperty--3m4rI div.t4b-owners-ClaimProperty__name--1p1wR";
     // "Search" Button (className)
     public static final String webElementButtonSearch = "ui_button primary large fullwidth";
-
-
     // Search Results Names List - "Location" Input Box (LIST) (CSS)
     private static final String webElementListNamesSearchResultsLocation = "div._2sFgES0v > div span:nth-child(2)";
     // GETTER - Search Results Names List - "Location" Input Box (LIST) (CSS)
     public static String getWebElementListNamesSearchResultsLocation() {
         return webElementListNamesSearchResultsLocation;
     }
-
-
-
+    // Search Results Names List - "Business Name" Input Box (LIST) (CSS)
+    private static final String webElementListNamesSearchResultsBusinessName = "div._2sFgES0v > div:not([class*='t4b']) span:nth-child(2)";
+    // GETTER - Search Results Names List - "Business Name" Input Box (LIST) (CSS)
+    public static String getWebElementListNamesSearchResultsBusinessName() {
+        return webElementListNamesSearchResultsBusinessName;
+    }
 }
