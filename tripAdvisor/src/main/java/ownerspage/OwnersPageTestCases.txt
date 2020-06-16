@@ -57,25 +57,30 @@ Test Case 9 - Validate Navigation to Each Link Under "Help" Dropdown
 4 - Click each list item
 5 - Verify URL of each page user is navigated to
 
-
-
-
-
-Test Case 10 -
+Test Case 10 - Validate "Location" Search Box Functionality
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - In "Location" input box, type "New York"
+4 - Verify there are 8 search results shown
 
-Test Case 11 -
+Test Case 11 - Validate "Location" Results
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - In "Location" input box, type "New York"
+4 - Verify the name of each city shown in search results
 
-Test Case 12 -
+Test Case 12 - Validate "Location" Result Select
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - In "Business Name" input box, type "New York"
+4 - If the first search result option is "New York City", click on it
+5 - Verify "Location" input box is populated with "New York, United States"
 
-Test Case 13 -
+Test Case 13 - Validate "Business Name" Search Box Functionality
 1 - Navigate to http://tripadvisor.com
 2 - In footer, under "Do Business With Us", click "Owners"
+3 - In "Business Name" input box, type ""
+4 - Verify
 
 Test Case 14 -
 1 - Navigate to http://tripadvisor.com

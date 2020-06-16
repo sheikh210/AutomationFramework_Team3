@@ -8,7 +8,7 @@ public class OwnersPageElements {
     public static final String webElementImageOwnersPageBackground = "#component_1 div.t4b-owners-Owners__redesignBackground--39J7b";
 
     /**
-     * Header
+     * HEADER
      */
     // Header Bar (CSS)
     public static final String webElementHeaderBar = "div.t4b-t4b_header-T4BHeader__menuContainer--2uhyU > div nav";
@@ -89,6 +89,31 @@ public class OwnersPageElements {
     public static String getWebElementListDropdownLinksHelp() {
         return webElementListDropdownLinksHelp;
     }
+
+    /**
+     * BODY
+     */
+    // "Location" Input Box (xPath)
+    public static final String webElementInputBoxLocation = "//input[@placeholder='Location']";
+    // Results Box - "Location" Input Box (className)
+    public static final String webElementResultsBoxLocation = "_2sFgES0v";
+    // Search Result - 1st Option - "Location" Input Box (CSS)
+    public static final String webElementButtonFirstResultLocation = "div._2sFgES0v > div:nth-child(1) > div";
+    // "Business Name" Input Box (xPath)
+    public static final String webElementInputBoxBusinessName = "//input[@placeholder='Business name']";
+    // Results Box - "Business Name
+    public static final String webElementResultsBoxBusinessName = "";
+    // "Search" Button (className)
+    public static final String webElementButtonSearch = "ui_button primary large fullwidth";
+
+
+    // Search Results Names List - "Location" Input Box (LIST) (CSS)
+    private static final String webElementListNamesSearchResultsLocation = "div._2sFgES0v > div span:nth-child(2)";
+    // GETTER - Search Results Names List - "Location" Input Box (LIST) (CSS)
+    public static String getWebElementListNamesSearchResultsLocation() {
+        return webElementListNamesSearchResultsLocation;
+    }
+
 
 
 }
