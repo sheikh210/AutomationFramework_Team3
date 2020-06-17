@@ -13,167 +13,179 @@ import java.util.List;
 public class TripAdvisorFlightspage extends WebAPI {
 
     //Case 2 Elements
-    @FindBy (xpath = clickMoreButton)
-    public WebElement webclickMoreButton;
-
-    @FindBy (xpath = clickFlightsButton)
-    public WebElement webclickFlightsButton;
+    @FindBy (xpath = webclickMoreButton)
+    public WebElement clickMoreButton;
 
     //-----------------------------------------------------------------------
     //Case 3 Elements
-    @FindBy (xpath = clickEllipsMenuButton)
-    public WebElement webclickEllipsMenuButton;
+    @FindBy (xpath = webclickFlightsButton)
+    public WebElement clickFlightsButton;
 
     //-----------------------------------------------------------------------
     //Case 4 Elements
-    @FindBy (xpath = clickFrombox)
-    public WebElement webclickFrombox;
-
-    @FindBy (xpath = clickToWhereBox)
-    public WebElement webclickToWhereBox;
+    @FindBy (xpath = webclickEllipsMenuButton)
+    public WebElement clickEllipsMenuButton;
 
     //-----------------------------------------------------------------------
     //Case 5 Elements
-    @FindBy (xpath = clickCalendarbox)
-    public WebElement webclickCalendarbox;
+    @FindBy (xpath = webclickFrombox)
+    public WebElement clickFrombox;
 
-    @FindBy (xpath = clickRightswipe)
-    public WebElement webclickRightswipe;
-
-    @FindBy (xpath = click18July)
-    public WebElement webclick18July;
-
-    @FindBy (xpath = click15August)
-    public WebElement webclick15August;
+    @FindBy (xpath = webclickToWhereBox)
+    public WebElement clickToWhereBox;
 
     //-----------------------------------------------------------------------
     //Case 6 Elements
-    @FindBy (xpath = clickClassBox)
-    public WebElement webclickClassBox;
+    @FindBy (xpath = webclickCalendarbox)
+    public WebElement clickCalendarbox;
 
-    @FindBy (xpath = clickEconomyButton)
-    public WebElement webclickEconomyButton;
+    @FindBy (xpath = webclickRightswipe)
+    public WebElement clickRightswipe;
 
-    @FindBy (xpath = clickFirstClass)
-    public WebElement webclickFirstClass;
+    @FindBy (xpath = webclick18July)
+    public WebElement click18July;
 
-    @FindBy (xpath = clickCloseButton)
-    public WebElement webclickCloseButton;
+    @FindBy (xpath = webclick15August)
+    public WebElement click15August;
 
     //-----------------------------------------------------------------------
     //case 7 elements
-    @FindBy (xpath = clickPreferNonstopButton)
-    public WebElement webclickPreferNonstopButton;
+    @FindBy (xpath = webclickClassBox)
+    public WebElement clickClassBox;
 
-    @FindBy (xpath = clickNearbyAirportsButton)
-    public WebElement webclickNearbyAirportsButton;
+    @FindBy (xpath = webclickEconomyButton)
+    public WebElement clickEconomyButton;
+
+    @FindBy (xpath = webclickFirstClass)
+    public WebElement clickFirstClass;
+
+    @FindBy (xpath = webclickCloseButton)
+    public WebElement clickCloseButton;
 
     //-----------------------------------------------------------------------
     //case 8 elements
-    @FindBy (xpath = clickEmailBar)
-    public WebElement webclickEmailBar;
+    @FindBy (xpath = webclickPreferNonstopButton)
+    public WebElement clickPreferNonstopButton;
+
+    @FindBy (xpath = webclickNearbyAirportsButton)
+    public WebElement clickNearbyAirportsButton;
 
     //-----------------------------------------------------------------------
     //case 9 elements
-    @FindBy (xpath = clickCurrencyBox)
-    public WebElement webclickCurrencyBox;
+    @FindBy (xpath = webclickEmailBar)
+    public WebElement clickEmailBar;
 
     //-----------------------------------------------------------------------
     //case 10 elements
-    @FindBy (xpath = clickCountryBox)
-    public WebElement webclickCountryBox;
+    @FindBy (xpath = webclickCurrencyBox)
+    public WebElement clickCurrencyBox;
 
     //-----------------------------------------------------------------------
     //case 11 elements
-    @FindBy (xpath = clickGreenSearch)
-    public WebElement webclickGreenSearch;
+    @FindBy (xpath =webclickCountryBox)
+    public WebElement clickCountryBox;
 
     //-----------------------------------------------------------------------
     //case 12 elements
-    @FindBy (xpath = clickSortByBox)
-    public WebElement webclickSortByBox;
-
-    @FindBy (xpath = clickBestValue)
-    public WebElement webclickBestValue;
+    @FindBy (xpath = webclickGreenSearch)
+    public WebElement clickGreenSearch;
 
     //-----------------------------------------------------------------------
     //case 13 elements
-    @FindBy (xpath = clickViewDealsButton)
-    public WebElement webclickViewDealsButton;
+    @FindBy (xpath = webclickSortByBox)
+    public WebElement clickSortByBox;
 
-    @FindBy (xpath = clickDownArrow)
-    public WebElement webclickDownArrow;
-
-    @FindBy (xpath = clickAirlineView)
-    public WebElement webclickAirlineView;
-
-    @FindBy (xpath = clickXtoClose)
-    public WebElement webclickXtoClose;
+    @FindBy (xpath = webclickBestValue)
+    public WebElement clickBestValue;
 
     //-----------------------------------------------------------------------
     //case 14 elements
-    @FindBy (xpath = clickAlaskaAirlines )
-    public WebElement webclickAlaskaAirlines ;
+    @FindBy (xpath = webclickViewDealsButton)
+    public WebElement clickViewDealsButton;
 
-    @FindBy (xpath = clickAmericanAirlines)
-    public WebElement webclickAmericanAirlines;
+    @FindBy (xpath = webclickDownArrow)
+    public WebElement clickDownArrow;
+
+    @FindBy (xpath = webclickAirlineView)
+    public WebElement clickAirlineView;
+
+    @FindBy (xpath = webclickXtoClose)
+    public WebElement clickXtoClose;
 
     //-----------------------------------------------------------------------
     //case 15 elements
-    @FindBy (xpath = clickWifi)
-    public WebElement webclickWifi;
+    @FindBy (xpath = webclickAlaskaAirlines)
+    public WebElement clickAlaskaAirlines;
 
-    @FindBy (xpath = clickPowerAvailable)
-    public WebElement webclickPowerAvailable;
+    @FindBy (xpath = webclickAmericanAirlines)
+    public WebElement clickAmericanAirlines;
 
     //-----------------------------------------------------------------------
     //case 16 elements
-    @FindBy (xpath = clickOneWay)
-    public WebElement webclickOneWay;
+    @FindBy (xpath = webclickWifi)
+    public WebElement clickWifi;
 
-    @FindBy (xpath = clickTravelers)
-    public WebElement webcclickTravelers;
-
-    @FindBy (xpath = clickFirstClassButton)
-    public WebElement webclickFirstClassButton;
-
-    @FindBy (xpath = clickCloseButton2)
-    public WebElement webclickCloseButton2;
-
-    @FindBy (xpath = clickSearch)
-    public WebElement webclickSearch;
+    @FindBy (xpath = webclickPowerAvailable)
+    public WebElement clickPowerAvailable;
 
     //-----------------------------------------------------------------------
     //case 17 elements
-    @FindBy (xpath = clickMultiCity)
-    public WebElement webclickMultiCity;
+    @FindBy (xpath = webclickOneWay)
+    public WebElement clickOneWay;
 
-    @FindBy (xpath = clickSecondFromBox)
-    public WebElement webclickSecondFromBox;
+    @FindBy (xpath = webclickTravelers)
+    public WebElement clickTravelers;
 
-    @FindBy (xpath = clickSecondToTox)
-    public WebElement webclickSecondToTox;
+    @FindBy (xpath = webclickFirstClassButton)
+    public WebElement clickFirstClassButton;
 
-    @FindBy (xpath = clickDepart)
-    public WebElement webclickDepart;
+    @FindBy (xpath = webclickCloseButton2)
+    public WebElement clickCloseButton2;
 
-    @FindBy (xpath = click30August)
-    public WebElement webclick30August;
-
-    @FindBy (xpath = clickSearchButton)
-    public WebElement webclickSearchButton;
+    @FindBy (xpath = webclickSearch)
+    public WebElement clickSearch;
 
     //-----------------------------------------------------------------------
     //case 18 elements
+    @FindBy (xpath = webclickMultiCity)
+    public WebElement clickMultiCity;
 
+    @FindBy (xpath = webclickSecondFromBox)
+    public WebElement clickSecondFromBox;
+
+    @FindBy (xpath = webclickSecondToTox)
+    public WebElement clickSecondToTox;
+
+    @FindBy (xpath = webclickDepart)
+    public WebElement clickDepart;
+
+    @FindBy (xpath = webclick30August)
+    public WebElement click30August;
+
+    @FindBy (xpath = webclickSearchButton)
+    public WebElement clickSearchButton;
 
     //-----------------------------------------------------------------------
     //case 19 elements
+    @FindBy (xpath = webclickNonStop)
+    public WebElement clickNonStop;
 
+    @FindBy (xpath = webclickAmerican)
+    public WebElement clickAmerican;
+
+    @FindBy (xpath = webclickClearAllFilters)
+    public WebElement clickClearAllFilters;
 
     //-----------------------------------------------------------------------
     //case 20 elements
+    @FindBy (xpath = webclickMinimizeStopsBar)
+    public WebElement clickMinimizeStopsBar;
 
+    @FindBy (xpath = webclickMinimizeCovid19Bar)
+    public WebElement clickMinimizeCovid19Bar;
+
+    @FindBy (xpath = webclickMinimizeFlightTimes)
+    public WebElement clickMinimizeFlightTimes;
 
     //-----------------------------------------------------------------------
 
@@ -206,13 +218,10 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click >>More<< button on header
      * Expand it
      * Validate 9 Category are there
-     * Click Flights button
-     * Wait until home page is landing
-     * Get Title
      */
     public int getMoreCategories() {
-        webclickMoreButton.click();
-        List<WebElement> moreCategories = webclickMoreButton.findElements(By.xpath(clickMoreButton));
+        clickMoreButton.click();
+        List<WebElement> moreCategories = clickMoreButton.findElements(By.xpath(webclickMoreButton));
         int moreCtegoryList = moreCategories.size();
         return moreCtegoryList;
     }
@@ -222,15 +231,23 @@ public class TripAdvisorFlightspage extends WebAPI {
                 "//src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","MoreCategory List");
         int expectedCategoryList = expectedMenuArrayCount[0];
 
-
         Assert.assertEquals(getMoreCategories(),expectedCategoryList,"List size does not match");
     }
 
     public void goToFlightsPage() {
-        webclickFlightsButton.click();
+        clickFlightsButton.click();
         String actualTitle = getCurrentPageTitle();
         System.out.println("Page Title:"+actualTitle);
     }
+
+    /**
+     * >>>Go To Flights Page
+     * Click Flights button
+     * Wait until home page is landing
+     * Get Title
+     */
+
+
 
     /**
      * >>>Test Case 3 - Drop Down Menu<<<
@@ -238,8 +255,8 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Validate 5 Category are visible
      */
     public int getEllipsMenu() {
-        mouseHover(webclickEllipsMenuButton);
-        List<WebElement> ellipsMenuList = webclickEllipsMenuButton.findElements(By.xpath(clickEllipsMenuButton));
+        mouseHover(clickEllipsMenuButton);
+        List<WebElement> ellipsMenuList = clickEllipsMenuButton.findElements(By.xpath(webclickEllipsMenuButton));
         int ellipsMenuSize = ellipsMenuList.size();
         return ellipsMenuSize;
 
@@ -256,8 +273,8 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Type Los Angeles (LAX)
      */
     public void roundTripBox() {
-        webclickFrombox.sendKeys("New York City (NYC)");
-        webclickToWhereBox.sendKeys("Los Angeles (LAX)");
+        clickFrombox.sendKeys("New York City (NYC)");
+        clickToWhereBox.sendKeys("Los Angeles (LAX)");
 
     }
     /**
@@ -268,10 +285,10 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click 15 August
      */
     public void goToCalendarBox() {
-        webclickCalendarbox.click();
-        webclickRightswipe.click();
-        webclick18July.click();
-        webclick15August.click();
+        clickCalendarbox.click();
+        clickRightswipe.click();
+        click18July.click();
+        click15August.click();
     }
     /**
      * >>>Test Case 6 - Check class type<<<
@@ -283,12 +300,12 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click Close
      */
     public int getClasType() {
-        webclickClassBox.click();
-        webclickEconomyButton.click();
-        List <WebElement> classTypeList = webclickEconomyButton.findElements(By.xpath(clickEconomyButton));
+        clickClassBox.click();
+        clickEconomyButton.click();
+        List <WebElement> classTypeList = clickEconomyButton.findElements(By.xpath(webclickEconomyButton));
         int classTypeListSize = classTypeList.size();
-        webclickFirstClass.click();
-        webclickCloseButton.click();
+        clickFirstClass.click();
+        clickCloseButton.click();
         return classTypeListSize;
     }
     public void validateClassTypelist() {
@@ -301,8 +318,8 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click >>Include nearby airports<< button
      */
     public void chooseExtraFlightOptions() {
-        webclickPreferNonstopButton.click();
-        webclickNearbyAirportsButton.click();
+        clickPreferNonstopButton.click();
+        clickNearbyAirportsButton.click();
     }
 
     /**
@@ -311,7 +328,7 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Type >>pnttest@gmail.com<<
      */
     public void priceAlert() {
-        webclickEmailBar.sendKeys("pnttest@gmail.com");
+        clickEmailBar.sendKeys("pnttest@gmail.com");
     }
 
     /**
@@ -320,8 +337,8 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Validate 8 currency type are displayed
      */
     public int getCurrencyBox() {
-        webclickCurrencyBox.click();
-        List<WebElement> currencyBoxList = webclickCurrencyBox.findElements(By.xpath(clickCurrencyBox));
+        clickCurrencyBox.click();
+        List<WebElement> currencyBoxList = clickCurrencyBox.findElements(By.xpath(webclickCurrencyBox));
         int currencyBoxListSize = currencyBoxList.size();
         return currencyBoxListSize;
     }
@@ -335,8 +352,8 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Validate how many country names are there
      */
     public void getCountryBox() {
-        webclickCountryBox.click();
-        List<WebElement> countryBox = webclickCountryBox.findElements(By.xpath(clickCountryBox));
+        clickCountryBox.click();
+        List<WebElement> countryBox = clickCountryBox.findElements(By.xpath(webclickCountryBox));
         System.out.println(countryBox);
     }
 
@@ -345,7 +362,7 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click green search bar on the right side of the header
      */
     public void doFlightSearch() {
-        webclickGreenSearch.click();
+        clickGreenSearch.click();
     }
 
     /**
@@ -356,14 +373,14 @@ public class TripAdvisorFlightspage extends WebAPI {
      */
 
     public int getCheckSortByBox() {
-        webclickSortByBox.click();
-        List<WebElement> sortByBoxList = webclickSortByBox.findElements(By.xpath(clickSortByBox));
+        clickSortByBox.click();
+        List<WebElement> sortByBoxList = clickSortByBox.findElements(By.xpath(webclickSortByBox));
         int sortByBoxSize = sortByBoxList.size();
         return sortByBoxSize;
     }
     public void validateCheckSortBybox() {
         Assert.assertEquals(getCheckSortByBox(),11,"List Size Does not match");
-        webclickBestValue.click();
+        clickBestValue.click();
     }
 
     /**
@@ -375,10 +392,10 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click X to close window
      */
     public void validateCheckDealsBox() {
-        webclickViewDealsButton.click();
-        webclickDownArrow.click();
-        webclickAirlineView.click();
-        webclickXtoClose.click();
+        clickViewDealsButton.click();
+        clickDownArrow.click();
+        clickAirlineView.click();
+        clickXtoClose.click();
     }
 
     /**
@@ -387,8 +404,8 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click American Airlines
      */
     public void validateAirlineOptions() {
-        webclickAlaskaAirlines.click();
-        webclickAmericanAirlines.click();
+        clickAlaskaAirlines.click();
+        clickAmericanAirlines.click();
     }
 
     /**
@@ -397,8 +414,8 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click Power available
      */
     public void validateAmenitiesBox() {
-        webclickWifi.click();
-        webclickPowerAvailable.click();
+        clickWifi.click();
+        clickPowerAvailable.click();
     }
 
     /**
@@ -410,11 +427,11 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click Search
      */
     public void validateOneWayOption() {
-        webclickOneWay.click();
-        webcclickTravelers.click();
-        webclickFirstClassButton.click();
-        webclickCloseButton2.click();
-        webclickSearch.click();
+        clickOneWay.click();
+        clickTravelers.click();
+        clickFirstClassButton.click();
+        clickCloseButton2.click();
+        clickSearch.click();
     }
 
     /**
@@ -429,6 +446,19 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click Search
      */
 
+    /**
+     * >>>Test Case 19 - Clear filter<<<
+     * Click Non Stop
+     * Click American
+     * Click Clear All Filters
+     */
+
+    /**
+     * >>>Test Case 20 - Minimize Side Bars<<<
+     * Minimize Stops Bar
+     * Minimize Covid 19 Bar
+     * Minimize Flight Times
+     */
 
 
 
