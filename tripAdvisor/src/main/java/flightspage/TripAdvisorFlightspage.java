@@ -214,7 +214,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 2 - Go to Flights page <<<
+     * >>>Test Case 2 - Validate More Button bar <<<
      * Click >>More<< button on header
      * Expand it
      * Validate 9 Category are there
@@ -234,6 +234,12 @@ public class TripAdvisorFlightspage extends WebAPI {
         Assert.assertEquals(getMoreCategories(),expectedCategoryList,"List size does not match");
     }
 
+    /**
+     *  >>>Test Case 3 - Go to Flights page <<<
+     * Click Flights button
+     * Wait until home page is landing
+     * Get Title
+     */
     public void goToFlightsPage() {
         clickFlightsButton.click();
         String actualTitle = getCurrentPageTitle();
@@ -241,16 +247,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Go To Flights Page
-     * Click Flights button
-     * Wait until home page is landing
-     * Get Title
-     */
-
-
-
-    /**
-     * >>>Test Case 3 - Drop Down Menu<<<
+     * >>>Test Case 4 - Drop Down Menu<<<
      * Click ellipsis button
      * Validate 5 Category are visible
      */
@@ -266,7 +263,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 4 - Round Trip<<<
+     * >>>Test Case 5 - Round Trip<<<
      * Click From box
      * Type New York City (NYC)
      * Click To Where Box
@@ -278,7 +275,7 @@ public class TripAdvisorFlightspage extends WebAPI {
 
     }
     /**
-     * >>>Test Case 5 - Calendar Box<<<
+     * >>>Test Case 6 - Calendar Box<<<
      * Click Calendar box
      * Click right swipe
      * Click 18 July
@@ -291,7 +288,7 @@ public class TripAdvisorFlightspage extends WebAPI {
         click15August.click();
     }
     /**
-     * >>>Test Case 6 - Check class type<<<
+     * >>>Test Case 7 - Check class type<<<
      * Click Class box
      * Expand it
      * Click Economy button
@@ -313,7 +310,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 7 - Extra options<<<
+     * >>>Test Case 8 - Extra options<<<
      * Click >>Prefer nonstop<< button
      * Click >>Include nearby airports<< button
      */
@@ -323,7 +320,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 8 - Price Alert<<<
+     * >>>Test Case 9 - Price Alert<<<
      * Click Email Bar
      * Type >>pnttest@gmail.com<<
      */
@@ -332,7 +329,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 9 - Currency box<<<
+     * >>>Test Case 10 - Currency box<<<
      * Click Currency box
      * Validate 8 currency type are displayed
      */
@@ -347,7 +344,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 10 - Country box<<<
+     * >>>Test Case 11 - Country box<<<
      * Click Country box
      * Validate how many country names are there
      */
@@ -358,7 +355,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 11 - Do flight search<<<
+     * >>>Test Case 12 - Do flight search<<<
      * Click green search bar on the right side of the header
      */
     public void doFlightSearch() {
@@ -366,7 +363,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 12 - Check Sort By Box<<<
+     * >>>Test Case 13 - Check Sort By Box<<<
      * Click Sort By Box
      * Validate 11 Elements are visible
      * Click Best Value
@@ -384,7 +381,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 13 - Check Deals Box<<<
+     * >>>Test Case 14 - Check Deals Box<<<
      * Click View Deals button
      * Scroll down
      * Click Down Arrow expand more info
@@ -399,7 +396,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 14 - Airlines Options<<<
+     * >>>Test Case 15 - Airlines Options<<<
      * Click Alaska Airlines
      * Click American Airlines
      */
@@ -409,7 +406,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 15 - Click Amenities<<<
+     * >>>Test Case 16 - Click Amenities<<<
      * Click Wifi
      * Click Power available
      */
@@ -419,7 +416,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 16 - Choose one way option<<<
+     * >>>Test Case 17 - Choose one way option<<<
      * Click one-way
      * Click Travelers
      * Click First Class
@@ -435,7 +432,7 @@ public class TripAdvisorFlightspage extends WebAPI {
     }
 
     /**
-     * >>>Test Case 17 - Choose Multi City<<<
+     * >>>Test Case 18 - Choose Multi City<<<
      * Click Multi City
      * Click SecondFrom box
      * Type >>Los Angeles (LAX)<<
@@ -445,6 +442,14 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click 30 August
      * Click Search
      */
+    public void validateMultiCityOption() {
+        clickMultiCity.click();
+        clickSecondFromBox.sendKeys("Los Angeles");
+        clickSecondToTox.sendKeys("San Francisco");
+        clickDepart.click();
+        click30August.click();
+        clickSearchButton.click();
+    }
 
     /**
      * >>>Test Case 19 - Clear filter<<<
@@ -452,6 +457,10 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click American
      * Click Clear All Filters
      */
+    public void clearFilter() {
+        clickAmerican.click();
+        clickClearAllFilters.click();
+    }
 
     /**
      * >>>Test Case 20 - Minimize Side Bars<<<
@@ -459,9 +468,10 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Minimize Covid 19 Bar
      * Minimize Flight Times
      */
-
-
-
-
+    public void minimizeSideBar() {
+        clickMinimizeStopsBar.click();
+        clickMinimizeCovid19Bar.click();
+        clickMinimizeFlightTimes.click();
+    }
 
 }

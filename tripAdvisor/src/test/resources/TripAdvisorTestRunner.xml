@@ -28,9 +28,9 @@
         </classes>
     </test>
   
-    <test name="Trip Advisor - Owners Page">
-        <classes>
-            <class name="ownerspageTest.OwnersPageTest"/>
-        </classes>
-    </test>
+<!--    <test name="Trip Advisor - Owners Page">-->
+<!--        <classes>-->
+<!--            <class name="ownerspageTest.OwnersPageTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
