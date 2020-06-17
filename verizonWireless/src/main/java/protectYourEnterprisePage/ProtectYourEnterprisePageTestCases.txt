@@ -1,10 +1,17 @@
 PROTECT YOUR ENTERPRISE PAGE - TEST CASES
 
-TEST CASE 1 -
-1. Navigate to "Protect Your Enterprise" page
+TEST CASE 1 - Validate navigation to "Protect Your Enterprise From Threats" Page
+1. Navigate to http://verizonwireless.com
+2. Click "Business" button in header
+3. Click "Enterprise" button in header
+4. If pop-up is displayed, close pop-up.
+5. If pop-up is not displayed, scroll down and click "Protect Your Enterprise From Threats" box
+6. Verify image text is correct
 
-TEST CASE 2 -
+TEST CASE 2 - Validate number of list items contained in "Protect your enterprise from threats" dropdown
 1. Navigate to "Protect Your Enterprise" page
+2. Hover over "Protect your enterprise from threats" dropdown
+3. Verify number of list items contained within dropdown
 
 TEST CASE 3 -
 1. Navigate to "Protect Your Enterprise" page

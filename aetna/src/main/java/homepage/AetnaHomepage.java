@@ -86,6 +86,7 @@ public class AetnaHomepage extends WebAPI {
 
     DataReader dataReader = new DataReader();
     ConnectToSqlDB connectToSQL = new ConnectToSqlDB();
+    String path = System.getProperty("user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx";
 
     /**
      * Test Case 1 - Validate Navigation to Homepage
@@ -101,8 +102,7 @@ public class AetnaHomepage extends WebAPI {
         String actualTitle = getCurrentPageTitle();
         System.out.println("ACTUAL Page Title: " + actualTitle);
 
-        String [] expectedHomepageTitleArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") +
-                "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Homepage Title");
+        String [] expectedHomepageTitleArray = dataReader.fileReaderStringXSSF(path, "Homepage Title");
         String expectedHomepageTitle = expectedHomepageTitleArray[0];
         System.out.println("EXPECTED Page Title: "+expectedHomepageTitle);
 
@@ -136,8 +136,8 @@ public class AetnaHomepage extends WebAPI {
         String actualTitle = driver.getTitle();
         System.out.println("ACTUAL Page Title: "+actualTitle);
 
-        String [] expectedSearchResultsPageTitleArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") +
-                "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Search Results Page Title");
+        String [] expectedSearchResultsPageTitleArray = dataReader.fileReaderStringXSSF(path,
+                "Search Results Page Title");
         String expectedSearchResultsPageTitle = expectedSearchResultsPageTitleArray[0];
         System.out.println("EXPECTED Page Title: "+expectedSearchResultsPageTitle);
 
@@ -162,8 +162,8 @@ public class AetnaHomepage extends WebAPI {
         int actualItemCount = exploreAetnaSitesItems.size();
         System.out.println("ACTUAL number of items in 'Explore Aetna sites' dropdown: "+actualItemCount+"\n");
 
-        int [] expectedCountExploreAetnaSitesDropdownItemsArray = dataReader.fileReaderIntegerXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Explore Aetna Sites Count");
+        int [] expectedCountExploreAetnaSitesDropdownItemsArray = dataReader.fileReaderIntegerXSSF(path,
+                "Explore Aetna Sites Count");
         int expectedCountExploreAetnaSitesItems = expectedCountExploreAetnaSitesDropdownItemsArray[0];
         System.out.println("EXPECTED number of items in 'Explore Aetna sites' dropdown: "+expectedCountExploreAetnaSitesItems);
 
@@ -190,10 +190,10 @@ public class AetnaHomepage extends WebAPI {
         connectToSQL.insertWebElementTextArrayListToSqlTable(exploreAetnaSitesItems, "explore_aetna_sites_dropdown_names", "dropdown_names");
         connectToSQL.insertWebElementLinksArrayListToSqlTable(exploreAetnaSitesItems, "explore_aetna_sites_dropdown_urls", "dropdown_urls");
 
-        String [] expectedNamesExploreAetnaSitesDropdownItemsArray = dataReader.fileReaderStringXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Explore Aetna Sites Name");
-        String [] expectedURLExploreAetnaSitesDropdownItemsArray = dataReader.fileReaderStringXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Explore Aetna Sites URL");
+        String [] expectedNamesExploreAetnaSitesDropdownItemsArray = dataReader.fileReaderStringXSSF(path,
+                "Explore Aetna Sites Name");
+        String [] expectedURLExploreAetnaSitesDropdownItemsArray = dataReader.fileReaderStringXSSF(path,
+                "Explore Aetna Sites URL");
 
         List<String> actualNames = connectToSQL.readDataBase("explore_aetna_sites_dropdown_names",
                 "dropdown_names");
@@ -234,19 +234,19 @@ public class AetnaHomepage extends WebAPI {
         int actualCount = shopForAPlanItemsList.size();
         System.out.println("Number of counted items in 'Shop for a plan' dropdown menu: "+actualCount+"\n");
 
-        int [] expectedCountShopForAPlanItemsArray = dataReader.fileReaderIntegerXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "ShopForAPlan Dropdown Count");
+        int [] expectedCountShopForAPlanItemsArray = dataReader.fileReaderIntegerXSSF(path,
+                "ShopForAPlan Dropdown Count");
         int expectedCountShopForAPlan = expectedCountShopForAPlanItemsArray[0];
 
-        String [] expectedNameShopForAPlanItemsArray = dataReader.fileReaderStringXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "ShopForAPlan Dropdown Names");
+        String [] expectedNameShopForAPlanItemsArray = dataReader.fileReaderStringXSSF(path,
+                "ShopForAPlan Dropdown Names");
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(actualCount, expectedCountShopForAPlan, "NUMBER OF COUNTED ITEMS ('SHOP FOR A PLAN' DROPDOWN) & NUMBER " +
                 "OF EXPECTED ITEMS DO NOT MATCH");
 
         for (int i=0;i<actualCount; i++){
-            System.out.println(shopForAPlanItemsList.get(i).getText().toString());
+            System.out.println(shopForAPlanItemsList.get(i).getText());
             softAssert.assertEquals(shopForAPlanItemsList.get(i).getText(), expectedNameShopForAPlanItemsArray[i], "ITEM AT INDEX "+i+" " +
                     "('SHOP FOR A PLAN' DROPDOWN) DOES NOT MATCH");
         }
@@ -273,12 +273,10 @@ public class AetnaHomepage extends WebAPI {
         int actualSubmenuItemCount = submenuItems.size();
         System.out.println("Counted items within 'Medicare' submenu: "+actualSubmenuItemCount);
 
-        int [] expectedCountMedicareSubmenuArray = dataReader.fileReaderIntegerXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Medicare Submenu Count");
+        int [] expectedCountMedicareSubmenuArray = dataReader.fileReaderIntegerXSSF(path, "Medicare Submenu Count");
         int expectedCountMedicareSubmenu = expectedCountMedicareSubmenuArray[0];
 
-        String [] expectedNamesMedicareSubmenuArray = dataReader.fileReaderStringXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Medicare Submenu Names");
+        String [] expectedNamesMedicareSubmenuArray = dataReader.fileReaderStringXSSF(path, "Medicare Submenu Names");
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(actualSubmenuItemCount, expectedCountMedicareSubmenu, "'MEDICARE' SUBMENU ITEM COUNT DOES NOT MATCH");
@@ -309,8 +307,7 @@ public class AetnaHomepage extends WebAPI {
         wait.until(ExpectedConditions.visibilityOfAllElements(submenuMedicare.findElements(By.cssSelector(webElementsSubmenuMedicareItems))));
         List<WebElement> submenuItems = submenuMedicare.findElements(By.cssSelector(webElementsSubmenuMedicareItems));
 
-        String [] expectedURLMedicareSubmenuArray = dataReader.fileReaderStringXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Medicare Submenu URL");
+        String [] expectedURLMedicareSubmenuArray = dataReader.fileReaderStringXSSF(path, "Medicare Submenu URL");
 
         SoftAssert softAssert = new SoftAssert();
 
@@ -343,13 +340,13 @@ public class AetnaHomepage extends WebAPI {
         int actualSubmenuItemCount = submenuItems.size();
         System.out.println("Counted items within 'Health Coverage' submenu: "+actualSubmenuItemCount);
 
-        int [] expectedCountHealthCoverageSubmenuArray = dataReader.fileReaderIntegerXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Health Coverage Submenu" +
+        int [] expectedCountHealthCoverageSubmenuArray = dataReader.fileReaderIntegerXSSF(path, "Health Coverage " +
+                "Submenu" +
                 " Count");
         int expectedCountHealthCoverageSubmenu = expectedCountHealthCoverageSubmenuArray[0];
 
-        String [] expectedNamesHealthCoverageSubmenuArray = dataReader.fileReaderStringXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Health Coverage Submenu Names");
+        String [] expectedNamesHealthCoverageSubmenuArray = dataReader.fileReaderStringXSSF(path, "Health Coverage " +
+                "Submenu Names");
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(actualSubmenuItemCount, expectedCountHealthCoverageSubmenu, "'HEALTH COVERAGE' SUBMENU ITEM COUNT DOES NOT MATCH");
@@ -380,8 +377,8 @@ public class AetnaHomepage extends WebAPI {
 
         List<WebElement> submenuItems = submenuHealthCoverage.findElements(By.cssSelector(webElementsSubmenuHealthCoverageItems));
 
-        String [] expectedURLHealthCoverageSubmenuArray = dataReader.fileReaderStringXSSF(System.getProperty(
-                "user.dir") + "\\src\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Health Coverage Submenu URL");
+        String [] expectedURLHealthCoverageSubmenuArray = dataReader.fileReaderStringXSSF(path, "Health Coverage " +
+                "Submenu URL");
 
         SoftAssert softAssert = new SoftAssert();
         for (int i=0; i<submenuItems.size(); i++) {
@@ -413,12 +410,10 @@ public class AetnaHomepage extends WebAPI {
         int actualSubmenuItemCount = submenuItems.size();
         System.out.println("Counted items within 'Dental, Vision and supplemental' submenu: "+actualSubmenuItemCount);
 
-        int [] expectedSubmenuCountArray = dataReader.fileReaderIntegerXSSF(System.getProperty("user.dir")+"\\src" +
-                "\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "DVS Submenu Count");
+        int [] expectedSubmenuCountArray = dataReader.fileReaderIntegerXSSF(path, "DVS Submenu Count");
         int expectedSubmenuCount = expectedSubmenuCountArray[0];
 
-        String [] expectedSubmenuNamesArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+"\\src" +
-                "\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "DVS Submenu Names");
+        String [] expectedSubmenuNamesArray = dataReader.fileReaderStringXSSF(path, "DVS Submenu Names");
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(actualSubmenuItemCount, expectedSubmenuCount, "'DENTAL, VISION AND SUPPLEMENTAL' SUBMENU ITEM COUNT " +
@@ -607,8 +602,7 @@ public class AetnaHomepage extends WebAPI {
         String actualLoginPageURL = driver.getCurrentUrl();
         System.out.println("Login Page URL: "+actualLoginPageURL);
 
-        String[] expectedLoginPageURLArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+"\\src" +
-                "\\main\\resources\\AetnaHomepage_ExpectedElements.xlsx", "Login Page URL");
+        String[] expectedLoginPageURLArray = dataReader.fileReaderStringXSSF(path, "Login Page URL");
         String expectedLoginPageURL = expectedLoginPageURLArray[0];
         System.out.println("EXPECTED URL: "+expectedLoginPageURL);
 
@@ -683,7 +677,6 @@ public class AetnaHomepage extends WebAPI {
      * 2 - Verify there are 5 social media icons in the footer
      */
     public void validateSocialMediaIconCount(){
-//        WebDriverWait wait = new WebDriverWait(driver, 10);
         scrollToElementJScript(wrapperSocialMedia);
 
         List<WebElement> socialMediaList = wrapperSocialMedia.findElements(By.cssSelector(webElementsIconsSocialMedia));

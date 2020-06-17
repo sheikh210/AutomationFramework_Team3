@@ -284,8 +284,9 @@ public class WebAPI {
         try {
             element.click();
         } catch (Exception e) {
-            System.out.println("UNABLE TO CLICK ON ELEMENT");
+            System.out.println("UNABLE TO CLICK ON ELEMENT\n");
             e.getMessage();
+            e.printStackTrace();
         }
     }
 
@@ -603,6 +604,7 @@ public class WebAPI {
             if (isElementPresent(element)) {
                 String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('onmouseover');}";
                 ((JavascriptExecutor) driver).executeScript(mouseOverScript, element);
+                System.out.println("Hover performed\n");
             } else {
                 System.out.println("UNABLE TO HOVER OVER ELEMENT\n");
             }
@@ -758,7 +760,7 @@ public class WebAPI {
 
         List<WebElement> dropdownList = driver.findElements(by);
         int actual = dropdownList.size();
-        System.out.println("Counted " + actual + " elements");
+        System.out.println("Counted " + actual + " elements\n");
 
         boolean flag;
         if (actual == expected) {
@@ -766,7 +768,7 @@ public class WebAPI {
             System.out.println("ACTUAL COUNT: " + actual + "\nEXPECTED COUNT: " + expected);
         } else {
             flag = false;
-            System.out.println("***SIZE DOES NOT MATCH***\nACTUAL COUNT: " + actual + "\nEXPECTED COUNT: " + expected);
+            System.out.println("***SIZE DOES NOT MATCH***\nACTUAL COUNT: " + actual + "\nEXPECTED COUNT: " + expected + "\n");
         }
         return flag;
     }
