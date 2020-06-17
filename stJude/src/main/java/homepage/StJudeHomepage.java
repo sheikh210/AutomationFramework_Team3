@@ -240,7 +240,8 @@ public class StJudeHomepage extends WebAPI {
 
             //Test 14
             public void doSearchUrl2 () {
-                moreScienceAndMedicineMenu.click();
+
+             moreScienceAndMedicineMenu.click();
             }
 
             public void validateDoSearchUrl2 () {

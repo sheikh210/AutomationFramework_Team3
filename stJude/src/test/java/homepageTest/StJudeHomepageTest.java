@@ -28,7 +28,7 @@ public class StJudeHomepageTest extends WebAPI {
     public static void testDoSearchBar() throws InterruptedException {
          getInItElements();
          stJudeHomepage.doSearchBar();
-         stJudeHomepage.validateSearchBar();
+         stJudeHomepage.validateDoSearchBar();
 
      }
 
@@ -129,7 +129,7 @@ public class StJudeHomepageTest extends WebAPI {
          getInItElements();
          stJudeHomepage.validateSearchUrl3();
      }
-     @Test
+     @Test(enabled = false)
      public static void testSearchUrl5(){
          getInItElements();
          stJudeHomepage.validateSearchUrl5();
@@ -146,8 +146,9 @@ public class StJudeHomepageTest extends WebAPI {
          getInItElements();
          stJudeHomepage.doHandleDropDownSubMenu1();
 
+
      }
-     @Test(enabled = false)
+     @Test
     public static void testSearchUrl4(){
          getInItElements();
          stJudeHomepage.validateSearchUrl4();

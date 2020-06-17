@@ -1,0 +1,90 @@
+Test Case 1:
+1.Navigate url https://www.bankofamerica.com/
+2.click on business & institutions
+3.It'll go must read research
+
+
+Test Case 2:
+1.Navigate to homepage
+2.Click on Hmaburger menu
+3.Get the url
+
+Test Case 3:
+1.Navigate to HomePage
+2.Get Page title
+
+Test Case 4:
+1.Navigate to HomePage
+2.Get the list size
+
+Test Case 5:
+1.Navigate to HomePage
+2.get url for fraud and cybersecurity
+
+Test Case 6:
+1.Navigate to HomePage
+2.Get url for funding growth
+
+Test Case 7:
+1.Navigate to HomePage
+2.Url for Growing globally
+
+Test Case 8:
+1.Navigate to HomePage
+2.Get url fraud and cybersecurity
+
+Test Case 9:
+1.Navigate to HomePage
+2.Get url attracting and rertaining talent
+
+Test Case 10:
+1.Navigate to HomePage
+2.get optimizing trading performance
+
+Test Case 11:
+1.Navigate to HomePage
+2.Our business url
+
+Test Case 12:
+1.Navigate to HomePage
+2.Our reginoins url
+
+Test 13:
+1.Navigate to HomePage
+2.clickAccessingResearchInsights
+3.get globalResearchAndMarketInsights page
+
+Test 14:
+1.Navigate to HomePage
+2.clickBusinessBankingSolutions
+3.open helpingYouAndYourBusinessManageThroughChange page
+
+Test 15:
+1.Navigate to HomePage
+2.clickFeaturedContentMenu
+3.get mustReadResearch page
+
+Test 16:
+1.Navigate to HomePage
+2.clickFundingGrowth
+3.get fuelingYourOperationsWithCostEfficientCapital page
+
+Test 17:
+1.Navigate to HomePage
+2.clickGrowingGlobally
+3.get growingAndManagingGlobalEmergingMarkets page
+
+Test 18:
+1.Navigate to HomePage
+2.clickFraudAndCybersecurity
+3.get digitalSecurityForAConnectedWorld page
+
+Test 19:
+1.Navigate to HomePage
+2.clickOurBusiness
+3.latest insights
+
+Test 20:
+1.Navigate to HomePage
+2.clickTransactionServices
+3.globalTransactionServices page

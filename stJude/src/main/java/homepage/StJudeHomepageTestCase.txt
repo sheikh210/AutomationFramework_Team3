@@ -61,3 +61,33 @@ Test Case 13:
 1.Navigate to https://www.stjude.org/
 2.Home page Link number
 3.get expected link
+
+Test Case 14:
+1.Navigate to https://www.stjude.org/
+2.Click on more science and medicine menu
+3. get the url page
+
+
+Test Case 15:
+1.Navigate to https://www.stjude.org/
+2.validate search display text
+
+Test Case 16:
+1.Navigate to https://www.stjude.org/
+2.Current page url
+
+Test Case 17:
+1.Navigate to https://www.stjude.org/
+2.Click on brain tumors and get the url
+
+Test Case 18:
+1.Navigate to https://www.stjude.org/
+2.Unique operation model url
+
+Test Case 19:
+1.Navigate to https://www.stjude.org/
+2.Drop down menu and get the current page url
+
+Test Case 20:
+1.Navigate to https://www.stjude.org/
+2.Drop down menu and get the url

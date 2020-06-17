@@ -9,10 +9,10 @@
         <module name="tripAdvisor" />
         <module name="verizonWireless" />
         <module name="bankOfAmerica" />
+        <module name="eBay" />
         <module name="aetna" />
         <module name="Generic" />
         <module name="espn" />
-        <module name="eBay" />
         <module name="stJude" />
         <module name="deltaAirlines" />
       </profile>
