@@ -1,17 +1,79 @@
-//case-1
+//case - 1
 1. Navigate to Aetna homepage.
 2. Click on careers button to open careers page.
 3. validate the page is displayed or not.
 
+//case - 2
+1. Navigate to Aetna homepage.
+2. click on aetna career button to open page.
+3. validate the url  page.
 
-//2
+//case - 3
+1. Navigate to Aetna homepage.
+2. click the career page.
+3. check the title validate or not.
+
+//case - 4
 1. Navigate to Aetna homepage.
 2. Click on careers button to open careers page.
 3. validate the page is displayed or not.
 
-//5
+//case - 5
 1. Navigate to Aetna homepage.
 2. Click on careers button to open careers page.
 3. Click on member support.
 4. Click on account agreement.
 5. validate the page is displayed or not.
+
+//case - 6
+1. Navigate to Aetna homepage.
+2. Click on careers button to open careers page.
+3. Click on  support menu.
+4. Click on insurance right button.
+5. validate the page is displayed or not.
+
+//case - 7
+1.  navigate to https://aetna.com
+2.  Scroll down to "Explore Aetna Site" grid.
+3.  Click on "Aetna.com"
+4.  verify the name of list item.
+
+//case - 8
+1.  navigate to https://aetna.com
+2.  Scroll down to "Explore Aetna Site" grid.
+3.  Click on "For Providers"
+4.  verify the name of list item.
+
+//test case -9
+1.  navigate to https://aetna.com
+2.  Click on career button to open member support.
+3.  validate actual expected text.
+
+//test case - 10
+1. navigate to https://aetna.com
+2. click on career button to open page.
+3. move to back page.
+4. validate back the movement.
+
+//11
+ 1. navigate to https://aetna.com
+ 2. click on career button to open page.
+ 3. move to back page.
+ 4. move to forward page.
+ 5. refresh the page.
+ 6. validate back the movement.
+
+//12
+1. navigate to aetna homepage.
+2. click the career button to open page,
+3. validate product id number.
+
+//case - 13
+1. Navigate to aetna homepage.
+2. click career button to  open aetna health page.
+3. validate career page url.
+
+//test case -14
+ 1. Navigate to aetna homepage.
+ 2. click career button to open page.
+ 3. validate links in a certain place.
