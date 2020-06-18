@@ -4,7 +4,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,9 +14,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -31,11 +29,14 @@ import java.io.StringWriter;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import static org.apache.commons.lang3.StringEscapeUtils.*;
 
 public class WebAPI {
 
@@ -438,7 +439,7 @@ public class WebAPI {
         }
     }
 
-    public void mouseHover(WebElement element) {
+    public static void mouseHover(WebElement element) {
         try {
             Actions hover = new Actions(driver);
             hover.moveToElement(element).perform();
@@ -599,7 +600,7 @@ public class WebAPI {
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
-    public void mouseHoverJScript(WebElement element) {
+    public static void mouseHoverJScript(WebElement element) {
         try {
             if (isElementPresent(element)) {
                 String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('onmouseover');}";
@@ -672,16 +673,25 @@ public class WebAPI {
         List<WebElement> actualList = driver.findElements(by);
         String[] expectedList = dataReader.fileReaderStringXSSF(path, sheetName);
 
+        String[] actual = new String[actualList.size()];
+
+        for (int j = 0; j<actualList.size(); j++) {
+            actual[j] = actualList.get(j).getText().replaceAll("&amp;", "&").replaceAll("’", "'").trim();
+            actual[j].replaceAll("&amp;", "&").replaceAll("’", "'").trim();
+//            escapeHtml4(actual[j]);
+//            escapeHtml3(actual[j]);
+        }
+
         int falseCount = 0;
         boolean flag = false;
         for (int i = 0; i < expectedList.length; i++) {
-            if (actualList.get(i).getText().replace("’", "'").trim().equalsIgnoreCase(expectedList[i])) {
+            if (actual[i].equalsIgnoreCase(expectedList[i])) {
                 flag = true;
-                System.out.println("ACTUAL STRING " + (i + 1) + ": " + actualList.get(i).getText());
+                System.out.println("ACTUAL STRING " + (i + 1) + ": " + actual[i]);
                 System.out.println("EXPECTED STRING " + (i + 1) + ": " + expectedList[i] + "\n");
             } else {
                 System.out.println("***FAILED AT INDEX " + (i + 1) + "***\nEXPECTED STRING: " + expectedList[i] +
-                        "\nACTUAL STRING: " + actualList.get(i).getText() + "\n");
+                        "\nACTUAL STRING: " + actual[i] + "\n");
                 falseCount++;
             }
         }
@@ -698,7 +708,7 @@ public class WebAPI {
         int falseCount = 0;
         boolean flag = false;
         for (int i = 0; i < expectedList.length; i++) {
-            if (actualArray[i].replace("’", "'").trim().equalsIgnoreCase(expectedList[i])) {
+            if (actualArray[i].replaceAll("&amp;", "&").replaceAll("’", "'").trim().equalsIgnoreCase(expectedList[i])) {
                 flag = true;
                 System.out.println("ACTUAL " + (i + 1) + ": " + actualArray[i]);
                 System.out.println("EXPECTED " + (i + 1) + ": " + expectedList[i] + "\n");
@@ -720,7 +730,7 @@ public class WebAPI {
         String expected = expectedArray[0];
 
         boolean flag;
-        if (actual.replace("’", "'").trim().equalsIgnoreCase(expected)) {
+        if (actual.replaceAll("&amp;", "&").replaceAll("’", "'").trim().equalsIgnoreCase(expected)) {
             flag = true;
             System.out.println("ACTUAL STRING: " + actual + "\nEXPECTED STRING: " + expected);
         } else {
@@ -735,16 +745,25 @@ public class WebAPI {
         List<WebElement> actualList = driver.findElements(by);
         String[] expectedList = dataReader.fileReaderStringXSSF(path, sheetName);
 
+        String[] actual = new String[actualList.size()];
+
+        for (int j = 0; j<actualList.size(); j++) {
+            actual[j] = actualList.get(j).getAttribute(attribute).replaceAll("&amp;", "&").replace("’", "'").trim();
+            actual[j].replaceAll("&amp;", "&").replace("’", "'").trim();
+//            escapeHtml4(actual[j]);
+//            escapeHtml3(actual[j]);
+        }
+
         int falseCount = 0;
         boolean flag = false;
         for (int i = 0; i < expectedList.length; i++) {
-            if (actualList.get(i).getAttribute(attribute).trim().equalsIgnoreCase(expectedList[i])) {
+            if (actual[i].equalsIgnoreCase(expectedList[i])) {
                 flag = true;
-                System.out.println("ACTUAL " + attribute.toUpperCase() + " " + (i + 1) + ": " + actualList.get(i).getAttribute(attribute));
+                System.out.println("ACTUAL " + attribute.toUpperCase() + " " + (i + 1) + ": " + actual[i]);
                 System.out.println("EXPECTED " + attribute.toUpperCase() + " " + (i + 1) + ": " + expectedList[i] + "\n");
             } else {
-                System.out.println("FAILED AT INDEX " + i + "\nEXPECTED " + attribute.toUpperCase() + ": " + expectedList[i] +
-                        "\nACTUAL " + attribute.toUpperCase() + ": " + actualList.get(i).getAttribute(attribute));
+                System.out.println("FAILED AT INDEX " + (i+1) + "\nEXPECTED " + attribute.toUpperCase() + ": " + expectedList[i] +
+                        "\nACTUAL " + attribute.toUpperCase() + ": " + actual[i] + "\n");
                 falseCount++;
             }
         }
@@ -816,22 +835,38 @@ public class WebAPI {
         return flag;
     }
 
-    // Loops through list of links, clicks on each link individually, grabs each page URL, inserts into String[], closes
-    //      child page & switches back to parent page
+    // Loops through list of dropdown elements, clicks on each link individually, grabs each page URL, inserts into String[],
+    // closes child page & switches back to parent page
+    //
     // Compares String[] to expected URLs in Excel workbook
-    public static boolean clickLinksSwitchTabsCompareURLs(By by, String path, String sheetName) throws InterruptedException, IOException {
+    public static boolean clickLinksSwitchTabsCompareURLs(WebElement hoverElement, By by, String path, String sheetName) throws InterruptedException, IOException {
+        Wait fluentWait = new FluentWait(driver)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2))
+                .ignoring(Exception.class);
+
         List<WebElement> list = driver.findElements(by);
         int listSize = list.size();
         String[] actualURLs = new String[listSize];
 
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-
         int i = 0;
         for (WebElement element : list) {
-            wait.until(ExpectedConditions.elementToBeClickable(element));
-            element.sendKeys(Keys.CONTROL, Keys.ENTER);
-            Thread.sleep(1000);
-            actualURLs[i] = switchToTabAndGetURL();
+            if (hoverElement.isEnabled()) {
+                fluentWait.until(ExpectedConditions.elementToBeClickable(element));
+                element.sendKeys(Keys.CONTROL, Keys.ENTER);
+                Thread.sleep(800);
+                actualURLs[i] = switchToTabAndGetURL();
+            } else if (!(hoverElement.isEnabled())){
+                try {
+                    mouseHoverJScript(hoverElement);
+                } catch (Exception e){
+                    mouseHover(hoverElement);
+                }
+                fluentWait.until(ExpectedConditions.elementToBeClickable(element));
+                element.sendKeys(Keys.CONTROL, Keys.ENTER);
+                Thread.sleep(800);
+                actualURLs[i] = switchToTabAndGetURL();
+            }
             i++;
         }
         boolean flag = compareTextListToExpectedStringArray(actualURLs, path, sheetName);

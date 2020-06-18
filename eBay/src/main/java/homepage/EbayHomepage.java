@@ -572,7 +572,7 @@ public class EbayHomepage extends WebAPI {
         WebDriverWait expWait = new WebDriverWait(driver, 10);
         expWait.until(ExpectedConditions.elementToBeClickable(ebayLogo));
         ebayLogo.click();
-       mouseHover(miniCart);
+        mouseHover(miniCart);
         deleteIcon.click();
         String emptyCart = miniCartEmpty.getText();
         Assert.assertEquals(emptyCart,expectedMiniCartEmptyText);

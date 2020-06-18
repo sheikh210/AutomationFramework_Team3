@@ -13,29 +13,45 @@ TEST CASE 2 - Validate number of list items contained in "Protect your enterpris
 2. Hover over "Protect your enterprise from threats" dropdown
 3. Verify number of list items contained within dropdown
 
-TEST CASE 3 -
+TEST CASE 3 - Validate name of each list item contained in "Protect your enterprise from threats" dropdown
 1. Navigate to "Protect Your Enterprise" page
+2. Hover over "Protect your enterprise from threats" dropdown
+3. Verify name of each list item contained within dropdown
 
-TEST CASE 4 -
+TEST CASE 4 - Validate navigation to URL of each list item contained in "Protect your enterprise from threats" dropdown
 1. Navigate to "Protect Your Enterprise" page
+2. Hover over "Protect your enterprise from threats" dropdown
+3. Click on each list item contained within dropdown, capture and verify each URL
 
-TEST CASE 5 -
+TEST CASE 5 - Validate the name of each item on the sticky Navigation Bar (located under page image)
 1. Navigate to "Protect Your Enterprise" page
+2. Verify the name of each section contained within navigation bar, under the main page image
 
-TEST CASE 6 -
+TEST CASE 6 - Validate titles of first grid container section (below nav bar)
 1. Navigate to "Protect Your Enterprise" page
+2. Verify the title of each section below the nav bar
 
-TEST CASE 7 -
+TEST CASE 7 - Validate body text of first grid container section (below nav bar)
 1. Navigate to "Protect Your Enterprise" page
+2. Verify the body text of each section below the nav bar
 
-TEST CASE 8 -
+TEST CASE 8 - Validate "Contact Us" button
 1. Navigate to "Protect Your Enterprise" page
+2. Click on "Contact Us" button (above YouTube video iFrame)
+3. Verify pageURL of "Contact Us" page
 
-TEST CASE 9 -
-1. Navigate to "Protect Your Enterprise" page
+TEST CASE 9 -Validate YouTube Player
+ 1. Navigate to "Protect Your Enterprise" page
+ 2. Scroll down to embedded YouTube video frame
+ 3. Verify that user can click play button to play YouTube video
 
-TEST CASE 10 -
+// Internal YT Play Button
+#player_uid_618971657_1 > div.ytp-chrome-bottom > div.ytp-chrome-controls > div.ytp-left-controls > button
+
+TEST CASE 10 - Validate titles of each expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify title of each expandable stack container section
 
 TEST CASE 11 -
 1. Navigate to "Protect Your Enterprise" page

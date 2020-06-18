@@ -7,14 +7,19 @@ import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
+import java.time.Duration;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
 import static protectYourEnterprisePage.ProtectYourEnterprisePageElements.*;
 
 public class ProtectYourEnterprisePage extends WebAPI {
 
     WebDriverWait wait = new WebDriverWait(driver, 10);
+    Wait fluentWait = new FluentWait(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(2)).ignoring(Exception.class);
     String path = System.getProperty("user.dir") + "\\src\\main\\resources\\" +
             "VerizonWireless_ProtectYourEnterprisePage_ExpectedElements.xlsx";
 
@@ -38,6 +43,22 @@ public class ProtectYourEnterprisePage extends WebAPI {
 
     @FindBy (css = webElementDropdownProtectEnterprise)
     private WebElement dropdownProtectEnterprise;
+
+    @FindBy (css = webElementIFrameYouTubePlayer)
+    private WebElement iFrameYouTubePlayer;
+
+    @FindBy (css = webElementButtonYouTubePlayerPlay)
+    private WebElement buttonYouTubePlayerPlay;
+
+    @FindBy (css = webElementButtonContactUs)
+    private WebElement buttonContactUs;
+
+    @FindBy (css = webElementTextPageConfirmContactUs)
+    private WebElement textPageConfirmContactUs;
+
+    public WebElement getDropdownProtectEnterprise() {
+        return dropdownProtectEnterprise;
+    }
 
 
     /**
@@ -64,7 +85,7 @@ public class ProtectYourEnterprisePage extends WebAPI {
         } else {
             try {
                 wait.until(ExpectedConditions.elementToBeClickable(buttonThreats));
-                clickOnElement(buttonThreats);
+                clickJScript(buttonThreats);
                 System.out.println("Clicked \"Enterprise Threats\" button\n");
             } catch (Exception e1) {
                 clickJScript(buttonThreats);
@@ -72,7 +93,6 @@ public class ProtectYourEnterprisePage extends WebAPI {
         }
         wait.until(ExpectedConditions.visibilityOf(textPageConfirm));
         String pageConfirmText = textPageConfirm.getText();
-        System.out.println(pageConfirmText + "\n");
         System.out.println("Navigated to \"Protect Your Enterprise\" page\n");
 
         return pageConfirmText;
@@ -80,8 +100,10 @@ public class ProtectYourEnterprisePage extends WebAPI {
 
     /**
      * TEST CASE 2 - Validate number of list items contained in "Protect your enterprise from threats" dropdown
+     * TEST CASE 3 - Validate name of each list item contained in "Protect your enterprise from threats" dropdown
+     * TEST CASE 4 - Validate navigation to URL of each list item contained in "Protect your enterprise from threats" dropdown
      */
-    public boolean validateProtectEnterpriseDropdownListSize() throws IOException {
+    public void hoverProtectEnterpriseDropdown() {
         navigateToProtectYourEnterprisePage();
 
         try{
@@ -92,6 +114,7 @@ public class ProtectYourEnterprisePage extends WebAPI {
 
         try {
             mouseHover(dropdownProtectEnterprise);
+            System.out.println("Hovered over \"Protect your enterprise from threats\" dropdown\n");
         } catch (ElementNotInteractableException e) {
             e.getMessage();
             try {
@@ -100,10 +123,56 @@ public class ProtectYourEnterprisePage extends WebAPI {
                 e1.getMessage();
             }
         }
-        boolean flag = compareListSizeToExpectedCount(By.xpath(webElementsListDropdownProtectEnterprise),
-                path,"DropdownProtectEnt Count");
+    }
 
-        return flag;
+    /**
+     * TEST CASE 5 - Validate the name of each item on the sticky Navigation Bar (located under page image)
+     *
+     * TEST CASE 6 - Validate titles of first section (below nav bar)
+     *
+     * TEST CASE 7 - Validate body text of first grid container section (below nav bar)
+     */
+
+    /**
+     * TEST CASE 8 - Validate "Contact Us" button
+     */
+
+    public String validateURLButtonContactUs() {
+        navigateToProtectYourEnterprisePage();
+
+        try {
+            clickJScript(buttonContactUs);
+            System.out.println("Clicked on \"Contact Us\" button\n");
+        } catch (Exception e) {
+            try {
+                clickOnElement(buttonContactUs);
+            } catch (Exception e1) {
+                e.getMessage();
+                e1.getMessage();
+            }
+        }
+        String url = null;
+        wait.until(ExpectedConditions.visibilityOf(textPageConfirmContactUs));
+        if (textPageConfirmContactUs.isDisplayed()) {
+            System.out.println("Navigated to \"Contact Us\" page\n");
+            url = driver.getCurrentUrl();
+            return url;
+        } else {
+            System.out.println("COULD NOT NAVIGATE TO \"CONTACT US\" PAGE");
+        }
+        return url;
+    }
+
+    public void clickYouTubePlayer() throws InterruptedException {
+        navigateToProtectYourEnterprisePage();
+
+        try {
+            clickJScript(buttonYouTubePlayerPlay);
+            System.out.println("Clicked \"Play\" on embedded YouTube player");
+        } catch (Exception e) {
+            e.getMessage();
+            clickOnElement(buttonYouTubePlayerPlay);
+        }
     }
 
 
