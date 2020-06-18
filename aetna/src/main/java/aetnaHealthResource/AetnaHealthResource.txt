@@ -77,3 +77,36 @@
  1. Navigate to aetna homepage.
  2. click career button to open page.
  3. validate links in a certain place.
+
+ //test case -15
+ 1. Navigate to aetna homepage.
+ 2. click career button to open military page.
+ 3. validate military sub menu display or not.
+
+ //test case - 16
+ 1. Navigate to aetna homepage.
+  2. click career button to about  page.
+  3. validate about sub menu display or not.
+
+ //17
+ 1. Navigate to aetna homepage.
+ 2. click payment method  page.
+ 3. validate the page display or not.
+
+ //18
+1. navigate to https://aetna.com
+2. click on career button to open page.
+3. move to back page.
+4. validate back the movement.
+
+//19
+1. navigate to https://aetna.com
+2. click on career button to open page.
+3. check validate or not.
+
+
+//20
+1. navigate to https://aetna.com
+2. click on career button to open page.
+3. move to back page.
+4. checking final validate back the movement.
