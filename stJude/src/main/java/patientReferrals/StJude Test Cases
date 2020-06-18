@@ -1,0 +1,13 @@
+Stjude Test cases
+ Test case 1:
+ 1)Navigate to "https://www.stjude.org/"
+ 2)Click on "Patient Referrals"
+ 3)Get page title
+ 4) Close browser
+
+ Test Case 2: "Validate Contact us button"
+  1)Navigate to "https://www.stjude.org/"
+  2)Click on "Patient Referrals"
+  3)Click on Contact us
+  4)Get the page title
+  5)close browser

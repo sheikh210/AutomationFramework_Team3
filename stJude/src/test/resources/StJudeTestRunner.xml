@@ -14,10 +14,16 @@
     <parameter name="browserVersion" value="83"/>
     <parameter name="url" value="https://www.stjude.org/"/>
 
-    <test name="StJude Homepage">
+<!--    <test name="StJude Homepage">-->
+<!--        <classes>-->
+<!--            <class name="homepageTest.StJudeHomepageTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="StJude Patient Referrals Page">
         <classes>
-            <class name="homepageTest.StJudeHomepageTest"/>
+            <class name="patientReferralsTest.StJudePatientReferralsTest"/>
         </classes>
     </test>
+
 
 </suite>

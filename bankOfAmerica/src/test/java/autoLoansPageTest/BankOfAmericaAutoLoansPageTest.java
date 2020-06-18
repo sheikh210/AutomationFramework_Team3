@@ -13,7 +13,7 @@ import utilities.DataReader;
 import static autoLoansPage.BankOfAmericaAutoLoansPageWebElements.*;
 import java.io.IOException;
 
-public class BankOfAmericaAutoLoansPageTest extends WebAPI {
+    public class BankOfAmericaAutoLoansPageTest extends WebAPI {
     static BankOfAmericaAutoLoansPage bankOfAmericaAutoLoansPage;
     static DataReader dataReader = new DataReader();
     static String path=System.getProperty("user.dir")+"\\src\\main\\resources\\BankOfAmericaAutoLoansPageExpectedElements.xlsx";
