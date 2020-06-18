@@ -4,12 +4,18 @@ package homepage;
 import commonAPI.WebAPI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 
-import static homepage.DeltaAirlinesHomepageElements.*;
+import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import static homepage.DeltaHomePageElements.*;
 
 
 public class DeltaAirlinesHomepage extends WebAPI {
@@ -38,8 +44,12 @@ public class DeltaAirlinesHomepage extends WebAPI {
     public WebElement flightNumberBox;
     @FindBy(xpath = WebElementFlightDL1872)
     public WebElement flightDL1872;
-    @FindBy(xpath = WebElementTravelInfoButton)
+    @FindBy(css = WebElementTravelInfoButton)
     public WebElement travelInfoButton;
+    @FindBy(xpath = WebElementGetNotificationMessage)
+    WebElement getNotificationMessage;
+    @FindBy(id=WebElementPassenger5)
+    WebElement passenger5;
     /**
      * Body WebElement
      */
@@ -81,8 +91,11 @@ public class DeltaAirlinesHomepage extends WebAPI {
     public WebElement ticketNumberBox;
     @FindBy(xpath = WebElementTicketNumberError)
     public WebElement ticketNumberError;
-    @FindBy(xpath = WebElementExploreHowLink)
-    public WebElement exploreHowLink;
+    @FindBy(css =WebElementDownloadApp )
+    public WebElement downloadApp ;
+    @FindBy(xpath = WebElementPassengerDropMenu)
+    WebElement passengerDropMenu;
+
     /**
      * Footer
      */
@@ -90,8 +103,10 @@ public class DeltaAirlinesHomepage extends WebAPI {
     WebElement aboutUsLink;
     @FindBy(xpath = WebElementNeedHelpLink)
     public WebElement needHelpLink;
-    @FindBy(xpath = WebElementCoronaVirusLink)
+    @FindBy(className = WebElementCoronaVirusLink)
     public WebElement coronaVirusLink;
+    @FindBy(css = WebElementSiteSupportLinks)
+    public WebElement siteSupportLinks;
 
 
     /**
@@ -143,13 +158,9 @@ public class DeltaAirlinesHomepage extends WebAPI {
 
     public void validateSignUp(){
 
-//            String actualTitle=getCurrentPageTitle();
-//            String expectedTitle="Join SkyMiles® Loyalty Program : Delta Air Lines";
-//            Assert.assertEquals(actualTitle,expectedTitle,"Title does not match");
-
-            String actualTitle1 =getCurrentPageTitle();
-            String expectedTitle1="Airline Tickets & Flights: Book Direct with Delta Air Lines - Official Site";
-            Assert.assertEquals(actualTitle1,expectedTitle1,"Title does not match");
+        String actualTitle1 =getCurrentPageTitle();
+        String expectedTitle1="Airline Tickets & Flights: Book Direct with Delta Air Lines - Official Site";
+        Assert.assertEquals(actualTitle1,expectedTitle1,"Title does not match");
 
 
     }
@@ -173,7 +184,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
     }
     public void validateLogIn(){
         String actualTitle1=getCurrentPageTitle();
-        String expectedTitle1="Airline Tickets & Flights: Book Direct with Delta Air Lines - Official Site";
+        String expectedTitle1="Login";
         Assert.assertEquals(actualTitle1,expectedTitle1,"Title does not match");
 
     }
@@ -194,7 +205,6 @@ public class DeltaAirlinesHomepage extends WebAPI {
         getDepartureAirportSearchBox.sendKeys("EWR");
         departureAirportCode.click();
         continueButton.click();
-
 
     }
     public void validateDepartureAirport(){
@@ -225,8 +235,6 @@ public class DeltaAirlinesHomepage extends WebAPI {
         Thread.sleep(3000);
         continueButton.click();
 
-
-
     }
     public void validateDestinationAirport(){
         String actualMessage=correctionMessage.getText();
@@ -248,15 +256,21 @@ public class DeltaAirlinesHomepage extends WebAPI {
      * 10)Close browser
      */
     public  void selectDepartureReturnDate() throws InterruptedException {
-        selectDepartureAirport();
-        selectDestinationAirport();
+        driver.manage().deleteAllCookies();
+        departureAirportButton.click();
+        getDepartureAirportSearchBox.sendKeys("EWR");
+        departureAirportCode.click();
+        arrivalAirportButton.click();
+        arrivalAirportSearchBox.sendKeys("SFO");
+        arrivalAirportCode.click();
         departureReturnDateButton.click();
         departureDate.click();
         returnDate.click();
         dateDoneButton.click();
-        sleepFor(3);
+        getCurrentPageTitle();
         continueButton.click();
-        sleepFor(3);
+        sleepFor(4);
+        getCurrentPageTitle();
 
 
     }
@@ -278,6 +292,7 @@ public class DeltaAirlinesHomepage extends WebAPI {
      */
     public void findYourTripBy() throws InterruptedException {
         checkInButton.click();
+        sleepFor(3);
         findYourTripByButton.click();
         ticketNumberOption.click();
         sleepFor(3);
@@ -384,11 +399,10 @@ public class DeltaAirlinesHomepage extends WebAPI {
      * 5)Validate there are 18 sub links
      */
     public void getSubLinksFlightInfo() throws InterruptedException {
-        driver.findElement(By.xpath("//*[@id=\"headSectab3\"]")).click();
-//        findYourTripByButton.click();
-//        travelInfoButton.click();
-//        List<WebElement> subLinks=travelInfoButton.findElements(By.tagName("a"));
-//        System.out.println("Number of links is : "+subLinks.size());
+          clickOnElement("#navPrimary > li.nav-item.staticLink.last-static-link.ng-star-inserted.more");
+          clickOnElement("//*[@id=\"navPrimary\"]/li[6]");
+          WebElement travelInfoLinks=driver.findElement(By.cssSelector("#secPanel1 > ngc-app-sec-links-content > div > div > div.row"));
+          System.out.println(travelInfoLinks.findElements(By.tagName("a")).size());
 
     }
     /**
@@ -400,8 +414,15 @@ public class DeltaAirlinesHomepage extends WebAPI {
      */
     public void countSearchSubLinks() {
         clickOnElement("//ngc-search[@class='d-none d-lg-block ng-tns-c0-0 ng-star-inserted']//a[@class='search icon-search-icon circle-outline']");
-//        List<WebElement>links=getListOfWebElementsByXpath("/html/body/modal-container/div/div/ngc-flyout-search/div/div/div/div/div[2]/div[2]");
-//        System.out.println(links.size());
+        WebElement popularTopicsLinks=driver.findElement(By.cssSelector("body.delta.ng-tns-0-1.modal-open:nth-child(2) modal-container.modal.search-header-modal.show:nth-child(13) div.modal-dialog.loggedIn-modal-dialog.loggedIn-alertAdv-modal-dialog.no-transform div.modal-content ngc-flyout-search.loggedIn-modal-height div.flyout div.search-flyout.flyout-main-container.mt-lg-0.pl-0.pr-0 div.container.container-wrapper div.flyout-content.content.content-loggedIn div.search-container > div.popular-topics"));
+        int linksNumber=popularTopicsLinks.findElements(By.tagName("a")).size();
+        for (int i=1; i<9;i++) {
+            String openTabs= Keys.chord(Keys.CONTROL,Keys.ENTER);
+            popularTopicsLinks.findElements(By.tagName("a")).get(i).sendKeys(openTabs);
+            System.out.println( getCurrentPageTitle());
+
+
+        }
 
     }
 
@@ -413,12 +434,13 @@ public class DeltaAirlinesHomepage extends WebAPI {
      * 3)Get the page title
      * 4)Close Browser
      */
-    public void clickNeedHelpLink(){
+    public void clickNeedHelpLink() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement needHelp= driver.findElement(By.xpath(WebElementNeedHelpLink));
         js.executeScript("arguments[0].scrollIntoView();",needHelp);
         needHelpLink.click();
-        getCurrentPageTitle();
+        sleepFor(3);
+
     }
     public void validateNeedHelpLink(){
         String actualTitle=getCurrentPageTitle();
@@ -433,11 +455,12 @@ public class DeltaAirlinesHomepage extends WebAPI {
      * 3)Get the page title
      * 4)Close Browser
      */
-    public void clickCoronaVirusLink()  {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement coronaVirus= driver.findElement(By.xpath("/html/body/app-root/app-home/ngc-global-footer/footer/div/div/div[1]/div[1]/div/a/ngc-search/div/a"));
-        js.executeScript("arguments[0].scrollIntoView();",coronaVirus);
+    public void clickCoronaVirusLink() throws InterruptedException {
 
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement coronaVirus= driver.findElement(By.className("search-text"));
+        js.executeScript("arguments[0].scrollIntoView();",coronaVirus);
+        sleepFor(3);
         coronaVirusLink.click();
         getCurrentPageTitle();
     }
@@ -447,16 +470,104 @@ public class DeltaAirlinesHomepage extends WebAPI {
         Assert.assertEquals(actualTitle,expectedTitle,"Title does not match");
 
     }
-    public void clickExploreHowLink(){
 
-        clickByXpath(WebElementExploreHowLink);
-        getCurrentPageTitle();
+    /**
+     * Test Case 17: "Count Site Support links"
+     * 1)Navigate to url "www.delta.com"
+     * 2)Count Site support links
+     * 3)Print site support links
+     * 4)validate number of links
+     * 5)Close browser
+     */
+    public void countFooterSectionLinks(){
+
+       List<WebElement> list= siteSupportLinks.findElements(By.tagName("a"));
+        System.out.println(list.size());
+        for(WebElement link:list){
+            System.out.println(link.getText() + " - " );
+        }
+    }
+      public void validateNumberOfLinks(){
+        int actualLinkNumber = siteSupportLinks.findElements(By.cssSelector("body > app-root > app-home > ngc-global-footer > footer > div > div > div.row.ng-star-inserted > div > ngc-footer-column > div > div > div:nth-child(3) > ul.d-none.d-md-block>li")).size();
+        int expectedLinkNumber = 5;
+        Assert.assertEquals(actualLinkNumber, expectedLinkNumber, "Count does not match");
+    }
+    /**
+     * Test Case 18:
+     * 1)Navigate to url "www.delta.com"
+     * 2)Scroll down until Download app is displayed.
+     * 3)Click on "DOWNLOAD THE FLY DELTA APP".
+     * 4)Get the title page
+     * 5)Close the browser
+     */
+
+        public void clickDownloadAppLink() throws InterruptedException {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            WebElement downloadApplication= driver.findElement(By.xpath("/html//div[@id='BS4-hero']/div//a[@href='/us/en/coronavirus-update-center/ways-we-are-keeping-you-safe/6-ways-delta-supports-healthy-flying']/div"));
+            js.executeScript("arguments[0].scrollIntoView();",downloadApplication);
+            driver.findElement(By.xpath("//span[contains(text(),'DOWNLOAD THE FLY DELTA APP')]")).click();
+            getCurrentPageTitle();
+            sleepFor(3);
+
+        }
+        public void validateDownloadAppLink(){
+            String actualTitle=getCurrentPageTitle();
+            String expectedTitle="Fly Delta App: Book, Manage or Track Your Flight : Delta Air Lines";
+            Assert.assertEquals(actualTitle,expectedTitle,"Title does not match");
+        }
+    /**
+     * 1)Navigate to url "www.delta.com"
+     * 2)Click on Flight status
+     * 3)Enter flight 1872
+     * 4)Get the result
+     * 4)Enter flight 4700
+     * 5)Get the result
+     * 6)Enter Flight 1786,4677,3071
+     */
+    public void checkFlightsStatus() throws IOException, InterruptedException {
+
+        String path="lib/Exel/Flight Status.xlsx";
+       int rows= XlUtil.getRowCount(path,"Sheet1");
+        System.out.println(rows);
+        for (int i=1;i<=5;i++) {
+           String flightNumber= XlUtil.getCellData(path, "Sheet1", i, 0);
+           flightStatusButton.click();
+           typeOnElementNEnter(WebElementFlightNumberBox,flightNumber);
+           sleepFor(3);
+           if(getNotificationMessage.isDisplayed()){
+               System.out.println("Test Passed");
+               XlUtil.setCellData(path,"Sheet1",i,1,"Passed");
+           }
+           else
+
+           {
+               System.out.println("Test Failed");
+               XlUtil.setCellData(path,"Sheet1",i,1,"Failed");
+           }
+           sleepFor(3);
+           navigateBack();
+
+        }
+
 
     }
-    public void validateClickExploreHowLink(){
-        String actualTitle=getCurrentPageTitle();
-        String expectedTitle="Setting the Standard for Safer Travel | Delta Air Lines";
-        Assert.assertEquals(actualTitle,expectedTitle,"Title does not match");
+    /**
+     *
+     * Test Case 20:
+     * 1)Navigate to url "www.delta.com"
+     * 2)Click on Drop Menu for number of passengers
+     * 3) Count number of options
+     * 4)Close Browser
+     */
+    public void countDropMenuOptions(){
+    passengerDropMenu.click();
+    mouseHover(passenger5);
+    passenger5.click();
+    }
+    public void validateOptionIsSelected(){
+        boolean actualResult=passenger5.isDisplayed();
+        Assert.assertEquals(actualResult,true,"Option was not selected");
+
     }
 }
 

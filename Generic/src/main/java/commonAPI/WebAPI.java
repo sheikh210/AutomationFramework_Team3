@@ -772,6 +772,30 @@ public class WebAPI {
     }
 
 
+    // Gets text from String[], converts each index of passed String[] into integer,
+    // and compares against expected integer array from Excel workbook
+    public static boolean compareIntegerListToExpectedStringArray(String[] actualArray, String path, String sheetName) throws IOException {
+        int[] expectedList = dataReader.fileReaderIntegerXSSF(path, sheetName);
+
+        int falseCount = 0;
+        boolean flag = false;
+        for (int i = 0; i < expectedList.length; i++) {
+            if (Integer.parseInt(actualArray[i])==(expectedList[i])) {
+                flag = true;
+                System.out.println("ACTUAL INTEGER " + (i + 1) + ": " + Integer.parseInt(actualArray[i]));
+                System.out.println("EXPECTED INTEGER" + (i + 1) + ": " + expectedList[i] + "\n");
+            } else {
+                System.out.println("FAILED AT INDEX " + (i + 1) + "\nEXPECTED STRING: " + expectedList[i] + "\nACTUAL STRING: "
+                        + Integer.parseInt(actualArray[i]));
+                falseCount++;
+            }
+        }
+        if (falseCount > 0) {
+            flag = false;
+        }
+        return flag;
+    }
+
     // Switches to newly opened tab, gets URL, closes new tab, switches back to parent tab
     public static String switchToTabAndGetURL() {
         java.util.Iterator<String> iter = driver.getWindowHandles().iterator();

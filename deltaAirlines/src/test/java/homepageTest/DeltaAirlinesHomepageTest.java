@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class DeltaAirlinesHomepageTest extends WebAPI {
     static DeltaAirlinesHomepage deltaAirlinesHomepage;
 
@@ -22,106 +24,126 @@ public class DeltaAirlinesHomepageTest extends WebAPI {
         deltaAirlinesHomepage.validateCurrentPage();
     }
 
-   @Test(priority = 5)
+   @Test(priority = 9)
     public static void testSearchBar() throws InterruptedException {
         getInItElement();
         deltaAirlinesHomepage.doSearch();
         deltaAirlinesHomepage.validateDoSearch();
     }
 
-    @Test(priority=3)
+    @Test(priority=8)
     public static void testSignUpButton(){
         getInItElement();
         deltaAirlinesHomepage.signUp();
         deltaAirlinesHomepage.validateSignUp();
     }
-    @Test(priority = 4)
+    @Test(priority = 7)
     public static void testLogInButton() throws InterruptedException {
         getInItElement();
         deltaAirlinesHomepage.logIn();
         deltaAirlinesHomepage.validateLogIn();
     }
-    @Test(priority = 6)
+    @Test(priority = 10)
     public static void testDepartureAirportSelection(){
         getInItElement();
         deltaAirlinesHomepage.selectDepartureAirport();
         deltaAirlinesHomepage.validateDepartureAirport();
 
     }
-    @Test(priority = 7)
+    @Test(priority = 11)
     public static void testArrivalAirportSelection() throws InterruptedException {
         getInItElement();
         deltaAirlinesHomepage.selectDestinationAirport();
         deltaAirlinesHomepage.validateDestinationAirport();
     }
-    @Test(priority = 8)
+    @Test(priority = 12)
     public static void testSelectDepartureReturnDate() throws InterruptedException {
         getInItElement();
         deltaAirlinesHomepage.selectDepartureReturnDate();
         deltaAirlinesHomepage.validateDepartureReturnDate();
 
     }
-    @Test(priority = 1)
+    @Test(priority = 3)
     public static void testFindYourTripBy() throws InterruptedException {
         getInItElement();
         deltaAirlinesHomepage.findYourTripBy();
         deltaAirlinesHomepage.validateYourTripBy();
 
     }
-    @Test(priority = 2)
+    @Test(priority = 4)
     public static void testFindYourTripByTicketNumber() throws InterruptedException {
         getInItElement();
         deltaAirlinesHomepage.findYourTripByTicketNumber();
         deltaAirlinesHomepage.validateYourTripByTicketNumber();
    }
-    @Test(priority = 9)
+    @Test(priority = 18)
     public static void testValidateAboutUs() throws InterruptedException {
         getInItElement();
         deltaAirlinesHomepage.clickAboutUs();
         deltaAirlinesHomepage.validateAboutUs();
     }
-    @Test
+    @Test(priority = 2)
     public static void testBookButton(){
         getInItElement();
         deltaAirlinesHomepage.clickBookButton();
         deltaAirlinesHomepage.validateClickBookButton();
     }
-    @Test
+    @Test(priority = 5)
     public static void testFlightStatus() throws InterruptedException {
         getInItElement();
         deltaAirlinesHomepage.confirmFlightStatus();
         deltaAirlinesHomepage.validateFlightStatus();
 
     }
-    @Test
-    public static void testGetSubLinksFlightInfo() throws InterruptedException {
-        deltaAirlinesHomepage.getSubLinksFlightInfo();
+   @Test(priority = 17)
+   public static void testGetSubLinksFlightInfo() throws InterruptedException {
+       getInItElement();
+    deltaAirlinesHomepage.getSubLinksFlightInfo();
     }
-  @Test
+  @Test(priority = 9)
     public static void testCountSearchSubLinks(){
       getInItElement();
       deltaAirlinesHomepage.countSearchSubLinks();
   }
-  @Test(priority = 1)
-    public static void testClickNeedHelpLink(){
+  @Test(priority = 16)
+    public static void testClickNeedHelpLink() throws InterruptedException {
       getInItElement();
       deltaAirlinesHomepage.clickNeedHelpLink();
       deltaAirlinesHomepage.validateNeedHelpLink();
   }
-  @Test
-    public static void testClickCoronaVirusLink()  {
+  @Test(priority = 15)
+    public static void testClickCoronaVirusLink() throws InterruptedException {
       getInItElement();
       deltaAirlinesHomepage.clickCoronaVirusLink();
       deltaAirlinesHomepage.validateClickCoronaVirusLink();
   }
 
 
-    @Test
-    public static void testClickExploreHowLink(){
+    @Test(priority = 14)
+    public static void testCountFooterSectionLinks(){
         getInItElement();
-        deltaAirlinesHomepage.clickExploreHowLink();
-        deltaAirlinesHomepage.validateClickExploreHowLink();
+        deltaAirlinesHomepage.countFooterSectionLinks();
+        deltaAirlinesHomepage.validateNumberOfLinks();
+
     }
+    @Test(priority = 13)
+    public static void testClickDownloadApp() throws InterruptedException {
+        getInItElement();
+        deltaAirlinesHomepage.clickDownloadAppLink();
+        deltaAirlinesHomepage.validateDownloadAppLink();
+    }
+    @Test(priority = 20)
+    public void testCheckFlightsStatus() throws IOException, InterruptedException {
+        getInItElement();
+        deltaAirlinesHomepage.checkFlightsStatus();
+    }
+    @Test(priority = 21)
+    public void testCountDropMenuOptions(){
+        getInItElement();
+        deltaAirlinesHomepage.countDropMenuOptions();
+        deltaAirlinesHomepage.validateOptionIsSelected();
+    }
+
 }
 
 

@@ -63,62 +63,100 @@ Test Case 8: "Validate Shop for your car button"
 Test Case 9:
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+3) Find out how many options present in LoanType drop menu
+4) Extract all the options and print them
+5) Select "Refinance" from the menu
 6) Close Browser
 
 Test Case 10
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+3) Find out how many options present in LoanType drop menu
+4) Extract all the options and print them
+5) Select "Buy out your lease" from the menu
 6) Close Browser
 
-Test Case 11:
+Test Case 11:  Select "Used cars "(dealers)" by index number
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+3) Find out how many options present in LoanType drop menu
+4) Extract all the options and print them
+5) Select "Used cars "(dealers)" from the menu
 6) Close Browser
 
-Test Case 12:
-1) Navigate to "www.bankofamerica.com".
+Test Case 12:  Select "Private party" by value
+1) Navigate to "www.bankofamerica.com
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+3) Find out how many options present in LoanType drop menu
+4) Extract all the options and print them
+5) Select "Used cars "Private party" from the menu
 6) Close Browser
 
 Test case 13
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
-6) Close Browser
+3) Scroll down to "Lease buyout & private seller loans"
+4) count all the visible links
+5) Close Browser
 
-Test case 14:
+Test case 14: "Validate near by dealers search".
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
-6) Close Browser
+3) Scroll down to dealers search box.
+4) Type zip code "07306" .
+5) Get the page title
+6) Close Browser.
 
-Test Case 15:
+Test Case 15: Validate"Specialized vehicle financing options" links
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+3) Scroll down the page until element is found
+4) Click on "Loans for customers needing accessible vehicles" link
+5) Get the page title
+6) Navigate back
+7) Click on " Small business vehicles and equipment loans"
+8) Get the title page
 6) Close Browser
 
-Test Case 16:
+Test Case 16: "Ensure Connect with us images are displayed"
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+3) Ensure that phone number image is displayed
+4) Ensure that "Schedule an appointment image" is displayed
+5) Ensure that "Auto Loan FAQ" is displayed
 6) Close Browser
 
-Test Case 17:
+Test Case 17: " Validate "BOA" menu links
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
-6) Close Browser
+3) Scroll down the footer section
+4) Extract all the menu Items
+5) Close Browser
 
-Test Case 18:
+Test Case 18: "Validate Privacy & Security" link
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
-6) Close Browser
+3) Scroll down the page.
+4) Click on Privacy & Security link.
+5) Get the title page.
+6) Close Browser.
 
-Test Case 19:
-1) Navigate to "www.bankofamerica.com".
-2) Navigate to "https://www.bankofamerica.com/auto-loans/".
-6) Close Browser
+Test Case 19: Validate"Specialized vehicle financing options" links
+     * 1) Navigate to "www.bankofamerica.com".
+     * 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
+     * 3) Scroll down the page until element is found
+     * 4) Click on "Loans for customers needing accessible vehicles" link
+     * 5) Get the page title
+     * 6) Close Browser
 
-Test Case 20:
+Test Case 20: Handle popOut window when you click "Advertising Practices"
 1) Navigate to "www.bankofamerica.com".
 2) Navigate to "https://www.bankofamerica.com/auto-loans/".
-6) Close Browser
+3) Scroll down the page.
+4) Click on "Advertising Practices".
+5) Extract text from the popOut window.
+6) Close popOut window.
+7) Close Browser.
 
 
 

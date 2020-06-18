@@ -1,3 +1,5 @@
+package homepageTest;
+
 import commonAPI.WebAPI;
 import homepage.BankOfAmericaHomepage;
 import org.openqa.selenium.support.PageFactory;

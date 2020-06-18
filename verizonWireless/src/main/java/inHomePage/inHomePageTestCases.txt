@@ -1,0 +1,156 @@
+Verizon InHome Page Test cases
+ Test Case 1: "Validate url"
+ 1)Navigate to "https://www.verizon.com/?lid=//global//residential"
+ 2)Get the page title
+ 3)validate the Page Title.
+
+ Test Case 2:"Validate Shop menu
+1) Navigate to "https://www.verizon.com/?lid=//global//residential"
+2) Count how many links in "Shop" sub menu
+3) Validate number of links
+4)Close Browser
+
+Test Case 3: "Open display menu links in new tabs"
+1) Navigate to "https://www.verizonWireless.com"
+2) Count how many links in "Shop" sub menu
+3) Open each link in new tab
+4) Close Browser
+
+Test Case 4: "Validate Search Button"
+1) Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)click on search button
+4)Click on first link "Fios Internet"
+5)Get the page title
+
+Test Case 5: "Open a new tab"
+1) Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)hover over to TV link
+4)Open the link in new tab using "Ctrl + Enter"
+5)get the title of the new page
+6)Close the new tab.
+7)Close Browser.
+
+Test Case 6: "Test Search box by passing "Moving"
+1) Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Click search box
+4)Type "Moving"
+5)Click enter
+6)Get page title
+7)Close browser
+
+Test Cse 7: "Validate "Register" button"
+1) Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Scroll down until "Register" button is found
+4)Click Register
+5)Switch to the new tab
+6)get page title
+7)Close browser
+
+Test Case 8: "Validate My verizon Tab"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Click on "My Verizon" tab
+4)Confirm that "Sign In" is displayed
+5)Close Browser
+
+Test Case 9: "Validate Support Tab"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Click on "Support" tab
+4)Get the title page
+5)Close Browser
+
+Test Case 10: "Watch TV Tab"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Click on "Watch TV" tab
+4)Get the title page
+5)Close Browser
+
+Test Case 11: " Change the language to Spanish"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Change language to Spanish
+4)get the page title
+5)navigate back using mouse
+6)Close browser
+
+Test Case 12: "Count SignIn button options"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Click on SignIn button
+4)count number of options
+5)print options
+6)Close browser
+
+Test case 13: "Validate Contact us link "
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Scroll down the page
+4)click on "Contact us"
+5)Get the title
+
+Test case 14: "Validate "Follow sub links"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Scroll down the page
+4)open all sub links in new tabs
+5)Close browser
+
+Test case 15:" validate My fios app"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Scroll down the page
+4)Click "My Fios Account App"
+5)Verify google play store logo is displayed
+5)Close browser
+
+Test case 16:" validate Terms&Conditions"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Scroll down the page
+4)Click "Terms&Conditions"
+5)Verify Terms&Conditions text is displayed
+5)Close browser
+
+Test case 17: "Test "Locate" Button
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Click on "Locate" button
+4)Get page title
+5)close browser
+
+Test Case 18:
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Click "search by state" button
+4)get page title
+5)close browser
+
+Test Case 19: "Validate Home page logo is displayed"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Verify if home page logo is displayed
+
+Test Case 20:" Print footer section link"
+1)Navigate to "https://www.verizonWireless.com"
+2)Click on "Inhome Page" tab
+3)Print all footer section links
+4)Close browser
+
+
+
+
+
+
+
+
+
+
+
+
+

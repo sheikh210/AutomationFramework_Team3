@@ -30,13 +30,35 @@ public class BankOfAmericaAutoLoansPageWebElements {
      */
     // Loan Amount box by xpath
     public static final String WebElementLoanAmountBox="//input[@id='currencyInputField']";
+    // Payment Amount box by css
+    public static final String WebElementPaymentAmountBox = "#simpleCalcAutoModule  div.payment > p > span";
     //Calculate button by xpath
     public static final String WebElementCalculateButton="//a[@id='calculate']";
     // Apply now button by xpath
     public static final String WebElementApplyNowButton="//a[@id='refi-button']";
     // Shop for your car now button by xpath
     public static final String WebElementShopForYourCarButton="//a[@id='shop-now-button']";
-
+    // LoanType drop menu by xpath
+    public static final String WebElementLoanTypeDropMenu="//select[@id='dropdown-loan']";
+    //Lease buy-out by xpath
+    public static final String WebElementLeaseBuyOutButton="//div[@class='show-for-medium-up']//div[@id='advantageRelationshipTile']";
+    //Lease buy-out dropdown links by css
+    public static final String WebElementLeaseBuyOutDropDownLinks="#advantageRelationshipLayerDrawer div.row div a:not([class*='button spa-btn spa-btn--primary spa-btn--medium'])";
+    //Zip code search by xpath
+    public static final String WebElementZipCodeSearchBox="//div[@class='zipinput-container show-for-medium-up']//input[@id='zipCodeField']";
+    //Refine your search by xpath
+    public static final String WebElementButtonRefineYourSearch="#rioSearchFilterLabel > a";
+    //specialized vehicle by xpath
+    public static final String WebElementSpecializedVehicleLinks="//p[contains(text(),'Loans for customers needing accessible vehicles')]";
+    // Small business vehicle by xpath
+    public static final String WebElementSmallBusinessVehicle="//p[contains(text(),'Small business vehicles and equipment loans')]";
+    /**
+     * footer
+     */
+    // Advertising practices by xpath
+    public static final String WebElementAdvertisingPractices="//a[contains(text(),'Advertising Practices')]";
+    // Exit from pop out window by xpath
+    public static final String WebElementExit="//span[contains(text(),'×')]";
 
 
 }
