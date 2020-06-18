@@ -32,7 +32,7 @@ public class TripAdvisorFlightspageTest extends WebAPI {
         testFlightsPage.goToFlightsPage();
     }
     @Test (priority = 3)
-    public static void testDropDownMenu() {
+    public static void testDropDownMenu() throws IOException {
         getInitElements();
         testFlightsPage.getEllipsMenu();
         testFlightsPage.validateEllipsMenu();
@@ -48,9 +48,9 @@ public class TripAdvisorFlightspageTest extends WebAPI {
         testFlightsPage.goToCalendarBox();
     }
     @Test (priority = 6)
-    public static void testClasType() {
+    public static void testClasType() throws IOException {
         getInitElements();
-        testFlightsPage.getClasType();
+        testFlightsPage.getClassType();
         testFlightsPage.validateClassTypelist();
     }
     @Test (priority = 7)
@@ -64,7 +64,7 @@ public class TripAdvisorFlightspageTest extends WebAPI {
         testFlightsPage.priceAlert();
     }
     @Test (priority = 9)
-    public static void testCurrencyBox() {
+    public static void testCurrencyBox() throws IOException {
         getInitElements();
         testFlightsPage.getCurrencyBox();
         testFlightsPage.validateCurrencyBox();
@@ -80,7 +80,7 @@ public class TripAdvisorFlightspageTest extends WebAPI {
         testFlightsPage.doFlightSearch();
     }
     @Test (priority = 12)
-    public static void testCheckSortByBox() {
+    public static void testCheckSortByBox() throws IOException {
         getInitElements();
         testFlightsPage.getCheckSortByBox();
         testFlightsPage.validateCheckSortBybox();

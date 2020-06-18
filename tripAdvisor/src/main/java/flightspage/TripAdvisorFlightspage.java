@@ -222,8 +222,8 @@ public class TripAdvisorFlightspage extends WebAPI {
     public int getMoreCategories() {
         clickMoreButton.click();
         List<WebElement> moreCategories = clickMoreButton.findElements(By.xpath(webclickMoreButton));
-        int moreCtegoryList = moreCategories.size();
-        return moreCtegoryList;
+        int moreCategoryList = moreCategories.size();
+        return moreCategoryList;
     }
 
     public void validateCategoryList() throws IOException {
@@ -258,8 +258,12 @@ public class TripAdvisorFlightspage extends WebAPI {
         return ellipsMenuSize;
 
     }
-    public void validateEllipsMenu() {
-        Assert.assertEquals(getEllipsMenu(),5,"List Size does not match");
+    public void validateEllipsMenu() throws IOException {
+        int [] expectedEllipsMenuArrayCount = dataReader.fileReaderIntegerHSSF(System.getProperty("user.dir")+
+                "//src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","Ellips Menu");
+        int expectedEllipsMenu = expectedEllipsMenuArrayCount[0];
+
+        Assert.assertEquals(getEllipsMenu(),expectedEllipsMenu,"List Size does not match");
     }
 
     /**
@@ -296,7 +300,7 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Click First Class
      * Click Close
      */
-    public int getClasType() {
+    public int getClassType() {
         clickClassBox.click();
         clickEconomyButton.click();
         List <WebElement> classTypeList = clickEconomyButton.findElements(By.xpath(webclickEconomyButton));
@@ -305,8 +309,12 @@ public class TripAdvisorFlightspage extends WebAPI {
         clickCloseButton.click();
         return classTypeListSize;
     }
-    public void validateClassTypelist() {
-        Assert.assertEquals(getClasType(),4,"List Size does not match");
+    public void validateClassTypelist() throws IOException {
+        int [] expectedClassTypeArrayCount = dataReader.fileReaderIntegerHSSF(System.getProperty("user.dir")+
+                "//src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","Class Type List");
+        int expectedClassTypelist = expectedClassTypeArrayCount[0];
+
+        Assert.assertEquals(getClassType(),expectedClassTypelist,"List Size does not match");
     }
 
     /**
@@ -339,8 +347,11 @@ public class TripAdvisorFlightspage extends WebAPI {
         int currencyBoxListSize = currencyBoxList.size();
         return currencyBoxListSize;
     }
-    public void validateCurrencyBox() {
-        Assert.assertEquals(getCurrencyBox(),9,"List Size does not match");
+    public void validateCurrencyBox() throws IOException {
+        int [] expectedCurrencyBoxArrayCount = dataReader.fileReaderIntegerHSSF(System.getProperty("user.dir")+
+                "//src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","Currency Box List");
+        int expectedCurrencyBoxList = expectedCurrencyBoxArrayCount[0];
+        Assert.assertEquals(getCurrencyBox(),expectedCurrencyBoxList,"List Size does not match");
     }
 
     /**
@@ -375,8 +386,12 @@ public class TripAdvisorFlightspage extends WebAPI {
         int sortByBoxSize = sortByBoxList.size();
         return sortByBoxSize;
     }
-    public void validateCheckSortBybox() {
-        Assert.assertEquals(getCheckSortByBox(),11,"List Size Does not match");
+    public void validateCheckSortBybox() throws IOException {
+        int [] expectedSortByboxArrayCount = dataReader.fileReaderIntegerHSSF(System.getProperty("user.dir")+
+                "//src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","Sort By Box");
+        int expectedSortByBoxList = expectedSortByboxArrayCount[0];
+
+        Assert.assertEquals(getCheckSortByBox(),expectedSortByBoxList,"List Size Does not match");
         clickBestValue.click();
     }
 
