@@ -47,12 +47,33 @@ public class ESPNPlus extends WebAPI {
     public WebElement createAccount;
     @FindBy(how = How.XPATH, using = webElementUFCButton)
     public WebElement uFCButton;
+    @FindBy(how = How.XPATH, using = webElementESPNHelpCenterButton)
+    public WebElement eSPNHelpCenterButton;
+    @FindBy(how = How.XPATH, using = webElementSupportFaqsButton)
+    public WebElement supportFaqsButton;
+    @FindBy(how = How.XPATH, using = webElementItalianSerieAButton)
+    public WebElement italianSerieAButton;
+    @FindBy(how = How.XPATH, using = webElementPGATourButton)
+    public WebElement pGATourButton;
+    @FindBy(how = How.XPATH, using =webElementNewNFLButton)
+    public WebElement newNFLButton;
+    @FindBy(how = How.XPATH, using = webElementMLBButton)
+    public WebElement mLBButton;
+    @FindBy(how = How.XPATH, using = webElementNBAButton)
+    public WebElement nBAButton;
+    @FindBy(how = How.XPATH, using = webElementNHLButton)
+    public WebElement nHLButton;
+    @FindBy(how = How.XPATH, using = webElementMLSButton)
+    public WebElement mLSButton;
+    @FindBy(how = How.XPATH, using = webElementEnglishLeagueButton)
+    public WebElement englishLeagueButton;
 
     public void navigateToESPNPlusPage() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(ESPNPlusButton));
 
         ESPNPlusButton.click();
+        driver.navigate().refresh();
 
     }
 
@@ -255,6 +276,91 @@ public class ESPNPlus extends WebAPI {
         return uFCPageTitle;
 
     }
+
+    /**
+     * Test Case: 12
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Mouse hover on Support & Faqs Button
+     * Click on ESPN Help Center Button
+     * Verify  the page page Url
+     */
+    public String validateFanSupportPage() throws InterruptedException {
+        navigateToESPNPlusPage();
+        Actions actions=new Actions(driver);
+        actions.moveToElement(supportFaqsButton).build().perform();
+
+        Thread.sleep(2000);
+
+        eSPNHelpCenterButton.click();
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        String pageUrl=super.getCurrentPageUrl();
+        return pageUrl;
+
+    }
+    public String validateItalianSerieAPage() {
+
+        navigateToESPNPlusPage();
+        italianSerieAButton.click();
+        String italianSerieAPageTitle = super.getCurrentPageTitle();
+        return italianSerieAPageTitle;
+
+    }
+    public String validatePGATourPage() {
+
+        navigateToESPNPlusPage();
+        pGATourButton.click();
+        String pGATourPageTitle = super.getCurrentPageTitle();
+        return pGATourPageTitle;
+
+    }
+    public String validateNewNFLPage() {
+        navigateToESPNPlusPage();
+        newNFLButton.click();
+        String nFLPageUrl=super.getCurrentPageUrl();
+        return nFLPageUrl;
+
+    }
+    public String validateMLBPage() {
+        navigateToESPNPlusPage();
+        mLBButton.click();
+        String  mLBPageUrl=super.getCurrentPageUrl();
+        return mLBPageUrl;
+
+    }
+    public String validateNBAPage() {
+        navigateToESPNPlusPage();
+        nBAButton.click();
+        String  nBAPageUrl=super.getCurrentPageUrl();
+        return nBAPageUrl;
+
+    }
+    public String validateNHLPage() {
+
+        navigateToESPNPlusPage();
+        nHLButton.click();
+        String nHLPagerTitle = super.getCurrentPageTitle();
+        return nHLPagerTitle;
+
+    }
+    public String validateMLSPage() {
+
+        navigateToESPNPlusPage();
+        mLSButton.click();
+        String mLSPagerUrl = super.getCurrentPageUrl();
+        return mLSPagerUrl;
+    }
+    public String validateEnglishLeaguePage() {
+
+        navigateToESPNPlusPage();
+        englishLeagueButton.click();
+        String englishLeaguePageTitle = super.getCurrentPageTitle();
+        return englishLeaguePageTitle;
+
+    }
+
+
+
 }
 
 

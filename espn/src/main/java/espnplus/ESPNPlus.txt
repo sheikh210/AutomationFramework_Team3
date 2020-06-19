@@ -60,3 +60,10 @@
      * Navigate to ESPN home page
      * Click on ESPN plus button
      * Verify  the page page title
+
+* Test Case: 12
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Mouse hover on Support & Faqs Button
+     * Click on ESPN Help Center Button
+     * Verify  the page page Url
