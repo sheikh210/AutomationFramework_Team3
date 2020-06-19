@@ -1,0 +1,32 @@
+Aetna Providers page test Cases
+
+Test case 1: "Validate providers page title"
+1)Navigate to "Navigate to http://aetna.com"
+2) Navigate to "https://www.aetna.com/health-care-professionals.html".
+3)Get title
+4)validate title
+5)Close browser
+
+Test Case 2 "Validate Contact us button"
+1) Navigate to "Navigate to http://aetna.com"
+2) Navigate to "https://www.aetna.com/health-care-professionals.html".
+3) Click on "Contact us"
+4) Get the page title
+5) Validate page title
+6) Close browser
+
+Test cases 3: "Change language to spanish"
+1) Navigate to "Navigate to http://aetna.com"
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Click on "Espagnol" button.
+4) Get page title
+5) close browser
+
+Test case 4: "Validate search box"
+1) Navigate to "Navigate to http://aetna.com"
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Click on search box
+4) Type "HSA"
+5) validate search
+6)Close browser
+
