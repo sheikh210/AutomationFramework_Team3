@@ -11,3 +11,137 @@ Stjude Test cases
   3)Click on Contact us
   4)Get the page title
   5)close browser
+
+  Test Case 3: "Change language to spanish"
+    1)Navigate to "https://www.stjude.org/"
+    2)Click on "Patient Referrals"
+    3)Click on spanish language button
+    4) Get title
+    5)Close Browser
+
+Test Case 4: "Validate Donate now link"
+   1)Navigate to "https://www.stjude.org/"
+   2)Click on "Patient Referrals"
+   3)Click "Donate now link"
+   4)Get page Title
+   5)Close Browser
+
+   Test Case 5 : "Count about us tab links"
+     1)Navigate to "https://www.stjude.org/"
+     2)Click on "Patient Referrals"
+     4) Click on about Us button
+     5) Count links included
+     6) validate count
+     7) Close Browser
+  Test Case 6:
+      1)Navigate to "https://www.stjude.org/"
+      2)Click on "Patient Referrals"
+      3) Click on search button
+      4) pass "Hematology" in search box
+      5) Get page title
+      6) validate title
+      7)Close Browser
+
+  Test Case 7 : "count body links"
+    1)Navigate to "https://www.stjude.org/"
+    2)Click on "Patient Referrals"
+    3)Count body links"left side of tha page"
+    4)Validate count
+    5)Close Browser
+
+  Test Case 8) : "Open body links in new tab and compare titel"
+    1)Navigate to "https://www.stjude.org/"
+    2)Click on "Patient Referrals"
+    3)Open 4 body links in new tabs
+    4) Get the title from each page
+    5)compare titles
+    6)Close browser
+
+ Test Case 9) : "Open body links in new tab and compare titel"
+    1)Navigate to "https://www.stjude.org/"
+    2)Click on "Patient Referrals"
+    3)Open 4 body links in new tabs
+    4) Get the title from each page
+    5)compare titles
+    6)Close browser
+
+   Test Case 10:" Validate clinical trials link
+     1)Navigate to "https://www.stjude.org/"
+     2)Click on "Patient Referrals"
+     3) Click on "Clinical Trials"
+     4) Get page Title
+     5) Close Browser
+
+
+    Test Case :11
+    1)Navigate to "https://www.stjude.org/"
+    2)Click on "Patient Referrals"
+    3)Get requirements for acceptance in StJude hospital
+    4)Validate text
+    5)Close Browser
+
+    Test case 12: "Validate in a new tab" Physician Referral Contact Form
+     1)Navigate to "https://www.stjude.org/"
+     2)Click on "Patient Referrals"
+     3)Click on "Physician Referral Contact Form"
+     4)Open in new tab
+     5)Get page url
+     6)Validate url
+     7)Close browser
+
+    Test Case 13 "Validate 24 hours pager is displayed"
+    1)Navigate to "https://www.stjude.org/"
+    2)Click on "Patient Referrals"
+    3)Verify if 24 hours pager is displayed
+    4)Close browser
+
+   Test Case 14 "Validate toll free phone is displayed"
+    1)Navigate to "https://www.stjude.org/"
+    2)Click on "Patient Referrals"
+    3)Verify if toll free phone  is displayed
+    4)Close browser
+
+     Test Case 15 "Validate Fax number is displayed"
+        1)Navigate to "https://www.stjude.org/"
+        2)Click on "Patient Referrals"
+        3)Verify if toll free phone  is displayed
+        4)Close browser
+
+  Test Case 16 "Validate email is displayed"
+     1)Navigate to "https://www.stjude.org/"
+     2)Click on "Patient Referrals"
+     3)Verify if toll free phone  is displayed
+     4)Close browser
+
+  Test Case 17: "Validate social media links"
+  1)Navigate to "https://www.stjude.org/"
+  2)Click on "Patient Referrals"
+  3)Open 4 social media  in new tabs
+  4)compare url for each page
+  5)Close browser
+
+
+Test Case 18: "Validate social media links"
+     *   1)Navigate to "https://www.stjude.org/"
+     *   2)Click on "Patient Referrals"
+     *   3)Open 5 partners links  in new tabs
+     *   4)compare url for each page
+     *   5)Close browse
+Test Case 19: "Validate Site map in footer section"
+  1)Navigate to "https://www.stjude.org/"
+  2)Click on "Patient Referrals"
+  3)Scroll down the page
+  4)Click on site map
+  5)Get page Title
+
+  Test Case 20: "Validate linking policy in footer section"
+    1)Navigate to "https://www.stjude.org/"
+    2)Click on "Patient Referrals"
+    3)Scroll down the page
+    4)Click "linking policy"
+    5)Get page Title
+
+
+
+
+

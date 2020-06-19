@@ -718,7 +718,8 @@ public class WebAPI {
         String expected = expectedArray[0];
 
         boolean flag;
-        if (actual.replace("’", "'").trim().equalsIgnoreCase(expected)) {
+       // if (actual.replace("’", "'").trim().equalsIgnoreCase(expected)) {
+        if (actual.equalsIgnoreCase(expected)) {
             flag = true;
             System.out.println("ACTUAL STRING: " + actual + "\nEXPECTED STRING: " + expected);
         } else {
