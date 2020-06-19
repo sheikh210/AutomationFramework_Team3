@@ -748,8 +748,8 @@ public class WebAPI {
         String[] actual = new String[actualList.size()];
 
         for (int j = 0; j<actualList.size(); j++) {
-            actual[j] = actualList.get(j).getAttribute(attribute).replaceAll("&amp;", "&").replace("’", "'").trim();
-            actual[j].replaceAll("&amp;", "&").replace("’", "'").trim();
+            actual[j] = actualList.get(j).getAttribute(attribute).replaceAll("&amp;", "&").replaceAll("’", "'").replaceAll("<br>", "\n").trim();
+            actual[j].replaceAll("&amp;", "&").replaceAll("’", "'").replaceAll("<br>", "\n").trim();
 //            escapeHtml4(actual[j]);
 //            escapeHtml3(actual[j]);
         }

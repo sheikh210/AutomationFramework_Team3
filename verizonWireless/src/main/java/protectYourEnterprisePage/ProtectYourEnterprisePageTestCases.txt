@@ -45,40 +45,62 @@ TEST CASE 9 -Validate YouTube Player
  2. Scroll down to embedded YouTube video frame
  3. Verify that user can click play button to play YouTube video
 
-// Internal YT Play Button
-#player_uid_618971657_1 > div.ytp-chrome-bottom > div.ytp-chrome-controls > div.ytp-left-controls > button
-
-TEST CASE 10 - Validate titles of each expandable stack container (under YouTube iFrame)
+TEST CASE 10 - Validate title of first expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
 2. Scroll down below embedded YouTube video frame
-3. Verify title of each expandable stack container section
+3. Verify title of first expandable stack container section
 
-TEST CASE 11 -
+TEST CASE 11 - Validate title of second expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify title of second expandable stack container section
 
-TEST CASE 12 -
+TEST CASE 12 - Validate title of third expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify title of third expandable stack container section
 
-TEST CASE 13 -
+TEST CASE 13 - Validate title of fourth expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify title of fourth expandable stack container section
 
-TEST CASE 14 -
+TEST CASE 14 - Validate text title of first expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify text title of first expandable stack container section
 
-TEST CASE 15 -
+TEST CASE 15 - Validate text title of second expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify text title of second expandable stack container section
 
-TEST CASE 16 -
+TEST CASE 16 - Validate text title of third expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify text title of third expandable stack container section
 
-TEST CASE 17 -
+TEST CASE 17 - Validate text title of fourth expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify text title of fourth expandable stack container section
 
-TEST CASE 18 -
+TEST CASE 18 - Validate text body of first expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify body text of first expandable stack container section
 
-TEST CASE 19 -
+TEST CASE 19 - Validate text body of second expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify body text of second expandable stack container section
 
-TEST CASE 20 -
+TEST CASE 20 - Validate text body of third expandable stack container (under YouTube iFrame)
 1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify body text of third expandable stack container section
+
+TEST CASE 21 - Validate text body of fourth expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify body text of fourth expandable stack container section

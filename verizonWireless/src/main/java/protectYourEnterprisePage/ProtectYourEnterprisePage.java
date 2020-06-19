@@ -10,8 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static protectYourEnterprisePage.ProtectYourEnterprisePageElements.*;
@@ -56,10 +56,57 @@ public class ProtectYourEnterprisePage extends WebAPI {
     @FindBy (css = webElementTextPageConfirmContactUs)
     private WebElement textPageConfirmContactUs;
 
+    @FindBy (css = webElementFirstExpandStackContainer)
+    private WebElement firstExpandStackContainer;
+
+    @FindBy (css = webElementSecondExpandStackContainer)
+    private WebElement secondExpandStackContainer;
+
+    @FindBy (css = webElementThirdExpandStackContainer)
+    private WebElement thirdExpandStackContainer;
+
+    @FindBy (css = webElementFourthExpandStackContainer)
+    private WebElement fourthExpandStackContainer;
+
+    @FindBy (css = webElementTitleFirstExpandStackContainer)
+    private WebElement titleFirstExpandStackContainer;
+
+    @FindBy (css = webElementTitleSecondExpandStackContainer)
+    private WebElement titleSecondExpandStackContainer;
+
+    @FindBy (css = webElementTitleThirdExpandStackContainer)
+    private WebElement titleThirdExpandStackContainer;
+
+    @FindBy (css = webElementTitleFourthExpandStackContainer)
+    private WebElement titleFourthExpandStackContainer;
+
+    @FindBy (css = webElementTextTitleFirstExpandStackContainer)
+    private WebElement textTitleFirstExpandStackContainer;
+
+    @FindBy (css = webElementTextTitleSecondExpandStackContainer)
+    private WebElement textTitleSecondExpandStackContainer;
+
+    @FindBy (css = webElementTextTitleThirdExpandStackContainer)
+    private WebElement textTitleThirdExpandStackContainer;
+
+    @FindBy (css = webElementTextTitleFourthExpandStackContainer)
+    private WebElement textTitleFourthExpandStackContainer;
+
     public WebElement getDropdownProtectEnterprise() {
         return dropdownProtectEnterprise;
     }
-
+    public WebElement getFirstExpandStackContainer() { return firstExpandStackContainer; }
+    public WebElement getSecondExpandStackContainer() { return secondExpandStackContainer; }
+    public WebElement getThirdExpandStackContainer() { return thirdExpandStackContainer; }
+    public WebElement getFourthExpandStackContainer() { return fourthExpandStackContainer; }
+    public WebElement getTitleFirstExpandStackContainer() { return titleFirstExpandStackContainer; }
+    public WebElement getTitleSecondExpandStackContainer() { return titleSecondExpandStackContainer; }
+    public WebElement getTitleThirdExpandStackContainer() { return titleThirdExpandStackContainer; }
+    public WebElement getTitleFourthExpandStackContainer() { return titleFourthExpandStackContainer; }
+    public WebElement getTextTitleFirstExpandStackContainer() { return textTitleFirstExpandStackContainer; }
+    public WebElement getTextTitleSecondExpandStackContainer() { return textTitleSecondExpandStackContainer; }
+    public WebElement getTextTitleThirdExpandStackContainer() { return textTitleThirdExpandStackContainer; }
+    public WebElement getTextTitleFourthExpandStackContainer() { return textTitleFourthExpandStackContainer; }
 
     /**
      * TEST CASE 1 - Validate navigation to "Protect Your Enterprise From Threats" Page
@@ -151,7 +198,7 @@ public class ProtectYourEnterprisePage extends WebAPI {
                 e1.getMessage();
             }
         }
-        String url = null;
+        String url;
         wait.until(ExpectedConditions.visibilityOf(textPageConfirmContactUs));
         if (textPageConfirmContactUs.isDisplayed()) {
             System.out.println("Navigated to \"Contact Us\" page\n");
@@ -160,14 +207,18 @@ public class ProtectYourEnterprisePage extends WebAPI {
         } else {
             System.out.println("COULD NOT NAVIGATE TO \"CONTACT US\" PAGE");
         }
-        return url;
+        return null;
     }
 
+    /**
+     * TEST CASE 9 -Validate YouTube Player
+     */
     public void clickYouTubePlayer() throws InterruptedException {
         navigateToProtectYourEnterprisePage();
 
         try {
             clickJScript(buttonYouTubePlayerPlay);
+            Thread.sleep(10000);
             System.out.println("Clicked \"Play\" on embedded YouTube player");
         } catch (Exception e) {
             e.getMessage();
@@ -175,6 +226,44 @@ public class ProtectYourEnterprisePage extends WebAPI {
         }
     }
 
+    /**
+     * TEST CASE 10 - Validate titles of each expandable stack container (under YouTube iFrame)
+     *
+     * TEST CASE 11 - Validate text titles of each expandable stack container (under YouTube iFrame)
+     *
+     * TEST CASE 12 - Validate text body of each expandable stack container (under YouTube iFrame)
+     */
+
+    public void hoverExpandStackContainerAndWait(WebElement element, WebElement elementToWaitFor) {
+        navigateToProtectYourEnterprisePage();
+
+        wait.until(ExpectedConditions.visibilityOf(element));
+        try {
+            scrollToElementJScript(element);
+            mouseHoverJScript(element);
+        } catch (Exception e) {
+            driver.navigate().refresh();
+            wait.until(ExpectedConditions.visibilityOf(element));
+            mouseHoverJScript(element);
+        }
+
+        wait.until(ExpectedConditions.visibilityOf(elementToWaitFor));
+
+    }
+
+    public void hoverExpandStackContainer(WebElement element) {
+        navigateToProtectYourEnterprisePage();
+
+        wait.until(ExpectedConditions.visibilityOf(element));
+        try {
+            scrollToElementJScript(element);
+            mouseHoverJScript(element);
+        } catch (Exception e) {
+            driver.navigate().refresh();
+            wait.until(ExpectedConditions.visibilityOf(element));
+            mouseHoverJScript(element);
+        }
+    }
 
 
 

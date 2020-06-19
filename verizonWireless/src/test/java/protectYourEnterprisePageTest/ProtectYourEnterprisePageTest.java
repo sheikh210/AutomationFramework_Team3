@@ -17,9 +17,9 @@ import static protectYourEnterprisePage.ProtectYourEnterprisePageElements.*;
 public class ProtectYourEnterprisePageTest extends WebAPI {
 
     static ProtectYourEnterprisePage protectYourEnterprisePage;
+    static DataReader dataReader = new DataReader();
     static String path = System.getProperty("user.dir")+"\\src\\main\\resources\\" +
             "VerizonWireless_ProtectYourEnterprisePage_ExpectedElements.xlsx";
-    static DataReader dataReader = new DataReader();
 
     public static void getInItElements() {
         protectYourEnterprisePage = PageFactory.initElements(driver, ProtectYourEnterprisePage.class);
@@ -109,6 +109,7 @@ public class ProtectYourEnterprisePageTest extends WebAPI {
     @Test (priority = 5)
     public static void testTitlesGridContainerOne() throws IOException {
         getInItElements();
+
         protectYourEnterprisePage.navigateToProtectYourEnterprisePage();
 
         Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementsTextTitlesGridContainerOne()),
@@ -128,10 +129,10 @@ public class ProtectYourEnterprisePageTest extends WebAPI {
         SoftAssert softAssert = new SoftAssert();
 
         // Section 1
-        softAssert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementTextBodyGridContainerOneSectionOne()),
+        softAssert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementsTextBodyGridContainerOneSectionOne()),
                 path, "GridContainerOne Sec1 Body"));
         // Section 2
-        softAssert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementTextBodyGridContainerOneSectionTwo()),
+        softAssert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementsTextBodyGridContainerOneSectionTwo()),
                 path, "GridContainerOne Sec2 Body"));
 
         softAssert.assertAll();
@@ -165,19 +166,188 @@ public class ProtectYourEnterprisePageTest extends WebAPI {
     }
 
     /**
-     * TEST CASE 10 - Validate titles of each expandable stack container (under YouTube iFrame)
+     * TEST CASE 10 - Validate title of first expandable stack container (under YouTube iFrame)
      * 1. Navigate to "Protect Your Enterprise" page
      * 2. Scroll down below embedded YouTube video frame
-     * 3. Verify title of each expandable stack container section
+     * 3. Verify title of first expandable stack container section
      */
 
     @Test (priority = 9)
-    public static void testTitlesExpandableStackContainers() throws IOException {
+    public static void testTitleFirstExpandableStackContainer() throws IOException {
         getInItElements();
-        protectYourEnterprisePage.navigateToProtectYourEnterprisePage();
+        protectYourEnterprisePage.hoverExpandStackContainerAndWait(protectYourEnterprisePage.getFirstExpandStackContainer(),
+                protectYourEnterprisePage.getTitleFirstExpandStackContainer());
 
-        Assert.assertTrue(compareWebElementListToExpectedStringArray(By.cssSelector(getWebElementTextExpandStackContainers()),
-               path, "ExpandStack Titles"));
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(webElementTitleFirstExpandStackContainer),
+                "innerHTML", path, "ExpandStack Title1"));
+    }
+
+    /**
+     * TEST CASE 11 - Validate title of second expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify title of second expandable stack container section
+     */
+    @Test (priority = 10)
+    public static void testTitleSecondExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainerAndWait(protectYourEnterprisePage.getSecondExpandStackContainer(),
+                protectYourEnterprisePage.getTitleSecondExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(webElementTitleSecondExpandStackContainer),
+                "innerHTML", path, "ExpandStack Title2"));
+    }
+
+    /**
+     * TEST CASE 12 - Validate title of third expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify title of third expandable stack container section
+     */
+    @Test (priority = 11)
+    public static void testTitleThirdExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainerAndWait(protectYourEnterprisePage.getThirdExpandStackContainer(),
+                protectYourEnterprisePage.getTitleThirdExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(webElementTitleThirdExpandStackContainer),
+                "innerHTML", path, "ExpandStack Title3"));
+    }
+
+    /**
+     * TEST CASE 13 - Validate title of fourth expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify title of fourth expandable stack container section
+     */
+    @Test (priority = 12)
+    public static void testTitleFourthExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainerAndWait(protectYourEnterprisePage.getFourthExpandStackContainer(),
+                protectYourEnterprisePage.getTitleFourthExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(webElementTitleFourthExpandStackContainer),
+                "innerHTML", path, "ExpandStack Title4"));
+    }
+
+    /**
+     * TEST CASE 14 - Validate text title of first expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify text title of first expandable stack container section
+     */
+    @Test (priority = 13)
+    public static void testTextTitleFirstExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainer(protectYourEnterprisePage.getFirstExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(webElementTextTitleFirstExpandStackContainer),
+                "innerHTML", path, "ExpandStack TextTitle1"));
+    }
+
+    /**
+     * TEST CASE 15 - Validate text title of second expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify text title of second expandable stack container section
+     */
+    @Test (priority = 14)
+    public static void testTextTitleSecondExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainer(protectYourEnterprisePage.getSecondExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(webElementTextTitleSecondExpandStackContainer),
+                "innerHTML", path, "ExpandStack TextTitle2"));
+    }
+
+    /**
+     * TEST CASE 16 - Validate text title of third expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify text title of third expandable stack container section
+     */
+    @Test (priority = 15)
+    public static void testTextTitleThirdExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainer(protectYourEnterprisePage.getThirdExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(webElementTextTitleThirdExpandStackContainer),
+                "innerHTML", path, "ExpandStack TextTitle3"));
+    }
+
+    /**
+     * TEST CASE 17 - Validate text title of fourth expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify text title of fourth expandable stack container section
+     */
+    @Test (priority = 16)
+    public static void testTextTitleFourthExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainer(protectYourEnterprisePage.getFourthExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(webElementTextTitleFourthExpandStackContainer),
+                "innerHTML", path, "ExpandStack TextTitle4"));
+    }
+
+    /**
+     * TEST CASE 18 - Validate text body of first expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify body text of first expandable stack container section
+     */
+    @Test (priority = 17)
+    public static void testTextBodyFirstExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainer(protectYourEnterprisePage.getFirstExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(getWebElementsTextBodyFirstExpandStackContainers()),
+                "innerHTML", path, "ExpandStack TextBody1"));
+    }
+
+    /**
+     * TEST CASE 19 - Validate text body of second expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify body text of second expandable stack container section
+     */
+    @Test (priority = 18)
+    public static void testTextBodySecondExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainer(protectYourEnterprisePage.getSecondExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray((By.cssSelector(getWebElementsTextBodySecondExpandStackContainers())),
+                "innerHTML", path,"ExpandStack TextBody2"));
+    }
+
+    /**
+     * TEST CASE 20 - Validate text body of third expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify body text of third expandable stack container section
+     */
+    @Test (priority = 19)
+    public static void testTextBodyThirdExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainer(protectYourEnterprisePage.getThirdExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(getWebElementsTextBodyThirdExpandStackContainers()),
+                "innerHTML", path,"ExpandStack TextBody3"));
+    }
+
+    /**
+     * TEST CASE 21 - Validate text body of fourth expandable stack container (under YouTube iFrame)
+     * 1. Navigate to "Protect Your Enterprise" page
+     * 2. Scroll down below embedded YouTube video frame
+     * 3. Verify body text of fourth expandable stack container section
+     */
+    @Test (priority = 20)
+    public static void testTextBodyFourthExpandableStackContainer() throws IOException {
+        getInItElements();
+        protectYourEnterprisePage.hoverExpandStackContainer(protectYourEnterprisePage.getFourthExpandStackContainer());
+
+        Assert.assertTrue(compareAttributeListToExpectedStringArray(By.cssSelector(getWebElementsTextBodyFourthExpandStackContainers()),
+                "innerHTML", path,"ExpandStack TextBody4"));
     }
 
 }
