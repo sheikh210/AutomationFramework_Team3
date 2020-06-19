@@ -1,0 +1,62 @@
+*  Test Case:1
+     * Navigate to ESPN home page
+     * click on ESPN plus Button
+     * Validate new page url
+
+ * Test Case:2
+     * Navigate to ESPN home page
+     * click on ESPN plus Button
+     * Validate new page title
+
+* Test Case:3
+     * Navigate to ESPN home page
+     * click on ESPN plus Button
+     * Click on Back Button
+     * Mouse hover on NFL button
+     * Check Buffalo Bills is Displayed
+
+* Test Case:4
+     * Navigate to ESPN home page
+     * click on ESPN plus Button
+     * Mouse hover  Napoli Vs Juventus on  button
+     * Click on Napoli Vs Juventus Button
+     * Check pop up window is Displayed
+
+* Test Case:5
+     * Navigate to ESPN home page
+     * click on ESPN plus Button
+     * Mouse hover on Orginals  button
+     * Check new page is Displayed
+
+ * Test Case 6 - Validate number of elements in "Top Events" dropdown menu list
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "back button"
+     * Verify number of links present in "Top Events" dropdown menu
+
+ * Test Case 7
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on Sign up button
+     * Verify It,s navigate to sign up page by titles
+
+ * Test Case 8 -
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on Sign up button
+     * Verify  the page
+
+* Test Case: 9
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Verify  the page links
+
+* Test Case: 10
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Verify  the page active links
+
+ * Test Case: 11
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Verify  the page page title

@@ -74,7 +74,6 @@ public class ElectronicsPage extends WebAPI {
 
     /**
      * Test case:1
-     *
      * Navigate to Ebay Homepage
      * Click on Electronics Button to open Electronics page
      * Validate the page is displayed or not
