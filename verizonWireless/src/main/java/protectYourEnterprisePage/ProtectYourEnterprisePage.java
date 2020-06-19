@@ -103,10 +103,7 @@ public class ProtectYourEnterprisePage extends WebAPI {
     public WebElement getTitleSecondExpandStackContainer() { return titleSecondExpandStackContainer; }
     public WebElement getTitleThirdExpandStackContainer() { return titleThirdExpandStackContainer; }
     public WebElement getTitleFourthExpandStackContainer() { return titleFourthExpandStackContainer; }
-    public WebElement getTextTitleFirstExpandStackContainer() { return textTitleFirstExpandStackContainer; }
-    public WebElement getTextTitleSecondExpandStackContainer() { return textTitleSecondExpandStackContainer; }
-    public WebElement getTextTitleThirdExpandStackContainer() { return textTitleThirdExpandStackContainer; }
-    public WebElement getTextTitleFourthExpandStackContainer() { return textTitleFourthExpandStackContainer; }
+
 
     /**
      * TEST CASE 1 - Validate navigation to "Protect Your Enterprise From Threats" Page
@@ -174,9 +171,7 @@ public class ProtectYourEnterprisePage extends WebAPI {
 
     /**
      * TEST CASE 5 - Validate the name of each item on the sticky Navigation Bar (located under page image)
-     *
      * TEST CASE 6 - Validate titles of first section (below nav bar)
-     *
      * TEST CASE 7 - Validate body text of first grid container section (below nav bar)
      */
 
@@ -228,10 +223,17 @@ public class ProtectYourEnterprisePage extends WebAPI {
 
     /**
      * TEST CASE 10 - Validate titles of each expandable stack container (under YouTube iFrame)
-     *
      * TEST CASE 11 - Validate text titles of each expandable stack container (under YouTube iFrame)
-     *
      * TEST CASE 12 - Validate text body of each expandable stack container (under YouTube iFrame)
+     * TEST CASE 13 - Validate title of fourth expandable stack container (under YouTube iFrame)
+     * TEST CASE 14 - Validate text title of first expandable stack container (under YouTube iFrame)
+     * TEST CASE 15 - Validate text title of second expandable stack container (under YouTube iFrame)
+     * TEST CASE 16 - Validate text title of third expandable stack container (under YouTube iFrame)
+     * TEST CASE 17 - Validate text title of fourth expandable stack container (under YouTube iFrame)
+     * TEST CASE 18 - Validate text body of first expandable stack container (under YouTube iFrame)
+     * TEST CASE 19 - Validate text body of second expandable stack container (under YouTube iFrame)
+     * TEST CASE 20 - Validate text body of third expandable stack container (under YouTube iFrame)
+     * TEST CASE 21 - Validate text body of fourth expandable stack container (under YouTube iFrame)
      */
 
     public void hoverExpandStackContainerAndWait(WebElement element, WebElement elementToWaitFor) {
@@ -265,13 +267,6 @@ public class ProtectYourEnterprisePage extends WebAPI {
         }
     }
 
-
-
-
-
-
-
-
     /**
      * HELPER METHOD TO KILL POP-UP
      */
@@ -294,5 +289,4 @@ public class ProtectYourEnterprisePage extends WebAPI {
         }
         return flag;
     }
-
 }
