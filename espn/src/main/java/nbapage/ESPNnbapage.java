@@ -35,8 +35,8 @@ public class ESPNnbapage extends WebAPI {
 
     @FindBy(xpath = webElementTeamsBox)
             public WebElement teamsBox;
-    @FindBy(xpath = webElementSubHeaderTeams)
-            public WebElement subHeaderTeams;
+    @FindBy(xpath = webElementTeamsList)
+            public WebElement teamsList;
 
     @FindBy(xpath = webElementPodcastsList)
             public WebElement podcastsList;
@@ -62,13 +62,29 @@ public class ESPNnbapage extends WebAPI {
     @FindBy(xpath = webElementESPNFooterList)
             public WebElement espnFooterList;
 
-
     @FindBy(css = webElementNBADropdown)
-    public WebElement nbaDropdown;
+            public WebElement nbaDropdown;
 
     @FindBy(css = webElementNBADropdownMenuLeft)
-    public WebElement nbaDropdownMenuLeft;
+            public WebElement nbaDropdownMenuLeft;
 
+    @FindBy(css = webElementHeaderScrollRight)
+            public  WebElement headerScrollRight;
+
+    @FindBy(css = webElementHeaderScrollLeft)
+            public WebElement headerScrollLeft;
+
+    @FindBy(css = webElementHeaderScrollLeft)
+            public  WebElement ufcHeaderTile;
+
+    @FindBy(xpath = webElementMoreDropDownMenu)
+            public WebElement moreDropDownMenu;
+
+    @FindBy(xpath = webElementMoreDropDownMenuItems)
+    public WebElement moreDropDownMenuItems;
+
+    @FindBy(xpath = webElementMoreDropDownMenuLinks)
+            public WebElement moreDropDownMenuLinks;
 
     DataReader dataReader = new DataReader();
 
@@ -123,36 +139,50 @@ public class ESPNnbapage extends WebAPI {
         softAssert.assertAll();
     }
 
-    public String getStatsListText(int a){
-        List<WebElement> subHeaderStatsListArray = subHeaderStatsList.findElements(By.xpath(webElementSubHeaderStatsList));
-            return subHeaderStatsListArray.get(a).getText();
-
-    }
-
-    public String validateStatsList(int x) throws Exception {
-        String[] expectedStatsListArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "StatsList");
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(statsBox));
+    public void getStatsListText() throws IOException {
         mouseHover(statsBox);
+        List<WebElement> subHeaderStatsListArray = subHeaderStatsList.findElements(By.xpath(webElementSubHeaderStatsList));
+        SoftAssert softAssert = new SoftAssert();
+        String[] expectedStatsDropdownMenuItems = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "StatsList");
 
-        return expectedStatsListArray[x];
+        for (int i = 0; i < subHeaderStatsListArray.size(); i++) {
+            String actualText = subHeaderStatsListArray.get(i).getAttribute("innerHTML");
+            System.out.println(subHeaderStatsListArray.get(i).getAttribute("innerHTML"));
+            String[] expectedElementNBADropdownMenuItemsLeft = expectedStatsDropdownMenuItems;
+            softAssert.assertEquals(actualText, expectedElementNBADropdownMenuItemsLeft[i], "ELEMENT OF LIST AT POSITION " + i + " (NBA MENU LEFT) DOES NOT MATCH");
+        }
+        softAssert.assertAll();
     }
 
+    public List<WebElement> getTeamsDropdownMenu() {
+        mouseHover(teamsBox);
+        List<WebElement> teamsDropdownElementsList = getListOfWebElementsByXpath(teamsList, webElementTeamsList);
+
+        return teamsDropdownElementsList;
+    }
+    public void validateTeamsDropDownSize() throws IOException {
+        getNBApage();
+        mouseHover(teamsBox);
+        int actualSize = getTeamsDropdownMenu().size();
+        System.out.println("Number of elements in Teams Menu: " + actualSize);
+        String[] expectedNBADropdownMenu = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "TeamList");
+        SoftAssert softAssert = new SoftAssert();
+        int expectedHeaderDropdownListSize = expectedNBADropdownMenu.length;
+        softAssert.assertEquals(actualSize, expectedHeaderDropdownListSize, "SIZE OF LIST (NBA MENU LEFT) DOES NOT MATCH");
+        softAssert.assertAll();
+    }
     public void validateTeamsList() throws Exception {
         getNBApage();
-        List<WebElement> teamListArray = subHeaderTeams.findElements(By.xpath(webElementSubHeaderTeams));
-        String[] expectedTeamsArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "TeamCategories");
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(teamsBox));
         mouseHover(teamsBox);
+        List<WebElement> teamListArray = teamsList.findElements(By.xpath(webElementTeamsList));
         SoftAssert softAssert = new SoftAssert();
+        String[] expectedStatsDropdownMenuItems = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "TeamList");
 
         for (int i = 0; i < teamListArray.size(); i++) {
-            String actualText = teamListArray.get(i).getText();
-            System.out.println(actualText);
-            String expectedTeamList = expectedTeamsArray[i];
-            softAssert.assertEquals(actualText, expectedTeamList, "Team Categories at index of " + i + " " + "Does not match");
-
+            String actualText = teamListArray.get(i).getAttribute("innerHTML");
+            System.out.println(teamListArray.get(i).getAttribute("innerHTML"));
+            String[] expectedElementTeamsDropdownItems = expectedStatsDropdownMenuItems;
+            softAssert.assertEquals(actualText, expectedElementTeamsDropdownItems[i], "ELEMENT OF LIST AT POSITION " + i + " (NBA MENU LEFT) DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
@@ -275,7 +305,7 @@ public class ESPNnbapage extends WebAPI {
         return listSize;
     }
 
-    public void validateTopEventsDropdownListSizeAndLinks() {
+    public void validateTopEventsDropdownListSize() {
         int actualListSize = topEventsDropdownList();
 
         System.out.println("Size of 'Top Events' Dropdown List: " + actualListSize);
@@ -298,17 +328,16 @@ public class ESPNnbapage extends WebAPI {
         SoftAssert softAssert = new SoftAssert();
 
         for (int i = 0; i < espnFooterListArray.size(); i++) {
-            String actualText = espnFooterListArray.get(i).getText();
-            System.out.println(actualText);
-            String expectedESPNFooterArray = expectedESPNFooterList[i];
-            softAssert.assertEquals(actualText, expectedESPNFooterArray ,"Fantasy title at index of " + i + " " + "Does not match");
-
+            String actualText = espnFooterListArray.get(i).getAttribute("innerHTML");
+            System.out.println(espnFooterListArray.get(i).getAttribute("innerHTML"));
+            String[] expectedElementNBADropdownMenuItemsLeft = expectedESPNFooterList;
+            softAssert.assertEquals(actualText, expectedElementNBADropdownMenuItemsLeft[i], "ELEMENT OF LIST AT POSITION " + i + " (Footer list) DOES NOT MATCH");
         }
         softAssert.assertAll();
     }
 
     /**
-     * Test Case 13 - NBA Dropdown Menu (Left Div)
+     * Test Case 13-15 - NBA Dropdown Menu (Left Div)
      * 1 - Navigate to http://espn.com
      * 2 - Hover over NBA Dropdown on header bar
      * 3 - Verify there are 9 elements located on left menu of NBA Dropdown menu
@@ -331,9 +360,10 @@ public class ESPNnbapage extends WebAPI {
         softAssert.assertAll();
     }
 
-    public void validateNBADropdownMenuLeftItemsText() throws IOException {
+    public void validateNBADropdownMenuItemsText() throws IOException {
         List<WebElement> nbaDropdownElementsLeftList = getNBADropdownMenuLeft();
-        SoftAssert softAssert = new SoftAssert(); String[] expectedNBADropdownMenuItems = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "NBADropdownMenuItemsLeft");
+        SoftAssert softAssert = new SoftAssert();
+        String[] expectedNBADropdownMenuItems = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "NBADropdownMenuItemsLeft");
 
         for (int i = 0; i < nbaDropdownElementsLeftList.size(); i++) {
             String actualText = nbaDropdownElementsLeftList.get(i).getAttribute("innerHTML");
@@ -344,5 +374,138 @@ public class ESPNnbapage extends WebAPI {
         softAssert.assertAll();
     }
 
+    public String[] getNBADropdownMenuLinks() {
+        mouseHover(nbaDropdown);
+
+        List<WebElement> nbaMenuListLeft = getListOfWebElementsByCss(nbaDropdownMenuLeft, webElementNBADropdownMenuLinksLeft);
+        String[] nbaMenuListLeftLinks = new String[nbaMenuListLeft.size()];
+
+        for (int i = 0; i < nbaMenuListLeft.size(); i++) {
+            nbaMenuListLeftLinks[i] = nbaMenuListLeft.get(i).getAttribute("href");
+        }
+        return nbaMenuListLeftLinks;
+    }
+
+    public void validateNBADropdownMenuLinks() {
+        String[] actualNBADropdownMenuLeftPageLinks = getNBADropdownMenuLinks();
+        SoftAssert softAssert = new SoftAssert();
+
+        System.out.println("Total Number of Links (NBA Menu Dropdown - LEFT): " + actualNBADropdownMenuLeftPageLinks.length);
+        for (int i = 0; i < actualNBADropdownMenuLeftPageLinks.length; i++) {
+            System.out.println(actualNBADropdownMenuLeftPageLinks[i]);
+            softAssert.assertEquals(actualNBADropdownMenuLeftPageLinks[i], expectedElementNBADropdownMenuLeftLinks[i], "LINK AT POSITION " + i + " (NBA MENU LEFT) DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+
+    /**
+     * Test case 14: Validate More dropdown list
+     * 1. Navigate to espn.com
+     * 2. Go to espn nba page
+     * 3.Get the More dropdown list of titles
+     * 4. Validate that More dropdown list title's are displayed compare to titles stored in excel
+     */
+
+    public List<WebElement> getMoreDropdownMenu() {
+        mouseHover(moreDropDownMenu);
+        List<WebElement> moreDropdownElementsList = getListOfWebElementsByXpath(moreDropDownMenuItems, webElementMoreDropDownMenuItems);
+
+        return moreDropdownElementsList;
+    }
+    public void validateMoreDropdownMenuSize() throws IOException {
+        int actualSize = getMoreDropdownMenu().size();
+        System.out.println("Number of elements in More Menu: " + actualSize);
+        String[] expectedNBADropdownMenu = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "MoreDropDownTitles");
+        SoftAssert softAssert = new SoftAssert();
+        int expectedHeaderDropdownListSize = expectedNBADropdownMenu.length;
+        softAssert.assertEquals(actualSize, expectedHeaderDropdownListSize, "SIZE OF LIST (NBA MENU LEFT) DOES NOT MATCH");
+        softAssert.assertAll();
+    }
+
+    public void validateMoreDropdownMenuText() throws IOException {
+        List<WebElement> moreDropdownMenuList = getMoreDropdownMenu();
+        SoftAssert softAssert = new SoftAssert();
+        String[] expectedNBADropdownMenuItems = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "MoreDropDownTitles");
+
+        for (int i = 0; i < moreDropdownMenuList.size(); i++) {
+            String actualText = moreDropdownMenuList.get(i).getAttribute("innerHTML");
+            System.out.println(moreDropdownMenuList.get(i).getAttribute("innerHTML"));
+            String[] expectedElementNBADropdownMenuItemsLeft = expectedNBADropdownMenuItems;
+            softAssert.assertEquals(actualText, expectedElementNBADropdownMenuItemsLeft[i], "ELEMENT OF LIST AT POSITION " + i + " (More MENU ) DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+    public String[] getMoreDropdownMenuLinks() {
+        mouseHover(moreDropDownMenu);
+
+        List<WebElement> nbaMenuListLeft = getListOfWebElementsByXpath(moreDropDownMenuLinks, webElementMoreDropDownMenuLinks);
+        String[] moreMenuListLinks = new String[nbaMenuListLeft.size()];
+
+        for (int i = 0; i < nbaMenuListLeft.size(); i++) {
+            moreMenuListLinks[i] = nbaMenuListLeft.get(i).getAttribute("href");
+        }
+        return moreMenuListLinks;
+    }
+    public void validateMoreDropdownMenuLinks() throws IOException {
+        String[] actualMoreDropdownMenuLeftPageLinks = getMoreDropdownMenuLinks();
+        SoftAssert softAssert = new SoftAssert();
+
+        System.out.println("Total Number of Links (More Menu Dropdown): " + actualMoreDropdownMenuLeftPageLinks.length);
+        String[] expectedElementMoreDropdownMenuLinks = dataReader.fileReaderStringXSSF(System.getProperty("user.dir") + "\\src\\main\\resources\\ESPNnbapageElements.xlsx", "MoreDropDownLinks");
+        for (int i = 0; i < actualMoreDropdownMenuLeftPageLinks.length; i++) {
+            System.out.println(actualMoreDropdownMenuLeftPageLinks[i]);
+            softAssert.assertEquals(actualMoreDropdownMenuLeftPageLinks[i], expectedElementMoreDropdownMenuLinks[i], "LINK AT POSITION " + i + " (More MENU ) DOES NOT MATCH");
+        }
+        softAssert.assertAll();
+    }
+
+
+    /**
+     * Test Case 15 - Validate header scroll
+     * 1 - Navigate to http://espn.com
+     * 2 - Click on arrow (right) to scroll header
+     * 3 - Click on arrow (left) to scroll header back
+     * 4 - Verify functionality of header scroll
+     */
+    public boolean scrollHeader() throws Exception {
+        WebDriverWait expWait = new WebDriverWait(driver, 10);
+
+
+        try {
+            expWait.until(ExpectedConditions.elementToBeClickable(headerScrollRight));
+            headerScrollRight.click();
+        } catch (Exception e) {
+            System.out.println("COULD NOT CLICK ON RIGHT SCROLL ON 1st ATTEMPT --- TRYING AGAIN");
+            expWait.until(ExpectedConditions.elementToBeClickable(headerScrollRight));
+            headerScrollRight.click();
+        }
+
+        try {
+            expWait.until(ExpectedConditions.elementToBeClickable(headerScrollLeft));
+            headerScrollLeft.click();
+        } catch (Exception e1) {
+            expWait.until(ExpectedConditions.elementToBeClickable(headerScrollLeft));
+            headerScrollLeft.click();
+        }
+
+        boolean isPresent = false;
+
+
+        if (ufcHeaderTile.isDisplayed()) {
+            isPresent = true;
+            return isPresent;
+        } else if (!(ufcHeaderTile.isDisplayed())) {
+            isPresent = false;
+            return isPresent;
+        }
+        return isPresent;
+    }
+
+    public void validateScrollHeader() throws Exception {
+        boolean actualScroll = scrollHeader();
+        System.out.println("Header Scroll: " + actualScroll);
+        Assert.assertEquals(actualScroll, true, "COULD NOT SCROLL ON HEADER");
+    }
 
 }

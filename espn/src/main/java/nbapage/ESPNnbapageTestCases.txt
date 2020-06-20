@@ -28,13 +28,13 @@ Test Case 5: Validate Teams dropdown list Categories
 3.Get the Teams dropdown list Categories
 4. Validate that those Teams list Categories title's are displayed compare to titles stored in excel
 
-Test Case 6:Validate Podcasts list
+Test Case 6: Validate Podcasts list
 1. Navigate to espn.com
 2. Go to espn nba page
 3.Get the Podcasts list title's
 4. Validate that those Podcasts list title's are displayed compare to titles stored in excel
 
-Test Case 7:Validate Fantasy list
+Test Case 7: Validate Fantasy list
 1. Navigate to espn.com
 2. Go to espn nba page
 3.Get the Fantasy list title's list
@@ -63,8 +63,47 @@ Test Case 11 - Validate number of elements in "Top Events" dropdown menu list
 2 - Click on "Top Events" dropdown menu
 3 - Verify number of links present in "Top Events" dropdown menu
 
-Test Case 12:Validate ESPN footer list
+Test Case 12:Validate ESPN footer list Size
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the ESPN Footer title's size
+4. Validate that those Follow ESPN size are displayed compare to size in excel
+
+Test Case 13:Validate ESPN footer list
 1. Navigate to espn.com
 2. Go to espn nba page
 3.Get the ESPN Footer title's list
 4. Validate that those Follow ESPN title's are displayed compare to titles stored in excel
+
+Test Case 14-16 - NBA Dropdown Menu
+1 - Navigate to http://espn.com
+2 - Hover over NBA Dropdown on header bar
+3 - Verify there are 9 elements located on left menu of NBA Dropdown menu
+4 - Validate that those title's are displayed compare to titles stored in excel
+5 - Validate the links are displayed correctly compared to links in excel
+
+
+Test case 17: Validate More dropdown list size
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the number of options More dropdown list
+4. Validate that More dropdown list number is the same as stored in excel
+
+Test case 18: Validate More dropdown list text
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the text of the More dropdown list options
+4. Validate that More dropdown list text  is the same as stored in excel
+
+Test case 19: Validate More dropdown list Links
+1. Navigate to espn.com
+2. Go to espn nba page
+3.Get the links of the More dropdown list options
+4. Validate that More dropdown list links are displayed
+
+Test Case 20 - Validate header scroll
+1 - Navigate to http://espn.com
+2 - Click on arrow (right) to scroll header
+3 - Click on arrow (left) to scroll header back
+4 - Verify functionality of header scroll
+
