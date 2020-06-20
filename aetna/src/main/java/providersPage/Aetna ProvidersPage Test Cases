@@ -30,3 +30,135 @@ Test case 4: "Validate search box"
 5) validate search
 6)Close browser
 
+Test Cae 5:
+Validate "Explore Aetna sites" button in header & elements contained within it
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Click on "Explore Aetna sites" button on top right of header
+4) Verify the number of items contained within the dropdown
+5) Verify the name of each of the items
+6)Verify each item in the list takes us to the expected pages
+7) Close browser
+
+Test Case 6: "Validate sub links  number for "Health care providers" under claims menu
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Click on Claims button
+4) click on "Health care providers" button
+5) Count menu sublinks
+6) Validate count
+5) Close browser
+
+Test Case 7:"Validate sub links text for "Health care providers" under claims menu
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Click on Claims button
+4) click on "Health care providers" button
+5) print menu sublinks
+6) Validate text for each item
+5) Close browser
+
+Test Case 8: "Validate video is playing when clicked"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Play youtube video
+4) Pause video
+5) Close browser
+
+Test Case 9: "Validate transcript text"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Click on "View Transcript"
+4) Extract text
+5) validate Text
+6) Close browser
+
+Test case 10:"Validate Corona virus fact" link
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Click on "Get CoronaVirus Fact"
+4) Get title
+5) Close browser
+
+Test Case 11: "get count of quick links"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) get count of quick links section
+4) validate count
+5 close browser
+
+Test Case 12: "Validate quick links"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Open each quick link in new tab and get URL
+4) Validate each URL
+5) Close browser
+
+Test case 13: " Validate newsLetter link"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Click on "Read provider newsletters"
+4) Get page title
+5) Close browser
+
+Test case 14: " Validate Explore health care resources link"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Click on "Explore health care resources"
+4) Get page title
+5) Close browser
+
+Test Case 15: "count Helpful links"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) count helpful links
+4) validate count
+5) Close browser
+
+Test Case 16:"print helpful links"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Print helpful links
+4) validate URL
+5) Close browser
+
+Test Case 17: "Count footer section links"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Count footer section links
+4) Validate count
+5) Close browser
+
+Test Case 18: "validate all footer section text"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) extract text from each footer section item
+4) Validate text
+5) Close Browser
+
+Test Case 19: "Ensure Instagram icon is displayed"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Verify if Instagram icon is displayed
+4) Close browser
+
+Test Case 20: "Ensure Facebook icon is displayed"
+1) Navigate to http://aetna.com
+2) Navigate to "https://www.aetna.com/health-care-professionals.html"
+3) Verify if Facebook icon is displayed
+4) Close browser
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

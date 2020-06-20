@@ -185,7 +185,7 @@ public class WebAPI {
 
     @AfterMethod(alwaysRun = true)
     public void cleanUp() {
-        driver.quit();
+       driver.quit();
     }
 
 
@@ -855,6 +855,7 @@ public class WebAPI {
             element.sendKeys(Keys.CONTROL, Keys.ENTER);
             Thread.sleep(1000);
             actualURLs[i] = switchToTabAndGetURL();
+
             i++;
         }
         boolean flag = compareTextListToExpectedStringArray(actualURLs, path, sheetName);
