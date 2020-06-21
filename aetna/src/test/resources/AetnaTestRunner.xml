@@ -14,9 +14,15 @@
     <parameter name="browserVersion" value="83"/>
     <parameter name="url" value="http://aetna.com"/>
 
-    <test name="Aetna Homepage">
+<!--    <test name="Aetna Homepage">-->
+<!--        <classes>-->
+<!--            <class name="homepageTest.AetnaHomepageTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Aetna Employers Page">
         <classes>
-            <class name="homepageTest.AetnaHomepageTest"/>
+            <class name="employerspageTest.EmployerspageTest"/>
         </classes>
     </test>
 

@@ -1,0 +1,6 @@
+Test Case 1 - Navigate to Employers page
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Validate the For Employers page url with what is stored in Exel

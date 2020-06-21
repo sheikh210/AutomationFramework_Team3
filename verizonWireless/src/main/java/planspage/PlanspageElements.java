@@ -1,8 +1,5 @@
 package planspage;
 
-
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 public class PlanspageElements {
 
     public static final String webElementButtonPlans = "//*[@id=\"secondLevel1\"]/span/button";
