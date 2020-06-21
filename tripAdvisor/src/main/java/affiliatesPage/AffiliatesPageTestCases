@@ -1,0 +1,111 @@
+Trip Advisor Affiliates Page Test Cases
+Test Case 1: "Validate affiliatesPage title"
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Get page title
+
+Test Case 2:
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Click on "Get started"
+5) Verify image is displayed
+
+Test Case 3:
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Click on "Get started"
+5) Verify image is displayed
+
+Test Case 4:
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Click on "Get started"
+5) Verify image is displayed
+
+Test Case 5:
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Get the text from "Minimum 50% commission"
+5) validate the text
+6) Close browser
+
+Test Case 6:
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Get the Text from "No hotel booking is required"
+5) Write the text in excel.
+6) Close browser
+
+Test Case 7:
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) count Network partners links
+5) Validate count
+
+Test Case 8:
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Open each network link in new page
+5) Validate urls
+
+Test Case 9: "Validate SignIn button"
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Click On "SignIn"
+5) validate if there is a popout window
+6) Click on "Continue with email"
+7) validate the tooltip text
+
+Test Case 10 "count Country currency menu"
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Click Currency box
+5) count all items
+
+
+Test Case 11:
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Click countries box
+5) count all items
+
+Test Case 12:
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4)Scroll down the page
+5) Verify "All right reserved text is displayed"
+
+Test Case 13: "Count footer section links"
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) count footer section links
+5) Validate count
+
+Test Case 14:"Open footer section links in new tabs and compare urls"
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Open each link in new tab
+5) compare urls
+
+
+
+
+
+
+
+
+

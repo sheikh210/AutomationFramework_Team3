@@ -1,0 +1,15 @@
+ESPNMMAPage Test Cases
+Test Case 1: "Validate page title"
+1) Navigate to "espn.com"
+2) Click on MMA
+3) Click on home
+4) Get page title
+5) Close browser
+
+Test Case 2:
+1) Navigate to "espn.com"
+2) Click on MMA
+3) Click on home
+3) Click on "Schedule"
+4) Get page Title
+5) Close browser
