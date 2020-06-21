@@ -34,17 +34,42 @@ public class PlanspageTest extends WebAPI  {
 
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3,enabled = false)
     public static void testPlanDealsText() throws Exception{
         getInItElements();
         Assert.assertTrue(planspage.validatePlansDealsText() == true);
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4,enabled = false)
     public static void testPlanDealsSize() throws Exception{
         getInItElements();
         Assert.assertTrue(planspage.validatePlansDealsSize() == true);
     }
 
+    @Test(priority = 5,enabled = false)
+    public static void testSharedDataButton() throws Exception{
+        getInItElements();
+        Assert.assertTrue(planspage.validateSharedDataButton() == true);
+    }
+    @Test(priority = 6,enabled = false)
+    public static void testSingleDeviceButton() throws Exception{
+        getInItElements();
+        Assert.assertTrue(planspage.validateSingleDeviceButton() == true);
+    }
+    @Test(priority = 7)
+    public static void testNumberShareButton() throws Exception{
+        getInItElements();
+        Assert.assertTrue(planspage.validateNumberShareButton() == true);
+    }
+    @Test(priority = 8)
+    public static void testPrepaidButton() throws Exception{
+        getInItElements();
+        Assert.assertTrue(planspage.validatePrepaidButton() == true);
+    }
+    @Test(priority = 9)
+    public static void testInternationalButton() throws Exception{
+        getInItElements();
+        Assert.assertTrue(planspage.validateInternationalButton() == true);
+    }
 
 }

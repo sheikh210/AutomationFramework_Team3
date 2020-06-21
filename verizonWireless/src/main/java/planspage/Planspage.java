@@ -33,6 +33,18 @@ public class Planspage extends WebAPI {
             public WebElement plansDropDownButton;
     @FindBy(xpath = webElementPlansDeals)
             public WebElement plansDeals;
+    @FindBy(xpath = webElementSharedDataButton)
+            public WebElement sharedDataButton;
+    @FindBy(xpath = webElementGetStartedButton)
+            public WebElement getStartedButton;
+    @FindBy(xpath = webElementSingleDeviceButton)
+            public WebElement singleDeviceButton;
+    @FindBy(xpath = webElementNumberShareButton)
+            public WebElement numberShareButton;
+    @FindBy(xpath = webElementPrepaidButton)
+            public WebElement prepaidButton;
+    @FindBy(xpath = webElementInternationalButton)
+            public WebElement internationalButton;
 
     DataReader dataReader = new DataReader();
 
@@ -146,6 +158,92 @@ public class Planspage extends WebAPI {
             System.out.println("Expected size: " + expectedPlansDropDownArray.length);
         }
         return  arrayMatches;
+    }
+
+    public boolean validateSharedDataButton()throws IOException {
+        getPlanspage();
+        wait.until(ExpectedConditions.elementToBeClickable(sharedDataButton));
+        clickOnElement(sharedDataButton);
+        fluentWait.until(ExpectedConditions.visibilityOf(getStartedButton));
+        boolean isDisplayed;
+        if(getStartedButton.isDisplayed() == true) {
+            isDisplayed = true;
+            System.out.println("Shared Data button is working");
+        }
+        else {
+            isDisplayed = false;
+            System.out.println("Shared Data button is not working");
+        }
+            return isDisplayed;
+
+    }
+    public boolean validateSingleDeviceButton()throws IOException {
+        getPlanspage();
+        wait.until(ExpectedConditions.elementToBeClickable(singleDeviceButton));
+        clickOnElement(singleDeviceButton);
+        wait.until(ExpectedConditions.elementToBeClickable(getStartedButton));
+        boolean isDisplayed;
+        if(getStartedButton.isDisplayed() == true) {
+            isDisplayed = true;
+            System.out.println("Single Device button is working");
+        }
+        else {
+            isDisplayed = false;
+            System.out.println("Single Device button is not working");
+        }
+        return isDisplayed;
+
+    }
+    public boolean validateNumberShareButton()throws IOException {
+        getPlanspage();
+        wait.until(ExpectedConditions.elementToBeClickable(numberShareButton));
+        clickOnElement(numberShareButton);
+        wait.until(ExpectedConditions.elementToBeClickable(getStartedButton));
+        boolean isDisplayed;
+        if(getStartedButton.isDisplayed() == true) {
+            isDisplayed = true;
+            System.out.println("Number Share button is working");
+        }
+        else {
+            isDisplayed = false;
+            System.out.println("Number Share button is not working");
+        }
+        return isDisplayed;
+
+    }
+    public boolean validatePrepaidButton()throws IOException {
+        getPlanspage();
+        wait.until(ExpectedConditions.elementToBeClickable(prepaidButton));
+        clickOnElement(prepaidButton);
+        fluentWait.until(ExpectedConditions.visibilityOf(getStartedButton));
+        boolean isDisplayed;
+        if(getStartedButton.isDisplayed() == true) {
+            isDisplayed = true;
+            System.out.println("Prepaid button is working");
+        }
+        else {
+            isDisplayed = false;
+            System.out.println("Prepaid button is not working");
+        }
+        return isDisplayed;
+
+    }
+    public boolean validateInternationalButton()throws IOException {
+        getPlanspage();
+        wait.until(ExpectedConditions.elementToBeClickable(internationalButton));
+        clickOnElement(internationalButton);
+        fluentWait.until(ExpectedConditions.visibilityOf(getStartedButton));
+        boolean isDisplayed;
+        if(getStartedButton.isDisplayed() == true) {
+            isDisplayed = true;
+            System.out.println("International button is working");
+        }
+        else {
+            isDisplayed = false;
+            System.out.println("International button is not working");
+        }
+        return isDisplayed;
+
     }
 
 

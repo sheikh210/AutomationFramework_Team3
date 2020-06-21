@@ -32,3 +32,38 @@ Test Case 5 - Plan Deal Drop Down Size
 3: Click on Wireless button
 4: Click on Plans button to navigate to plans page
 5: Validate Plan Deal Text compared to what is stored in excel
+
+Test Case 6 - Shared data Button
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Click on Shared Data Button and verify that the Get Started Button is displayed on the page
+
+Test Case 7 - Single Device Button
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Click on Single Device Button and verify that the Get Started Button is displayed on the page
+
+Test Case 8 - Number Share Button
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Click on Number Share Button and verify that the Get Started Button is displayed on the page
+
+Test Case 9 - Prepaid Button
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Click on Prepaid Button and verify that the Get Started Button is displayed on the page
+
+Test Case 10 - International Button
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Click on International Button and verify that the Get Started Button is displayed on the page
