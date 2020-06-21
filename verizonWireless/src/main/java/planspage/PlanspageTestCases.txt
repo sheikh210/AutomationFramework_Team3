@@ -1,0 +1,34 @@
+Test Case 1 - Navigate to Planspage
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Validate the Plans page url with what is stored in Excel
+
+Test Case 2 - Planspage Drop Down Text
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Validate Plans Drop Down Text compared to what is stored in excel
+
+Test Case 3 - Planspage Drop Down Size
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Validate Plans Drop Down Text compared to what is stored in excel
+
+Test Case 4 - Plan Deal Drop Down Text
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Validate Plan Deal Text compared to what is stored in excel
+
+Test Case 5 - Plan Deal Drop Down Size
+1: Launch Chrome Browser
+2: Direct chrome to Verizon homepage
+3: Click on Wireless button
+4: Click on Plans button to navigate to plans page
+5: Validate Plan Deal Text compared to what is stored in excel

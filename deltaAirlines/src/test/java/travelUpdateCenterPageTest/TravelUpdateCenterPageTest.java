@@ -16,7 +16,7 @@ import java.io.IOException;
 
 import static travelUpdateCenterPage.TravelUpdateCenterPageElements.*;
 
-public class TravelUpdateCenterPageTest extends WebAPI {
+public class     TravelUpdateCenterPageTest extends WebAPI {
 
     static TravelUpdateCenterPage travelUpdateCenterPage;
     static DataReader dataReader = new DataReader();
