@@ -83,6 +83,7 @@ public class ElectronicsPage extends WebAPI {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(electronicsButton));
         electronicsButton.click();
+        driver.navigate().refresh();
 
 
     }

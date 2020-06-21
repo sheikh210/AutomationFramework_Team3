@@ -298,6 +298,13 @@ public class ESPNPlus extends WebAPI {
         return pageUrl;
 
     }
+    /**
+     * Test Case: 13
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "Italian Serie" Button
+     * Verify  the page page Title
+     */
     public String validateItalianSerieAPage() {
 
         navigateToESPNPlusPage();
@@ -306,6 +313,13 @@ public class ESPNPlus extends WebAPI {
         return italianSerieAPageTitle;
 
     }
+    /**
+     * Test Case: 14
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "PGA Tour" Button
+     * Verify  the page page Title
+     */
     public String validatePGATourPage() {
 
         navigateToESPNPlusPage();
@@ -314,6 +328,13 @@ public class ESPNPlus extends WebAPI {
         return pGATourPageTitle;
 
     }
+    /**
+     * Test Case: 15
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "NFL" Button
+     * Verify  the page URL
+     */
     public String validateNewNFLPage() {
         navigateToESPNPlusPage();
         newNFLButton.click();
@@ -321,20 +342,39 @@ public class ESPNPlus extends WebAPI {
         return nFLPageUrl;
 
     }
+    /**
+     * Test Case: 16
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "MLB" Button
+     * Verify  the page Url
+     */
     public String validateMLBPage() {
         navigateToESPNPlusPage();
         mLBButton.click();
         String  mLBPageUrl=super.getCurrentPageUrl();
         return mLBPageUrl;
 
-    }
+    }/**
+     * Test Case: 17
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "NBA Tour" Button
+     * Verify  the page URL
+     */
     public String validateNBAPage() {
         navigateToESPNPlusPage();
         nBAButton.click();
         String  nBAPageUrl=super.getCurrentPageUrl();
         return nBAPageUrl;
 
-    }
+    }/**
+     * Test Case: 18
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "NHL" Button
+     * Verify  the page Title
+     */
     public String validateNHLPage() {
 
         navigateToESPNPlusPage();
@@ -343,6 +383,14 @@ public class ESPNPlus extends WebAPI {
         return nHLPagerTitle;
 
     }
+
+    /**
+     * Test Case: 19
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "MLS" Button
+     * Verify  the page Url
+     */
     public String validateMLSPage() {
 
         navigateToESPNPlusPage();
@@ -350,6 +398,13 @@ public class ESPNPlus extends WebAPI {
         String mLSPagerUrl = super.getCurrentPageUrl();
         return mLSPagerUrl;
     }
+    /**
+     * Test Case: 20
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "English League" Button
+     * Verify  the page page Title
+     */
     public String validateEnglishLeaguePage() {
 
         navigateToESPNPlusPage();

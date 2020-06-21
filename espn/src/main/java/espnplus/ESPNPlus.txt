@@ -59,11 +59,59 @@
  * Test Case: 11
      * Navigate to ESPN home page
      * Click on ESPN plus button
-     * Verify  the page page title
+     * Verify  the page title
 
 * Test Case: 12
      * Navigate to ESPN home page
      * Click on ESPN plus button
      * Mouse hover on Support & Faqs Button
      * Click on ESPN Help Center Button
-     * Verify  the page page Url
+     * Verify  the page Url
+
+* Test Case: 13
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "Italian Serie" Button
+     * Verify  the page Title
+
+* Test Case: 14
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "PGA Tour" Button
+     * Verify  the page Title
+
+  * Test Case: 15
+       * Navigate to ESPN home page
+       * Click on ESPN plus button
+       * Click on "NFL" Button
+       * Verify  the page URL
+
+* Test Case: 16
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "MLB" Button
+     * Verify  the page Url
+
+ * Test Case: 17
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "NBA Tour" Button
+     * Verify  the page URL
+
+ * Test Case: 18
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "NHL" Button
+     * Verify  the page Title
+
+ * Test Case: 19
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "MLS" Button
+     * Verify  the page Url
+
+* Test Case: 20
+     * Navigate to ESPN home page
+     * Click on ESPN plus button
+     * Click on "English League" Button
+     * Verify  the page page Title

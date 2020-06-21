@@ -1,0 +1,139 @@
+* Test case-1
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Click on Travel Update Button
+     * Verify Corona Virus update page URL
+
+* Test case-2
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Click on find And Use eCredit Button
+     * Verify find And Use eCredit text
+
+* Test case-3
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Click on Sign up  Button
+     * Click on Prefix  Button
+     * Click on Prefix  Text
+     * Verify Prefix text
+
+* Test case-4
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Click on Sign up  Button
+     * Write First Name
+     * Write Middle Name
+     * Write Last Name
+     * Click on Suffix  Button
+     * Click on Suffix   Text
+     * Verify Suffix text
+
+* Test case-5
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Click on Sign up  Button
+     * Click on Gender  Button
+     * Click on Male   Text
+     * Verify Male gender is Displayed
+
+* Test case-6
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Click on Sign up  Button
+     * Click on Month menu
+     * Select June Month
+     * Verify the month is Displayed
+
+ * Test case-7
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on Travel info menu
+     * Find out the Sub Menus
+     * Verify the sub menus number
+
+* Test case-8
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "Get to Know Medallion Status" Sub Menu
+     * Verify the "Get to Know Medallion Status" sub menu
+
+* Test case-9
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "Program Resources" Sub Menu
+     * Verify the "Program Resources" sub menu
+
+* Test case-10
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "Buy or Transfer Miles" Sub Menu
+     * Verify the "Buy or Transfer Miles" sub menu
+
+* Test case-11
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "SkyMiles Credit Cards" Sub Menu
+     * Verify the "SkyMiles Credit Cards" sub menu
+
+ * Test case-12
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "SkyMiles Partners" Sub Menu
+     * Verify the "SkyMiles Partners" sub menu
+
+* Test case-13
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "News & Special Offers" Sub Menu
+     * Verify the "News & Special Offers" sub menu
+
+* Test case-14
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "SkyMiles Cruises" Sub Menu
+     * Verify the "SkyMiles Cruises" sub menu
+
+* Test case-15
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "Book Award Travel" Sub Menu
+     * Verify the "Book Award Travel" sub menu
+
+ * Test case-16
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "Upgrade with Miles" Sub Menu
+     * Verify the "Upgrade with Miles" sub menu
+
+* Test case-17
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Mouse Hover on "Sky Miles" menu
+     * Find out the "Manage your Account" Sub Menu
+     * Verify the "Manage your Account" sub menu
+
+* Test case-19
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Click on Sign up  Button
+     * Click on "Question One" button
+     * Select Question one
+     * Verify the Question one is Displayed
+
+ * Test case-20
+     * Navigate to Delta home page (www.delta.com)
+     * Click on Find my e credit button to open
+     * Click on Sign up  Button
+     * Click on "Question Two" button
+     * Select Question Two
+     * Verify the Question Two is Displayed
