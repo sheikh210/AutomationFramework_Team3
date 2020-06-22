@@ -4,3 +4,123 @@ Test Case 1 - Navigate to Employers page
 3: Click on Explore Aetna Sites to reveal dropdown menu
 4: Click on For Employers link
 5: Validate the For Employers page url with what is stored in Exel
+
+Test Case 2: Products & Services Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Products & Services
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 3: Health plans list under P&S Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Health plans
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 4: Member programs list under P&S Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Member programs list
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 5: Member programs list Size under P&S Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Member programs list Size
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 6: Administration offerings list under P&S Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Administration offerings
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 7: Administration offerings list size under P&S Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Administration offerings list size
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 8: Solutions Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Solutions
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 9: By company size list under Solutions Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under By company size
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 10: By company size list size  under Solutions Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under By company size list size
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 11: By industry list under Solutions Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under By industry
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 12: By industry list size under Solutions Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under By industry list size
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 13: Resources Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Resources
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 14: Pay your bill list under Resources Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Pay your bill
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 15: Tools, manuals and forms list under Resources Dropdown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Tools, manuals and forms
+6: Validate the text by comparing to what is stored in excel
+
+Test Case 16: Trends and Insights DropDown
+1: Launch Chrome Browser
+2: Direct chrome to Aetna homepage
+3: Click on Explore Aetna Sites to reveal dropdown menu
+4: Click on For Employers link
+5: Get List of link text under Trends and Insights
+6: Validate the text by comparing to what is stored in excel
