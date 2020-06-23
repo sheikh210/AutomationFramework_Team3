@@ -11,7 +11,8 @@ public class MotorsPageTest extends WebAPI{
 
     static MotorsPage motorsPage;
     public static void getInItElements() {
-       motorsPage = PageFactory.initElements(driver,MotorsPage.class);
+
+        motorsPage = PageFactory.initElements(driver,MotorsPage.class);
     }
     //1
     @Test (priority = 1, enabled = false)
