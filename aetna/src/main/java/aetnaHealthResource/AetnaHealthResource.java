@@ -1,6 +1,7 @@
 package aetnaHealthResource;
 
 import commonAPI.WebAPI;
+import org.jsoup.select.Evaluator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -199,9 +200,9 @@ public class AetnaHealthResource extends WebAPI {
 
     //12
     public void validateHealthResourceIdNumber() {
-        List<WebElement> list = driver.findElements(By.tagName("id"));
-        System.out.println(list.size());
-        int linkNumber = list.size();
+        List<WebElement> id = driver.findElements(By.tagName("id"));
+        System.out.println(id.size());
+        int linkNumber = id.size();
         Assert.assertEquals(linkNumber, "123", "expected id number not found");
     }
 

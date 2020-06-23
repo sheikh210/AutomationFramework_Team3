@@ -1,0 +1,112 @@
+case-1.
+1. navigate to https://www.bankofamerica.com/
+2. click on small business page.
+3. open the small business page.
+
+case-2.
+1. navigate to https://www.bankofamerica.com/
+2. click on small business button to open page.
+3. navigate the small business page url.
+
+case-3.
+1. navigate to https://www.bankofamerica.com/
+2. click on small business button to open page.
+3. navigate the small business page title.
+
+case-4.
+1. navigate to https://www.bankofamerica.com/
+2. click on small business button to open page.
+3. gives the correct link number.
+
+case-5.
+1. navigate to https://www.bankofamerica.com/
+2. click on small business button to open page.
+3. move to back page.
+4. validate back the movement.
+
+case-6.
+1. navigate to https://www.bankofamerica.com/
+2. click on small business button to open page.
+3. move to back page.
+4. move to forward page.
+5. refresh the page.
+6. validate back the movement.
+
+case -7.
+1. navigate to https://www.bankofamerica.com/
+2. click on small business button to open page.
+3. validate small business page Url.
+
+case-8.
+1.Navigate to HomePage.
+2.click on small business button to open credit card page.
+2.get url for popular credit card page.
+
+case -9.
+1.Navigate to HomePage.
+2.click on small business button to open checking account page.
+3. get url.
+
+case - 10.
+1.Navigate to HomePage.
+2.click on small business button to open credit card page.
+2. check validation.
+
+case -11.
+1.Navigate to HomePage.
+2.click on small business button to open page.
+2. check validation.
+
+case-12.
+1. Navigate to https://www.bankofamerica.com/.
+2. Navigate to "https://www.bankofamerica.com/small business/".
+3. Ensure that home page logo is displayed.
+4. Click on Home page logo
+5. Get the valid page logo.
+
+case-13.
+1. Navigate to https://www.bankofamerica.com/.
+2. Navigate to "https://www.bankofamerica.com/small business/".
+3. Ensure that home page header search box is displayed.
+4. Click on Home page header search box
+5. Get the valid page header search box.
+
+case -14.
+1. Navigate to https://www.bankofamerica.com/.
+2. Navigate to "https://www.bankofamerica.com/small business/".
+3. Get the valid page.
+
+
+case -15.
+1. Navigate to https://www.bankofamerica.com/.
+2. Navigate to "https://www.bankofamerica.com/small business/".
+3. Get the valid page.
+
+
+case -16.
+1. Navigate to https://www.bankofamerica.com/.
+2. Navigate to "https://www.bankofamerica.com/small business/".
+3. Get the valid Explore App page.
+
+case -17.
+1. Navigate to https://www.bankofamerica.com/.
+2. Navigate to "https://www.bankofamerica.com/small business/".
+3. click business service button.
+4. get tax service page.
+
+case -18.
+1. Navigate to https://www.bankofamerica.com/.
+2. Navigate to "https://www.bankofamerica.com/small business/".
+3. click forgot password button.
+
+
+case -19.
+1. Navigate to https://www.bankofamerica.com/.
+2. Navigate to "https://www.bankofamerica.com/small business/".
+3. check validate sign in page or not.
+
+case - 20.
+1. Navigate to https://www.bankofamerica.com/.
+2. Navigate to "https://www.bankofamerica.com/small business/".
+3. click business service button.
+4. get online banking service page.
