@@ -9,11 +9,13 @@ public class TripAdvisorFlightspageElements {
 
     //-----------------------------------------------------------------------
     //case 2 elements
-    public static final String webclickMoreButton = "//*[@id=\"lithium-root\"]/main/div[1]/div[1]/div/div/div[16]/div/button";
+    public static final String webElementDropdownMoreBox = "body > div._1HphCM4i  ul._125crZwh";
+    public static final String webElementDropdownMoreCategories = "body > div._1HphCM4i  ul._125crZwh > div:not([class='_39kFrNls _2PEEtTWK']) li a";
 
     //-----------------------------------------------------------------------
     //case 3 elements
     public static final String webclickFlightsButton = "/html/body/div[2]/div/div/div/ul/div[3]";
+    public static final String webElementClickMoreButton = "#lithium-root div._1brQmsfe button._1yB-kafB  span._28xP7Srb";
 
     //-----------------------------------------------------------------------
     //case 4 elements

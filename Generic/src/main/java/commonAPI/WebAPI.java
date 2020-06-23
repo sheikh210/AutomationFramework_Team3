@@ -672,7 +672,7 @@ public class WebAPI {
         int falseCount = 0;
         boolean flag = false;
         for (int i = 0; i < expectedList.length; i++) {
-            if (actualList.get(i).getText().replace("’", "'").trim().equalsIgnoreCase(expectedList[i])) {
+            if (actualList.get(i).getText().replaceAll("’", "'").trim().equalsIgnoreCase(expectedList[i])) {
                 flag = true;
                 System.out.println("ACTUAL STRING " + (i + 1) + ": " + actualList.get(i).getText());
                 System.out.println("EXPECTED STRING " + (i + 1) + ": " + expectedList[i] + "\n");

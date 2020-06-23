@@ -130,7 +130,6 @@ public class ESPNHomepage extends WebAPI {
         Assert.assertEquals(actualListSize, expectedElementTopEventsDropdownCount, "LIST SIZE DOES NOT MATCH");
     }
 
-
     /**
      * Test Case 3 - Validate header scroll
      * 1 - Navigate to http://espn.com

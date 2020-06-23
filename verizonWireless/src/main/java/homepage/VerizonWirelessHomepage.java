@@ -1,283 +1,294 @@
 package homepage;
 import static homepage.VerizonWirelessHomepageElements.*;
 import commonAPI.WebAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import utilities.DataReader;
+
+import java.io.IOException;
+import java.util.List;
 
 public class VerizonWirelessHomepage extends WebAPI {
 
     //page object design pattern
     //case 1 elements
-    @FindBy(xpath = signinButton)
-    public WebElement websignbutton;
+    @FindBy(xpath = websigninButton)
+    public WebElement signbutton;
 
-    @FindBy(xpath = usernamefield)
-    public WebElement webusernamefield;
+    @FindBy(xpath = webusernamefield)
+    public WebElement usernamefield;
 
-    @FindBy(xpath = passwordfield)
-    public WebElement webpasswordfield;
+    @FindBy(xpath = webpasswordfield)
+    public WebElement passwordfield;
 
-    @FindBy(xpath = loginbutton)
-    public WebElement webloginbutton;
+    @FindBy(xpath = webloginbutton)
+    public WebElement loginbutton;
 
     //-----------------------------------------------------------------------
     //Case 2 Elements
-    @FindBy(xpath = click5gOverview)
-    public WebElement webclick5gOverview;
+    @FindBy(xpath = webclick5g)
+    public WebElement click5g;
 
-    @FindBy(xpath = swipeButton)
-    public WebElement webswipeButton;
+    @FindBy(xpath = webclick5gOverview)
+    public WebElement click5gOverview;
 
-    @FindBy(xpath = click5gHomeInternet)
-    public WebElement webclick5gHomeInternet;
+    @FindBy(xpath = webswipeButton)
+    public WebElement swipeButton;
+
+    @FindBy(xpath = webclick5gHomeInternet)
+    public WebElement click5gHomeInternet;
 
     //-----------------------------------------------------------------------
     //Case 3 Elements
-    @FindBy(xpath = clickSupportOverview)
-    public WebElement webclickSupportOverview;
+    @FindBy(xpath = webclickSupportOverview)
+    public WebElement clickSupportOverview;
 
-    @FindBy(xpath = searchBar)
-    public WebElement websearchBar;
+    @FindBy(xpath = websearchBar)
+    public WebElement searchBar;
 
-    @FindBy(xpath = searchButton)
-    public WebElement websearchButton;
+    @FindBy(xpath = websearchButton)
+    public WebElement searchButton;
 
-    @FindBy(xpath = clickPayBill)
-    public WebElement webclickPayBill;
+    @FindBy(xpath = webclickPayBill)
+    public WebElement clickPayBill;
 
     //-----------------------------------------------------------------------
     //Case 4 Elements
-    @FindBy(xpath = clickSmartphone)
-    public WebElement webclickSmartphone;
+    @FindBy(xpath = webclickSmartphone)
+    public WebElement clickSmartphone;
 
-    @FindBy(xpath = clickRetailPrice)
-    public WebElement webclickRetailPrice;
+    @FindBy(xpath = webclickRetailPrice)
+    public WebElement clickRetailPrice;
 
-    @FindBy(xpath = clickView)
-    public WebElement webclickView;
+    @FindBy(xpath = webclickView)
+    public WebElement clickView;
 
-    @FindBy(xpath = clickAddToCard)
-    public WebElement webclickAddToCard;
+    @FindBy(xpath = webclickAddToCard)
+    public WebElement clickAddToCard;
 
-    @FindBy(xpath = clickZipcodeForLocation)
-    public WebElement webclickZipcodeForLocation;
+    @FindBy(xpath = webclickZipcodeForLocation)
+    public WebElement clickZipcodeForLocation;
 
-    @FindBy(css = clickConfirmLocation)
-    public WebElement webclickConfirmLocation;
+    @FindBy(css = webclickConfirmLocation)
+    public WebElement clickConfirmLocation;
 
-    @FindBy(css = closeWindow)
-    public WebElement webcloseWindow;
+    @FindBy(css = webcloseWindow)
+    public WebElement closeWindow;
 
     //-----------------------------------------------------------------------
     //Case 5 Elements
-    @FindBy(xpath = clickVerizonUp)
-    public WebElement webclickVerizonUp;
+    @FindBy(xpath = webclickVerizonUp)
+    public WebElement clickVerizonUp;
 
-    @FindBy(xpath = clickEligible)
-    public WebElement webclickEligible;
+    @FindBy(xpath = webclickEligible)
+    public WebElement clickEligible;
 
-    @FindBy(xpath = clickResponders)
-    public WebElement webclickResponders;
+    @FindBy(xpath = webclickResponders)
+    public WebElement clickResponders;
 
-    @FindBy(xpath = clickFios)
-    public WebElement webclickFios;
+    @FindBy(xpath = webclickFios)
+    public WebElement clickFios;
 
-    @FindBy(xpath = clickLearnMore)
-    public WebElement webclickLearnMore;
+    @FindBy(xpath = webclickLearnMore)
+    public WebElement clickLearnMore;
 
     //-----------------------------------------------------------------------
     //Case 6 Elements
-    @FindBy(xpath = clickUnlimited)
-    public WebElement webclickUnlimited;
+    @FindBy(xpath = webclickUnlimited)
+    public WebElement clickUnlimited;
     //
-    @FindBy(xpath = clickChartView)
-    public WebElement webclickChartView;
+    @FindBy(xpath = webclickChartView)
+    public WebElement clickChartView;
 
-    @FindBy(xpath = clickMinusButton)
-    public WebElement webclickMinusButton;
+    @FindBy(xpath = webclickMinusButton)
+    public WebElement clickMinusButton;
 
     //-----------------------------------------------------------------------
     //Case 7 Elements
-    @FindBy(xpath = clickTradeIn)
-    public WebElement webclickTradeIn;
+    @FindBy(xpath = webclickTradeIn)
+    public WebElement clickTradeIn;
 
-    @FindBy(xpath = clickSearchbar)
-    public WebElement webclickSearchbar;
+    @FindBy(xpath = webclickSearchbar)
+    public WebElement clickSearchbar;
 
-    @FindBy(xpath = clickConfirm)
-    public WebElement webclickConfirm;
+    @FindBy(xpath = webclickConfirm)
+    public WebElement clickConfirm;
 
-    @FindBy(xpath = clickGood)
-    public WebElement webclickGood;
+    @FindBy(xpath = webclickGood)
+    public WebElement clickGood;
 
     //-----------------------------------------------------------------------
     //Case 8 Elements
-    @FindBy(xpath = clickInHome)
-    public WebElement webclickInHome;
+    @FindBy(xpath = webclickInHome)
+    public WebElement clickInHome;
 
-    @FindBy(xpath = clickTV)
-    public WebElement webclickTV;
+    @FindBy(xpath = webclickTV)
+    public WebElement clickTV;
 
-    @FindBy(xpath = clickAvailability)
-    public WebElement webclickAvailability;
+    @FindBy(xpath = webclickAvailability)
+    public WebElement clickAvailability;
 
-    @FindBy(xpath = clickZipcode)
-    public WebElement webclickZipcode;
+    @FindBy(xpath = webclickZipcode)
+    public WebElement clickZipcode;
 
-    @FindBy(xpath = clickAddress)
-    public WebElement webclickAddress;
+    @FindBy(xpath = webclickAddress)
+    public WebElement clickAddress;
 
-    @FindBy(xpath = clickResult)
-    public WebElement webclickResult;
+    @FindBy(xpath = webclickResult)
+    public WebElement clickResult;
 
     //-----------------------------------------------------------------------
     //Case 9 Elements
-    @FindBy(xpath = clickBusiness)
-    public WebElement webclickBusiness;
+    @FindBy(xpath = webclickBusiness)
+    public WebElement clickBusiness;
 
-    @FindBy(xpath = clickEducation)
-    public WebElement webclickEducation;
+    @FindBy(xpath = webclickEducation)
+    public WebElement clickEducation;
 
-    @FindBy(xpath = clickLearnMore2)
-    public WebElement webclickLearnMore2;
+    @FindBy(xpath = webclickLearnMore2)
+    public WebElement clickLearnMore2;
 
-    @FindBy(xpath = clickBusinessContinuity)
-    public WebElement webclickBusinessContinuity;
+    @FindBy(xpath = webclickBusinessContinuity)
+    public WebElement clickBusinessContinuity;
 
     //-----------------------------------------------------------------------
     //Case 10 Elements
-    @FindBy(xpath = clickHomePage)
-    public WebElement webclickHomePage;
+    @FindBy(xpath = webclickHomePage)
+    public WebElement clickHomePage;
 
-    @FindBy(xpath = clickResponsibility)
-    public WebElement webclickResponsibility;
+    @FindBy(xpath = webclickResponsibility)
+    public WebElement clickResponsibility;
 
-    @FindBy(xpath = clickAbilities)
-    public WebElement webclickAbilities;
+    @FindBy(xpath = webclickAbilities)
+    public WebElement clickAbilities;
 
-    @FindBy(xpath = clickReadStory)
-    public WebElement webclickReadStory;
+    @FindBy(xpath = webclickReadStory)
+    public WebElement clickReadStory;
 
     //-----------------------------------------------------------------------
     //Case 11 Elements
-    @FindBy(xpath = clickWirelessButton)
-    public WebElement webclickWirelessButton;
+    @FindBy(xpath = webclickWirelessButton)
+    public WebElement clickWirelessButton;
 
-    @FindBy(xpath = clickShopAllAccessories)
-    public WebElement webclickShopAllAccessories;
+    @FindBy(xpath = webclickShopAllAccessories)
+    public WebElement clickShopAllAccessories;
 
-    @FindBy(xpath = clickKeyboards)
-    public WebElement webclickKeyboards;
+    @FindBy(xpath = webclickKeyboards)
+    public WebElement clickKeyboards;
 
-    @FindBy(xpath = clickItem)
-    public WebElement webclickItem;
+    @FindBy(xpath = webclickItem)
+    public WebElement clickItem;
 
-    @FindBy(xpath = clickAddFilter)
-    public WebElement webclickAddFilter;
+    @FindBy(xpath = webclickAddFilter)
+    public WebElement clickAddFilter;
 
-    @FindBy(xpath = clickBrand)
-    public WebElement webclickBrand;
+    @FindBy(xpath = webclickBrand)
+    public WebElement clickBrand;
 
-    @FindBy(xpath = clickApple)
-    public WebElement webclickApple;
+    @FindBy(xpath = webclickApple)
+    public WebElement clickApple;
 
-    @FindBy(xpath = clickCloseFilter)
-    public WebElement webclickCloseFilter;
+    @FindBy(xpath = webclickCloseFilter)
+    public WebElement clickCloseFilter;
 
     //-----------------------------------------------------------------------
     //Case 12 Elements
-    @FindBy(xpath = clickMobileApp)
-    public WebElement webclickMobileApp;
+    @FindBy(xpath = webclickMobileApp)
+    public WebElement clickMobileApp;
 
-    @FindBy(xpath = clickDataHub)
-    public WebElement webclickDataHub;
+    @FindBy(xpath = webclickDataHub)
+    public WebElement clickDataHub;
 
     //-----------------------------------------------------------------------
     //Case 13 Elements
-    @FindBy(xpath = clickStores)
-    public WebElement webclickStores;
+    @FindBy(xpath = webclickStores)
+    public WebElement clickStores;
 
-    @FindBy(xpath = clickZipCodeBar)
-    public WebElement webclickZipCodeBar;
+    @FindBy(xpath = webclickZipCodeBar)
+    public WebElement clickZipCodeBar;
 
-    @FindBy(xpath = clickStoresNearMe)
-    public WebElement webclickStoresNearMe;
+    @FindBy(xpath = webclickStoresNearMe)
+    public WebElement clickStoresNearMe;
 
     //-----------------------------------------------------------------------
     //Case 14 Elements
-    @FindBy(xpath = clickReturnPolicy)
-    public WebElement webclickReturnPolicy;
+    @FindBy(xpath = webclickReturnPolicy)
+    public WebElement clickReturnPolicy;
 
-    @FindBy(xpath = clickReturnAndService)
-    public WebElement webclickReturnAndService;
+    @FindBy(xpath = webclickReturnAndService)
+    public WebElement clickReturnAndService;
 
-    @FindBy(xpath = clickGiftCard)
-    public WebElement webclickGiftCard;
+    @FindBy(xpath = webclickGiftCard)
+    public WebElement clickGiftCard;
 
     //-----------------------------------------------------------------------
     //Case 15 Elements
-    @FindBy(xpath = clickSeeMoreApps)
-    public WebElement webclickSeeMoreApps;
+    @FindBy(xpath = webclickSeeMoreApps)
+    public WebElement clickSeeMoreApps;
 
-    @FindBy(xpath = clickEntertainment)
-    public WebElement webclickEntertainment;
+    @FindBy(xpath = webclickEntertainment)
+    public WebElement clickEntertainment;
 
-    @FindBy(xpath = clickLearnMoreMessages)
-    public WebElement webclickLearnMoreMessages;
+    @FindBy(xpath = webclickLearnMoreMessages)
+    public WebElement clickLearnMoreMessages;
 
     //-----------------------------------------------------------------------
     //Case 16 Elements
-    @FindBy(xpath = clickVerizonGiftCard)
-    public WebElement webclickVerizonGiftCard;
+    @FindBy(xpath = webclickVerizonGiftCard)
+    public WebElement clickVerizonGiftCard;
 
-    @FindBy(xpath = click50)
-    public WebElement webclick50;
+    @FindBy(xpath = webclick50)
+    public WebElement click50;
 
-    @FindBy(xpath = clickAddToCardButton)
-    public WebElement webclickAddToCardButton;
+    @FindBy(xpath = webclickAddToCardButton)
+    public WebElement clickAddToCardButton;
 
     //-----------------------------------------------------------------------
     //Case 17 Elements
-    @FindBy(xpath = clickCommunityForum)
-    public WebElement webclickCommunityForum;
+    @FindBy(xpath = webclickCommunityForum)
+    public WebElement clickCommunityForum;
 
-    @FindBy(xpath = chooseCommunityBlog)
-    public WebElement webchooseCommunityBlog;
+    @FindBy(xpath = webchooseCommunityBlog)
+    public WebElement chooseCommunityBlog;
 
     //-----------------------------------------------------------------------
     //Case 18 Elements
-    @FindBy(xpath = clickVerizonCloud)
-    public WebElement webclickVerizonCloud;
+    @FindBy(xpath = webclickVerizonCloud)
+    public WebElement clickVerizonCloud;
 
-    @FindBy(xpath = ClickNeedHelp)
-    public WebElement webClickNeedHelp;
+    @FindBy(xpath = webclickNeedHelp)
+    public WebElement clickNeedHelp;
 
-    @FindBy(xpath = selectBackupAssistantPlus)
-    public WebElement webselectBackupAssistantPlus;
+    @FindBy(xpath = webselectBackupAssistantPlus)
+    public WebElement selectBackupAssistantPlus;
 
     //-----------------------------------------------------------------------
     //Case 19 Elements
-    @FindBy(xpath = clickSmartFamily)
-    public WebElement webclickSmartFamily;
+    @FindBy(xpath = webclickSmartFamily)
+    public WebElement clickSmartFamily;
 
-    @FindBy(xpath = clickPickMeUp)
-    public WebElement webclickPickMeUp;
+    @FindBy(xpath = webclickPickMeUp)
+    public WebElement clickPickMeUp;
 
-    @FindBy(xpath = clickLearnMoreDigital)
-    public WebElement webclickLearnMoreDigital;
+    @FindBy(xpath = webclickLearnMoreDigital)
+    public WebElement clickLearnMoreDigital;
 
     //-----------------------------------------------------------------------
     //Case 20 Elements
-    @FindBy(xpath = clickDeviceProtection)
-    public WebElement webclickDeviceProtection;
+    @FindBy(xpath = webclickDeviceProtection)
+    public WebElement clickDeviceProtection;
 
-    @FindBy(xpath = clickSecurity)
-    public WebElement webclickSecurity;
+    @FindBy(xpath = webclickSecurity)
+    public WebElement clickSecurity;
 
-    @FindBy(xpath = clickSecurityLearnMoreNews)
-    public WebElement webclickSecurityLearnMoreNews;
+    @FindBy(xpath = webclickSecurityLearnMoreNews)
+    public WebElement clickSecurityLearnMoreNews;
     //-----------------------------------------------------------------------
-
+    DataReader dataReader = new DataReader();
     /**
      * >>>Test Case 1 - Login Functionality<<<
      * Open Chrome Browser
@@ -290,11 +301,24 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Type Password
      * Click sign in
      */
+    public void validatePageTitle() throws IOException {
+        String actualTitle = getCurrentPageTitle();
+        System.out.println("Page Title: " + actualTitle);
+
+        String [] expectedHomePageTitleArray = dataReader.fileReaderStringXSSF(System.getProperty("user.dir")+
+                "//src/main/resources/VerizonWireless_Homepage_ExpectedElements.xlsx","Homepage Title");
+        String expectedHomePageTitle = expectedHomePageTitleArray [0];
+        System.out.println("Expected Page Title: "+expectedHomePageTitle);
+
+        Assert.assertEquals(actualTitle, expectedHomePageTitle, "HOMEPAGE TITLE DOES NOT MATCH");
+    }
     public void doLogin() {
-        websignbutton.click();
-        webusernamefield.sendKeys(username);
-        webpasswordfield.sendKeys(password);
-        webloginbutton.click();
+        WebDriverWait expWait = new WebDriverWait(driver, 10);
+        expWait.until(ExpectedConditions.elementToBeClickable(signbutton));
+        signbutton.click();
+        usernamefield.sendKeys(username);
+        passwordfield.sendKeys(password);
+        loginbutton.click();
     }
 
     /**
@@ -304,7 +328,6 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Wait Landing page
      * Click 5G
      * Verify subcategories are visible
-     * Verify subcategories are clickable
      * Open 5G Overview
      * Wait landing
      * Scroll down
@@ -312,31 +335,48 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Click 5G
      * Open 5G Home Internet
      */
-    public void goto5Gpage() {
-        webclick5gOverview.click();
-        webswipeButton.click();
-        webclick5gHomeInternet.click();
+    public int goto5Gpage() {
+        mouseHover(click5g);
+        List<WebElement> topEventsDropDownList = getListOfWebElementsByXpath(click5g, webclick5g);
+        int listSize = topEventsDropDownList.size();
+        click5gOverview.click();
+        swipeButton.click();
+        click5gHomeInternet.click();
+        return listSize;
+    }
+    public void validate5GPage() throws IOException {
+        int [] expectedListArrayCount = dataReader.fileReaderIntegerHSSF(System.getProperty("user.dir")+
+                "//src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","5G Page List");
+        int expectedCategoryList = expectedListArrayCount[0];
+
+        Assert.assertEquals(goto5Gpage(),expectedCategoryList,"List size does not match");
     }
 
     /**
-     * >>>Test Case 3 - Support Page<<<
+     * >>>Test Case 3 - Go To Support Page<<<
      * Click Support
      * Open Support overview
+     *
+     */
+    public void goToSupportPage() {
+        clickSupportOverview.click();
+        searchBar.click();
+        searchButton.click();
+        clickPayBill.click();
+    }
+
+     /**
      * Click Search bar
      * Type >>>Make Payment<<<
      * Click search
      * Wait landing page
      * Click Pay Bill
      */
-    public void goToSupportPage() {
-        webclickSupportOverview.click();
-        websearchBar.click();
-        websearchButton.click();
-        webclickPayBill.click();
-    }
+
+
 
     /**
-     * >>>Test Case 4 - Shop Page<<<
+     * >>>Test Case 4 - SmartPhone Page<<<
      * Click Shop
      * Open Smartphones
      * Click Pricing
@@ -350,13 +390,13 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Click X to exit
      */
     public void goToSmartPhonePage() {
-        webclickSmartphone.click();
-        webclickRetailPrice.click();
-        webclickView.click();
-        webclickAddToCard.click();
-        webclickZipcodeForLocation.sendKeys("11223");
-        webclickConfirmLocation.click();
-        webcloseWindow.click();
+        clickSmartphone.click();
+        clickRetailPrice.click();
+        clickView.click();
+        clickAddToCard.click();
+        clickZipcodeForLocation.sendKeys("11223");
+        clickConfirmLocation.click();
+        closeWindow.click();
     }
 
     /**
@@ -371,11 +411,11 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Click Learn more
      */
     public void goToDealsPage() {
-        webclickVerizonUp.click();
-        webclickEligible.click();
-        webclickResponders.click();
-        webclickFios.click();
-        webclickLearnMore.click();
+        clickVerizonUp.click();
+        clickEligible.click();
+        clickResponders.click();
+        clickFios.click();
+        clickLearnMore.click();
     }
 
     /**
@@ -387,9 +427,9 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Click minus 3 times
      */
     public void goToPlanPage() {
-        webclickUnlimited.click();
-        webclickChartView.click();
-        webclickMinusButton.click();
+        clickUnlimited.click();
+        clickChartView.click();
+        clickMinusButton.click();
     }
 
     /**
@@ -402,10 +442,10 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Click >Good
      */
     public void goToPhonePage() {
-        webclickTradeIn.click();
-        webclickSearchbar.sendKeys("Iphone XR");
-        webclickConfirm.click();
-        webclickGood.click();
+        clickTradeIn.click();
+        clickSearchbar.sendKeys("Iphone XR");
+        clickConfirm.click();
+        clickGood.click();
     }
 
     /**
@@ -420,12 +460,12 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Click result
      */
     public void goToInHomePage() {
-        webclickInHome.click();
-        webclickTV.click();
-        webclickAvailability.click();
-        webclickZipcode.sendKeys("11223");
-        webclickAddress.sendKeys("2203 West Street");
-        webclickResult.click();
+        clickInHome.click();
+        clickTV.click();
+        clickAvailability.click();
+        clickZipcode.sendKeys("11223");
+        clickAddress.sendKeys("2203 West Street");
+        clickResult.click();
     }
 
     /**
@@ -436,10 +476,10 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Click Business continuity
      */
     public void goToBusinessPage() {
-        webclickBusiness.click();
-        webclickEducation.click();
-        webclickLearnMore2.click();
-        webclickBusinessContinuity.click();
+        clickBusiness.click();
+        clickEducation.click();
+        clickLearnMore2.click();
+        clickBusinessContinuity.click();
     }
 
     /**
@@ -450,10 +490,10 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Click Read Story
      */
     public void goToResponsibilityPage() {
-        webclickHomePage.click();
-        webclickResponsibility.click();
-        webclickAbilities.click();
-        webclickReadStory.click();
+        clickHomePage.click();
+        clickResponsibility.click();
+        clickAbilities.click();
+        clickReadStory.click();
     }
 
     /**
@@ -469,21 +509,15 @@ public class VerizonWirelessHomepage extends WebAPI {
      * Click Close filter
      */
     public void goToAccessories() {
-        webclickWirelessButton.click();
-        webclickShopAllAccessories.click();
-        webclickKeyboards.click();
-        webclickItem.click();
-        webclickAddFilter.click();
-        webclickBrand.click();
-        webclickApple.click();
-        webclickCloseFilter.click();
+        clickWirelessButton.click();
+        clickShopAllAccessories.click();
+        clickKeyboards.click();
+        clickItem.click();
+        clickAddFilter.click();
+        clickBrand.click();
+        clickApple.click();
+        clickCloseFilter.click();
     }
 
 
-
-    //3---validate method
-    //assertion
-    public void validateLogin() {
-
-    }
 }

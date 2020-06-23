@@ -2,8 +2,12 @@ package flightspage;
 import static flightspage.TripAdvisorFlightspageElements.*;
 import commonAPI.WebAPI;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utilities.DataReader;
 
@@ -11,10 +15,11 @@ import java.io.IOException;
 import java.util.List;
 
 public class TripAdvisorFlightspage extends WebAPI {
+    WebDriverWait wait = new WebDriverWait(driver, 10);
 
-    //Case 2 Elements
-    @FindBy (xpath = webclickMoreButton)
-    public WebElement clickMoreButton;
+    //Case 2 Elements (List)
+    @FindBy (xpath = webElementDropdownMoreCategories)
+    public WebElement dropdownMoreCategories;
 
     //-----------------------------------------------------------------------
     //Case 3 Elements
@@ -219,19 +224,45 @@ public class TripAdvisorFlightspage extends WebAPI {
      * Expand it
      * Validate 9 Category are there
      */
-    public int getMoreCategories() {
-        clickMoreButton.click();
-        List<WebElement> moreCategories = clickMoreButton.findElements(By.xpath(webclickMoreButton));
-        int moreCategoryList = moreCategories.size();
-        return moreCategoryList;
+
+    @FindBy (css = webElementClickMoreButton)
+    private WebElement clickMoreButton;
+
+    @FindBy (css = webElementDropdownMoreBox)
+    private WebElement dropdownMoreBox;
+
+    public int getMoreCategories() throws Exception {
+
+        wait.until(ExpectedConditions.elementToBeClickable(clickMoreButton));
+        Thread.sleep(2000);
+
+        try {
+            clickOnElement(clickMoreButton);
+            System.out.println("Clicked");
+        } catch (ElementNotInteractableException e) {
+            System.out.println("COULD NOT CLICK");
+            try {
+                Actions click = new Actions(driver);
+                click.click(clickMoreButton);
+                System.out.println("Clicked 2");
+            } catch (Exception e1) {
+                e.getMessage();
+                e1.getMessage();
+            }
+        }
+
+        wait.until(ExpectedConditions.visibilityOf(dropdownMoreBox));
+
+        List<WebElement> moreCategories = driver.findElements(By.cssSelector(webElementDropdownMoreCategories));
+        return moreCategories.size();
     }
 
-    public void validateCategoryList() throws IOException {
-        int [] expectedMenuArrayCount = dataReader.fileReaderIntegerHSSF(System.getProperty("user.dir")+
-                "//src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","MoreCategory List");
-        int expectedCategoryList = expectedMenuArrayCount[0];
+    public int validateCategoryList() throws IOException {
+        int [] expectedMenuArrayCount = dataReader.fileReaderIntegerXSSF(System.getProperty("user.dir")+
+                "/src/main/resources/TripAdvisor_FlightsPage_ExpectedElements.xlsx","MoreCategory List");
 
-        Assert.assertEquals(getMoreCategories(),expectedCategoryList,"List size does not match");
+        return expectedMenuArrayCount[0];
+
     }
 
     /**
@@ -253,6 +284,7 @@ public class TripAdvisorFlightspage extends WebAPI {
      */
     public int getEllipsMenu() {
         mouseHover(clickEllipsMenuButton);
+
         List<WebElement> ellipsMenuList = clickEllipsMenuButton.findElements(By.xpath(webclickEllipsMenuButton));
         int ellipsMenuSize = ellipsMenuList.size();
         return ellipsMenuSize;

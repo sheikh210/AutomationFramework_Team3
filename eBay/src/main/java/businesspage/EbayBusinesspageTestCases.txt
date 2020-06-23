@@ -1,0 +1,115 @@
+"3990NY_Firdovsi Isgandarov"
+
+Ebay Business Page Test cases
+
+>>>Test Case 1 - Go to Home Page<<<
+Open Chrome Browser
+Type Url >>https://www.ebay.com/<<
+Wait until home page is landing
+Get Home Page Title
+
+>>>Test Case 2 - Go to Business Page<<<
+Click Business And Industrial
+Wait until page is landing
+Get Page Title
+
+>>>Test Case 3 - Check My Ebay Button<<<
+Click My Ebay Button
+Expand it
+Validate 9 subcategories are visible
+
+>>>Test Case 4 - Check Business & Industrial Button<<<
+Click Category DropDown Button on search bar
+Expand it
+Validate 34 subcategories are visible
+
+>>>Test Case 5 - SideBar DropDown button<<<
+Click Agriculture DropDown Button
+Expand it
+Click Building Material DropDown Button
+Validate 17 Subcategories are visible
+
+>>>Test Case 6 - Go To "Building Materials & Supplies Page"<<<
+Click Building Material DropDown Button
+Expand it
+Click Building Materials And Supplies Page Button
+
+>>>Test Case 7 - Check Swipe Button<<<
+Scroll down
+Find "Save on Building Materials & Supplies"
+Click Right Swipe Button
+Wait until expected item visible
+
+>>>Test Case 8 - Check Brand Box<<<
+Find Brand Box on the left side bar
+Click See All Button
+Click Agilent Button
+Click Dayton Button
+Click Quantum Button
+Click Apply Button
+
+>>>Test Case 9 - Check Guaranteed Delivery Box<<<
+Find Guaranteed Delivery Box on the left side bar
+Click Delivery See All Button
+Click 3 Day Shipping
+Click Apply
+
+>>>Test Case 10 - Check Price Box<<<
+Find Price Box on the left side bar
+Click Minimum Price Field
+Type 15$
+Click Maximum Price Field
+Type 50$
+Click Submit Price Range Button
+
+>>>Test Case 11 - Check Item Location Box<<<
+Click Within Button
+Click Miles Button
+Click 100 Miles Button
+Click Zip Code Bar
+Type 11223
+Click Submit Price Range Button
+
+>>>Test Case 12 - Check Show Only Box<<<
+Click See All Button 2
+Click Returns Accepted
+Wait Until Page is Landing
+
+>>>Test Case 13 - Check Search Bar<<<
+Click Search Bar On Header
+Type Wood
+Click Search
+
+>>>Test Case 14 - Change View Of Page<<<
+Click Ellipse Menu Button
+Expand It
+Click Gallery View
+
+>>>Test Case 15 - Best Match Bar<<<
+Click Best Match Button
+Verify 6 Options Are Available
+
+>>>Test Case 16 - Condition Box<<<
+Click Condition Box
+Verify 3 options are available
+Click New Button
+
+>>>Test Case 17 - Buy It Now Option<<<
+Verify 4 Sales Options are available
+Print All names of Sales Options
+Click Buy It Now
+
+>>>Test Case 18 - Page Swipe Button<<<
+Scroll down
+Verify Right Arrow is visible
+Click Right Arrow 2 times
+
+>>>Test Case 19 - Verify Items Per Page Options<<<
+Scroll Down
+Click Items Per Page
+Verify 4 Options Available
+Click 96
+
+>>>Test Case 20 - Remove Filter<<<
+Find Chosen Filter Top side of the Item List
+Click X button
