@@ -1,0 +1,44 @@
+Test Case 1:
+1. Navigate to change my flight
+2.change my flight displayed
+
+Test Case 2:
+1. Navigate to change my flight
+2.get coronavirus url
+
+
+Test Case 3:
+1. Navigate to change my flight
+2.coronavirus title
+
+Test Case 4:
+1. Navigate to change my flight
+2. get arrow menu
+
+Test Case 5:
+1. Navigate to change my flight
+2.Back to homepage
+
+
+Test Case 6:
+1. Navigate to change my flight
+2.return to travel update page
+
+
+Test Case 7:
+1. Navigate to change my flight
+2.OnBoard services displayed
+
+
+Test Case 8:
+1. Navigate to change my flight
+2.Get travel info page
+
+
+Test Case 9:
+1. Navigate to change my flight
+2.link number from delta to our customer
+
+Test Case 10:
+1. Navigate to change my flight
+2.Link number from flying

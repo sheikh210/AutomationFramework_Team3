@@ -1,0 +1,91 @@
+Test Case 1:
+1.Validate homepage
+2.Open golf page
+3.get the url for golf
+
+
+Test Case 2:
+1.Validate homepage
+2.Scores menu displayed
+
+Test Case 3:
+1.Validate homepage
+2.Schedule menu displayed
+
+Test Case 4:
+1.Validate homepage
+2.Home menu displayed
+
+Test Case 5:
+1.Validate homepage
+2.Ranking menu displayed
+
+
+Test Case 6:
+1.Validate homepage
+2.Standings menu displayed
+
+
+Test Case 7:
+1.Validate homepage
+2.Stats menu displayed
+
+Test Case 8:
+1.Validate homepage
+2.Plyers menu displayed
+
+Test Case 9:
+1.Validate homepage
+2.Master com menu displayed
+
+
+Test Case 10:
+1.Validate homepage
+2.FexEx cup dispalyed
+
+Test Case 11:
+1.Validate homepage
+
+
+Test Case 12:
+1.Validate homepage
+2.get golf page title
+
+
+Test Case 13:
+1.Validate homepage
+2.Streak page url
+
+
+Test Case 14:
+1.Validate homepage
+2.Streak page url
+
+
+Test Case 15:
+1.Validate homepage
+2.football page url
+
+
+Test Case 16:
+1.Validate homepage
+2. football page title
+
+
+Test Case 17:
+1.Validate homepage
+2.Basketball page url
+
+Test Case 18:
+1.Validate homepage
+2.Basketball page title
+
+Test Case 19:
+1.Validate homepage
+2.Baseball url
+
+
+Test Case 20:
+1.Validate homepage
+2.baseball title
+

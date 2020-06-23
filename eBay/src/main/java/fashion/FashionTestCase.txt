@@ -1,0 +1,90 @@
+Test Case 1:
+1.Navigate to homepage
+2.click on fashion button
+3.open on shop by category menu
+
+Test Case 2:
+1.Navigate to homepage
+2.get page title
+
+
+Test Case 3:
+1.Navigate to homepage
+2.search product on top categories
+
+Test Case 4:
+1.Navigate to homepage
+2.search product on shop by category
+
+Test Case 5:
+1.Navigate to homepage
+2.get text on more brand outlet
+
+
+Test Case 6:
+1.Navigate to homepage
+2.get pageurl for fashion button
+
+Test Case 7:
+1.Navigate to homepage
+2.Click on fashion menu
+3.Click on all categories
+4.click on search button
+5.Make sure product is there
+
+
+Test Case 8:
+1.Navigate to homepage
+2.move back to page
+
+Test Case 9:
+1.Navigate to homepage
+2.click on fashion page
+3.move to forward page
+
+Test Case 10:
+
+
+Test Case 11:
+1.Navigate to homepage
+2.open homepage
+3.return url
+
+Test Case 12:
+1.Navigate to homepage
+2. Click on women's clothing arrow menu
+3. open all the option for women's clothing menu
+
+Test Case 13:
+1.Navigate to homepage
+2. get actual link for chanel
+
+
+Test Case 14:
+1.Navigate to homepage
+2.Jewelry button will be displayed
+
+Test Case 15:
+1.Navigate to homepage
+2.get back to title
+3.get the current url
+
+Test Case 16:
+1.Navigate to homepage
+2.get the vintage arrow option
+
+Test Case 17:
+1.Navigate to homepage
+2.To see health menu will be displayed
+
+Test Case 18:
+1.Navigate to homepage
+2.get the url for women's clothing menu
+
+Test Case 19:
+1.Navigate to homepage
+2.link for shoes menu
+
+Test Case 20:
+1.Navigate to homepage
+2.link for watch menu

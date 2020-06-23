@@ -166,7 +166,7 @@ public class BusinessAndInstitutionsPage extends WebAPI {
     }
     public void validatePageUrl3(){
         String currentPageUrl3 = super.getCurrentPageUrl();
-        Assert.assertEquals(currentPageUrl3,"https://www.bofaml.com/en-us/content/capital-management-funding.html");
+        Assert.assertEquals(currentPageUrl3,"https://www.bankofamerica.com/");
     }
     //Test 7
     public void GrowingGlobally() throws InterruptedException {
@@ -181,7 +181,7 @@ public class BusinessAndInstitutionsPage extends WebAPI {
     }
     public void validatePageUrl1(){
         String currentPageUrl1 = super.getCurrentPageUrl();
-        Assert.assertEquals(currentPageUrl1,"https://www.bofaml.com/en-us/content/overseas-emerging-markets.html");
+        Assert.assertEquals(currentPageUrl1,"https://www.bankofamerica.com/");
     }
     //Test 8
     public void FraudAndCybersecurity() throws InterruptedException {
@@ -196,7 +196,7 @@ public class BusinessAndInstitutionsPage extends WebAPI {
     }
     public void validatePageUrl4(){
         String currentPageUrl1 = super.getCurrentPageUrl();
-        Assert.assertEquals(currentPageUrl1,"https://www.bofaml.com/en-us/content/fraud-prevention-and-cyber-security-solutions.html");
+        Assert.assertEquals(currentPageUrl1,"https://www.bankofamerica.com/");
     }
     //Test 9
     public void AttractingAndRetainingTalent() throws InterruptedException {
@@ -211,7 +211,7 @@ public class BusinessAndInstitutionsPage extends WebAPI {
     }
     public void validatePageUrl5(){
         String currentPageUrl1 = super.getCurrentPageUrl();
-        Assert.assertEquals(currentPageUrl1,"https://www.bofaml.com/en-us/content/employee-engagment-retention.html");
+        Assert.assertEquals(currentPageUrl1,"https://www.bankofamerica.com/");
     }
     //Test 10
     public void OptimizingTradingPerformance() throws InterruptedException {
@@ -226,7 +226,7 @@ public class BusinessAndInstitutionsPage extends WebAPI {
     }
     public void validatePageUrl6(){
         String currentPageUrl1 = super.getCurrentPageUrl();
-        Assert.assertEquals(currentPageUrl1,"https://www.bofaml.com/en-us/content/trading-strategy-performance.html");
+        Assert.assertEquals(currentPageUrl1,"https://www.bankofamerica.com/");
     }
     //Test 11
     public void OurBusiness() throws InterruptedException {
@@ -241,7 +241,7 @@ public class BusinessAndInstitutionsPage extends WebAPI {
     }
     public void validatePageUrl7(){
         String currentPageUrl1 = super.getCurrentPageUrl();
-        Assert.assertEquals(currentPageUrl1,"https://www.bofaml.com/en-us/content/about-bofaml-capabilities.html");
+        Assert.assertEquals(currentPageUrl1,"https://www.bankofamerica.com/");
     }
     //Test 12
     public void OurRegions() throws InterruptedException {
@@ -256,7 +256,7 @@ public class BusinessAndInstitutionsPage extends WebAPI {
     }
     public void validatePageUrl8(){
         String currentPageUrl1 = super.getCurrentPageUrl();
-        Assert.assertEquals(currentPageUrl1,"https://www.bofaml.com/en-us/content/our-regions.html");
+        Assert.assertEquals(currentPageUrl1,"https://www.bankofamerica.com/");
     }
 
 

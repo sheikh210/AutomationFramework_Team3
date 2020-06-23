@@ -20,9 +20,14 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="Delta Airlines - Travel Update Center Page">
+   <!-- <test name="Delta Airlines - Travel Update Center Page">
         <classes>
             <class name="travelUpdateCenterPageTest.TravelUpdateCenterPageTest"/>
+        </classes
+    </test>-->
+    <test name="Change My Flight Page">
+        <classes>
+            <class name="changeMyFlightTest.ChangeMyFlightTest"/>
         </classes>
     </test>
 

@@ -15,7 +15,7 @@ public class StJudeHomepageTest extends WebAPI {
      }
 
 
-     @Test(enabled = false)
+     @Test
      public static void testDoSearchText() throws InterruptedException {
          getInItElements();
          stJudeHomepage.doSearchText();
@@ -23,7 +23,7 @@ public class StJudeHomepageTest extends WebAPI {
      }
 
 
-     @Test(enabled = false)
+     @Test
 
     public static void testDoSearchBar() throws InterruptedException {
          getInItElements();
@@ -32,21 +32,21 @@ public class StJudeHomepageTest extends WebAPI {
 
      }
 
-     @Test(enabled = false)
+     @Test
     public static void testDoSearchTopic(){
          getInItElements();
          stJudeHomepage.doSearchTopic();
          stJudeHomepage.validateDoSearchTopic();
      }
 
-    @Test(enabled = false)
+    @Test
     public static void testSearchTrainingTopic(){
         getInItElements();
         stJudeHomepage.searchTraining();
         stJudeHomepage.validateSearchTrainingTopic();
     }
 
-    @Test(enabled = false)
+    @Test
     public static void testDoSearchUrl(){
          getInItElements();
          stJudeHomepage.doSearchTitle();
@@ -54,14 +54,14 @@ public class StJudeHomepageTest extends WebAPI {
 
     }
 
-    @Test(enabled = false)
+    @Test
     public static void testDoSearchElement(){
          getInItElements();
          stJudeHomepage.doSearchElement();
          stJudeHomepage.validateDoSearchElement();
     }
 
-    @Test(enabled = false)
+    @Test
 
     public static void testDoSearchButton(){
          getInItElements();
@@ -69,7 +69,7 @@ public class StJudeHomepageTest extends WebAPI {
          stJudeHomepage.validateDoSearchButton();
     }
 
-    @Test(enabled = false)
+    @Test
 
     public static void testDoSearchingButton(){
          getInItElements();
@@ -77,7 +77,7 @@ public class StJudeHomepageTest extends WebAPI {
          stJudeHomepage.validateDoSearchingButton();
     }
 
-    @Test(enabled = false)
+    @Test
 
     public static void testDoSearchingElement(){
          getInItElements();
@@ -85,7 +85,7 @@ public class StJudeHomepageTest extends WebAPI {
          stJudeHomepage.validateDoSearchingElement();
     }
 
-    @Test(enabled = false)
+    @Test
 
     public static void testDoSearchingTopic(){
          getInItElements();
@@ -93,55 +93,55 @@ public class StJudeHomepageTest extends WebAPI {
          stJudeHomepage.validateDoSearchingTopic();
     }
 
-    @Test(enabled = false)
+    @Test
     public static void testDoSearchUrl1(){
          getInItElements();
          stJudeHomepage.doSearchUrl1();
          stJudeHomepage.validateDoSearchUrl1();
 
     }
-    @Test(enabled = false)
+    @Test
     public static void testHomePageTitle(){
          getInItElements();
          stJudeHomepage.validateHomePageTitle();
 
     }
-    @Test(enabled = false)
+    @Test
     public static void testHomePageLinkNumber(){
          getInItElements();
          stJudeHomepage.validateHomePageLinkNumber();
     }
-    @Test(enabled = false)
+    @Test
     public static void testDoSearchUrl2(){
          getInItElements();
          stJudeHomepage.doSearchUrl2();
          stJudeHomepage.validateDoSearchUrl2();
      }
-     @Test(enabled = false)
+     @Test
     public static void testDoSearchDisplayText(){
          getInItElements();
          stJudeHomepage.doSearchDisplayText();
          //stJudeHomepage.validateSearchDisplayText();
      }
 
-     @Test(enabled = false)
+     @Test
      public static void testSearchUrl3(){
          getInItElements();
          stJudeHomepage.validateSearchUrl3();
      }
-     @Test(enabled = false)
+     @Test
      public static void testSearchUrl5(){
          getInItElements();
          stJudeHomepage.validateSearchUrl5();
      }
-     @Test(enabled = false)
+     @Test
     public static void testHandleDropDownMenu() throws InterruptedException {
          getInItElements();
          stJudeHomepage.doHandleDropDownMenu();
          //stJudeHomepage.validateHandleDropDownMenu();
 
      }
-     @Test(enabled = false)
+     @Test
     public static void testDropDownMenu1() throws InterruptedException {
          getInItElements();
          stJudeHomepage.doHandleDropDownSubMenu1();
