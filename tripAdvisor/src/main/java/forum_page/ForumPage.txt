@@ -1,0 +1,102 @@
+* Test Case: 1
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Verify the forum page URL
+
+ * Test Case: 2
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Verify the forum page Title
+
+ * Test Case: 3
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Verify the Airlines link is Displayed
+
+* Test Case: 4
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Click on "airlines" link
+     * Verify the Airlines link page title
+
+* Test Case: 5
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Verify the Travel Forum link is Displayed
+
+* Test Case: 6
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Click on "Travel forum" link
+     * Verify the Travel Forum link page title
+
+* Test Case: 7
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Verify the Best of 2020 link is Displayed
+
+ * Test Case: 8
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Click on "Best of 2020" link
+     * Verify the Best of 2020 link page title
+
+* Test Case: 9
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Verify the Road trips link is Displayed
+
+ * Test Case: 10
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Click on "Road trips" link
+     * Verify the Road trips link page title
+
+* Test Case: 11
+    * Navigate to HomePage WWW.TRIPADVISOR.COM
+    * Click on "Forum page" Button
+    * Mouse Hove on DropDown button
+    * Verify the Help Center link is Displayed
+
+ * Test Case: 12
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Click on "airlines" link
+     * Verify the Airlines link page URL
+
+ * Test Case: 13
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Click on "Travel forum" link
+     * Verify the Travel Forum link page Source
+
+ * Test Case: 14
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Click on "Travel forum" link
+     * Verify the Travel Forum link page URL
+
+* Test Case: 15
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Click on "Best of 2020" link
+     * Verify the Best of 2020 link page Source
+
+* Test Case: 16
+     * Navigate to HomePage WWW.TRIPADVISOR.COM
+     * Click on "Forum page" Button
+     * Mouse Hove on DropDown button
+     * Click on "Road trips" link
+     * Verify the Road trips link page title

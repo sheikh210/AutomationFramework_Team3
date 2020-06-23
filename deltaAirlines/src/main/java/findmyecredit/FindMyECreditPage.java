@@ -182,9 +182,9 @@ public class FindMyECreditPage extends WebAPI {
         lastNameField.sendKeys("Rashid");
         suffixButton.click();
         Thread.sleep(2000);
-//        Select select = new Select(suffixMenu);
-//        select.selectByVisibleText("CO");
-//        System.out.println(select.getOptions());
+        Select select = new Select(suffixMenu);
+        select.selectByVisibleText("CO");
+        System.out.println(select.getOptions());
 
         suffixJr.submit();
         Thread.sleep(2000);
