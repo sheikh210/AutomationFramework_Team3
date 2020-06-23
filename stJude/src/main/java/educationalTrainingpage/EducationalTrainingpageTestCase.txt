@@ -1,0 +1,22 @@
+Test Case 1 - Navigate to Education & Training page
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Validate the Education & Training page url with what is stored in Excel
+
+Test Case 2 - Advanced training List
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Get Advanced Training list of links text
+6: Validate Advanced Training list of links text by comparing what is stored in Excel
+
+Test Case 3 - Advanced training links
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Get Advanced Training list of links urls
+6: Validate Advanced Training list of links urls by comparing what is stored in Excel
