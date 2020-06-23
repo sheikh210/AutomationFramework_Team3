@@ -49,55 +49,46 @@ Test Case 10:
 2.click on NFL page.
 3. validate the
 
-
-
-
-
-
-
-
-
-
-
 Test Case 11:
 1.Navigate to homepage
-2.validate "CarAndTruck"
+2.validate "signUp Page"
 
 Test Case 12:
 1.Navigate to homepage
-2.validate Wheel Menu.
+2.click Scores Button.
 
 Test Case 13:
 1.Navigate to homepage
-2. get "MotorCycleMenu".
+2. validate search bear button.
 
 
 Test Case 14:
 1.Navigate to homepage
-2.validate the Logo.
+2.validate Return To Search Button Page.
 
 Test Case 15:
 1.Navigate to homepage
-2.validate "PowerSports" page.
+2.validate 'MiamiDolphins".
 
 
 Test Case 16:
 1.Navigate to homepage
-2.get "BatteryCharger" option.
+2.get mouse hover,
+3.validate Drop down Season List.
 
 Test Case 17:
 1.Navigate to homepage
-2.get "AntiqueBoats" page.
+2.validate Indiana Poles.
 
 Test Case 18:
 1.Navigate to homepage
-2.validate the "ExoticsMenu".
+2.validate the Baltimore button.
 
 Test Case 19:
 1.Navigate to homepage
-2.click
+2.click Top Heading page.
 
 
 Test Case 20:
 1.Navigate to homepage
-2.click
+2.Navigate To Buffalo Bill.

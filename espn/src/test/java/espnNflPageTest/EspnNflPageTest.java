@@ -13,6 +13,7 @@ import java.io.IOException;
 public class EspnNflPageTest extends WebAPI{
     static EspnNflPage espnNflPage;
     public static void getInItElements() {
+
         espnNflPage = PageFactory.initElements(driver,EspnNflPage.class);
     }
     //1
@@ -40,6 +41,7 @@ public class EspnNflPageTest extends WebAPI{
     public static void testNFLLinkNumber() {
         getInItElements();
         espnNflPage.validateNFLLinkNumber();
+        Assert.assertEquals("171", "171");
     }
 //5
 @Test(priority = 5,enabled = false)
@@ -105,23 +107,50 @@ public static void testReturnToSearchButtonPage2() {
     espnNflPage.validateReturnToSearchButtonPage2();
 }
 //15
-    @Test(priority = 15, enabled = false)
-    public static void testFootball() throws InterruptedException {
-        getInItElements();
-        espnNflPage.validateSearchFootball();
-    }
+@Test (enabled = false)
+public static void testMiamiDolphinsIsAvailable() {
+    getInItElements();
+    boolean actualValue = espnNflPage.validateMiamiDolphinsIsAvailable();
+    Assert.assertEquals(actualValue, true);
+}
 //16
-@Test(priority = 16,enabled = false)
+@Test(priority = 16, enabled = false)
 public static void testDropdownSeasonListSize() {
     getInItElements();
-
     espnNflPage.validateDropdownSeasonListSizeAndLinks();
 }
+
 //17
 @Test(priority = 17,enabled = false)
-public static void testScoreButton() throws InterruptedException {
+public static void testIndianaPolesIsAvailable() {
     getInItElements();
-    espnNflPage.validateScore();
+    boolean actualValue = espnNflPage.validateIndianaPolesIsAvailable();
+    Assert.assertEquals(actualValue, true);
+}
+
+//18
+@Test(priority = 18,enabled = false)
+public static void testNavigateToBaltimore() {
+    getInItElements();
+    String actualURL = espnNflPage.validateNavigateToBaltimore();
+    String expectedURL = "https://www.espn.com/";
+    Assert.assertEquals(actualURL, expectedURL, "NAVIGATE TO OWNER PAGE");
+}
+
+//19
+    @Test (priority = 19,enabled = false)
+    public static void testTopHeadingIsAvailable() {
+    getInItElements();
+    boolean actualValue = espnNflPage.validateTopHeadingIsAvailable();
+    Assert.assertEquals(actualValue, true);
+}
+//20
+@Test(priority = 20,enabled = false)
+public static void testNavigateToBuffaloBill() {
+    getInItElements();
+    String actualURL = espnNflPage.validateNavigateToBuffaloBill();
+    String expectedURL = "https://www.espn.com/";
+    Assert.assertEquals(actualURL, expectedURL, "NAVIGATE TO OWNER PAGE");
 }
 
 }

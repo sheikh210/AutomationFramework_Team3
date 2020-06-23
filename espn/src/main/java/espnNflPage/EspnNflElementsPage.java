@@ -16,12 +16,21 @@ public class EspnNflElementsPage extends WebAPI {
 
     public static final String webElementScoresButton="//*[@id=\"global-nav-secondary\"]/div/ul/li[3]/a/span[1]";
     public static final String webElementSearchBear="//*[@id=\"global-nav-secondary\"]/div/ul/li[3]/a/span[1]";
-    public static final String webElementFootBall="//*[@id=\"main-container\"]/div/section[1]/article[8]/div/ul/li[2]/a/div[1]/img";
+
 public static final String webElementImages="//*[@id=\"bucket-4007\"]/div/div[3]/a/figure/div[2]/picture/img";
 
-public static final String webElementScore="//*[@id=\"fitt-analytics\"]/div/header/div[1]/nav[2]/ul/li[3]/a/span";
-
+public static final String webElementScore="//*[@id=\"global-nav-secondary\"]/div/ul/li[3]/a/span[1]";
+    public static final String webElementMiamiDolphin="//*[@id=\"global-nav\"]/ul/li[1]/div/ul[2]/li/div/ul[1]/li[3]/a/span/span[1]";
     public static final String webElementStarButton="//*[@id=\"global-nav-secondary\"]/div/ul/li[7]/a/span[1]";
     public static final String webElementDropDownSeason="//*[@id=\"fitt-analytics\"]/div/header/div[1]/nav[2]/ul/li[7]/a/svg";
+
+    public static final String webElementBaltimore="//*[@id=\"global-nav\"]/ul/li[1]/div/ul[2]/li/div/ul[2]/li[2]/a/span/span[1]";
+
+    public static final String webElementTopHeading="//*[@id=\"main-container\"]/div/section[3]/div[1]/header/h1";
+public static final String webElementBuffaloBill="//*[@id=\"global-nav\"]/ul/li[1]/div/ul[2]/li/div/ul[1]/li[2]/a/span/span[1]";
+
+public static final String webElementIndianaPoles="//*[@id=\"global-nav\"]/ul/li[1]/div/ul[2]/li/div/ul[3]/li[3]/a/span/span[1]";
+
+
 
 }
