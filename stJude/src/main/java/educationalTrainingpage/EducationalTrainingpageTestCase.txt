@@ -5,7 +5,15 @@ Test Case 1 - Navigate to Education & Training page
 4: Click on For View More Education and Training link
 5: Validate the Education & Training page url with what is stored in Excel
 
-Test Case 2 - Advanced training List
+Test Case 2 - Advanced training links Size
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Get Advanced Training list of links size
+6: Validate Advanced Training list of links size by comparing what is stored in Excel
+
+Test Case 3 - Advanced training List
 1: Launch Chrome Browser
 2: Direct chrome to St.Judes homepage
 3: Click on Training on St. Judes header to reveal dropdown
@@ -13,10 +21,138 @@ Test Case 2 - Advanced training List
 5: Get Advanced Training list of links text
 6: Validate Advanced Training list of links text by comparing what is stored in Excel
 
-Test Case 3 - Advanced training links
+Test Case 4 - Advanced training links
 1: Launch Chrome Browser
 2: Direct chrome to St.Judes homepage
 3: Click on Training on St. Judes header to reveal dropdown
 4: Click on For View More Education and Training link
 5: Get Advanced Training list of links urls
 6: Validate Advanced Training list of links urls by comparing what is stored in Excel
+
+Test Case 5 - Predoctoral Training links Size
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Get Predoctoral Training list of links size
+6: Validate Predoctoral Training list of links size by comparing what is stored in Excel
+
+Test Case 6 - Predoctoral Training List
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Get Predoctoral Training list of links text
+6: Validate Predoctoral Training list of links text by comparing what is stored in Excel
+
+Test Case 7 - Predoctoral Training links
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Get Predoctoral Training list of links urls
+6: Validate Predoctoral Training list of links urls by comparing what is stored in Excel
+
+Test Case 8 - St Judes Global Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click St Judes Global Button and get the URL from the new tab
+6: Validate St Judes Global Button url by comparing what is stored in Excel
+
+Test Case 9 - Online Resources Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click Online Resources Button and get the URL from the new tab
+6: Validate Online Resources Button url by comparing what is stored in Excel
+
+Test Case 10 - Career At StJudes Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click Career At StJudes Button and get the URL from the new tab
+6: Validate Career At StJudes Button url by comparing what is stored in Excel
+
+Test Case 11 - Explore The Grad School Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click Explore The Grad School Button and get the URL from the new tab
+6: Validate Explore The Grad School Button url by comparing what is stored in Excel
+
+Test Case 12 - Sign Up Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click Sign Up Button and get the URL from the new tab
+6: Validate Sign Up Button url by comparing what is stored in Excel
+
+Test Case 13 - Contact With Us Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click  Contact With Us and get the URL from the new tab
+6: Validate  Contact With Us url by comparing what is stored in Excel
+
+Test Case 14 - Facebook Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click  Facebook and get the URL from the new tab
+6: Validate Facebook url by comparing what is stored in Excel
+
+Test Case 15 - Twitter Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click  Twitter and get the URL from the new tab
+6: Validate Twitter url by comparing what is stored in Excel
+
+Test Case 16 - Instagram Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click  Instagram and get the URL from the new tab
+6: Validate Instagram url by comparing what is stored in Excel
+
+Test Case 17 - Youtube Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click  Youtube and get the URL from the new tab
+6: Validate Youtube url by comparing what is stored in Excel
+
+Test Case 18 - Careers Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click Careers and get the URL from the new tab
+6: Validate Careers url by comparing what is stored in Excel
+
+Test Case 19 - Media Resources Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click Media Resources and get the URL from the new tab
+6: Validate Media Resources url by comparing what is stored in Excel
+
+Test Case 20 - Visit Us Button
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Training on St. Judes header to reveal dropdown
+4: Click on For View More Education and Training link
+5: Click Visit Us and get the URL from the new tab
+6: Validate Visit Us url by comparing what is stored in Excel

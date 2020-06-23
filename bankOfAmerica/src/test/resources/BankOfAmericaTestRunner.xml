@@ -14,9 +14,15 @@
     <parameter name="browserVersion" value="83"/>
     <parameter name="url" value="http://bankofamerica.com"/>
 
-    <test name="BankOfAmerica Homepage">
+<!--    <test name="BankOfAmerica Homepage">-->
+<!--        <classes>-->
+<!--            <class name="homepageTest.BankOfAmericaHomepageTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="BankOfAmerica Securitypage">
         <classes>
-            <class name="homepageTest.BankOfAmericaHomepageTest"/>
+            <class name="securitypageTest.SecuritypageTest"/>
         </classes>
     </test>
 
