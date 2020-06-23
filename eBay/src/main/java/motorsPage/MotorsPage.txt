@@ -1,0 +1,93 @@
+Test Case 1:
+1.Navigate to www.ebay.com
+2.click on motor button
+3. validate the motor button page.
+
+Test Case 2:
+1.Navigate to homepage
+2.get page url.
+
+
+Test Case 3:
+1.Navigate to homepage
+2.get page title.
+
+Test Case 4:
+1.Navigate to homepage
+2.search the link number.
+
+Test Case 5:
+1.Navigate to homepage
+2.get the vehicle page.
+3. validate the page link.
+
+
+Test Case 6:
+1.Navigate to homepage
+2.move to back page.
+3.move to forward.
+4. refresh the page.
+5. check validity.
+
+Test Case 7:
+1.Navigate to homepage
+2.Click on motor menu
+3. check return the page or not.
+
+Test Case 8:
+1.Navigate to homepage
+2.validate the owner page.
+
+Test Case 9:
+1.Navigate to homepage
+2.click on motor page
+3.validate the homepage menu display.
+
+Test Case 10:
+1.Navigate to homepage
+2.click on motor page.
+3. validate the "PartAndAccessories"
+
+
+Test Case 11:
+1.Navigate to homepage
+2.validate "CarAndTruck"
+
+Test Case 12:
+1.Navigate to homepage
+2.validate Wheel Menu.
+
+Test Case 13:
+1.Navigate to homepage
+2. get "MotorCycleMenu".
+
+
+Test Case 14:
+1.Navigate to homepage
+2.validate the Logo.
+
+Test Case 15:
+1.Navigate to homepage
+2.validate "PowerSports" page.
+
+
+Test Case 16:
+1.Navigate to homepage
+2.get "BatteryCharger" option.
+
+Test Case 17:
+1.Navigate to homepage
+2.get "AntiqueBoats" page.
+
+Test Case 18:
+1.Navigate to homepage
+2.validate the "ExoticsMenu".
+
+Test Case 19:
+1.Navigate to homepage
+2.click EBayButton.
+
+
+Test Case 20:
+1.Navigate to homepage
+2.click "CollectorCar".

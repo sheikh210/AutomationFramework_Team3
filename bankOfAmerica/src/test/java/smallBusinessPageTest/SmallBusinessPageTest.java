@@ -143,7 +143,7 @@ public class SmallBusinessPageTest extends WebAPI {
         Assert.assertEquals(smallBusinessPage.isHomePageForgotPasswordButtonDisplayed(),true,"Password not displayed");
     }
     //20
-    @Test (priority = 20)
+    @Test (priority = 20,enabled = false)
     public void testIsHomeBenefitMenuDisplayed(){
         getInItElements();
         smallBusinessPage.isHomePageOnlineBankingDisplayed();
