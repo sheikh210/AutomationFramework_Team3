@@ -55,16 +55,16 @@ public class Securitypage extends WebAPI{
     public WebElement knowFraudPage;
     @FindBy(xpath = webElementAvoidBankScamsPage)
     public WebElement avoidBankScamsPage;
-//    @FindBy(xpath = )
-//    public WebElement ;
-//    @FindBy(xpath = )
-//    public WebElement ;
-//    @FindBy(xpath = )
-//    public WebElement ;
-//    @FindBy(xpath = )
-//    public WebElement ;
-//    @FindBy(xpath = )
-//    public WebElement ;
+    @FindBy(xpath = webElementReportActivityPage)
+    public WebElement reportActivityPage;
+    @FindBy(xpath = webElementProtectYourSelf)
+    public WebElement protectYourSelf;
+    @FindBy(xpath = webElementFullPageVersionLink)
+    public WebElement fullPageVersionLink;
+    @FindBy(xpath = webElementSignInButton)
+    public WebElement signInButton;
+    @FindBy(xpath = webElementLocationsButton)
+    public WebElement locationsButton;
 
     public void getSecuritypage() {
         wait.until(ExpectedConditions.elementToBeClickable(securityTabButton));
@@ -237,6 +237,31 @@ public class Securitypage extends WebAPI{
         getSecuritypage();
         scrollToElementJScript(avoidBankScamsPage);
         return clickLinksSwitchTabsCompareURLs(By.xpath(webElementAvoidBankScamsPage),path,"AvoidBankScamsPageURL");
+    }
+    public boolean getReportActivityPage()throws Exception{
+        getSecuritypage();
+        scrollToElementJScript(reportActivityPage);
+        return clickLinksSwitchTabsCompareURLs(By.xpath(webElementReportActivityPage),path,"ReportActivityPageURL");
+    }
+    public boolean getProtectYourSelf()throws Exception{
+        getSecuritypage();
+        scrollToElementJScript(protectYourSelf);
+        return clickLinksSwitchTabsCompareURLs(By.xpath(webElementProtectYourSelf),path,"ProtectYourSelfURL");
+    }
+    public boolean getFullPageVersionLink()throws Exception{
+        getSecuritypage();
+        scrollToElementJScript(fullPageVersionLink);
+        return clickLinksSwitchTabsCompareURLs(By.xpath(webElementFullPageVersionLink),path,"FullPageVersionURL");
+    }
+    public boolean getSignInButton()throws Exception{
+        getSecuritypage();
+        waitUntilClickAble(By.xpath(webElementSignInButton));
+        return clickLinksSwitchTabsCompareURLs(By.xpath(webElementProtectYourSelf),path,"ProtectYourSelfURL");
+    }
+    public boolean getLocationsButton()throws Exception{
+        getSecuritypage();
+        waitUntilClickAble(By.xpath(webElementLocationsButton));
+        return clickLinksSwitchTabsCompareURLs(By.xpath(webElementFullPageVersionLink),path,"FullPageVersionURL");
     }
 
 

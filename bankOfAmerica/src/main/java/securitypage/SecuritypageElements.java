@@ -19,8 +19,10 @@ public class SecuritypageElements {
     public static final String webElementMenuTopLinks4 = "//*[@id=\"navigation\"]/div[2]/div/ul/li[5]/a";
     public static final String webElementKnowFraudPage = "//p[@class='show-for-medium-up']//a[@id='knowFraudPage']";
     public static final String webElementAvoidBankScamsPage = "//p[@class='show-for-medium-up']//a[@id='scamPage']";
-//    public static final String webElement = "";
-//    public static final String webElement = "";
-//    public static final String webElement = "";
+    public static final String webElementReportActivityPage = "//p[@class='show-for-medium-up']//a[@id='reporSuspiciousActivity']";
+    public static final String webElementProtectYourSelf = "//p[@class='show-for-medium-up']//a[@id='protectYourSelf']";
+    public static final String webElementFullPageVersionLink = "//a[@id='onlinePrivacyFullPageLinkLarge']";
+    public static final String webElementSignInButton = "//a[@id='header-signin']";
+    public static final String webElementLocationsButton = "//a[@id='locations-route-to']";
 
 }
