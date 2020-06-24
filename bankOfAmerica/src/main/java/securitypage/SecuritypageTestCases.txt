@@ -1,0 +1,19 @@
+Test Case 1 - Navigate to Security page
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Security tab on bank of America header
+4: Validate the Security page url with what is stored in Excel
+
+Test Case 2 - Next Slide arrow
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Security tab on bank of America header
+4: Click on Next arrow
+5: Validate that slide show moved to the next slide
+
+Test Case 3 - Previous Slide arrow
+1: Launch Chrome Browser
+2: Direct chrome to St.Judes homepage
+3: Click on Security tab on bank of America header
+4: Click on Previous arrow
+5: Validate that slide show moved to the next slide
