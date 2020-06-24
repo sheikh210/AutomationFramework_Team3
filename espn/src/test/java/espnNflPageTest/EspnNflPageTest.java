@@ -95,11 +95,13 @@ public static void testSignUp () throws InterruptedException {
     espnNflPage.clickScoresButton();
  }
 //13
-@Test(priority = 13,enabled = false)
-public static void testSearchBear() throws InterruptedException {
+@Test (priority = 13,enabled = false)
+public static void testSearchFollowButtonIsAvailable() {
     getInItElements();
-    espnNflPage.validateSearchBear();
+    boolean actualValue = espnNflPage.validateSearchFollowButtonIsAvailable();
+    Assert.assertEquals(actualValue, true);
 }
+
 //14
 @Test (priority = 14,enabled = false)
 public static void testReturnToSearchButtonPage2() {

@@ -36,8 +36,8 @@ public class EspnNflPage extends WebAPI {
 
     @FindBy(how = How.XPATH, using = webElementScoresButton)
     public WebElement scoresButton;
-    @FindBy(how = How.XPATH, using = webElementSearchBear)
-    public WebElement searchBear;
+    @FindBy(how = How.XPATH, using = webElementSearchFollowButton)
+    public WebElement searchFollowButton;
     @FindBy(how = How.XPATH, using = webElementMiamiDolphin)
     public WebElement searchMiamiDolphin;
     @FindBy(how = How.XPATH, using = webElementImages)
@@ -179,16 +179,13 @@ public class EspnNflPage extends WebAPI {
             clickJScript(scoresButton);
         }
     }
-
     //13
-    public void validateSearchBear() {
+    public boolean validateSearchFollowButtonIsAvailable() {
         navigateToNFLButton();
-        searchBear.click();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        List<WebElement> list = searchBear.findElements(By.xpath(webElementSearchBear));
-        int searchBear = list.size();
-        System.out.println("Link Number " + searchBear);
-        Assert.assertEquals(searchBear, 1, "Number doesnot found");
+        Actions actions = new Actions(driver);
+        actions.moveToElement(nFLButton).build().perform();
+        boolean searFollowButtonIsAvailable = searchFollowButton.isDisplayed();
+        return searFollowButtonIsAvailable;
     }
 
     //14
