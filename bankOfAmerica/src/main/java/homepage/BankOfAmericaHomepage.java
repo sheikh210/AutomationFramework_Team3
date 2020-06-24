@@ -14,6 +14,7 @@ import org.testng.Assert;
 import java.io.IOException;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static homepage.BankOfAmericaHomepageElements.*;
 
@@ -210,14 +211,18 @@ public class BankOfAmericaHomepage extends WebAPI {
      */
 
     public void doSearch() {
+
         searchBox.sendKeys("activate credit card");
+        new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(searchButton));
+
         searchButton.click();
     }
 
     public void validateDoSearch() {
-        String actualText = searchText.getText();
+                String actualText = searchText.getText();
+        String expectedText="Activate your eligible consumer credit card online.";
 
-        Assert.assertEquals(actualText, "Activate your eligible consumer credit card online.");
+        Assert.assertEquals(actualText, expectedText,"Expected text Not found");
     }
 
     /**
@@ -260,6 +265,7 @@ public class BankOfAmericaHomepage extends WebAPI {
      * 3. Search expected text
      */
     public void doSearchText() {
+        new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(investmentMenu));
         investmentMenu.click();
     }
 
@@ -278,8 +284,9 @@ public class BankOfAmericaHomepage extends WebAPI {
      * 5. Finally check page Title
      */
     public void doSearchElements() throws InterruptedException {
+        new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(zelleButton));
         zelleButton.click();
-        //driver.get("https://promo.bankofamerica.com/zelle/?cm_sp=Mobile%20Zelle-_-Default-_-M4T1QSBN01_Highlights_NH_Zelle_DefaultDefault_HL1_zelleWinterHLCta");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         videoPlayButton.click();
 
         Thread.sleep(5000);
@@ -403,9 +410,12 @@ public class BankOfAmericaHomepage extends WebAPI {
      * 6. Then validate Elements
      */
     public void doSecureLogIn() {
+        new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(investYourWay));
         investYourWay.click();
         secureUserNameBox.sendKeys("ssyfuysuy");
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         secureUserPasswordBox.sendKeys("sytgyuj22353");
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         secureUserLoginButton.click();
     }
 
@@ -424,6 +434,7 @@ public class BankOfAmericaHomepage extends WebAPI {
      */
     public void doCheckWebPage() {
         lifeServiceButton.click();
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
     }
 
     public void validateCheckWebPage() {

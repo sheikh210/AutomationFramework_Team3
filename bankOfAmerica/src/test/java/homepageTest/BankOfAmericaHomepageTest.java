@@ -13,20 +13,20 @@ public class BankOfAmericaHomepageTest extends WebAPI {
     public static void getInItElements() {
         bankOfAmericaHomepage = PageFactory.initElements(driver, BankOfAmericaHomepage.class);
     }
-    @Test(priority = 0, enabled = false)
+    @Test(priority = 0)
     public static void testDoLogin() {
         getInItElements();
         bankOfAmericaHomepage.doLogin();
         bankOfAmericaHomepage.validateDoLogin();
     }
-    @Test(priority = 1, enabled = false)
+    @Test(priority = 1)
 
     public static void testCheckMenuOptions() throws InterruptedException {
         getInItElements();
         bankOfAmericaHomepage.checkMenuOptions();
         bankOfAmericaHomepage.validateOptions();
     }
-    @Test(priority = 2,enabled = false)
+    @Test(priority = 2)
     public static void testGetCurrentPageTitle() {
 
         getInItElements();
@@ -34,64 +34,64 @@ public class BankOfAmericaHomepageTest extends WebAPI {
         bankOfAmericaHomepage.validateGetCurrentPageTittle();
 
     }
-    @Test(priority = 3,enabled = false)
+    @Test(priority = 3)
     public static void testFigureOutWebLinksNum() throws IOException {
         getInItElements();
         bankOfAmericaHomepage.figureOutWebLinksNum();
         bankOfAmericaHomepage.validateFigureOutWebLinksNum();
     }
-    @Test(priority = 4, enabled = false)
+    @Test(priority = 4)
     public static void testDoSearch(){
         getInItElements();
         bankOfAmericaHomepage.doSearch();
         bankOfAmericaHomepage.validateDoSearch();
     }
-    @Test(priority = 5, enabled = false)
+    @Test(priority = 5)
     public static void testDoSearchATM(){
         getInItElements();
         bankOfAmericaHomepage.doSearchATM();
         bankOfAmericaHomepage.validateDoSearchATM();
     }
 
-    @Test(priority = 6, enabled = false)
+    @Test(priority = 6)
     public static void testDoAvailable(){
         getInItElements();
         bankOfAmericaHomepage.doAvailable();
         bankOfAmericaHomepage.validateDoAvailable();
     }
-    @Test(priority = 7, enabled = false)
+    @Test(priority = 7)
     public static void testDoSearchText(){
         getInItElements();
         bankOfAmericaHomepage.doSearchText();
         bankOfAmericaHomepage.validateDoSearchText();
     }
-    @Test(priority = 8,enabled = false)
+    @Test(priority = 8)
     public static void testDoSearchElements() throws InterruptedException {
         getInItElements();
         bankOfAmericaHomepage.doSearchElements();
         bankOfAmericaHomepage.validateDoSearchElements();
 
     }
-    @Test(priority = 9, enabled = false )
+    @Test(priority = 9 )
     public static void testGetText(){
         getInItElements();
         bankOfAmericaHomepage.getText();
         bankOfAmericaHomepage.validateGetText();
 
     }
-    @Test(priority = 10, enabled = false)
+    @Test(priority = 10)
     public static void testCheckLinks(){
         getInItElements();
         bankOfAmericaHomepage.doGetCurrentUrl();
         bankOfAmericaHomepage.validateCurrentUrl();
     }
-    @Test(priority = 11,enabled = false)
+    @Test(priority = 11)
     public static void testDoCountWebLink(){
         getInItElements();
         bankOfAmericaHomepage.doCountWebLink();
         bankOfAmericaHomepage.validateDoCountWebLink();
     }
-    @Test(priority = 12,enabled = false)
+    @Test(priority = 12)
     public static void testDoCheckUrl(){
         getInItElements();
         bankOfAmericaHomepage.doCheckUrl();
@@ -103,35 +103,35 @@ public class BankOfAmericaHomepageTest extends WebAPI {
         bankOfAmericaHomepage.doBrowsingForText();
         bankOfAmericaHomepage.validateBrowsingForText();
     }
-    @Test(priority = 14,enabled = false)
+    @Test(priority = 14)
     public static void testDoSecureLogIn(){
         getInItElements();
         bankOfAmericaHomepage.doSecureLogIn();
         bankOfAmericaHomepage.validateSecureLogIn();
     }
-    @Test(priority = 15,enabled = false)
+    @Test(priority = 15)
     public static void testDoCheckWebPage(){
         getInItElements();
         bankOfAmericaHomepage.doCheckWebPage();
         bankOfAmericaHomepage.validateCheckWebPage();
     }
-    @ Test(priority = 16,enabled = false )
+    @ Test(priority = 16 )
     public static void TesHomepageLinksNum(){
         getInItElements();
         bankOfAmericaHomepage.validateHomepageLinksNum();
     }
-    @Test(priority = 17,enabled = false)
+    @Test(priority = 17)
     public static void testHomePageTitle(){
         getInItElements();
         bankOfAmericaHomepage.validateHomePageTitle();
     }
-    @Test(priority = 18,enabled = false)
+    @Test(priority = 18)
     public static void testSearchDisplayedElement(){
         getInItElements();
         bankOfAmericaHomepage.doSearchDisplayedElement();
         bankOfAmericaHomepage.validateSearchDisplayedElement();
     }
-    @Test(priority = 19,enabled = false)
+    @Test(priority = 19)
     public static void testSearchDisplayedText(){
         getInItElements();
         bankOfAmericaHomepage.doSearchDisplayedText();

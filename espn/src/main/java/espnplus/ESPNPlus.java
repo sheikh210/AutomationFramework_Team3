@@ -86,6 +86,7 @@ public class ESPNPlus extends WebAPI {
 
     public String validateESPNPlusPageUrl() {
         navigateToESPNPlusPage();
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         String url = super.getCurrentPageUrl();
         System.out.println("ESPN Plus page URL is " + url);
 
@@ -144,9 +145,8 @@ public class ESPNPlus extends WebAPI {
         napoliVsJuventusButton.click();
         Thread.sleep(3000);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        boolean napoliVsJuventusPopUpWindowIsDisplayed = napoliVsJuventusPopUpWindow.isDisplayed();
-        System.out.println(napoliVsJuventusPopUpWindowIsDisplayed);
-        return napoliVsJuventusPopUpWindowIsDisplayed;
+        System.out.println(napoliVsJuventusPopUpWindow.isDisplayed());
+        return napoliVsJuventusPopUpWindow.isDisplayed();
     }
 
     /**
@@ -184,7 +184,7 @@ public class ESPNPlus extends WebAPI {
 
 
         System.out.println("Size of 'Top Events' Dropdown List: " + listSize);
-        Assert.assertEquals(listSize, 14, "LIST SIZE DOES NOT MATCH");
+        Assert.assertEquals(listSize, 11, "LIST SIZE DOES NOT MATCH");
     }
 
     /**
@@ -197,9 +197,9 @@ public class ESPNPlus extends WebAPI {
     public void validateSignUpPage() {
         navigateToESPNPlusPage();
         signUpButton.click();
-        String actualPageTitle = super.getCurrentPageTitle();
-        String signUpPageTitle = "ESPN+";
-        Assert.assertEquals(actualPageTitle, signUpPageTitle, "Sign up page not found");
+        String actualPageUrl = driver.getCurrentUrl();
+        String signUpPageUrl = "https://secure.web.plus.espn.com/account?returnUrl=%2Fbilling%2Fpurchase%2FESPN_PURCHASE_CMPGN%2FESPN_PURCHASE_VOCHR%2FMESPN&start=socialregistration&locale=en_US";
+        Assert.assertEquals(actualPageUrl, signUpPageUrl, "Sign up page not found");
 
     }
 
@@ -364,6 +364,7 @@ public class ESPNPlus extends WebAPI {
      */
     public String validateNBAPage() {
         navigateToESPNPlusPage();
+     //   new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(nBAButton));
         nBAButton.click();
         String  nBAPageUrl=super.getCurrentPageUrl();
         return nBAPageUrl;

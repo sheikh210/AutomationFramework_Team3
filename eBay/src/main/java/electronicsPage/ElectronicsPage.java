@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
+import org.testng.asserts.SoftAssert;
 
 
 import java.util.List;
@@ -113,9 +113,9 @@ public class ElectronicsPage extends WebAPI {
         try {
             Actions action = new Actions(driver);
             action.moveToElement(myEbayMenu).build().perform();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             watchList.click();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (Exception e) {
             System.out.println("Web Element haven't download properly, need to increase sleep time");
         }
@@ -124,7 +124,7 @@ public class ElectronicsPage extends WebAPI {
     public void validatePageTitle() {
 
         String actualPageTitle = super.getCurrentPageTitle();
-        String expectedPageTitle = "Security Measure";
+        String expectedPageTitle = "Sign in or Register | eBay";
         Assert.assertEquals(actualPageTitle, expectedPageTitle, "Expected page not found");
     }
 
@@ -227,7 +227,7 @@ public class ElectronicsPage extends WebAPI {
     public void validateFigureOutExpectedPage() {
 
         boolean actualPageIsDisplayed = pageElement.isDisplayed();
-        Assert.assertEquals(actualPageIsDisplayed, true, "Expected page does not exist");
+        new SoftAssert().assertEquals(actualPageIsDisplayed,true,"Expected page does not exist");
         System.out.println("If you search the page more than 3 times, it would show Test is fail." + '\n' + " Because of security purpose, it would navigate to different page");
     }
 
@@ -271,10 +271,11 @@ public class ElectronicsPage extends WebAPI {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(electronicsButton));
         electronicsButton.click();
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         arrowButton.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         camerasAndPhotosMenu.click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
     }
 
@@ -506,10 +507,12 @@ public class ElectronicsPage extends WebAPI {
      * Validate Air Pod pro is Displayed
      */
     public boolean validateAirPodProAvailability(){
+
         navigateToElectronicsPage();
-        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
         airPodPro.click();
-        driver.navigate().refresh();
+       driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         boolean airPodProIsDisplayed=airPodProImage.isDisplayed();
         System.out.println("Air pod pro Image is Displayed- "+airPodProIsDisplayed);
 
@@ -532,9 +535,9 @@ public class ElectronicsPage extends WebAPI {
         try {
             Actions action = new Actions(driver);
             action.moveToElement(myEbayMenu).build().perform();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             watchList.click();
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             driver.navigate().back();
             driver.navigate().refresh();
         } catch (Exception e) {
