@@ -1,0 +1,92 @@
+"3990NY_Firdovsi Isgandarov"
+
+ESPN Soccer Page Test cases
+>>>Test Case 1 - Go to Home Page<<<
+Open Chrome Browser
+Type Url >>https://www.espn.com/<<
+Wait until home page is landing
+Get Home Page Title
+
+>>>Test Case 2 - Validate Soccer Drop Down List<<<
+Click Soccer Menu Button
+Expand it
+Validate 9 Subcategories are there
+
+>>>Test Case 3 - Go To Soccer Page<<<
+Wait Home Page is landing
+Click Soccer Menu Button
+Get Soccer Page Title
+
+>>>Test Case 4 -Validate Teams Drop Down List <<<
+Click Teams Drop Down Button
+Validate 13 Elements are visible under drop down
+
+>>>Test Case 5 - Validate Leagues and Cups Drop Down List<<<
+Click Leagues And Cups Button
+Validate 11 Elements are visible under drop down
+
+>>>Test Case 6 - Validate Tables drop down list<<<
+Click Tables Button
+Validate 10 elements are visible under drop down
+
+>>>Test Case 7 - Validate More Button<<<
+Click More Button
+Validate Tickets submenu is under more button
+
+>>>Test Case 8 - ESPN Plus Logo<<<
+Click ESPN Plus Logo
+Validate 11 elements displayed there
+
+>>>Test Case 9 - Watch Button<<<
+Click Watch Button
+Validate 7 Elements are there
+
+>>>Test Case 10 - Listen Button<<<
+Click Listen Button
+Validate 4  elements are displayed
+
+>>>Test Case 11 - Listen Button<<<
+Click Listen Button
+Validate 4 Elements are displayed
+
+>>>Test Case 12 - Fantasy Drop Down<<<
+Click Fantasy button
+Validate 7 Elements are displayed
+
+>>>Test Case 13 - Top Soccer<<<
+Click Top Soccer Button
+Validate 11 Elements are displayed
+
+>>>Test Case 14 - Header Ellipse Menu<<<
+Click Ellipse Menu Button
+Validate 24 Elements are displayed
+
+>>>Test Case 15 - Open Score Sub Menu<<<
+Click Score Button
+Wait Page until landing
+Get Title
+Validate Page Title is as Expected
+
+>>>Test Case 16 - Check Calendar Box<<<
+Open Score Sub Menu
+open Calendar
+Choose Date
+
+>>>Test Case 17 - Check Swipe Button<<<
+Go To Soccer Page
+Find Match Slide Bar
+Click Right Arrow
+
+>>>Test Case 18 - Open Transfer Menu<<<
+Click All League
+Verify 14 Elements Are Displayed
+
+>>>Test Case 19 - Open USMNT<<<
+Click USMNT submenu
+Get Title
+validate title is as expected
+
+>>>Test Case 20 - Open USWNT<<<
+Click USWNT
+Get Title
+Validate title is as expected
