@@ -101,6 +101,24 @@ Test Case 14:"Open footer section links in new tabs and compare urls"
 4) Open each link in new tab
 5) compare urls
 
+Test Case 15: "Validate Post a photo button"
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Click on "Post"
+5) Click on "Write a review"
+6) Get the page title
+
+Test Case 16: "Validate Post a photo button"
+1) Navigate to "tripadvisor.com"
+2) Scroll down the page
+3) Click on "Become an affiliate"
+4) Click on "Post"
+5) Click on "Post a picture"
+6) Get the page title
+
+
+
 
 
 

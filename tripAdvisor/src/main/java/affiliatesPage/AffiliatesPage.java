@@ -45,6 +45,14 @@ public class AffiliatesPage extends WebAPI {
     public WebElement continueWithEmail;
     @FindBy(xpath = WebElementEmailBox)
     public WebElement emailBox;
+    @FindBy(xpath = webElementPostReviewLink)
+    public WebElement postReviewLink;
+    @FindBy(xpath = webElementPostPhoto)
+    public WebElement postPhoto;
+    @FindBy(xpath = webElementPostButton)
+    public WebElement postButton;
+
+
     /**
      * Body
      */
@@ -298,6 +306,44 @@ public class AffiliatesPage extends WebAPI {
         //waitUntilClickAble(By.xpath(WebElementFooterSectionLinks));
         boolean flag= clickLinksSwitchTabsCompareURLs(By.xpath(WebElementFooterSectionLinks),path,"footerSectionLinks");
         return flag;
+    }
+
+    /**
+     * Test Case 15: "Validate Post a photo button"
+     * 1) Navigate to "tripadvisor.com"
+     * 2) Scroll down the page
+     * 3) Click on "Become an affiliate"
+     * 4) Click on "Post"
+     * 5) Click on "Post a Photo"
+     * 6) Get the page title
+     */
+    public boolean validatePostPhoto() throws IOException {
+        navigateToAffiliatePage();
+        clickOnElement(postButton);
+        wait.until(ExpectedConditions.elementToBeClickable(postPhoto));
+        clickOnElement(postPhoto);
+        boolean flag=compareTextToExpectedString(getCurrentPageTitle(),path,"postPhotoTitle");
+        return flag;
+
+    }
+
+    /**
+     * Test Case 16: "Validate Post a review"
+     * 1) Navigate to "tripadvisor.com"
+     * 2) Scroll down the page
+     * 3) Click on "Become an affiliate"
+     * 4) Click on "Post"
+     * 5) Click on "Post a review"
+     * 6) Get the page title
+     */
+    public boolean validatePostReview() throws IOException {
+        navigateToAffiliatePage();
+        clickOnElement(postButton);
+        wait.until(ExpectedConditions.elementToBeClickable(postReviewLink));
+        clickOnElement(postReviewLink);
+        boolean flag=compareTextToExpectedString(getCurrentPageTitle(),path,"postReviewTitle");
+        return flag;
+
     }
 
 

@@ -6,7 +6,7 @@ Test Case 1: "Validate page title"
 4) Get page title
 5) Close browser
 
-Test Case 2:
+Test Case 2: "Validate Schedule and result title"
 1) Navigate to "espn.com"
 2) Click on MMA
 3) Click on home

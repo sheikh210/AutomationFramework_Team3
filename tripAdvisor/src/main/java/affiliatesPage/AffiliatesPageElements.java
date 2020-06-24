@@ -29,6 +29,12 @@ public class AffiliatesPageElements {
     public static final String WebElementContinueWithEmail="//span[contains(text(),'Continue with email')]";
     // Email box by xpath
     public static final String WebElementEmailBox="//*[@id=\"regSignIn.email\"]";
+    // Post button by class name
+    public static final String webElementPostButton="//body/div/div/div/div/div/div/div/header/div/nav/div/button/span[1]";
+    //post a review by xpath
+    public static final String webElementPostReviewLink="//a[contains(text(),'Write a review')]";
+    //Post a photo by xpath
+    public static final String webElementPostPhoto="//a[contains(text(),'Post photos')]";
     /**
      * Body
      */
