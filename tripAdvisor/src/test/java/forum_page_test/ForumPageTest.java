@@ -118,7 +118,7 @@ public class ForumPageTest extends WebAPI {
     @Test(priority = 13)
     public void testTravelForumLinkPageSource() {
         forumPageInIt();
-        String actualSource = forumPage.validateTravelForumLinkPageTitle();
+        String actualSource = forumPage.validateTravelForumLinkPageSource();
         String expectedSource = "Travel Forum, Discussion Board for Talk and Chat - Tripadvisor";
         Assert.assertEquals(actualSource, expectedSource);
     }
@@ -134,7 +134,7 @@ public class ForumPageTest extends WebAPI {
     @Test(priority = 15)
     public void testBestOf2020LinkPageSource() {
         forumPageInIt();
-        String actualSource = forumPage.validateBestOfLinkPageTitle();
+        String actualSource = forumPage.validateBestOfLinkPageSource();
         String expectedSource = "Travelers' Choice - Tripadvisor - Best Airlines, Beaches, Family Vacations, Hotels & Destinations";
         Assert.assertEquals(actualSource, expectedSource, "Page Source not found");
     }
