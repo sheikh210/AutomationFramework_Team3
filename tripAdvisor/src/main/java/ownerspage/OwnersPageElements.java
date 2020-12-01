@@ -114,8 +114,10 @@ public class OwnersPageElements {
     public static final String webElementClaimPropertyBox = "div.t4b-owners-ClaimProperty__claimProperty--3m4rI div.t4b-owners-ClaimProperty__name--1p1wR";
     // "Search" Button (className)
     public static final String webElementButtonSearch = "ui_button primary large fullwidth";
-    // iFRAME - Sign-in Frame (CSS)
-    public static final String webElementIFrameSignIn = "#overlayRegFrame";
+    // iFRAME - Sign-in Frame (ID)
+    public static final String webElementIFrameSignIn = "overlayRegFrameWrap";
+    // iFRAME - Close Button (CSS)
+    public static final String webElementIFrameButtonClose = "#BODY_BLOCK_JQUERY_REFLOW > span > div.ui_close_x";
 
     // Search Results Names List - "Location" Input Box (LIST) (CSS)
     private static final String webElementListNamesSearchResultsLocation = "div._2sFgES0v > div span:nth-child(2)";

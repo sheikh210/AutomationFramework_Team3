@@ -1,0 +1,106 @@
+PROTECT YOUR ENTERPRISE PAGE - TEST CASES
+
+TEST CASE 1 - Validate navigation to "Protect Your Enterprise From Threats" Page
+1. Navigate to http://verizonwireless.com
+2. Click "Business" button in header
+3. Click "Enterprise" button in header
+4. If pop-up is displayed, close pop-up.
+5. If pop-up is not displayed, scroll down and click "Protect Your Enterprise From Threats" box
+6. Verify image text is correct
+
+TEST CASE 2 - Validate number of list items contained in "Protect your enterprise from threats" dropdown
+1. Navigate to "Protect Your Enterprise" page
+2. Hover over "Protect your enterprise from threats" dropdown
+3. Verify number of list items contained within dropdown
+
+TEST CASE 3 - Validate name of each list item contained in "Protect your enterprise from threats" dropdown
+1. Navigate to "Protect Your Enterprise" page
+2. Hover over "Protect your enterprise from threats" dropdown
+3. Verify name of each list item contained within dropdown
+
+TEST CASE 4 - Validate navigation to URL of each list item contained in "Protect your enterprise from threats" dropdown
+1. Navigate to "Protect Your Enterprise" page
+2. Hover over "Protect your enterprise from threats" dropdown
+3. Click on each list item contained within dropdown, capture and verify each URL
+
+TEST CASE 5 - Validate the name of each item on the sticky Navigation Bar (located under page image)
+1. Navigate to "Protect Your Enterprise" page
+2. Verify the name of each section contained within navigation bar, under the main page image
+
+TEST CASE 6 - Validate titles of first grid container section (below nav bar)
+1. Navigate to "Protect Your Enterprise" page
+2. Verify the title of each section below the nav bar
+
+TEST CASE 7 - Validate body text of first grid container section (below nav bar)
+1. Navigate to "Protect Your Enterprise" page
+2. Verify the body text of each section below the nav bar
+
+TEST CASE 8 - Validate "Contact Us" button
+1. Navigate to "Protect Your Enterprise" page
+2. Click on "Contact Us" button (above YouTube video iFrame)
+3. Verify pageURL of "Contact Us" page
+
+TEST CASE 9 -Validate YouTube Player
+ 1. Navigate to "Protect Your Enterprise" page
+ 2. Scroll down to embedded YouTube video frame
+ 3. Verify that user can click play button to play YouTube video
+
+TEST CASE 10 - Validate title of first expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify title of first expandable stack container section
+
+TEST CASE 11 - Validate title of second expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify title of second expandable stack container section
+
+TEST CASE 12 - Validate title of third expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify title of third expandable stack container section
+
+TEST CASE 13 - Validate title of fourth expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify title of fourth expandable stack container section
+
+TEST CASE 14 - Validate text title of first expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify text title of first expandable stack container section
+
+TEST CASE 15 - Validate text title of second expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify text title of second expandable stack container section
+
+TEST CASE 16 - Validate text title of third expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify text title of third expandable stack container section
+
+TEST CASE 17 - Validate text title of fourth expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify text title of fourth expandable stack container section
+
+TEST CASE 18 - Validate text body of first expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify body text of first expandable stack container section
+
+TEST CASE 19 - Validate text body of second expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify body text of second expandable stack container section
+
+TEST CASE 20 - Validate text body of third expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify body text of third expandable stack container section
+
+TEST CASE 21 - Validate text body of fourth expandable stack container (under YouTube iFrame)
+1. Navigate to "Protect Your Enterprise" page
+2. Scroll down below embedded YouTube video frame
+3. Verify body text of fourth expandable stack container section

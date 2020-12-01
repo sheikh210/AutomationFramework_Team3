@@ -178,7 +178,7 @@ public class DataReader extends WebAPI {
      */
 
     // RETURNS ARRAY OF STRING ARRAYS (XSSF)
-    public String[][] fileReaderStringArrayXSSF(String path, String sheetName) throws IOException {
+    public String[][] fileReaderArrayStringArraysXSSF(String path, String sheetName) throws IOException {
         String[][] data;
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);

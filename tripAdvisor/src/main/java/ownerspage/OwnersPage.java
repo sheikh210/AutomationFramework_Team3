@@ -80,8 +80,11 @@ public class OwnersPage extends WebAPI {
     @FindBy (css = webElementClaimPropertyBox)
     private WebElement claimPropertyBox;
 
-    @FindBy (css = webElementIFrameSignIn)
+    @FindBy (id = webElementIFrameSignIn)
     private WebElement iFrameSignIn;
+
+    @FindBy (css = webElementIFrameButtonClose)
+    private WebElement iFrameButtonClose;
 
     private final String searchTermLocationBox = "New York";
     private final String searchTermBusinessNameBox = "Museum";
@@ -234,24 +237,34 @@ public class OwnersPage extends WebAPI {
     public boolean validateSignInFrame() {
         navigateToOwnersPage();
         wait.until(ExpectedConditions.elementToBeClickable(buttonSignIn));
-        clickOnElement(buttonSignIn);
-        System.out.println("Clicked \"Sign-In\" button");
 
         try {
+            Thread.sleep(1000);
+            clickOnElement(buttonSignIn);
+            System.out.println("Clicked \"Sign-In\" button\n");
+        } catch (Exception e) {
+            e.getMessage();
+        }
+
+        try {
+            Thread.sleep(1000);
             wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iFrameSignIn));
-        } catch (NoSuchElementException e) {
+            driver.switchTo().frame(iFrameSignIn);
+        } catch (Exception e) {
             try {
                 iframeHandle(iFrameSignIn);
             } catch (Exception e1) {
                 e.getMessage();
             }
         }
+        System.out.println("Switched to iFrame\n");
 
         boolean flag = false;
-        if (iFrameSignIn.isDisplayed()) {
-            flag = true;
-            System.out.println("iFrame is displayed");
 
+        if (iFrameSignIn.isDisplayed()) {
+            clickOnElement(iFrameButtonClose);
+            System.out.println("Closed iFrame\n");
+            flag = true;
         } else {
             flag = false;
         }
